@@ -1,0 +1,76 @@
+{
+ "_comment": "STOMP-ESCORT on a 30 s one-take runway walk. Track 'model' with vtrack.py (objects.json here). Beat grid measured with librosa on the music bed. Items every 6 beats (3 s) cover the whole walk; the finale holds the last 7 s.",
+ "name": "runway-escort",
+ "clip": "clips/runway_720p.mp4",
+ "track": "tracks/runway_vtrack.json",
+ "follow": "model",
+ "beat": {
+  "bpm": 120,
+  "offset": 0.035
+ },
+ "brand": {
+  "name": "ATELIER VEYRA",
+  "tag": "AW26",
+  "beat": 1
+ },
+ "look": {
+  "text": "LOOK 07",
+  "beat": 4,
+  "until": 9
+ },
+ "items": [
+  {
+   "key": "coat",
+   "word": "COAT",
+   "name": "The Camel Overcoat",
+   "price": 890,
+   "image": "../demo/items/07_coat.webp",
+   "side": "L",
+   "beat": 10
+  },
+  {
+   "key": "knit",
+   "word": "KNIT",
+   "name": "Silk Rib Turtleneck",
+   "price": 240,
+   "image": "../demo/items/07_knit.webp",
+   "side": "R",
+   "beat": 16
+  },
+  {
+   "key": "trousers",
+   "word": "TROUSER",
+   "name": "Pleated Wide Trouser",
+   "price": 360,
+   "image": "../demo/items/07_trousers.webp",
+   "side": "L",
+   "beat": 22
+  },
+  {
+   "key": "bag",
+   "word": "BAG",
+   "name": "Mini Frame Bag",
+   "price": 520,
+   "image": "../demo/items/07_bag.webp",
+   "side": "R",
+   "beat": 28
+  },
+  {
+   "key": "boots",
+   "word": "BOOTS",
+   "name": "Pointed Ankle Boot",
+   "price": 410,
+   "image": "../demo/items/07_boots.webp",
+   "side": "L",
+   "beat": 34
+  }
+ ],
+ "finale": {
+  "title": "THE LOOK",
+  "beat": 46,
+  "label": "five pieces"
+ },
+ "music": "shared/sfx/fashion_elegant_30000.mp3",
+ "music_vol": 0.75,
+ "plate_vol": 0.15
+}

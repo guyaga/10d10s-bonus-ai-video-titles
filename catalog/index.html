@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Title Style Catalog</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%23E63B2E%22/%3E%3Ctext x=%2216%22 y=%2224%22 font-size=%2222%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Impact%22%3ET%3C/text%3E%3C/svg%3E">
+<meta name="description" content="22 After-Effects-style title and HUD styles for AI video, each with a live preview and a copy-paste prompt.">
+<style>
+@font-face{font-family:"Anton";src:url(fonts/anton-latin-400.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Archivo";font-weight:400;src:url(fonts/archivo-latin-400.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Archivo";font-weight:600;src:url(fonts/archivo-latin-600.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Archivo";font-weight:700;src:url(fonts/archivo-latin-700.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"JetBrains Mono";font-weight:500;src:url(fonts/jetbrains-mono-latin-500-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Assistant";font-weight:600;src:url(fonts/assistant-hebrew-600.woff2) format("woff2");unicode-range:U+0590-05FF;font-display:swap}
+
+/* One deliberate world: an edit suite at night. Dark so the previews carry the page; the kit's own red accent. */
+:root{
+  color-scheme:dark;
+  --bg:#141210; --panel:#1c1916; --panel2:#24201c; --line:#352f29; --ink:#f3eee6; --mute:#a59b8e; --faint:#6f665b;
+  --acc:#E63B2E; --acc-ink:#fff4ef; --ok:#7fd48b;
+  --display:"Anton","Impact","Arial Narrow",sans-serif;
+  --body:"Archivo","Assistant","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--ink)}
+body{margin:0;font-family:var(--body);font-size:15px;line-height:1.5}
+[hidden]{display:none!important}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.wrap{max-width:1320px;margin:0 auto;padding-inline:clamp(16px,3vw,36px)}
+
+/* header */
+.top{display:flex;flex-wrap:wrap;gap:28px 48px;align-items:end;padding-block:48px 28px;border-bottom:1px solid var(--line)}
+.top h1{font-family:var(--display);font-weight:400;font-size:clamp(48px,8.5vw,120px);line-height:.86;letter-spacing:.005em;margin:0;text-transform:uppercase}
+.top h1 span{color:var(--acc)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:14px}
+.how{max-width:44ch;color:var(--mute);margin:0}
+.how b{color:var(--ink);font-weight:600}
+.how ol{margin:10px 0 0;padding-left:20px}
+.how code{font-family:var(--mono);font-size:12.5px;background:var(--panel2);padding:1px 6px;border-radius:3px;color:var(--ink)}
+
+/* filters */
+.bar{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:14px;border-bottom:1px solid var(--line)}
+.bar .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-right:4px}
+.chip{border:1px solid var(--line);background:transparent;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;color:var(--mute)}
+.chip:hover{border-color:var(--mute);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
+.count{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums}
+
+/* family sections */
+.fam{padding-block:36px 8px}
+.fam h2{display:flex;align-items:baseline;gap:16px;margin:0 0 6px;font-family:var(--display);font-weight:400;font-size:clamp(28px,3.4vw,40px);text-transform:uppercase;letter-spacing:.01em}
+.fam h2 small{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--faint)}
+.fam > p{margin:0 0 20px;color:var(--mute);max-width:70ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:22px}
+
+/* card */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.media{position:relative;aspect-ratio:16/9;background:#000;border:0;padding:0;display:block;width:100%}
+.media video,.media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.media .tc{position:absolute;left:10px;bottom:8px;font-family:var(--mono);font-size:11px;color:#fff;background:rgba(0,0,0,.55);padding:2px 7px;border-radius:3px;letter-spacing:.05em}
+.media .zoom{position:absolute;right:10px;bottom:8px;font-family:var(--mono);font-size:11px;color:#fff;background:rgba(0,0,0,.55);padding:2px 7px;border-radius:3px;opacity:0;transition:opacity .2s}
+.media:hover .zoom,.media:focus-visible .zoom{opacity:1}
+.body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.id{font-family:var(--display);font-size:30px;line-height:1;letter-spacing:.01em;text-transform:uppercase;margin:0}
+.one{margin:0;color:var(--mute);font-size:14px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--mute);border:1px solid var(--line);border-radius:3px;padding:1px 7px}
+.spec{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:12.5px;margin:2px 0 0}
+.spec dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);padding-top:2px}
+.spec dd{margin:0;color:var(--ink)}
+.sw{display:flex;gap:4px;align-items:center}
+.sw i{width:16px;height:16px;border-radius:3px;border:1px solid rgba(255,255,255,.18);display:inline-block}
+.prompt{margin-top:auto;display:flex;gap:8px;align-items:stretch}
+.prompt code{flex:1;font-family:var(--mono);font-size:11.5px;line-height:1.45;background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:8px 10px;color:#d8d0c4;
+  user-select:all;word-break:break-word}
+.copy{border:0;background:var(--acc);color:var(--acc-ink);border-radius:4px;padding:0 14px;font-weight:700;font-size:13px;min-width:78px}
+.copy.done{background:var(--ok);color:#10200f}
+
+/* proposed */
+.card.proposed{border-style:dashed;background:transparent}
+.card.proposed .media{display:grid;place-items:center;background:repeating-linear-gradient(135deg,var(--panel) 0 12px,var(--bg) 12px 24px)}
+.card.proposed .media span{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--mute);text-transform:uppercase}
+
+footer{border-top:1px solid var(--line);margin-top:40px;padding-block:22px 40px;color:var(--faint);font-size:12.5px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* big preview */
+dialog{border:0;padding:0;background:transparent;max-width:min(1200px,94vw);width:100%}
+dialog::backdrop{background:rgba(8,7,6,.86)}
+dialog video{width:100%;display:block;border-radius:6px;background:#000}
+dialog .cap{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:10px;color:var(--ink)}
+dialog .cap b{font-family:var(--display);font-weight:400;font-size:26px;text-transform:uppercase}
+dialog .cap button{border:1px solid var(--line);background:var(--panel);border-radius:4px;padding:6px 14px}
+.toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);background:var(--ink);color:var(--bg);
+  padding:9px 16px;border-radius:999px;font-weight:600;font-size:13px;opacity:0;transition:.25s;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:520px){
+  .top{padding-block:32px 22px}
+  .bar{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:calc(-1 * clamp(16px,3vw,36px));padding-inline:clamp(16px,3vw,36px)}
+  .bar::-webkit-scrollbar{display:none}
+  .chip{flex:none}
+  .count{flex:none;padding-left:8px}
+  .prompt{flex-direction:column}
+  .copy{padding:10px}
+}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">ai-video-titles · style catalog · 22 built</div>
+      <h1>Titles for<br><span>AI video</span></h1>
+    </div>
+    <div class="how">
+      Every style here was rendered over a Seedance clip, tracked frame by frame. <b>Pick one, copy its prompt, paste it to Claude Code.</b>
+      <ol>
+        <li>Filter by what you are selling.</li>
+        <li>Click a preview to watch it large.</li>
+        <li>Copy the prompt line, e.g. <code>Titles: TAPE-HE …</code></li>
+      </ol>
+    </div>
+  </header>
+
+  <nav class="bar" aria-label="Filter styles by use case" id="bar"><span class="lbl">Use case</span></nav>
+  <main id="main"></main>
+
+  <footer>
+    <span>Previews are 4–6 s cuts of the full renders, muted. Brands shown are fictional demo brands.</span>
+    <span>Skill: ~/.claude/skills/ai-video-titles · details per style in references/styles.md</span>
+  </footer>
+</div>
+
+<dialog id="dlg" aria-label="Style preview">
+  <video id="dv" controls loop muted playsinline></video>
+  <div class="cap"><b id="dt"></b><button id="dx">Close</button></div>
+</dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const FAMS = [
+  ["social", "Social stomp", "Big, felt, beat-synced. For drops, fashion, product and Hebrew social ads."],
+  ["hud", "HUD & interface", "The frame becomes an instrument: visors, viewfinders, windscreens, maps."],
+  ["world", "Crafted worlds", "Fully bespoke. The titles are made of the subject's own world: tickets, loupes, vellum, magazines."],
+];
+const S = [
+ {id:"STOMP-ESCORT",f:"social",one:"Giant Anton words that ride beside each tracked item, red index tags and white price stickers.",tags:["fashion","product"],fonts:"Anton · Bodoni Moda · Archivo",pal:["#f6f1e8","#16130f","#ff3d2e"],src:"D2 runway · 30 s",
+  p:"Titles: STOMP-ESCORT - Anton words escorting each tracked item, red index tags + white price stickers, accent #E63B2E, 120 BPM grid."},
+ {id:"STOMP-BEHIND",f:"social",one:"The subject walks in front of her own giant title (matte cut-out).",tags:["fashion","sport","product"],fonts:"Anton · Bodoni Moda",pal:["#ffffff","#16130f","#ff3d2e"],src:"D1 runway · 10 s",
+  p:"Titles: STOMP-BEHIND - giant Anton words behind the subject (matte), white with red accent, stomp on the beat."},
+ {id:"GLASS-CALLOUT",f:"social",one:"Transparent outlined words and smoked-glass price cards. Quiet luxury.",tags:["fashion","luxury","product"],fonts:"Anton outline · Bodoni Moda",pal:["#ffffff","#2a2522","#d8ccb8"],src:"D1 runway · 10 s",
+  p:"Titles: GLASS-CALLOUT - transparent outlined Anton words + smoked-glass price cards, restrained, no hard shadows."},
+ {id:"COUNTDOWN-CTA",f:"social",one:"Flash-sale stack: struck total, sale price, live 00:15 countdown, SHOP NOW.",tags:["fashion","product"],fonts:"Anton · Bodoni Moda italic · Archivo",pal:["#E63B2E","#111111","#ffffff"],src:"D3 runway · 30 s",
+  p:"Titles: COUNTDOWN-CTA - flash-sale stack with 15 s live countdown, struck total + sale price, SHOP NOW, accent #E63B2E."},
+ {id:"KINETIC-HE",f:"social",one:"Hebrew words stomp in on the voice, one accent word per line, hits shake the frame.",tags:["hebrew","product","sport"],fonts:"Rubik 900 · Karantina · Assistant",pal:["#ffffff","#111111","#E63B2E"],src:"GUYAGA AERO · 15 s",
+  p:"Titles: KINETIC-HE - Hebrew voice-synced word stomps, Rubik 900 + Karantina, one accent word per line, hit shakes."},
+ {id:"TAPE-HE",f:"social",one:"Hebrew slogans on rotated highlight-tape strips. Readable over anything.",tags:["hebrew","product","tech"],fonts:"Rubik 900 · Karantina",pal:["#0c0806","#ff7a1a","#fff4ea"],src:"FIRELINK · 20 s",
+  p:"Titles: TAPE-HE - Hebrew slogans on rotated highlight-tape strips (ink + accent), RTL wipe + slam, readable over anything."},
+ {id:"KINETIC-KARAOKE",f:"social",one:"Voice-synced karaoke captions with an accent pill on the spoken word, plus punch zooms.",tags:["hebrew","travel","tech"],fonts:"Rubik 900 (stroked)",pal:["#ffffff","#000000","#2ed3a4"],src:"LUMEN LENS · 18 s",
+  p:"Titles: KINETIC-KARAOKE - voice-synced karaoke captions (accent pill on the spoken word) + punch zooms + tape slogans."},
+ {id:"FLASH-CARD",f:"social",one:"A 4-frame full-screen word card on the single biggest beat.",tags:["hebrew","product","sport"],fonts:"Karantina 700",pal:["#4cc9ff","#0a0c10","#ffffff"],src:"AURA EV · 18 s",
+  p:"Titles: FLASH-CARD - one 4-frame full-screen word card on the biggest beat, accent background."},
+ {id:"SPEED-STAT",f:"social",one:"Broadcast stat hits: 9 MS contact time, a live counter on the ball, a giant GOAL.",tags:["sport","product"],fonts:"Anton · Archivo",pal:["#ffffff","#E63B2E","#0b0b0d"],src:"GUYAGA STRIKE · 15 s",
+  p:"Titles: SPEED-STAT - broadcast stat hits: huge Anton numbers, live counter on the tracked ball, giant GOAL finish."},
+ {id:"PRESIDENTIAL-SERIF",f:"social",one:"Few, big serif words that ease in with an accent underline. Expensive, never comic.",tags:["sport","luxury","tech"],fonts:"DM Serif Display · Space Grotesk",pal:["#F5F3EE","#111111","#E63B2E"],src:"SPARTA · 24 s",
+  p:"Titles: PRESIDENTIAL-SERIF - few, big DM Serif words that ease in with an accent underline, glass tags, no comic colours."},
+ {id:"HUD-HELMET",f:"hud",one:"Holographic visor HUD in Hebrew: rotating rings, red alerts, an AI voice with a live meter.",tags:["tech","hebrew"],fonts:"Assistant · JetBrains Mono",pal:["#6fe3ff","#e6fbff","#ff4a5a"],src:"Helmet · 24 s",
+  p:"Titles: HUD-HELMET - holographic visor HUD, rotating rings + tick scales, cyan with red alerts, AI voice with live meter, Hebrew."},
+ {id:"SCIFI-TARGETING",f:"hud",one:"Brackets and ID tags locked to each target, HOSTILE LOCK, then TARGETS NEUTRALIZED.",tags:["tech"],fonts:"JetBrains Mono · Assistant",pal:["#ffb547","#ff5046","#0c0804"],src:"Exosuit POV · 8 s",
+  p:"Titles: SCIFI-TARGETING - tracked target brackets + ID tags, HOSTILE LOCK banner, amber military HUD."},
+ {id:"ROAD-HUD",f:"hud",one:"AR head-up display projected on the road in 3D perspective, speed ring, hazard contour.",tags:["tech","hebrew"],fonts:"Heebo 200–700",pal:["#eaf6ff","#4cc9ff","#ffb547"],src:"AURA EV · 18 s",
+  p:"Titles: ROAD-HUD - AR head-up display projected on the road in 3D perspective, speed ring + hazard contour, calm fades."},
+ {id:"THERMAL-RESCUE",f:"hud",one:"The frame is a thermal camera: blue-grey map, white-hot fire, gauge dial and ECG.",tags:["tech","hebrew"],fonts:"IBM Plex Sans Hebrew · Mono",pal:["#3d5a73","#ffb13b","#ffffff"],src:"FIRELINK · 20 s",
+  p:"Titles: THERMAL-RESCUE - the frame is a thermal camera: blue-grey map, white-hot fire, gauge dial + ECG, amber OSD voice."},
+ {id:"SPEC-SCAN",f:"hud",one:"Lab language: wireframe scan-in, exploded parts with balloons, FEA heat map, 7-segment stats.",tags:["product","sport","tech"],fonts:"Chakra Petch · Rubik",pal:["#0a0a0a","#c6ff1a","#ff6a13"],src:"GUYAGA AERO · 15 s",
+  p:"Titles: SPEC-SCAN - lab/CAD language: wireframe scan-in, exploded parts with numbered balloons, FEA heat map, 7-segment stats."},
+ {id:"MAP-FLYOVER",f:"hud",one:"A route draws across a tracked aerial, pinned bilingual places, distance counter, arrival card.",tags:["real estate","travel"],fonts:"Assistant · JetBrains Mono",pal:["#0b1a22","#9bd14a","#eef4e8"],src:"TLV → Ono · 16 s",
+  p:"Titles: MAP-FLYOVER - route drawing over a tracked aerial, pinned bilingual place labels, distance counter, arrival card."},
+ {id:"CAMPUS-AR",f:"hud",one:"Small bilingual AR tags pinned to real places along a walking tour.",tags:["real estate","travel"],fonts:"Assistant · mono",pal:["#101512","#9bd14a","#eef4e8"],src:"Campus tour · 18 s",
+  p:"Titles: CAMPUS-AR - small bilingual AR tags pinned to real places along a walk, glass panels, waveform for voice."},
+ {id:"HALLMARK-LUXE",f:"world",one:"Velvet-black spotlight, a travelling jeweller's loupe, gold hallmark price plates.",tags:["luxury","product","hebrew"],fonts:"Frank Ruhl Libre · Cormorant · Pinyon Script",pal:["#0b0908","#c9a45c","#f3e6c8"],src:"AURUM · 12 s",
+  p:"Titles: HALLMARK-LUXE - spotlight on velvet black, a travelling jeweller's loupe, gold hallmark price plates, foil type."},
+ {id:"ARCH-DRAWING",f:"world",one:"Vellum and sepia elevation sheets over the drone shot; floors fill with wash as it climbs.",tags:["real estate","hebrew"],fonts:"Karantina · Heebo",pal:["#f1e8d6","#5a3b27","#4f86a8"],src:"SEAVIEW 24 · 18 s",
+  p:"Titles: ARCH-DRAWING - vellum + sepia elevation sheets over the footage, floors fill with wash, hand-lettered lines, floor plan end."},
+ {id:"MAGAZINE-EDITORIAL",f:"world",one:"The flight as a printed spread: numbered product credits, price column, red-pencil notes.",tags:["real estate","product","hebrew"],fonts:"Frank Ruhl Libre · Heebo · Amatic SC",pal:["#f4efe4","#1d1a16","#c8321f"],src:"LUMA HOME · 18 s",
+  p:"Titles: MAGAZINE-EDITORIAL - the video as a printed spread: masthead, numbered product credits, price column, red-pencil notes, page folds."},
+ {id:"KITCHEN-TICKET",f:"world",one:"A thermal order ticket prints on a steel rail, smoke-formed words, a flame heat gauge.",tags:["food","hebrew"],fonts:"Frank Ruhl Libre · Miriam Libre · Amatic SC",pal:["#1a1714","#ff7a1a","#f5f1e8"],src:"EMBER · 15 s",
+  p:"Titles: KITCHEN-TICKET - thermal order ticket printing on a steel rail, smoke-formed words, flame heat gauge, stamped finish."},
+ {id:"LENS-POSTCARD",f:"world",one:"Seen through a glasses lens: a stamp mascot's speech bubbles, a translated sign, airmail postcards.",tags:["travel","tech","hebrew"],fonts:"Varela Round · IBM Plex Sans Hebrew",pal:["#1d2b4f","#d8322b","#f6f0e0"],src:"LUMEN LENS · 18 s",
+  p:"Titles: LENS-POSTCARD - seen through a glasses lens: stamp mascot speech bubbles, translated sign, airmail postcards, receipt."},
+];
+const PROPOSED = [
+ {id:"SCOREBUG-LIVE",one:"Live sports package: score bug, lower-thirds riding the tracked player, replay wipe.",tags:["sport"]},
+ {id:"SPLIT-FLAP",one:"Departure-board letters that flip into place for travel, airline and hotel copy.",tags:["travel"]},
+ {id:"MARKER-WRITE-ON",one:"Hand-drawn marker circles, arrows and handwriting that write on over the shot.",tags:["real estate","product"]},
+];
+const USES = ["all","fashion","sport","product","real estate","food","tech","luxury","travel","hebrew"];
+const $ = s => document.querySelector(s);
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const file = id => "previews/" + id.toLowerCase();
+let filter = "all";
+try { filter = localStorage.getItem("titles-filter") || "all" } catch (e) {}
+if (!USES.includes(filter)) filter = "all";
+
+function card(s) {
+  return `<article class="card" data-tags="${s.tags.join("|")}">
+    <button class="media" data-id="${s.id}" aria-label="Watch ${s.id} large">
+      <video muted loop playsinline preload="none" poster="${file(s.id)}.jpg" src="${file(s.id)}.mp4"></video>
+      <span class="tc">${esc(s.src)}</span><span class="zoom">Watch large</span>
+    </button>
+    <div class="body">
+      <h3 class="id">${s.id}</h3>
+      <p class="one">${esc(s.one)}</p>
+      <div class="tags">${s.tags.map(t => `<span>${t}</span>`).join("")}</div>
+      <dl class="spec"><dt>Type</dt><dd>${esc(s.fonts)}</dd><dt>Colour</dt><dd class="sw">${s.pal.map(c => `<i style="background:${c}" title="${c}"></i>`).join("")}</dd></dl>
+      <div class="prompt"><code>${esc(s.p)}</code><button class="copy" data-p="${esc(s.p)}">Copy</button></div>
+    </div></article>`;
+}
+function render() {
+  let html = "", shown = 0;
+  for (const [k, name, desc] of FAMS) {
+    const list = S.filter(s => s.f === k && (filter === "all" || s.tags.includes(filter)));
+    if (!list.length) continue;
+    shown += list.length;
+    html += `<section class="fam"><h2>${name} <small>${list.length} style${list.length > 1 ? "s" : ""}</small></h2><p>${desc}</p><div class="grid">${list.map(card).join("")}</div></section>`;
+  }
+  const prop = PROPOSED.filter(s => filter === "all" || s.tags.includes(filter));
+  if (prop.length) html += `<section class="fam"><h2>Proposed <small>not built yet</small></h2><p>Fits the kit, no render yet. Ask for one and it becomes a bespoke build.</p><div class="grid">${prop.map(s =>
+    `<article class="card proposed"><div class="media"><span>Not built yet</span></div><div class="body"><h3 class="id">${s.id}</h3><p class="one">${esc(s.one)}</p>
+     <div class="tags">${s.tags.map(t => `<span>${t}</span>`).join("")}</div></div></article>`).join("")}</div></section>`;
+  $("#main").innerHTML = html || `<p style="padding:40px 0;color:var(--mute)">No built style for this use case yet.</p>`;
+  $("#count") && ($("#count").textContent = `${shown} of ${S.length}`);
+  wire();
+}
+function bar() {
+  $("#bar").insertAdjacentHTML("beforeend", USES.map(u => `<button class="chip" data-u="${u}" aria-pressed="${u === filter}">${u === "all" ? "All" : u[0].toUpperCase() + u.slice(1)}</button>`).join("") + `<span class="count" id="count"></span>`);
+  $("#bar").addEventListener("click", e => {
+    const b = e.target.closest(".chip"); if (!b) return;
+    filter = b.dataset.u; try { localStorage.setItem("titles-filter", filter) } catch (e2) {}
+    document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c === b)); render();
+  });
+}
+// previews play only while on screen (22 videos would otherwise all decode at once)
+const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(en => {
+  const v = en.target; if (en.isIntersecting) { v.preload = "auto"; v.play().catch(() => {}) } else v.pause();
+}), { rootMargin: "120px" }) : null;
+const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function wire() {
+  document.querySelectorAll(".card video").forEach(v => { if (io && !still) io.observe(v) });
+  document.querySelectorAll(".copy").forEach(b => b.onclick = () => copy(b));
+  document.querySelectorAll(".media[data-id]").forEach(m => m.onclick = () => big(m.dataset.id));
+}
+function copy(b) {
+  const txt = b.dataset.p;
+  const ok = () => { b.textContent = "Copied"; b.classList.add("done"); toast("Prompt copied. Paste it to Claude Code."); setTimeout(() => { b.textContent = "Copy"; b.classList.remove("done") }, 1600) };
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents(b.previousElementSibling); const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    let done = false; try { done = document.execCommand("copy") } catch (e) {} done ? ok() : toast("Prompt selected. Press Ctrl+C to copy."); };
+  if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(ok, fallback); else fallback();
+}
+let tt; function toast(m) { const t = $("#toast"); t.textContent = m; t.classList.add("on"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("on"), 2000) }
+function big(id) {
+  const d = $("#dlg"), v = $("#dv"); v.src = file(id) + ".mp4"; v.poster = file(id) + ".jpg"; $("#dt").textContent = id;
+  d.showModal(); v.play().catch(() => {});
+}
+$("#dx").onclick = () => $("#dlg").close();
+$("#dlg").addEventListener("close", () => $("#dv").pause());
+$("#dlg").addEventListener("click", e => { if (e.target === $("#dlg")) $("#dlg").close() });
+bar(); render();
+</script>
+</body>
+</html>

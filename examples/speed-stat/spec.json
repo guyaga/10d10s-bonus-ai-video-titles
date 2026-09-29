@@ -1,0 +1,88 @@
+{
+ "_comment": "SPEED-STAT on a 15 s football spot with hard cuts at 2.54 / 7.75 / 11.125 s (ffmpeg scene detection). Track player, boot, ball. GOAL sits behind the player when the matte is given.",
+ "name": "strike-stat",
+ "clip": "clips/strike_720p.mp4",
+ "track": "tracks/strike_vtrack.json",
+ "matte": "mattes/strike_alpha.webm",
+ "brand": {
+  "name": "GUYAGA STRIKE",
+  "tag": "FG · 2026",
+  "until": 11.125
+ },
+ "player": {
+  "obj": "player",
+  "title": "THE STRIKER",
+  "sub": "RUN-UP 31 KM/H",
+  "t": 0.5,
+  "until": 2.54
+ },
+ "stat": {
+  "text": "9 MS",
+  "sub": "CONTACT TIME",
+  "x": 90,
+  "y": 520,
+  "t": 2.74,
+  "until": 7.75
+ },
+ "callouts": [
+  {
+   "title": "CARBON STRIKE PLATE",
+   "sub": "+14% energy return",
+   "obj": "boot",
+   "fx": 0.5,
+   "fy": 0.45,
+   "x": 1260,
+   "y": 130,
+   "t": 4.3,
+   "until": 7.75
+  },
+  {
+   "title": "3D GRIP ZONE",
+   "sub": "spin control on contact",
+   "obj": "boot",
+   "fx": 0.8,
+   "fy": 0.7,
+   "x": 1260,
+   "y": 330,
+   "t": 5.1,
+   "until": 7.75
+  }
+ ],
+ "ring": {
+  "obj": "ball",
+  "t": 3.6,
+  "until": 11.125,
+  "labels": [
+   [
+    3.6,
+    "BALL COMPRESSION 18%"
+   ],
+   [
+    7.75,
+    "SPIN 9.8 RPS"
+   ]
+  ],
+  "label_until": 7.75
+ },
+ "counter": {
+  "t": 7.87,
+  "until": 11.125,
+  "value": 121,
+  "dur": 1.6,
+  "unit": "KM/H · SPIN 9.8 RPS"
+ },
+ "trail": {
+  "obj": "ball",
+  "t": 7.75,
+  "until": 11.125
+ },
+ "big": {
+  "text": "GOAL",
+  "t": 11.4
+ },
+ "lockup": {
+  "name": "GUYAGA STRIKE",
+  "line": "MAKE IT COUNT",
+  "t": 13.0
+ }
+}

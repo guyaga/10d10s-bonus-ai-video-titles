@@ -1,0 +1,17 @@
+{
+ "context": "Extreme close-up of a man's face inside a helmet with a clear curved visor.",
+ "objects": [
+  {
+   "name": "face",
+   "desc": "the man's face (forehead to chin, ear to ear) seen through the visor"
+  },
+  {
+   "name": "eyes",
+   "desc": "both eyes of the man together as one box"
+  },
+  {
+   "name": "visor",
+   "desc": "the whole clear curved visor glass opening of the helmet"
+  }
+ ]
+}

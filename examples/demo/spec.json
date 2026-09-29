@@ -1,0 +1,53 @@
+{
+ "_comment": "Try-it demo: STOMP-ESCORT on an 8 s runway cut. Everything is bundled (clip, track, music, product images, UI sounds): no API key, no Seedance spend. python ../../scripts/run_style.py STOMP-ESCORT --spec spec.json --render",
+ "name": "demo-stomp-escort",
+ "clip": "runway_demo_720p.mp4",
+ "track": "runway_demo_vtrack.json",
+ "follow": "model",
+ "beat": {
+  "bpm": 120,
+  "offset": 0.035
+ },
+ "brand": {
+  "name": "ATELIER VEYRA",
+  "tag": "AW26",
+  "beat": 0
+ },
+ "items": [
+  {
+   "key": "coat",
+   "word": "COAT",
+   "name": "The Camel Overcoat",
+   "price": 890,
+   "image": "items/07_coat.webp",
+   "side": "L",
+   "beat": 2
+  },
+  {
+   "key": "knit",
+   "word": "KNIT",
+   "name": "Silk Rib Turtleneck",
+   "price": 240,
+   "image": "items/07_knit.webp",
+   "side": "R",
+   "beat": 5
+  },
+  {
+   "key": "trousers",
+   "word": "TROUSER",
+   "name": "Pleated Wide Trouser",
+   "price": 360,
+   "image": "items/07_trousers.webp",
+   "side": "L",
+   "beat": 8
+  }
+ ],
+ "finale": {
+  "title": "THE LOOK",
+  "beat": 11,
+  "label": "three pieces"
+ },
+ "music": "music_demo.mp3",
+ "music_vol": 0.75,
+ "plate_vol": 0.0
+}

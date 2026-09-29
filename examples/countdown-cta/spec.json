@@ -1,0 +1,85 @@
+{
+ "_comment": "COUNTDOWN-CTA: the escort walk, a giant AW26 behind the model (needs the matte), then a 15 s live flash-sale countdown. Matte: npx hyperframes@0.8.84 remove-background clips/look08_720p.mp4 -o mattes/look08_alpha.webm",
+ "name": "runway-countdown",
+ "clip": "clips/look08_720p.mp4",
+ "track": "tracks/look08_vtrack.json",
+ "matte": "mattes/look08_alpha.webm",
+ "follow": "model",
+ "beat": {
+  "bpm": 120,
+  "offset": 0.035
+ },
+ "brand": {
+  "name": "ATELIER VEYRA",
+  "tag": "AW26",
+  "beat": 1
+ },
+ "look": {
+  "text": "LOOK 08",
+  "beat": 4,
+  "until": 9
+ },
+ "items": [
+  {
+   "key": "trench",
+   "word": "TRENCH",
+   "name": "The Ivory Trench",
+   "price": 780,
+   "image": "../demo/items/08_trench.webp",
+   "side": "L",
+   "beat": 10
+  },
+  {
+   "key": "knit",
+   "word": "CASHMERE",
+   "name": "Cashmere Rib Knit",
+   "price": 320,
+   "image": "../demo/items/08_knit.webp",
+   "side": "R",
+   "beat": 13
+  },
+  {
+   "key": "skirt",
+   "word": "SATIN",
+   "name": "Satin Midi Skirt",
+   "price": 290,
+   "image": "../demo/items/08_skirt.webp",
+   "side": "L",
+   "beat": 16
+  },
+  {
+   "key": "tote",
+   "word": "TOTE",
+   "name": "Suede Tote",
+   "price": 460,
+   "image": "../demo/items/08_tote.webp",
+   "side": "R",
+   "beat": 19
+  },
+  {
+   "key": "boots",
+   "word": "BOOTS",
+   "name": "Knee Boot",
+   "price": 540,
+   "image": "../demo/items/08_boots.webp",
+   "side": "L",
+   "beat": 22
+  }
+ ],
+ "big_word": {
+  "text": "AW26",
+  "beat": 24,
+  "until": 29
+ },
+ "countdown": {
+  "beat": 29,
+  "seconds": 15,
+  "discount": 0.2,
+  "pill": "FLASH SALE",
+  "label": "the complete look",
+  "button": "SHOP NOW →"
+ },
+ "music": "shared/sfx/fashion_elegant_30000.mp3",
+ "music_vol": 0.75,
+ "plate_vol": 0.15
+}

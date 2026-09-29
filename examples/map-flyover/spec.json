@@ -1,0 +1,69 @@
+{
+ "_comment": "MAP-FLYOVER over a 10 s aerial. Tracking: python scripts/track.py clips/aerial_720p.mp4 anchors.json tracks/aerial_points.json (anchors = pixel positions on frame 0 of the clip, see anchors.json). Facts on the cards must be real: check coordinates and distances.",
+ "name": "map-flyover",
+ "clip": "clips/aerial_720p.mp4",
+ "track": "tracks/aerial_points.json",
+ "route": [
+  "r0",
+  "r1",
+  "r2",
+  "r3",
+  "r4",
+  "r5"
+ ],
+ "draw": [
+  2.0,
+  7.0
+ ],
+ "pins": [
+  {
+   "point": "airport",
+   "en": "Ben Gurion Airport",
+   "he": "נמל התעופה בן גוריון",
+   "meta": "TLV · LLBG · 32.003°N 34.881°E",
+   "t": 0.8,
+   "side": "right",
+   "hide_at": 8.4
+  },
+  {
+   "point": "telaviv",
+   "en": "Tel Aviv",
+   "he": "תל אביב",
+   "t": 1.5,
+   "below": true,
+   "dim_at": 4.0,
+   "hide_at": 6.3
+  },
+  {
+   "point": "ono",
+   "en": "Ono Academic College",
+   "he": "הקריה האקדמית אונו",
+   "meta": "KIRYAT ONO · 32.036°N 34.865°E",
+   "t": 7.0,
+   "side": "right",
+   "main": true
+  }
+ ],
+ "title": {
+  "kicker": "ROUTE 01 · ARRIVAL",
+  "en": "FROM TLV TO ONO",
+  "he": "מנתב״ג לקריית אונו",
+  "t": 0.3,
+  "until": 6.3
+ },
+ "readout": {
+  "label": "BY ROAD",
+  "value": 12.8,
+  "unit": "km",
+  "dec": 1,
+  "left": "≈ 17 min · no traffic",
+  "right": "straight line 4.0 km",
+  "t": 1.9,
+  "until": 8.4
+ },
+ "chip": "LIVE ROUTE",
+ "iris": {
+  "t": 8.4,
+  "dur": 1.55
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "_comment": "CAMPUS-AR on a 6 s walk through a library. Track shelves, desks and head. Add \"end\": {\"t\": 4.2, \"logo\": \"logo.png\", \"en\": \"Welcome\"} for an end card.",
+ "name": "campus-ar",
+ "clip": "clips/library_720p.mp4",
+ "track": "tracks/library_vtrack.json",
+ "chip": "ONO AR · CAMPUS TOUR",
+ "tags": [
+  {
+   "follow": "shelves",
+   "anchor": "c",
+   "dx": -70,
+   "place": "left",
+   "en": "Library",
+   "he": "הספרייה",
+   "t": 1.0
+  },
+  {
+   "follow": "desks",
+   "anchor": "c",
+   "dy": -30,
+   "place": "above",
+   "en": "Study area",
+   "he": "אזור למידה",
+   "t": 2.5
+  },
+  {
+   "follow": "head",
+   "anchor": "r",
+   "dx": 40,
+   "place": "right",
+   "en": "Guy Aga",
+   "he": "אורח בקמפוס",
+   "sub": "GUEST · VISITOR PASS",
+   "t": 3.9,
+   "dot": false
+  }
+ ]
+}

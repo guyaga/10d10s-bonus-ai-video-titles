@@ -1,0 +1,5 @@
+{"context": "One continuous take: a fashion model walks from the far end of a runway toward the camera, spins once, then poses. She wears a camel coat, ivory turtleneck, black wide trousers, black ankle boots and carries a small black bag.",
+ "objects": [
+  {"name": "model", "desc": "the whole body of the single model on the runway, from the top of her head to her boots (tight box)"},
+  {"name": "face", "desc": "the model's head and face"}
+ ]}

@@ -1,0 +1,56 @@
+{
+ "_comment": "SCIFI-TARGETING, 8 s first-person shot: two robots + a drone, rockets fire at 3.85 s, impact 4.65 s (measured from the plate's luminance).",
+ "name": "pov-targeting",
+ "clip": "clips/pov_720p.mp4",
+ "track": "tracks/pov_vtrack.json",
+ "launcher": "launcher",
+ "targets": [
+  {
+   "obj": "heavy",
+   "label": "T-01 // HEAVY",
+   "sub": "RANGE {range} m · ARMOR IV",
+   "range": [
+    140,
+    96
+   ],
+   "t": 0.5
+  },
+  {
+   "obj": "striker",
+   "label": "T-02 // STRIKER",
+   "sub": "RANGE {range} m · FAST",
+   "range": [
+    152,
+    118
+   ],
+   "t": 0.9,
+   "anchor": "tr",
+   "dy": -10
+  },
+  {
+   "obj": "drone",
+   "label": "D-01 // RECON",
+   "sub": "ALT 38 m · TRACKING",
+   "lock": false,
+   "after": "SIGNAL LOST",
+   "t": 1.3,
+   "dx": 26,
+   "dy": -26
+  }
+ ],
+ "lock": {
+  "t": 2.6,
+  "text": "HOSTILE LOCK · {n} TARGETS"
+ },
+ "fire": {
+  "t": 3.85,
+  "text": "FIRE"
+ },
+ "impact": 4.65,
+ "banner": {
+  "t": 6.2,
+  "title": "TARGETS NEUTRALIZED",
+  "sub": "המטרות נוטרלו",
+  "detail": "T-01 DOWN · T-02 DOWN · D-01 SIGNAL LOST"
+ }
+}

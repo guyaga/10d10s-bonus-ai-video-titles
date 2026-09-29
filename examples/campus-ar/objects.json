@@ -1,0 +1,21 @@
+{
+ "context": "A man walks through a library with curved wooden desks and tall bookshelves on the right.",
+ "objects": [
+  {
+   "name": "man",
+   "desc": "the whole body of the bearded man in the olive jacket"
+  },
+  {
+   "name": "head",
+   "desc": "the man's head and face only"
+  },
+  {
+   "name": "shelves",
+   "desc": "the tall bookshelves full of books on the right side"
+  },
+  {
+   "name": "desks",
+   "desc": "the curved wooden study desks with black chairs on the left side"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "context": "First-person view: two big combat robots and a small flying drone in a ruined plaza; rockets fire and explode around 5 seconds, then the robots lie destroyed.",
+ "objects": [
+  {
+   "name": "heavy",
+   "desc": "the larger, bulkier combat robot on the left (while standing; mark not visible once destroyed or hidden by fire)"
+  },
+  {
+   "name": "striker",
+   "desc": "the slimmer second combat robot to the right of the big one (not visible once destroyed or hidden by fire)"
+  },
+  {
+   "name": "drone",
+   "desc": "the small hovering drone with a red light in the sky"
+  },
+  {
+   "name": "launcher",
+   "desc": "the armored shoulder launcher / arm cannon in the right foreground"
+  }
+ ]
+}

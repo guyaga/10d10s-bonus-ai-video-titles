@@ -1,0 +1,7 @@
+{"context": "A 15-second football commercial with hard cuts: a run-up, an extreme slow-motion macro of the boot kicking the ball, the ball flying toward the goal, then the player celebrating in front of the goal.",
+ "objects": [
+  {"name": "player", "desc": "the footballer's whole visible body (not visible in the macro and ball-flight shots)"},
+  {"name": "ball", "desc": "the football"},
+  {"name": "boot", "desc": "the black football boot that kicks the ball (only visible in close shots)"},
+  {"name": "goal", "desc": "the goal frame and net (when visible)"}
+ ]}

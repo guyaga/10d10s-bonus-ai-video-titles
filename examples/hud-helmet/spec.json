@@ -1,0 +1,12 @@
+{
+ "_comment": "HUD-HELMET, Hebrew, 24 s close-up inside a helmet. Track 'face' and 'eyes'. Every block can be edited, moved (t/until) or dropped (false). Add \"voice\": {\"file\": \"voice/ora.mp3\", \"label\": \"אורה · ערוץ קולי\"} for an AI voice with a live meter.",
+ "name": "helmet-hud",
+ "clip": "clips/helmet_720p.mp4",
+ "track": "tracks/helmet_vtrack.json",
+ "language": "he",
+ "system": "VNG-OS",
+ "final": {
+  "t": 23.1,
+  "text": "יוצאים לדרך"
+ }
+}
