@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Title Style Catalog</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%23E63B2E%22/%3E%3Ctext x=%2216%22 y=%2224%22 font-size=%2222%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Impact%22%3ET%3C/text%3E%3C/svg%3E">
-<meta name="description" content="22 After-Effects-style title and HUD styles for AI video, each with a live preview and a copy-paste prompt.">
+<meta name="description" content="29 After-Effects-style title and HUD styles for AI video, each with a live preview and a copy-paste prompt.">
 <style>
 @font-face{font-family:"Anton";src:url(fonts/anton-latin-400.woff2) format("woff2");font-display:swap}
 @font-face{font-family:"Archivo";font-weight:400;src:url(fonts/archivo-latin-400.woff2) format("woff2");font-display:swap}
@@ -80,6 +80,23 @@ button{font:inherit;color:inherit;cursor:pointer}
 .copy{border:0;background:var(--acc);color:var(--acc-ink);border-radius:4px;padding:0 14px;font-weight:700;font-size:13px;min-width:78px}
 .copy.done{background:var(--ok);color:#10200f}
 
+/* every render of a style + the archive */
+.vers > span{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.vrow{display:flex;gap:6px;overflow-x:auto;padding-block:6px 2px;scrollbar-width:thin}
+.v{position:relative;flex:none;width:92px;aspect-ratio:16/9;border:1px solid var(--line);border-radius:3px;padding:0;background:#000;overflow:hidden}
+.v img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.v:hover img{transform:scale(1.06)}
+.v i{position:absolute;left:0;right:0;bottom:0;font-style:normal;font-size:9.5px;line-height:1.2;padding:10px 4px 3px;color:#fff;text-align:left;
+  background:linear-gradient(transparent,rgba(0,0,0,.8));white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reel{margin-top:16px;border:0;background:var(--acc);color:var(--acc-ink);border-radius:999px;padding:10px 18px;font-weight:700;font-size:13px;letter-spacing:.04em}
+.arch{border-top:1px solid var(--line);margin-top:36px}
+.proj{margin-bottom:26px}
+.proj h3{font-family:var(--display);font-weight:400;font-size:22px;text-transform:uppercase;letter-spacing:.01em;margin:0 0 10px;display:flex;gap:10px;align-items:baseline}
+.proj h3 small{font-family:var(--mono);font-size:11px;color:var(--faint)}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));gap:10px}
+.v.big{width:auto}
+.v.big i{font-size:11.5px;padding:18px 8px 6px}
+
 /* proposed */
 .card.proposed{border-style:dashed;background:transparent}
 .card.proposed .media{display:grid;place-items:center;background:repeating-linear-gradient(135deg,var(--panel) 0 12px,var(--bg) 12px 24px)}
@@ -114,7 +131,7 @@ dialog .cap button{border:1px solid var(--line);background:var(--panel);border-r
 <div class="wrap">
   <header class="top">
     <div>
-      <div class="eyebrow">ai-video-titles · style catalog · 22 built</div>
+      <div class="eyebrow">ai-video-titles · style catalog · 29 styles · 63 renders</div>
       <h1>Titles for<br><span>AI video</span></h1>
     </div>
     <div class="how">
@@ -124,6 +141,7 @@ dialog .cap button{border:1px solid var(--line);background:var(--panel);border-r
         <li>Click a preview to watch it large.</li>
         <li>Copy the prompt line, e.g. <code>Titles: TAPE-HE …</code></li>
       </ol>
+      <button class="reel" id="reel">▶ Watch the 55 s reel</button>
     </div>
   </header>
 
@@ -137,12 +155,13 @@ dialog .cap button{border:1px solid var(--line);background:var(--panel);border-r
 </div>
 
 <dialog id="dlg" aria-label="Style preview">
-  <video id="dv" controls loop muted playsinline></video>
+  <video id="dv" controls loop playsinline></video>
   <div class="cap"><b id="dt"></b><button id="dx">Close</button></div>
 </dialog>
 <div class="toast" id="toast" role="status"></div>
 
 <script>
+const RENDERS = ["A1_final", "A2_final", "B1_final", "B2_final", "B3_final", "B4V_helmet_ora_voice_24s", "B4X_helmet_holo_hebrew_24s", "B4_helmet_hebrew_24s", "C1_final", "C2_final", "C3_final", "D1_stomp_behind", "D1_stomp_behind_v2", "D1_stomp_glass", "D1_stomp_glass_v2", "D1_stomp_sticker", "D1_stomp_sticker_v2", "D2_runway_full_countdown_30s", "D3_look08_runway_countdown_30s", "E10_ember_chefs_pass", "E10_ember_chefs_pass_BESPOKE", "E10_ember_chefs_pass_HE", "E10_ember_chefs_pass_HK", "E10_ember_chefs_pass_SX", "E1_guyaga_strike_soccer", "E1_the_strike_soccer_15s", "E2_sparta_spartan_vs_machine", "E2_sparta_spartan_vs_machine_HE", "E3_aura_night_drive", "E3_aura_night_drive_BESPOKE", "E3_aura_night_drive_HE", "E3_aura_night_drive_HK", "E3_aura_night_drive_SX", "E4_firelink_through_the_smoke", "E4_firelink_through_the_smoke_BESPOKE", "E4_firelink_through_the_smoke_HE", "E4_firelink_through_the_smoke_HK", "E5_luma_drone_through_the_home", "E5_luma_drone_through_the_home_BESPOKE", "E5_luma_drone_through_the_home_HK", "E5_luma_drone_through_the_home_SX", "E6_guyaga_aero_sneaker", "E6_guyaga_aero_sneaker_BESPOKE", "E6_guyaga_aero_sneaker_HE", "E6_guyaga_aero_sneaker_HK", "E6_guyaga_aero_sneaker_SX", "E7_aurum_gold_on_velvet", "E7_aurum_gold_on_velvet_BESPOKE", "E7_aurum_gold_on_velvet_HE", "E7_aurum_gold_on_velvet_HK", "E8_seaview24_tower_arrival", "E8_seaview24_tower_arrival_BESPOKE", "E8_seaview24_tower_arrival_HE", "E8_seaview24_tower_arrival_HK", "E9_lumen_lens_smart_glasses", "E9_lumen_lens_smart_glasses_BESPOKE", "E9_lumen_lens_smart_glasses_HE", "E9_lumen_lens_smart_glasses_HK", "E9_lumen_lens_smart_glasses_SX", "FULL_REEL", "TEST_A_map_to_ono", "TEST_B_scifi_pilot", "TEST_C_campus_ar"];
 const FAMS = [
   ["social", "Social stomp", "Big, felt, beat-synced. For drops, fashion, product and Hebrew social ads."],
   ["hud", "HUD & interface", "The frame becomes an instrument: visors, viewfinders, windscreens, maps."],
@@ -169,10 +188,24 @@ const S = [
   p:"Titles: SPEED-STAT - broadcast stat hits: huge Anton numbers, live counter on the tracked ball, giant GOAL finish."},
  {id:"PRESIDENTIAL-SERIF",f:"social",one:"Few, big serif words that ease in with an accent underline. Expensive, never comic.",tags:["sport","luxury","tech"],fonts:"DM Serif Display · Space Grotesk",pal:["#F5F3EE","#111111","#E63B2E"],src:"SPARTA · 24 s",
   p:"Titles: PRESIDENTIAL-SERIF - few, big DM Serif words that ease in with an accent underline, glass tags, no comic colours."},
+ {id:"STICKER-POP",f:"social",one:"Heavy white sticker words with a hard ink shadow and a price sticker. Loud but clean.",tags:["fashion","product"],fonts:"Anton · Bodoni Moda italic",pal:["#ffffff","#16130f","#ff3d2e"],src:"D1 runway · 10 s",
+  p:"Titles: STICKER-POP - heavy white Anton sticker words with a hard ink shadow, red index tag, white price sticker, stomp on the beat."},
+ {id:"STOMP-SX",f:"social",one:"Dynamic Hebrew social stomp: coloured headline words, tape lines, a closing slogan with one accent word.",tags:["hebrew","food","product","travel"],fonts:"Karantina · Rubik 900",pal:["#ff7a1a","#111111","#ffffff"],src:"EMBER · 15 s",
+  p:"Titles: STOMP-SX - dynamic Hebrew social stomp, coloured Karantina headline words, ink tape lines, closing slogan with one accent word."},
+ {id:"TRACKED-TAGS",f:"social",one:"Clean English callouts: numbered glass tags tracked to each object, a stat panel, a price total.",tags:["product","real estate","luxury","food","tech"],fonts:"Space Grotesk · Space Mono · DM Serif",pal:["#f3eee6","#1a1714","#E63B2E"],src:"GUYAGA AERO · 15 s",
+  p:"Titles: TRACKED-TAGS - numbered glass tags tracked to each object, one stat panel, price total, English, restrained motion."},
+ {id:"COMIC-POP",f:"social",one:"Multi-colour comic burst words on the big beats. Loud and young, so we moved away from it for premium brands.",tags:["sport","product"],fonts:"Comic display · Archivo",pal:["#ffd400","#ff3d8b","#29d3ff"],src:"AURA EV · 18 s",
+  p:"Titles: COMIC-POP - multi-colour comic burst words on the biggest beats only, starburst backing, keep everything else calm."},
  {id:"HUD-HELMET",f:"hud",one:"Holographic visor HUD in Hebrew: rotating rings, red alerts, an AI voice with a live meter.",tags:["tech","hebrew"],fonts:"Assistant · JetBrains Mono",pal:["#6fe3ff","#e6fbff","#ff4a5a"],src:"Helmet · 24 s",
   p:"Titles: HUD-HELMET - holographic visor HUD, rotating rings + tick scales, cyan with red alerts, AI voice with live meter, Hebrew."},
  {id:"SCIFI-TARGETING",f:"hud",one:"Brackets and ID tags locked to each target, HOSTILE LOCK, then TARGETS NEUTRALIZED.",tags:["tech"],fonts:"JetBrains Mono · Assistant",pal:["#ffb547","#ff5046","#0c0804"],src:"Exosuit POV · 8 s",
   p:"Titles: SCIFI-TARGETING - tracked target brackets + ID tags, HOSTILE LOCK banner, amber military HUD."},
+ {id:"HUD-CLEAN",f:"hud",one:"The first, quieter visor HUD: thin vitals column, heading scale, one red alert panel.",tags:["tech","hebrew"],fonts:"Assistant · JetBrains Mono",pal:["#e6fbff","#ffb547","#ff4a5a"],src:"Helmet · 24 s",
+  p:"Titles: HUD-CLEAN - quiet visor HUD: thin vitals column, heading tick scale, one red alert panel, no rings."},
+ {id:"CYBER-DOSSIER",f:"hud",one:"Character intro as a city dossier: location card, pilot ID, suit status bars.",tags:["tech"],fonts:"JetBrains Mono · Assistant",pal:["#ffb547","#e8eef2","#0b0d10"],src:"Neo-TLV · 6 s",
+  p:"Titles: CYBER-DOSSIER - character intro dossier: bilingual location card, pilot ID panel, suit status bars, amber mono type."},
+ {id:"ARRIVAL-CARD",f:"hud",one:"Destination lower-third: place name in two languages, coordinates, route line, an ARRIVED chip.",tags:["travel","real estate","hebrew"],fonts:"Assistant · JetBrains Mono",pal:["#9bd14a","#0b1a22","#eef4e8"],src:"Ono campus · 6 s",
+  p:"Titles: ARRIVAL-CARD - destination lower-third, bilingual place name, coordinates + distance line, green ARRIVED chip."},
  {id:"ROAD-HUD",f:"hud",one:"AR head-up display projected on the road in 3D perspective, speed ring, hazard contour.",tags:["tech","hebrew"],fonts:"Heebo 200–700",pal:["#eaf6ff","#4cc9ff","#ffb547"],src:"AURA EV · 18 s",
   p:"Titles: ROAD-HUD - AR head-up display projected on the road in 3D perspective, speed ring + hazard contour, calm fades."},
  {id:"THERMAL-RESCUE",f:"hud",one:"The frame is a thermal camera: blue-grey map, white-hot fire, gauge dial and ECG.",tags:["tech","hebrew"],fonts:"IBM Plex Sans Hebrew · Mono",pal:["#3d5a73","#ffb13b","#ffffff"],src:"FIRELINK · 20 s",
@@ -194,6 +227,42 @@ const S = [
  {id:"LENS-POSTCARD",f:"world",one:"Seen through a glasses lens: a stamp mascot's speech bubbles, a translated sign, airmail postcards.",tags:["travel","tech","hebrew"],fonts:"Varela Round · IBM Plex Sans Hebrew",pal:["#1d2b4f","#d8322b","#f6f0e0"],src:"LUMEN LENS · 18 s",
   p:"Titles: LENS-POSTCARD - seen through a glasses lens: stamp mascot speech bubbles, translated sign, airmail postcards, receipt."},
 ];
+const MAIN = {"STOMP-ESCORT":"D2_runway_full_countdown_30s","COUNTDOWN-CTA":"D3_look08_runway_countdown_30s","STOMP-BEHIND":"D1_stomp_behind_v2",
+ "GLASS-CALLOUT":"D1_stomp_glass_v2","STICKER-POP":"D1_stomp_sticker_v2","KINETIC-HE":"E6_guyaga_aero_sneaker_HE","TAPE-HE":"E4_firelink_through_the_smoke_HK",
+ "KINETIC-KARAOKE":"E9_lumen_lens_smart_glasses_SX","FLASH-CARD":"E3_aura_night_drive_SX","STOMP-SX":"E10_ember_chefs_pass_SX","TRACKED-TAGS":"E6_guyaga_aero_sneaker",
+ "COMIC-POP":"E3_aura_night_drive","SPEED-STAT":"E1_guyaga_strike_soccer","PRESIDENTIAL-SERIF":"E2_sparta_spartan_vs_machine","HUD-HELMET":"B4V_helmet_ora_voice_24s",
+ "HUD-CLEAN":"B4_helmet_hebrew_24s","SCIFI-TARGETING":"B3_final","CYBER-DOSSIER":"B1_final","ROAD-HUD":"E3_aura_night_drive_BESPOKE","THERMAL-RESCUE":"E4_firelink_through_the_smoke_BESPOKE",
+ "SPEC-SCAN":"E6_guyaga_aero_sneaker_BESPOKE","MAP-FLYOVER":"TEST_A_map_to_ono","ARRIVAL-CARD":"A2_final","CAMPUS-AR":"TEST_C_campus_ar","HALLMARK-LUXE":"E7_aurum_gold_on_velvet_BESPOKE",
+ "ARCH-DRAWING":"E8_seaview24_tower_arrival_BESPOKE","MAGAZINE-EDITORIAL":"E5_luma_drone_through_the_home_BESPOKE","KITCHEN-TICKET":"E10_ember_chefs_pass_BESPOKE",
+ "LENS-POSTCARD":"E9_lumen_lens_smart_glasses_BESPOKE"};
+const MORE = {"STOMP-ESCORT":["D3_look08_runway_countdown_30s"],"COUNTDOWN-CTA":["D2_runway_full_countdown_30s"],"STOMP-BEHIND":["D1_stomp_behind"],
+ "GLASS-CALLOUT":["D1_stomp_glass"],"STICKER-POP":["D1_stomp_sticker"],
+ "KINETIC-HE":["E3_aura_night_drive_HE","E4_firelink_through_the_smoke_HE","E7_aurum_gold_on_velvet_HE","E8_seaview24_tower_arrival_HE","E9_lumen_lens_smart_glasses_HE","E10_ember_chefs_pass_HE","E2_sparta_spartan_vs_machine_HE"],
+ "TAPE-HE":["E3_aura_night_drive_HK","E5_luma_drone_through_the_home_HK","E6_guyaga_aero_sneaker_HK","E7_aurum_gold_on_velvet_HK","E8_seaview24_tower_arrival_HK","E9_lumen_lens_smart_glasses_HK","E10_ember_chefs_pass_HK"],
+ "STOMP-SX":["E3_aura_night_drive_SX","E5_luma_drone_through_the_home_SX","E6_guyaga_aero_sneaker_SX","E9_lumen_lens_smart_glasses_SX"],
+ "TRACKED-TAGS":["E4_firelink_through_the_smoke","E5_luma_drone_through_the_home","E7_aurum_gold_on_velvet","E8_seaview24_tower_arrival","E9_lumen_lens_smart_glasses","E10_ember_chefs_pass"],
+ "SPEED-STAT":["E1_the_strike_soccer_15s"],"HUD-HELMET":["B4X_helmet_holo_hebrew_24s"],"HUD-CLEAN":["B2_final","TEST_B_scifi_pilot"],
+ "MAP-FLYOVER":["A1_final"],"CAMPUS-AR":["C1_final","C2_final","C3_final"]};
+const PROJECTS = [
+ ["Runway · Atelier Veyra",["D2_runway_full_countdown_30s","D3_look08_runway_countdown_30s","D1_stomp_behind_v2","D1_stomp_glass_v2","D1_stomp_sticker_v2","D1_stomp_behind","D1_stomp_glass","D1_stomp_sticker"]],
+ ["Helmet HUD",["B4V_helmet_ora_voice_24s","B4X_helmet_holo_hebrew_24s","B4_helmet_hebrew_24s","B2_final","TEST_B_scifi_pilot","B3_final"]],
+ ["Neo-TLV pilot",["B1_final"]],
+ ["TLV → Ono campus",["TEST_A_map_to_ono","A1_final","A2_final","TEST_C_campus_ar","C1_final","C2_final","C3_final"]],
+ ["GUYAGA STRIKE · soccer",["E1_guyaga_strike_soccer","E1_the_strike_soccer_15s"]],
+ ["SPARTA · warrior vs machine",["E2_sparta_spartan_vs_machine","E2_sparta_spartan_vs_machine_HE"]],
+ ...[["AURA EV · night drive","E3_aura_night_drive"],["FIRELINK · rescue","E4_firelink_through_the_smoke"],["LUMA HOME · interior","E5_luma_drone_through_the_home"],
+     ["GUYAGA AERO · sneaker","E6_guyaga_aero_sneaker"],["AURUM · gold","E7_aurum_gold_on_velvet"],["SEAVIEW 24 · tower","E8_seaview24_tower_arrival"],
+     ["LUMEN LENS · smart glasses","E9_lumen_lens_smart_glasses"],["EMBER · chef","E10_ember_chefs_pass"]]
+   .map(([n, b]) => [n, [b + "_BESPOKE", b + "_HK", b + "_HE", b + "_SX", b].filter(r => RENDERS.includes(r))]),
+];
+const NAMES = {D2_runway_full_countdown_30s:"Look 07 · escort + countdown",D3_look08_runway_countdown_30s:"Look 08 · escort + countdown",D1_stomp_behind_v2:"Stomp behind v2",
+ D1_stomp_behind:"Stomp behind v1",D1_stomp_glass_v2:"Glass v2",D1_stomp_glass:"Glass v1",D1_stomp_sticker_v2:"Sticker v2",D1_stomp_sticker:"Sticker v1",
+ B4V_helmet_ora_voice_24s:"Holo HUD + Ora voice",B4X_helmet_holo_hebrew_24s:"Holo HUD",B4_helmet_hebrew_24s:"Clean HUD · Hebrew",B2_final:"Clean HUD · English",
+ TEST_B_scifi_pilot:"Pilot HUD test",B3_final:"Targeting",B1_final:"Dossier",TEST_A_map_to_ono:"Map flyover",A1_final:"Map · short",A2_final:"Arrival card",
+ TEST_C_campus_ar:"Campus AR",C1_final:"Library",C2_final:"Podcast studio",C3_final:"Atrium",E1_guyaga_strike_soccer:"GUYAGA STRIKE",E1_the_strike_soccer_15s:"First cut",
+ E2_sparta_spartan_vs_machine:"Presidential · English",E2_sparta_spartan_vs_machine_HE:"Hebrew",FULL_REEL:"The reel"};
+const label = r => NAMES[r] || (r.endsWith("_BESPOKE") ? "Bespoke world" : r.endsWith("_HK") ? "Hebrew · tape" : r.endsWith("_HE") ? "Hebrew · big titles"
+  : r.endsWith("_SX") ? "Hebrew · dynamic stomp" : r === "E3_aura_night_drive" ? "English · tags + comic pop" : "English · tracked tags");
 const PROPOSED = [
  {id:"SCOREBUG-LIVE",one:"Live sports package: score bug, lower-thirds riding the tracked player, replay wipe.",tags:["sport"]},
  {id:"SPLIT-FLAP",one:"Departure-board letters that flip into place for travel, airline and hotel copy.",tags:["travel"]},
@@ -209,7 +278,7 @@ if (!USES.includes(filter)) filter = "all";
 
 function card(s) {
   return `<article class="card" data-tags="${s.tags.join("|")}">
-    <button class="media" data-id="${s.id}" aria-label="Watch ${s.id} large">
+    <button class="media" data-id="${s.id}" data-r="${MAIN[s.id] || ""}" aria-label="Watch ${s.id} large">
       <video muted loop playsinline preload="none" poster="${file(s.id)}.jpg" src="${file(s.id)}.mp4"></video>
       <span class="tc">${esc(s.src)}</span><span class="zoom">Watch large</span>
     </button>
@@ -217,9 +286,21 @@ function card(s) {
       <h3 class="id">${s.id}</h3>
       <p class="one">${esc(s.one)}</p>
       <div class="tags">${s.tags.map(t => `<span>${t}</span>`).join("")}</div>
+      ${strip([MAIN[s.id], ...(MORE[s.id] || [])].filter(Boolean))}
       <dl class="spec"><dt>Type</dt><dd>${esc(s.fonts)}</dd><dt>Colour</dt><dd class="sw">${s.pal.map(c => `<i style="background:${c}" title="${c}"></i>`).join("")}</dd></dl>
       <div class="prompt"><code>${esc(s.p)}</code><button class="copy" data-p="${esc(s.p)}">Copy</button></div>
     </div></article>`;
+}
+function strip(list) {
+  if (!list.length) return "";
+  return `<div class="vers"><span>${list.length === 1 ? "The full render" : `All ${list.length} renders`}</span><div class="vrow">${list.map(r =>
+    `<button class="v" data-r="${r}" title="${esc(label(r))}"><img src="full/${r}.jpg" alt="" loading="lazy"><i>${esc(label(r))}</i></button>`).join("")}</div></div>`;
+}
+function archive() {
+  const n = RENDERS.filter(r => r !== "FULL_REEL").length;
+  return `<section class="fam arch" id="all"><h2>Every render <small>${n} videos</small></h2><p>Every version made while building the kit, grouped by project. Click to watch the whole thing with sound.</p>
+    ${PROJECTS.filter(([, l]) => l.length).map(([nm, l]) => `<div class="proj"><h3>${esc(nm)} <small>${l.length}</small></h3><div class="agrid">${l.map(r =>
+      `<button class="v big" data-r="${r}"><img src="full/${r}.jpg" alt="" loading="lazy"><i>${esc(label(r))}</i></button>`).join("")}</div></div>`).join("")}</section>`;
 }
 function render() {
   let html = "", shown = 0;
@@ -233,7 +314,7 @@ function render() {
   if (prop.length) html += `<section class="fam"><h2>Proposed <small>not built yet</small></h2><p>Fits the kit, no render yet. Ask for one and it becomes a bespoke build.</p><div class="grid">${prop.map(s =>
     `<article class="card proposed"><div class="media"><span>Not built yet</span></div><div class="body"><h3 class="id">${s.id}</h3><p class="one">${esc(s.one)}</p>
      <div class="tags">${s.tags.map(t => `<span>${t}</span>`).join("")}</div></div></article>`).join("")}</div></section>`;
-  $("#main").innerHTML = html || `<p style="padding:40px 0;color:var(--mute)">No built style for this use case yet.</p>`;
+  $("#main").innerHTML = (html || `<p style="padding:40px 0;color:var(--mute)">No built style for this use case yet.</p>`) + (filter === "all" ? archive() : "");
   $("#count") && ($("#count").textContent = `${shown} of ${S.length}`);
   wire();
 }
@@ -253,7 +334,8 @@ const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
 function wire() {
   document.querySelectorAll(".card video").forEach(v => { if (io && !still) io.observe(v) });
   document.querySelectorAll(".copy").forEach(b => b.onclick = () => copy(b));
-  document.querySelectorAll(".media[data-id]").forEach(m => m.onclick = () => big(m.dataset.id));
+  document.querySelectorAll(".media[data-id]").forEach(m => m.onclick = () => m.dataset.r ? full(m.dataset.r, m.dataset.id) : big(m.dataset.id));
+  document.querySelectorAll(".v[data-r]").forEach(b => b.onclick = () => full(b.dataset.r));
 }
 function copy(b) {
   const txt = b.dataset.p;
@@ -264,9 +346,19 @@ function copy(b) {
 }
 let tt; function toast(m) { const t = $("#toast"); t.textContent = m; t.classList.add("on"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("on"), 2000) }
 function big(id) {
-  const d = $("#dlg"), v = $("#dv"); v.src = file(id) + ".mp4"; v.poster = file(id) + ".jpg"; $("#dt").textContent = id;
-  d.showModal(); v.play().catch(() => {});
+  const d = $("#dlg"), v = $("#dv"); v.muted = true; v.src = file(id) + ".mp4"; v.poster = file(id) + ".jpg"; $("#dt").textContent = id;
+  if (!d.open) d.showModal(); v.play().catch(() => {});
 }
+// full renders live on the hosted hub; a local copy without full/ falls back to the short preview
+function full(r, id) {
+  const d = $("#dlg"), v = $("#dv");
+  v.onerror = id ? () => { v.onerror = null; big(id) } : null;
+  v.muted = false; v.src = "full/" + r + ".mp4"; v.poster = "full/" + r + ".jpg";
+  $("#dt").textContent = (id ? id + " · " : "") + label(r);
+  if (!d.open) d.showModal();
+  v.play().catch(() => { v.muted = true; v.play().catch(() => {}) });
+}
+$("#reel").onclick = () => full("FULL_REEL");
 $("#dx").onclick = () => $("#dlg").close();
 $("#dlg").addEventListener("close", () => $("#dv").pause());
 $("#dlg").addEventListener("click", e => { if (e.target === $("#dlg")) $("#dlg").close() });

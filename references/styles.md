@@ -127,6 +127,46 @@ a percent counter, few titles. Built after the comic version was rejected as chi
 - Source: `E2_sparta_spartan_vs_machine.mp4`.
 - Prompt: `Titles: PRESIDENTIAL-SERIF - few, big DM Serif words that ease in with an accent underline, glass tags, no comic colours.`
 
+### STICKER-POP
+Heavy white sticker words (solid white fill, thick ink stroke, hard offset shadow) with a red index tag and a white
+price sticker. The loudest of the runway family that still reads premium.
+- Best for: drops, streetwear, sneakers, anything that should feel like a sticker slapped on the frame.
+- Fonts: Anton + Bodoni Moda italic. Palette: #ffffff, #16130f, accent #ff3d2e.
+- Motion: same 120 BPM grid as ESCORT; words slam from 1.6x with a hard shadow snap.
+- Build: reference recipe `references/recipes/legacy_shots.py` → `D1S` (the sticker shot). Closest runnable:
+  `run_style.py STOMP-ESCORT` with the word style set to white fill + ink stroke.
+- Source: `D1_stomp_sticker_v2.mp4` (v1: `D1_stomp_sticker.mp4`).
+- Prompt: `Titles: STICKER-POP - heavy white Anton sticker words with a hard ink shadow, red index tag, white price sticker, stomp on the beat.`
+
+### STOMP-SX
+The dynamic Hebrew social version: coloured Karantina headline words that stomp in, ink tape lines for the
+secondary copy, and a closing slogan with one accent word. Busier and faster than TAPE-HE.
+- Best for: food, product, travel and brand social ads in Hebrew that need energy.
+- Fonts: Karantina + Rubik 900. Palette: brand accent (e.g. #ff7a1a), ink, white.
+- Motion: word-synced `kine` stomps (blur + scale + squash), hit shakes, `tape` strips wiping RTL.
+- Build: adkit via `run_ad.py` with an SX spec. `examples/E6_sneaker_sx.py` is the template.
+- Source: `E10_ember_chefs_pass_SX.mp4` (also E3, E5, E6, E9 `_SX`).
+- Prompt: `Titles: STOMP-SX - dynamic Hebrew social stomp, coloured Karantina headline words, ink tape lines, closing slogan with one accent word.`
+
+### TRACKED-TAGS
+The clean English callout layer: numbered glass tags tracked to each object, one stat panel, a price total.
+The original version of every ad before the Hebrew and bespoke passes.
+- Best for: product, interior, jewellery, food; any time the footage is the hero and the copy is facts.
+- Fonts: Space Grotesk + Space Mono (+ DM Serif for prices). Palette: warm white, ink, one accent.
+- Motion: tags draw a leader line and fade in on their object, follow it frame by frame, fade out.
+- Build: adkit `tag` / `callout` / `counter` elements via `run_ad.py`. Start from `examples/E6_sneaker_sx.py`
+  and keep only `tag`, `callout` and `counter` (drop `kine`, `tape` and `flash`).
+- Source: `E6_guyaga_aero_sneaker.mp4` (also the plain E4, E5, E7, E8, E9, E10 renders).
+- Prompt: `Titles: TRACKED-TAGS - numbered glass tags tracked to each object, one stat panel, price total, English, restrained motion.`
+
+### COMIC-POP
+Multi-colour comic burst words (yellow, pink, cyan) with a starburst backing on the biggest beats.
+- **Use sparingly.** It was rejected as childish for premium brands, and SPARTA was rebuilt as PRESIDENTIAL-SERIF.
+  Offer it only for kids, gaming or deliberately playful brands, and only on one or two beats.
+- Build: adkit theme flag `pop` on the big `stomp` words.
+- Source: `E3_aura_night_drive.mp4` ("BRAKING").
+- Prompt: `Titles: COMIC-POP - multi-colour comic burst words on the biggest beats only, starburst backing, keep everything else calm.`
+
 ## B. HUD / interface family
 
 ### HUD-HELMET
@@ -203,6 +243,31 @@ Skylight), a voice waveform, a person tag, an end logo card.
 - Source: `TEST_C_campus_ar.mp4`.
 - Prompt: `Titles: CAMPUS-AR - small bilingual AR tags pinned to real places along a walk, glass panels, waveform for voice.`
 
+### HUD-CLEAN
+The first, quieter visor HUD: a thin vitals column, a heading tick scale, and one red alert panel. No rings, no voice.
+- Best for: when HUD-HELMET is too much; documentary-feeling sci-fi, pilots, divers, climbers.
+- Fonts: Assistant + JetBrains Mono. Palette: pale cyan-white, amber, alert red.
+- Build: `run_style.py HUD-HELMET` with the reticle, radar and voice blocks left out of the spec (every block is optional).
+  The original recipe is `legacy_shots.py` → `B4` (Hebrew) / `B2` (English).
+- Source: `B4_helmet_hebrew_24s.mp4` (also `B2_final.mp4`, `TEST_B_scifi_pilot.mp4`).
+- Prompt: `Titles: HUD-CLEAN - quiet visor HUD: thin vitals column, heading tick scale, one red alert panel, no rings.`
+
+### CYBER-DOSSIER
+A character intro as a city dossier: a bilingual location card, a pilot ID panel, and suit status bars.
+- Best for: game trailers, character reveals, sci-fi shorts, "meet the hero" openers.
+- Fonts: JetBrains Mono + Assistant. Palette: amber #ffb547 on near-black glass.
+- Build: reference recipe `legacy_shots.py` → `B1`.
+- Source: `B1_final.mp4`.
+- Prompt: `Titles: CYBER-DOSSIER - character intro dossier: bilingual location card, pilot ID panel, suit status bars, amber mono type.`
+
+### ARRIVAL-CARD
+A destination lower-third: the place name in two languages, coordinates and a distance line, and a green ARRIVED chip.
+- Best for: travel, campus and real-estate arrivals; the last shot of a MAP-FLYOVER.
+- Fonts: Assistant + JetBrains Mono. Palette: green #9bd14a, dark glass, off-white.
+- Build: reference recipe `legacy_shots.py` → `A2`. It pairs with `run_style.py MAP-FLYOVER` as the next shot.
+- Source: `A2_final.mp4`.
+- Prompt: `Titles: ARRIVAL-CARD - destination lower-third, bilingual place name, coordinates + distance line, green ARRIVED chip.`
+
 ## C. Editorial / crafted-world family (fully bespoke)
 
 ### HALLMARK-LUXE
@@ -272,5 +337,5 @@ Ideas that fit the kit but have no render yet. Offer them as "new", and budget a
   (stroke-dashoffset on SVG paths) for tutorials, coaching, real-estate walk-throughs.
 
 ## Not offered
-- Comic multi-colour pop (theme flag `pop`): rejected as childish.
+- Comic multi-colour pop as the main language of a premium ad (see COMIC-POP: beats only, playful brands only).
 - "Security camera" face-recognition boxes on fashion: rejected; use STOMP-ESCORT or GLASS-CALLOUT.

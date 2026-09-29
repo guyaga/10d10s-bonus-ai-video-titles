@@ -3,7 +3,7 @@
 **Style hub (live):** https://ai-video-titles-guyaga.netlify.app
 
 After-Effects-style titles, HUDs and motion graphics on top of AI-generated video (Seedance 2.5 recommended), built as
-code: frame-by-frame tracking, beat and voice sync, HyperFrames render, Gemini QA. 22 built styles, each with a live
+code: frame-by-frame tracking, beat and voice sync, HyperFrames render, Gemini QA. 29 styles, each with a live
 preview on the hub, a style ID and a one-line prompt to paste into Claude Code.
 
 ## Install

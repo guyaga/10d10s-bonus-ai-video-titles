@@ -1,14 +1,15 @@
-# renders and generated projects (anywhere, incl. examples/demo when you try it)
-renders/
-videos/
-_test_renders/
-*.hf-transaction-*/
 # per-project caches created when running from inside the skill folder
-shared/
-voice/
-tracks/*_check.mp4
-node_modules/
-__pycache__/
+# renders and generated projects (anywhere, incl. examples/demo when you try it)
+*.hf-transaction-*/
 *.pyc
 .DS_Store
 Thumbs.db
+__pycache__/
+_test_renders/
+catalog/full/
+node_modules/
+renders/
+shared/
+tracks/*_check.mp4
+videos/
+voice/
