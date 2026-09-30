@@ -13,3 +13,6 @@ shared/
 tracks/*_check.mp4
 videos/
 voice/
+titles-demo/
+demo_assets/
+*-project/
