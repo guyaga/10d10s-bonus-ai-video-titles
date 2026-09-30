@@ -47,7 +47,7 @@ The sample is an EXAMPLE. The user supplies their own footage and content; this 
   Hebrew (the kit remaps old names to these three automatically).
 - RTL: the theme sets `direction: rtl` on stomps, tags, callouts, chip, lockup and meter; letter-spacing 0 on Hebrew;
   digits are glued to their word ("4 שכבות", "0.9 מ״מ") so a number never stands alone; counters keep the value LTR.
-  Prices as ש״ח (the kit replaces ₪ automatically, none of the three faces has it).
+  Prices as ש״ח (the kit replaces ₪ automatically, Suez One / Secular One draw ₪ as a stylised "שח").
 - Sizes: headline 190–230 px front, 400–420 px behind; sub = 34 % of the headline; counter values 120 px.
 - Max copy: headline ≤ 2 words (≤ 12 letters); sub ≤ 4 words; behind word 1 word.
 

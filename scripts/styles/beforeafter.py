@@ -12,7 +12,7 @@ Spec keys. Required: clip (the BEFORE plate), after (the AFTER clip).
   moves      [[t, pos], ...]  divider keyframes, pos 0..1 of the frame width measured from the after side
              (default [[0.9, 0], [2.9, .78], [4.6, .3], [6.0, .5]]). Two generated takes drift apart over time: keep the
              split moves early and end on 1.0 (full AFTER) if the seam starts to show.
-  NOTE       write currency in words for Hebrew (ש״ח): the three Hebrew faces have no ₪ glyph
+  NOTE       write currency in words for Hebrew (ש״ח): Suez One / Secular One draw ₪ as a stylised "שח"; write ש״ח
   stat       "שיפוץ מלא · 42 ימי עבודה · 186,000 ש״ח"  bottom bar text (optional), stat_t (default 6.6)
   language   "he" | "en";  pair (Hebrew, default "karantina": Karantina labels + Secular One stat); Latin: Oswald + Manrope
   colors     {"accent": "#ffd23f"}

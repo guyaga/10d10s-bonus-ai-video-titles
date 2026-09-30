@@ -110,6 +110,8 @@ def cmd_build(_):
             "n": d["NUM"].get(sid), "id": sid, "family": fams.get(s.get("f"), s.get("f")), "one": s.get("one", ""),
             "tags": s.get("tags", []), "fonts": s.get("fonts", ""), "palette": s.get("pal", []), "sample": s.get("src", ""),
             "kling": bool(s.get("kling")), "prompt": s.get("p", ""), "shoot_it_like_this": d["SHOOT"].get(sid, ""),
+            "recipe": f"references/styles/{d['NUM'].get(sid, 0):02d}-{sid}.md",
+            "recipe_url": f"https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/{d['NUM'].get(sid, 0):02d}-{sid}.md",
             "plate_contract": plates.get(sid), "runner": runner, "tier": tier_of(sid, runner, example), "build": how,
             "example": example,
             "preview": f"{HUB}/previews/{sid.lower()}.mp4",
@@ -153,6 +155,7 @@ def cmd_show(a):
     print(f"#{s['n']:02d} {s['id']}  ·  {s['family']}{'  ·  Kling sample' if s['kling'] else ''}\n{s['one']}\n")
     print(f"Use for:  {', '.join(s['tags'])}\nFonts:    {s['fonts']}\nPalette:  {' '.join(s['palette'])}")
     print(f"Shoot it: {s['shoot_it_like_this']}\nTier:     {s.get('tier', '?')}\nBuild:    {s['build']}\nExample:  {s['example']}")
+    print(f"Recipe:   {s.get('recipe')}  (read it before building)")
     print(f"Watch:    {s['preview']}")
     for r in s["renders"]:
         print(f"          {r['label']}: {r['url']}")
@@ -166,6 +169,10 @@ def cmd_brief(a):
 
 ## Project context (from the user)
 {a.context}
+
+## Read the recipe first
+{s.get('recipe')}: anatomy, timing and eases, typography, layout in px, what the footage must give, every spec key,
+the core GSAP move, 9:16, sound, and the QA checklist. Follow it; the summary below is only the headline.
 
 ## Style
 {s['prompt']}

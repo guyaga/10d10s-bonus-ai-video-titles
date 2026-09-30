@@ -42,7 +42,7 @@ The sample is an EXAMPLE. The user supplies their own footage and content; this 
 ## Typography
 - Latin: DM Serif Display 400 title, numbers and price; Manrope 500 pill, address, units, labels.
 - Hebrew: `pair: "suez"` (default) = Suez One title/numbers/price, Secular One text. RTL: the title block defaults to the right corner, cells read right-to-left, numbers stay LTR (`unicode-bidi: isolate`).
-- Currency: write the unit in words: "ש״ח" (Suez One / Karantina / Secular One have no ₪ glyph). Numbers get en-US thousands separators (12,900,000).
+- Currency: write the unit in words: "ש״ח" (Suez One / Secular One draw ₪ as a stylised "שח"). Numbers get en-US thousands separators (12,900,000).
 - Suez One digits are old-style (low): fine for prices; if you want full-height figures, set a Latin display for numbers.
 - Maximum copy: title ≈ 16 characters (104 px), address ≈ 34, unit ≈ 10, pin label ≈ 26.
 

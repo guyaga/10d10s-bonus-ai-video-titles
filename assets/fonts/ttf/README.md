@@ -11,4 +11,4 @@ The three Hebrew faces the skill uses, as complete desktop fonts. They're SIL Op
 - **Renders:** the kit renders with the matching web fonts (`../*.woff2`). These TTFs are for everything else: install
   them on your machine for After Effects, Premiere, Figma or Canva, or use them for Hebrew text drawn with PIL in
   generated images (PIL's default font draws empty boxes for Hebrew).
-- **₪:** all three include the ₪ sign.
+- **₪:** Karantina draws a normal ₪. Suez One and Secular One draw ₪ as a stylised "שח" (no gershayim), so write ש״ח with those two.

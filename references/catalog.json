@@ -21,6 +21,8 @@
    "kling": false,
    "prompt": "Titles: STOMP-ESCORT - Anton words escorting each tracked item, red index tags + white price stickers, accent #E63B2E, 120 BPM grid.",
    "shoot_it_like_this": "One take, no cuts · full body, centred, walks toward camera · 30% free both sides",
+   "recipe": "references/styles/01-STOMP-ESCORT.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/01-STOMP-ESCORT.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -91,6 +93,8 @@
    "kling": false,
    "prompt": "Titles: STOMP-BEHIND - giant Anton words behind the subject (matte), white with red accent, stomp on the beat.",
    "shoot_it_like_this": "One take, no cuts · full body, centred, walks toward camera; plain wall or backdrop behind the head and shoulders · 30% free both sides · subject matte",
+   "recipe": "references/styles/02-STOMP-BEHIND.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/02-STOMP-BEHIND.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -161,6 +165,8 @@
    "kling": false,
    "prompt": "Titles: GLASS-CALLOUT - transparent outlined Anton words + smoked-glass price cards, restrained, no hard shadows.",
    "shoot_it_like_this": "One take, no cuts · full body, centred, walks toward camera · 30% free both sides",
+   "recipe": "references/styles/03-GLASS-CALLOUT.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/03-GLASS-CALLOUT.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -231,6 +237,8 @@
    "kling": false,
    "prompt": "Titles: COUNTDOWN-CTA - flash-sale stack with 15 s live countdown, struck total + sale price, SHOP NOW, accent #E63B2E.",
    "shoot_it_like_this": "One take, no cuts · full body, centred; the last 15 s she stands in the centre facing camera · 30% free both sides",
+   "recipe": "references/styles/04-COUNTDOWN-CTA.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/04-COUNTDOWN-CTA.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -301,6 +309,8 @@
    "kling": false,
    "prompt": "Titles: KINETIC-HE - Hebrew voice-synced word stomps, Rubik 900 + Karantina, one accent word per line, hit shakes.",
    "shoot_it_like_this": "Cuts OK (max 5) · subject centred, room above it · 25% free top",
+   "recipe": "references/styles/05-KINETIC-HE.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/05-KINETIC-HE.md",
    "plate_contract": {
     "take": "cuts-ok",
     "max_cuts": 5,
@@ -394,6 +404,8 @@
    "kling": false,
    "prompt": "Titles: TAPE-HE - Hebrew slogans on rotated highlight-tape strips (ink + accent), RTL wipe + slam, readable over anything.",
    "shoot_it_like_this": "Cuts OK (max 5) · subject off-centre or centred with a calm lower third · 25% free bottom",
+   "recipe": "references/styles/06-TAPE-HE.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/06-TAPE-HE.md",
    "plate_contract": {
     "take": "cuts-ok",
     "max_cuts": 5,
@@ -487,6 +499,8 @@
    "kling": false,
    "prompt": "Titles: KINETIC-KARAOKE - voice-synced karaoke captions (accent pill on the spoken word) + punch zooms + tape slogans.",
    "shoot_it_like_this": "Cuts OK (max 5) · subject in the upper two thirds · 22% free bottom",
+   "recipe": "references/styles/07-KINETIC-KARAOKE.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/07-KINETIC-KARAOKE.md",
    "plate_contract": {
     "take": "cuts-ok",
     "max_cuts": 5,
@@ -550,6 +564,8 @@
    "kling": false,
    "prompt": "Titles: FLASH-CARD - one 4-frame full-screen word card on the biggest beat, accent background.",
    "shoot_it_like_this": "Cuts OK (max 6) · any · no free space needed",
+   "recipe": "references/styles/08-FLASH-CARD.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/08-FLASH-CARD.md",
    "plate_contract": {
     "take": "cuts-ok",
     "max_cuts": 6,
@@ -611,6 +627,8 @@
    "kling": false,
    "prompt": "Titles: SPEED-STAT - broadcast stat hits: huge Anton numbers, live counter on the tracked ball, giant GOAL finish.",
    "shoot_it_like_this": "Planned cuts (max 4) · one idea per shot: wide player, extreme close-up on the contact, the object crossing the frame, hero wide · 30% free left · subject matte",
+   "recipe": "references/styles/09-SPEED-STAT.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/09-SPEED-STAT.md",
    "plate_contract": {
     "take": "cut-list",
     "max_cuts": 4,
@@ -682,6 +700,8 @@
    "kling": false,
    "prompt": "Titles: PRESIDENTIAL-SERIF - few, big DM Serif words that ease in with an accent underline, glass tags, no comic colours.",
    "shoot_it_like_this": "Planned cuts (max 6) · hero framed off-centre, sky or smoke above · 25% free top",
+   "recipe": "references/styles/10-PRESIDENTIAL-SERIF.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/10-PRESIDENTIAL-SERIF.md",
    "plate_contract": {
     "take": "cut-list",
     "max_cuts": 6,
@@ -748,6 +768,8 @@
    "kling": false,
    "prompt": "Titles: STICKER-POP - heavy white Anton sticker words with a hard ink shadow, red index tag, white price sticker, stomp on the beat.",
    "shoot_it_like_this": "One take, no cuts · full body, centred, walks toward camera · 30% free both sides",
+   "recipe": "references/styles/11-STICKER-POP.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/11-STICKER-POP.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -819,6 +841,8 @@
    "kling": false,
    "prompt": "Titles: STOMP-SX - dynamic Hebrew social stomp, coloured Karantina headline words, ink tape lines, closing slogan with one accent word.",
    "shoot_it_like_this": "Planned cuts (max 5) · subject large, upper quarter free · 25% free top",
+   "recipe": "references/styles/12-STOMP-SX.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/12-STOMP-SX.md",
    "plate_contract": {
     "take": "cut-list",
     "max_cuts": 5,
@@ -902,6 +926,8 @@
    "kling": false,
    "prompt": "Titles: TRACKED-TAGS - numbered glass tags tracked to each object, one stat panel, price total, English, restrained motion.",
    "shoot_it_like_this": "Cuts OK (max 4) · subject centred at medium size · 20% free both sides",
+   "recipe": "references/styles/13-TRACKED-TAGS.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/13-TRACKED-TAGS.md",
    "plate_contract": {
     "take": "cuts-ok",
     "max_cuts": 4,
@@ -990,6 +1016,8 @@
    "kling": false,
    "prompt": "Titles: COMIC-POP - multi-colour comic burst words on the biggest beats only, starburst backing, keep everything else calm.",
    "shoot_it_like_this": "Cuts OK (max 5) · subject centred, upper area free on the beat shots · 25% free top",
+   "recipe": "references/styles/14-COMIC-POP.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/14-COMIC-POP.md",
    "plate_contract": {
     "take": "cuts-ok",
     "max_cuts": 5,
@@ -1052,6 +1080,8 @@
    "kling": false,
    "prompt": "Titles: HUD-HELMET - holographic visor HUD, rotating rings + tick scales, cyan with red alerts, AI voice with live meter, Hebrew.",
    "shoot_it_like_this": "One take, no cuts · face close-up, eyes steady and centred, visor edges in frame · 22% free both sides",
+   "recipe": "references/styles/15-HUD-HELMET.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/15-HUD-HELMET.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -1121,6 +1151,8 @@
    "kling": false,
    "prompt": "Titles: SCIFI-TARGETING - tracked target brackets + ID tags, HOSTILE LOCK banner, amber military HUD.",
    "shoot_it_like_this": "One take, no cuts · POV; targets spread across the middle, weapon in a lower corner · 25% free right",
+   "recipe": "references/styles/16-SCIFI-TARGETING.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/16-SCIFI-TARGETING.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -1186,6 +1218,8 @@
    "kling": false,
    "prompt": "Titles: HUD-CLEAN - quiet visor HUD: thin vitals column, heading tick scale, one red alert panel, no rings.",
    "shoot_it_like_this": "One take, no cuts · face close-up, eyes steady · 22% free both sides",
+   "recipe": "references/styles/17-HUD-CLEAN.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/17-HUD-CLEAN.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -1258,6 +1292,8 @@
    "kling": false,
    "prompt": "Titles: CYBER-DOSSIER - character intro dossier: bilingual location card, pilot ID panel, suit status bars, amber mono type.",
    "shoot_it_like_this": "One take, no cuts · full body, centred, walks toward camera · 35% free both sides",
+   "recipe": "references/styles/18-CYBER-DOSSIER.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/18-CYBER-DOSSIER.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -1324,6 +1360,8 @@
    "kling": false,
    "prompt": "Titles: ARRIVAL-CARD - destination lower-third, bilingual place name, coordinates + distance line, green ARRIVED chip.",
    "shoot_it_like_this": "One take, no cuts · person walks toward camera, destination facade behind with a blank area for the logo · 35% free left",
+   "recipe": "references/styles/19-ARRIVAL-CARD.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/19-ARRIVAL-CARD.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -1389,6 +1427,8 @@
    "kling": false,
    "prompt": "Titles: ROAD-HUD - AR head-up display projected on the road in 3D perspective, speed ring + hazard contour, calm fades.",
    "shoot_it_like_this": "Planned cuts (max 4) · windscreen POV with the road's vanishing point visible; the hazard enters from one side · 30% free bottom",
+   "recipe": "references/styles/20-ROAD-HUD.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/20-ROAD-HUD.md",
    "plate_contract": {
     "take": "cut-list",
     "max_cuts": 4,
@@ -1456,6 +1496,8 @@
    "kling": false,
    "prompt": "Titles: THERMAL-RESCUE - the frame is a thermal camera: blue-grey map, white-hot fire, gauge dial + ECG, amber OSD voice.",
    "shoot_it_like_this": "Planned cuts (max 5) · mid shots and close-ups; the searched object (door, person) clearly readable as a shape · no free space needed",
+   "recipe": "references/styles/21-THERMAL-RESCUE.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/21-THERMAL-RESCUE.md",
    "plate_contract": {
     "take": "cut-list",
     "max_cuts": 5,
@@ -1524,6 +1566,8 @@
    "kling": false,
    "prompt": "Titles: SPEC-SCAN - lab/CAD language: wireframe scan-in, exploded parts with numbered balloons, FEA heat map, 7-segment stats.",
    "shoot_it_like_this": "One take, no cuts · product centred, fully in frame · 20% free both sides · subject matte",
+   "recipe": "references/styles/22-SPEC-SCAN.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/22-SPEC-SCAN.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -1590,6 +1634,8 @@
    "kling": false,
    "prompt": "Titles: MAP-FLYOVER - route drawing over a tracked aerial, pinned bilingual place labels, distance counter, arrival card.",
    "shoot_it_like_this": "One take, no cuts · high aerial, landmarks spread across the frame, horizon or sea as a fixed reference · 30% free left",
+   "recipe": "references/styles/23-MAP-FLYOVER.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/23-MAP-FLYOVER.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -1658,6 +1704,8 @@
    "kling": false,
    "prompt": "Titles: CAMPUS-AR - small bilingual AR tags pinned to real places along a walk, glass panels, waveform for voice.",
    "shoot_it_like_this": "One take, no cuts · medium-wide, person centred, walking toward camera · 25% free both sides",
+   "recipe": "references/styles/24-CAMPUS-AR.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/24-CAMPUS-AR.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -1736,6 +1784,8 @@
    "kling": false,
    "prompt": "Titles: HALLMARK-LUXE - spotlight on velvet black, a travelling jeweller's loupe, gold hallmark price plates, foil type.",
    "shoot_it_like_this": "Cuts OK (max 2) · macro; the featured piece on one side of the frame · 40% free right",
+   "recipe": "references/styles/25-HALLMARK-LUXE.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/25-HALLMARK-LUXE.md",
    "plate_contract": {
     "take": "cuts-ok",
     "max_cuts": 2,
@@ -1801,6 +1851,8 @@
    "kling": false,
    "prompt": "Titles: ARCH-DRAWING - vellum + sepia elevation sheets over the footage, floors fill with wash, hand-lettered lines, floor plan end.",
    "shoot_it_like_this": "One take, no cuts · building on the right half, sky and neighbourhood on the left · 30% free left",
+   "recipe": "references/styles/26-ARCH-DRAWING.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/26-ARCH-DRAWING.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -1868,6 +1920,8 @@
    "kling": false,
    "prompt": "Titles: MAGAZINE-EDITORIAL - the video as a printed spread: masthead, numbered product credits, price column, red-pencil notes, page folds.",
    "shoot_it_like_this": "One take, no cuts · wide interior, pieces readable, camera travels through the room · 20% free left",
+   "recipe": "references/styles/27-MAGAZINE-EDITORIAL.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/27-MAGAZINE-EDITORIAL.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -1932,6 +1986,8 @@
    "kling": false,
    "prompt": "Titles: KITCHEN-TICKET - thermal order ticket printing on a steel rail, smoke-formed words, flame heat gauge, stamped finish.",
    "shoot_it_like_this": "Planned cuts (max 5) · macro, subject centre-left · 30% free right",
+   "recipe": "references/styles/28-KITCHEN-TICKET.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/28-KITCHEN-TICKET.md",
    "plate_contract": {
     "take": "cut-list",
     "max_cuts": 5,
@@ -1997,6 +2053,8 @@
    "kling": false,
    "prompt": "Titles: LENS-POSTCARD - seen through a glasses lens: stamp mascot speech bubbles, translated sign, airmail postcards, receipt.",
    "shoot_it_like_this": "One take, no cuts · POV at eye level, gentle head motion · 20% free bottom",
+   "recipe": "references/styles/29-LENS-POSTCARD.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/29-LENS-POSTCARD.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -2064,6 +2122,8 @@
    "kling": false,
    "prompt": "Titles: VIRAL-CAPTIONS - huge word-by-word captions from the VO timings, keywords in colour, emoji pops, bounce on every word.",
    "shoot_it_like_this": "Cuts OK (max 6) · subject in the upper two thirds · 25% free bottom",
+   "recipe": "references/styles/30-VIRAL-CAPTIONS.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/30-VIRAL-CAPTIONS.md",
    "plate_contract": {
     "take": "cuts-ok",
     "max_cuts": 6,
@@ -2126,6 +2186,8 @@
    "kling": false,
    "prompt": "Titles: DECODE-TYPE - terminal decode: scrambling glyphs lock into the words with a blinking cursor, status lines beside the face.",
    "shoot_it_like_this": "Cuts OK (max 4) · subject centred or off-centre, calm space on one side for the status lines · 22% free right",
+   "recipe": "references/styles/31-DECODE-TYPE.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/31-DECODE-TYPE.md",
    "plate_contract": {
     "take": "cuts-ok",
     "max_cuts": 4,
@@ -2190,6 +2252,8 @@
    "kling": false,
    "prompt": "Titles: GLITCH-RGB - on each beat the frame tears and the words split into RGB slices, then snap clean.",
    "shoot_it_like_this": "Cuts OK (max 6) · subject centred, walking or posing; plain walls or sky either side · 25% free both sides",
+   "recipe": "references/styles/32-GLITCH-RGB.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/32-GLITCH-RGB.md",
    "plate_contract": {
     "take": "cuts-ok",
     "max_cuts": 6,
@@ -2255,6 +2319,8 @@
    "kling": false,
    "prompt": "Titles: NEON-SIGN - neon tubes mounted on the walls in perspective, flicker-on, glow spill and a wet-floor reflection.",
    "shoot_it_like_this": "One take, no cuts · symmetrical corridor or street, subject in the centre third, blank walls left and right · 25% free both sides",
+   "recipe": "references/styles/33-NEON-SIGN.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/33-NEON-SIGN.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -2319,6 +2385,8 @@
    "kling": false,
    "prompt": "Titles: KEYNOTE-REVEAL - one huge counting number per shot, mask-wipe reveal, unit + small label, clean fades.",
    "shoot_it_like_this": "Cuts OK (max 6) · subject off-centre or small; the centre third calm (sky, windscreen, dark interior) · no free space needed",
+   "recipe": "references/styles/34-KEYNOTE-REVEAL.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/34-KEYNOTE-REVEAL.md",
    "plate_contract": {
     "take": "cuts-ok",
     "max_cuts": 6,
@@ -2381,6 +2449,8 @@
    "kling": false,
    "prompt": "Titles: SPLIT-FLAP - departure board, every cell flips through letters and lands; a status re-flips later.",
    "shoot_it_like_this": "Cuts OK (max 4) · subject in the lower two thirds; the top band free for the board · 30% free top",
+   "recipe": "references/styles/35-SPLIT-FLAP.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/35-SPLIT-FLAP.md",
    "plate_contract": {
     "take": "cuts-ok",
     "max_cuts": 4,
@@ -2443,6 +2513,8 @@
    "kling": false,
    "prompt": "Titles: SIGNATURE-WRITE-ON - handwritten notes write on, red hand circles and arrows pinned to the tracked features.",
    "shoot_it_like_this": "One take, no cuts · features readable and not moving too fast; open sky or wall on one side for the handwriting · 30% free left",
+   "recipe": "references/styles/36-SIGNATURE-WRITE-ON.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/36-SIGNATURE-WRITE-ON.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -2506,6 +2578,8 @@
    "kling": false,
    "prompt": "Titles: BROADCAST-PACK - live score bug with running clock, ticker, lower-third on the tracked player, stinger wipes, goal update.",
    "shoot_it_like_this": "Planned cuts (max 4) · player readable in the intro and result shots; top corners and the bottom band free · 15% free top",
+   "recipe": "references/styles/37-BROADCAST-PACK.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/37-BROADCAST-PACK.md",
    "plate_contract": {
     "take": "cut-list",
     "max_cuts": 4,
@@ -2570,6 +2644,8 @@
    "kling": false,
    "prompt": "Titles: FILM-TITLE-CARD - a Wes Anderson chapter card, a Saul Bass cut-paper title and a two-column credits roll.",
    "shoot_it_like_this": "Planned cuts (max 6) · wide establishing shots with dust, sky or floor space; hero off-centre in the last shot · 25% free bottom",
+   "recipe": "references/styles/38-FILM-TITLE-CARD.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/38-FILM-TITLE-CARD.md",
    "plate_contract": {
     "take": "cut-list",
     "max_cuts": 6,
@@ -2632,6 +2708,8 @@
    "kling": false,
    "prompt": "Titles: PARTICLE-TEXT - words assemble from embers / sand / steam, resolve crisp, then dissolve back.",
    "shoot_it_like_this": "Cuts OK (max 5) · subject low or to one side; dark, low-detail space above it · 30% free top",
+   "recipe": "references/styles/39-PARTICLE-TEXT.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/39-PARTICLE-TEXT.md",
    "plate_contract": {
     "take": "cuts-ok",
     "max_cuts": 5,
@@ -2694,6 +2772,8 @@
    "kling": false,
    "prompt": "Titles: FLIP-MONTAGE-LOGO - pages of the film flip faster and faster, then resolve into the logo on a colour block.",
    "shoot_it_like_this": "Cuts OK (max 6) · variety across the shot (close-ups, wides, details) makes the flip read · no free space needed",
+   "recipe": "references/styles/40-FLIP-MONTAGE-LOGO.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/40-FLIP-MONTAGE-LOGO.md",
    "plate_contract": {
     "take": "cuts-ok",
     "max_cuts": 6,
@@ -2755,6 +2835,8 @@
    "kling": false,
    "prompt": "Titles: TEXT-ON-PATH - the words ride the tracked road as a glowing route draws on.",
    "shoot_it_like_this": "One take, no cuts · the route clearly visible and roughly flat to camera, not hidden behind buildings · no free space needed",
+   "recipe": "references/styles/41-TEXT-ON-PATH.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/41-TEXT-ON-PATH.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -2821,6 +2903,8 @@
    "kling": true,
    "prompt": "Titles: LOWER-THIRD-CORP - accent-bar lower third, name masked rise, title slide, rule draw, one glint, Suez One + Secular One in Hebrew.",
    "shoot_it_like_this": "One take, no cuts · chest-up, the person centre or one side; the lower-left/lower-right quarter calm · 18% free bottom",
+   "recipe": "references/styles/42-LOWER-THIRD-CORP.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/42-LOWER-THIRD-CORP.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -2885,6 +2969,8 @@
    "kling": true,
    "prompt": "Titles: BREAKING-NEWS - red slab slam with shine, headline bar word-by-word, flip to the next headline, strap, LIVE bug with clock, ticker.",
    "shoot_it_like_this": "One take, no cuts · wide; key action in the upper two thirds; the bottom third is road/ground · 30% free bottom",
+   "recipe": "references/styles/43-BREAKING-NEWS.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/43-BREAKING-NEWS.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -2948,6 +3034,8 @@
    "kling": true,
    "prompt": "Titles: LEADER-CALLOUTS - dot + ring on each tracked part, thin two-segment leader lines, spaced caption over a counting spec value, cyan unit.",
    "shoot_it_like_this": "One take, no cuts · product centred in the middle third, large empty dark space left and right · 30% free both sides",
+   "recipe": "references/styles/44-LEADER-CALLOUTS.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/44-LEADER-CALLOUTS.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -3014,6 +3102,8 @@
    "kling": true,
    "prompt": "Titles: DATA-CHARTS - frosted card on the clean side, gridlines draw, bars grow with counters, hand-over to a line chart with area fill and a value flag.",
    "shoot_it_like_this": "One take, no cuts · people on one side; the other half soft out-of-focus space (window, wall) · 42% free left",
+   "recipe": "references/styles/45-DATA-CHARTS.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/45-DATA-CHARTS.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -3077,6 +3167,8 @@
    "kling": true,
    "prompt": "Titles: KPI-COUNTERS - frosted KPI tiles cascade in, numbers count up with separators, delta chips, sparklines with a glowing end dot.",
    "shoot_it_like_this": "One take, no cuts · subject on one side, a clean half for a tile column · 35% free left",
+   "recipe": "references/styles/46-KPI-COUNTERS.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/46-KPI-COUNTERS.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -3141,6 +3233,8 @@
    "kling": true,
    "prompt": "Titles: APP-UI-POPUPS - iOS-style notification banners spring in and stack, a progress-ring card fills, a toast confirms; glass, no logos.",
    "shoot_it_like_this": "One take, no cuts · the person in the left third; the right two thirds soft and empty · 35% free right",
+   "recipe": "references/styles/47-APP-UI-POPUPS.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/47-APP-UI-POPUPS.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -3204,6 +3298,8 @@
    "kling": true,
    "prompt": "Titles: CHAT-BUBBLES - messenger thread over the shot: typing indicator, bubbles pop from the tail, timestamps, read ticks turn blue.",
    "shoot_it_like_this": "One take, no cuts · the person in one third; a tall clean area on the other side for the thread · 33% free right",
+   "recipe": "references/styles/48-CHAT-BUBBLES.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/48-CHAT-BUBBLES.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -3266,6 +3362,8 @@
    "kling": true,
    "prompt": "Titles: SOCIAL-CTA - channel chip with counting followers, cursor clicks SUBSCRIBE, pill flips to SUBSCRIBED, bell rings, like counts up; no platform logos.",
    "shoot_it_like_this": "One take, no cuts · creator centre-right; the lower-left quarter clean · 25% free left",
+   "recipe": "references/styles/49-SOCIAL-CTA.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/49-SOCIAL-CTA.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -3328,6 +3426,8 @@
    "kling": true,
    "prompt": "Titles: END-SCREEN - angled scrim wipe, WATCH NEXT, two thumbnail tiles flip up (Ken Burns, duration badge), avatar in a spinning dashed ring + SUBSCRIBE.",
    "shoot_it_like_this": "One take, no cuts · creator on one side (centre-right); the other half free for the card · 40% free left",
+   "recipe": "references/styles/50-END-SCREEN.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/50-END-SCREEN.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -3391,6 +3491,8 @@
    "kling": true,
    "prompt": "Titles: PODCAST-TAGS - tracked speaker tags, active speaker lit with a live equalizer from the real audio, episode chip + REC, topic strip, waveform.",
    "shoot_it_like_this": "One take, no cuts · wide two-shot, hosts in the left and right thirds, the table edge along the bottom · 15% free bottom",
+   "recipe": "references/styles/51-PODCAST-TAGS.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/51-PODCAST-TAGS.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -3460,6 +3562,8 @@
    "kling": true,
    "prompt": "Titles: CHAPTER-MARKERS - outline numeral that fills, chapter title rising from a mask, subtitle, a segmented chapter bar, then a corner chapter chip. Suez One + Secular One, gold accent.",
    "shoot_it_like_this": "One take, no cuts · subject in one half of the frame; the other half open (sea, sky, wall) · 40% free left",
+   "recipe": "references/styles/52-CHAPTER-MARKERS.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/52-CHAPTER-MARKERS.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -3525,6 +3629,8 @@
    "kling": true,
    "prompt": "Titles: QUOTE-TESTIMONIAL - quote mark drops in, quote builds word by word on the speaker's own voice, key phrase underlined as spoken, then name, role and five stars.",
    "shoot_it_like_this": "One take, no cuts · medium close-up, the speaker on one third, the other half a soft bright wall or window · 35% free left",
+   "recipe": "references/styles/53-QUOTE-TESTIMONIAL.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/53-QUOTE-TESTIMONIAL.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -3590,6 +3696,8 @@
    "kling": true,
    "prompt": "Titles: DOC-LOCATION-STAMP - cinema letterbox, typewriter place name with block cursor, transliteration, GPS coordinates that scramble into place, time/date, crosshair locked on a tracked landmark.",
    "shoot_it_like_this": "One take, no cuts · landmark in one half; a calm corner for the stamp · 35% free left",
+   "recipe": "references/styles/54-DOC-LOCATION-STAMP.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/54-DOC-LOCATION-STAMP.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -3657,6 +3765,8 @@
    "kling": true,
    "prompt": "Titles: SWISS-GRID - 12-column grid draws in, black grotesk statements rise from masks and snap to columns, one red square jumping between cells, counter and caption column.",
    "shoot_it_like_this": "One take, no cuts · large flat light surfaces across the left and centre · 50% free left",
+   "recipe": "references/styles/55-SWISS-GRID.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/55-SWISS-GRID.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -3721,6 +3831,8 @@
    "kling": true,
    "prompt": "Titles: GRADIENT-GLASS - frosted glass card with border glint, NEW pill, gradient headline, subhead, CTA button, floating glass chips, cursor that clicks the CTA with a ripple.",
    "shoot_it_like_this": "One take, no cuts · motion around the edges, the centre calm and darker · no free space needed",
+   "recipe": "references/styles/56-GRADIENT-GLASS.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/56-GRADIENT-GLASS.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -3786,6 +3898,8 @@
    "kling": true,
    "prompt": "Titles: BEFORE-AFTER-SPLIT - two takes of one camera move, a white divider with a round handle sweeps and settles, big before/after label chips, a stat bar on the finished result.",
    "shoot_it_like_this": "One take, no cuts · identical framing in both takes (make both from one start frame + its edit) · no free space needed",
+   "recipe": "references/styles/57-BEFORE-AFTER-SPLIT.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/57-BEFORE-AFTER-SPLIT.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -3852,6 +3966,8 @@
    "kling": true,
    "prompt": "Titles: LOGO-SHINE-REVEAL - logomark strokes draw then fill with brushed silver, wordmark opens from a light slit, specular shine + star glint in sync with the plate's light sweep, tagline settles, slow push-in.",
    "shoot_it_like_this": "One take, no cuts · surface fills the frame; the centre clear and even · no free space needed",
+   "recipe": "references/styles/58-LOGO-SHINE-REVEAL.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/58-LOGO-SHINE-REVEAL.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -3917,6 +4033,8 @@
    "kling": true,
    "prompt": "Titles: LYRIC-KINETIC-3D - words fly in from depth on the sung syllables, big condensed key words + small italic connectives, chosen words behind the performer (matte), counter-rotating planes, glow on the hook word.",
    "shoot_it_like_this": "One take, no cuts · medium shot, performer centred, dark space above and on both sides · 18% free both sides · subject matte",
+   "recipe": "references/styles/59-LYRIC-KINETIC-3D.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/59-LYRIC-KINETIC-3D.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -3986,6 +4104,8 @@
    "kling": true,
    "prompt": "Titles: TIMELINE-HISTORY - ruled timeline with minor ticks, travelling playhead, nodes pop and captions rise, big year odometer, sepia archival grade warming into colour at the present.",
    "shoot_it_like_this": "One take, no cuts · the lower third calm enough for a timeline band; one open side for the big year · 30% free left",
+   "recipe": "references/styles/60-TIMELINE-HISTORY.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/60-TIMELINE-HISTORY.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,
@@ -4050,6 +4170,8 @@
    "kling": true,
    "prompt": "Titles: LISTING-SPECS - status pill, property title and address, tracked pins with labels on the house, glass spec bar with line icons and count-up numbers, asking price counting up.",
    "shoot_it_like_this": "One take, no cuts · the house centre-right; sky across the top quarter; calm ground across the bottom quarter · 30% free left",
+   "recipe": "references/styles/61-LISTING-SPECS.md",
+   "recipe_url": "https://github.com/guyaga/10d10s-bonus-ai-video-titles/blob/master/references/styles/61-LISTING-SPECS.md",
    "plate_contract": {
     "take": "one-take",
     "max_cuts": 0,

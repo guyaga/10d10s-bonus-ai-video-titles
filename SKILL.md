@@ -14,7 +14,9 @@ catalog      https://ai-video-titles-guyaga.netlify.app   (hosted hub: 61 number
 catalog db   $SKILL/references/catalog.json   + scripts/catalog.py  list | show | brief | make <n|ID> clip.mp4 "context" | build
 clip check   $SKILL/scripts/check_clip.py     plan <n|ID> "context" (no footage yet) | check <n|ID> clip.mp4 (footage in hand)
              $SKILL/catalog/index.html        the same page locally (serve it, e.g. npx http-server)
-style specs  $SKILL/references/styles.md      what each style is, fonts, palette, motion, how to build it
+recipes      $SKILL/references/styles/<NN>-<ID>.md   THE build doc per style (61): anatomy, timing, eases, type, layout,
+                                              footage, spec keys, core GSAP move, 9:16, sound, QA. Read before building.
+style index  $SKILL/references/styles.md      one-page summary per style (the recipe wins where they differ)
 kit          $SKILL/scripts/                  run_style (41 parametrised styles), run_ad (adkit + bespoke specs), vtrack, track,
                                               finalize, qa, music, vo_take2, word_times, doctor, selftest
                                               run_style.py <ID> --demo [--render]: any style on the bundled footage
@@ -127,6 +129,8 @@ Also look at a contact sheet (ffmpeg `fps=2,tile`) and note the timecode of ever
 
 ## STEP 3 - Build the titles
 
+**Read the style's recipe first:** `references/styles/<NN>-<ID>.md` (`catalog.py show` prints the path). It holds the exact timing, sizes, spec keys and pitfalls for that look. Build from it, adapted to the user's footage and content.
+
 Three routes, by style (references/styles.md says which one each style uses):
 
 **A. Parametrised styles - `run_style.py`** (STOMP-ESCORT, COUNTDOWN-CTA, HUD-HELMET, SCIFI-TARGETING, MAP-FLYOVER,
@@ -201,7 +205,7 @@ left-to-right island. Every Hebrew style in the kit renders with these three, in
 the switch: adkit remaps the old family names at build time (`HE_REMAP` in adkit.py: Assistant/Heebo/Plex/Varela/Miriam
 -> Secular One, Rubik/Rubik Dirt/Amatic -> Karantina, Frank Ruhl/Bellefair -> Suez One; a spec can override with
 `"he_fonts"`), `hfkit` maps the Hebrew range of the base font to Secular One, and HUD digits may stay in a Latin mono.
-Missing glyphs: none of the three has a **₪** sign, so Hebrew prices are written with **ש״ח** (`9,600 ש״ח`), never ₪.
+Missing glyphs: Suez One and Secular One draw **₪** as a stylised "שח" with no gershayim, which reads like a typo, so Hebrew prices are written **ש״ח** (`9,600 ש״ח`). Karantina draws a normal ₪, so ₪ is fine in Karantina-only titles. The adkit ad builder converts ₪ to ש״ח automatically.
 Suez One's digits are old-style (`620` reads `62o`); a hero number set in Suez One takes lining figures from a Latin
 face (KEYNOTE-REVEAL uses Jost 600 for the digits), the Hebrew words stay Suez One.
 

@@ -57,7 +57,7 @@ from the user's music with librosa (`beat_track`) and put them in the spec.
 - Hebrew: this builder's word font is Latin (Anton); for Hebrew copy set `"fonts": {"display": "Karantina", "serif":
   "Suez One", "body": "Secular One"}` (Karantina 700 is the word, Suez One the product name, Secular One labels/price).
   Keep words to one Hebrew word; do not mirror the layout (sides are physical left/right of the subject). Prices: set
-  `"currency": "ש״ח"` (the money helper writes `890 ש״ח` after the number); never `₪` (none of the three faces has it).
+  `"currency": "ש״ח"` (the money helper writes `890 ש״ח` after the number); not `₪` (Suez One / Secular One draw it as a stylised "שח").
 - Max copy: word ≤ 8 characters (CASHMERE is the longest that works at full scale); sticker name ≤ 22 characters;
   index tag is automatic.
 

@@ -55,7 +55,7 @@ Loupe on screen 3.05 → 8.72 s (the sprite covers frames 74–211 at 24 fps).
 ## Typography
 - Hebrew words and plate names: **Suez One** (the original used Frank Ruhl Libre 300/500; the kit remaps it). Large (150–176 px) with wide tracking (.12em) for the moment words; 40 px on the plates; 72 px on the card.
 - Latin: **Cormorant Garamond** 300–600 for numerals, caps and engraving (letter-spacing .24–.36em); **Pinyon Script** for the signature (44 px).
-- Prices: Latin digits inside a `<bdi dir="ltr">`, followed by ש״ח (the kit converts a ₪ glyph automatically because the three Hebrew faces don't have it).
+- Prices: Latin digits inside a `<bdi dir="ltr">`, followed by ש״ח (the kit converts a ₪ glyph automatically because Suez One / Secular One draw ₪ as a stylised "שח").
 - Max copy: one word per moment (≤ 6 letters at 176 px); plate name ≤ 12 characters; the card line ≤ 10 characters.
 
 ## Colour and surface

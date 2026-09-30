@@ -24,6 +24,8 @@ Two rules from the field:
    rejected as childish; it is still in adkit (`theme` flag `pop`) but do not offer it.
 
 
+> **Every style has a full recipe in `references/styles/<NN>-<ID>.md`** (anatomy, timing, eases, typography, layout, footage, build keys, the core GSAP move, 9:16, sound, QA). This file is the one-page summary.
+
 ## Hebrew typography
 
 Hebrew titles use three Google faces, bundled in `assets/fonts` with Hebrew + Latin unicode-ranges:
@@ -71,6 +73,7 @@ measured, free margins and coverage from its vtrack file, rounded down to leave 
 ## A. Social stomp family (fashion, product, drops)
 
 ### STOMP-ESCORT
+- Recipe (authoritative): `references/styles/01-STOMP-ESCORT.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Giant Anton word per item that slams in beside the tracked garment and rides with it ("escorts" it), a red `01 / 05`
 index tag with a rule, and a white sticker card (thumbnail, italic Bodoni name, red price chip). Brand bug top-left.
 - Best for: fashion runway, shoppable lookbooks, product line-ups, any "piece by piece" reveal.
@@ -84,6 +87,7 @@ index tag with a rule, and a white sticker card (thumbnail, italic Bodoni name, 
 - Prompt: `Titles: STOMP-ESCORT - Anton words escorting each tracked item, red index tags + white price stickers, accent #E63B2E, 120 BPM grid.`
 
 ### STOMP-BEHIND
+- Recipe (authoritative): `references/styles/02-STOMP-BEHIND.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Same words, but set **between the plate and a matted subject**, so the model walks in front of her own title.
 - Best for: hero reveals, fashion, athletes, anything with a clean silhouette.
 - Fonts: Anton + Bodoni Moda. Palette: white words, red shadow/accents.
@@ -95,6 +99,7 @@ Same words, but set **between the plate and a matted subject**, so the model wal
 - Prompt: `Titles: STOMP-BEHIND - giant Anton words behind the subject (matte), white with red accent, stomp on the beat.`
 
 ### GLASS-CALLOUT
+- Recipe (authoritative): `references/styles/03-GLASS-CALLOUT.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Transparent outlined words (translucent fill + stroke) and smoked-glass price cards; quieter than ESCORT.
 - Best for: premium retail, beauty, calm luxury, when the footage must stay the hero.
 - Fonts: Anton outline + Bodoni Moda. Palette: white stroke on rgba(0,0,0,.25) fill, glass panels.
@@ -105,6 +110,7 @@ Transparent outlined words (translucent fill + stroke) and smoked-glass price ca
 - Prompt: `Titles: GLASS-CALLOUT - transparent outlined Anton words + smoked-glass price cards, restrained, no hard shadows.`
 
 ### COUNTDOWN-CTA
+- Recipe (authoritative): `references/styles/04-COUNTDOWN-CTA.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 The selling end: FLASH SALE tag, italic "the complete look" box, struck-through total, big sale price, a black
 OFFER ENDS IN box with a live 00:15 countdown and red progress rule, a stack of item tiles at sale prices, SHOP NOW
 button with a hard offset shadow.
@@ -117,6 +123,7 @@ button with a hard offset shadow.
 - Prompt: `Titles: COUNTDOWN-CTA - flash-sale stack with 15 s live countdown, struck total + sale price, SHOP NOW, accent #E63B2E.`
 
 ### KINETIC-HE
+- Recipe (authoritative): `references/styles/05-KINETIC-HE.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Hebrew word-by-word social stomps synced to the voice: Karantina 700 words that land blurred->sharp with a
 squash, one word in the accent colour, one outlined, hits shake the frame.
 - Best for: Hebrew social ads, product launches, anything with a punchy VO.
@@ -128,6 +135,7 @@ squash, one word in the accent colour, one outlined, hits shake the frame.
 - Prompt: `Titles: KINETIC-HE - Hebrew voice-synced word stomps in Karantina, one accent word per line, hit shakes.`
 
 ### TAPE-HE
+- Recipe (authoritative): `references/styles/06-TAPE-HE.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Hebrew slogans on highlight-tape strips (ink / accent / light), each strip wipes in right-to-left and slams, slightly
 rotated, hard drop shadow; used where plain Hebrew text over footage was unreadable.
 - Best for: Hebrew slogans, stats, CTAs over busy footage; readable at phone size.
@@ -139,6 +147,7 @@ rotated, hard drop shadow; used where plain Hebrew text over footage was unreada
 - Prompt: `Titles: TAPE-HE - Hebrew slogans on rotated highlight-tape strips (ink + accent), RTL wipe + slam, readable over anything.`
 
 ### KINETIC-KARAOKE
+- Recipe (authoritative): `references/styles/07-KINETIC-KARAOKE.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 TAPE/KINETIC plus karaoke captions: 2-3 word groups at the bottom, the spoken word highlighted in an accent pill, plus
 punch-zooms on the plate.
 - Best for: talking/VO-driven social cuts, reels, accessibility.
@@ -151,6 +160,7 @@ punch-zooms on the plate.
 - Prompt: `Titles: KINETIC-KARAOKE - voice-synced karaoke captions (accent pill on the spoken word) + punch zooms + tape slogans.`
 
 ### FLASH-CARD
+- Recipe (authoritative): `references/styles/08-FLASH-CARD.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 A 4-frame full-screen word card (accent background, huge Karantina word) cut into the edit on the biggest beat.
 - Best for: the one moment that must hit (brand name, "GOAL", "SOLD").
 - Fonts: Karantina 700 (auto RTL/LTR by script). Palette: accent bg + ink word, or inverse.
@@ -161,6 +171,7 @@ A 4-frame full-screen word card (accent background, huge Karantina word) cut int
 - Prompt: `Titles: FLASH-CARD - one 4-frame full-screen word card on the biggest beat, accent background.`
 
 ### SPEED-STAT
+- Recipe (authoritative): `references/styles/09-SPEED-STAT.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Sports broadcast stat hits: a giant "9 MS" contact-time stomp, callout leaders to the boot, a live ball-speed counter
 riding the tracked ball, then a giant red GOAL with a brand lockup.
 - Best for: sport, slow-motion product proof, anything measurable in motion.
@@ -172,6 +183,7 @@ riding the tracked ball, then a giant red GOAL with a brand lockup.
 - Prompt: `Titles: SPEED-STAT - broadcast stat hits: huge Anton numbers, live counter on the tracked ball, giant GOAL finish.`
 
 ### PRESIDENTIAL-SERIF
+- Recipe (authoritative): `references/styles/10-PRESIDENTIAL-SERIF.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Restrained, premium: soft-in DM Serif Display words (BLOCK, VICTORY) with an accent underline, small glass tags,
 a percent counter, few titles. Built after the comic version was rejected as childish.
 - Best for: epic/brand films, leadership, battle or sport trailers that must feel expensive.
@@ -183,6 +195,7 @@ a percent counter, few titles. Built after the comic version was rejected as chi
 - Prompt: `Titles: PRESIDENTIAL-SERIF - few, big DM Serif words that ease in with an accent underline, glass tags, no comic colours.`
 
 ### STICKER-POP
+- Recipe (authoritative): `references/styles/11-STICKER-POP.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Heavy white sticker words (solid white fill, thick ink stroke, hard offset shadow) with a red index tag and a white
 price sticker. The loudest of the runway family that still reads premium.
 - Best for: drops, streetwear, sneakers, anything that should feel like a sticker slapped on the frame.
@@ -195,6 +208,7 @@ price sticker. The loudest of the runway family that still reads premium.
 - Prompt: `Titles: STICKER-POP - heavy white Anton sticker words with a hard ink shadow, red index tag, white price sticker, stomp on the beat.`
 
 ### STOMP-SX
+- Recipe (authoritative): `references/styles/12-STOMP-SX.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 The dynamic Hebrew social version: coloured Karantina headline words that stomp in, ink tape lines for the
 secondary copy, and a closing slogan with one accent word. Busier and faster than TAPE-HE.
 - Best for: food, product, travel and brand social ads in Hebrew that need energy.
@@ -206,6 +220,7 @@ secondary copy, and a closing slogan with one accent word. Busier and faster tha
 - Prompt: `Titles: STOMP-SX - dynamic Hebrew social stomp, coloured Karantina headline words, ink tape lines, closing slogan with one accent word.`
 
 ### TRACKED-TAGS
+- Recipe (authoritative): `references/styles/13-TRACKED-TAGS.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 The clean English callout layer: numbered glass tags tracked to each object, one stat panel, a price total.
 The original version of every ad before the Hebrew and bespoke passes.
 - Best for: product, interior, jewellery, food; any time the footage is the hero and the copy is facts.
@@ -218,6 +233,7 @@ The original version of every ad before the Hebrew and bespoke passes.
 - Prompt: `Titles: TRACKED-TAGS - numbered glass tags tracked to each object, one stat panel, price total, English, restrained motion.`
 
 ### COMIC-POP
+- Recipe (authoritative): `references/styles/14-COMIC-POP.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Multi-colour comic burst words (yellow, pink, cyan) with a starburst backing on the biggest beats.
 - **Use sparingly.** It was rejected as childish for premium brands, and SPARTA was rebuilt as PRESIDENTIAL-SERIF.
   Offer it only for kids, gaming or deliberately playful brands, and only on one or two beats.
@@ -229,6 +245,7 @@ Multi-colour comic burst words (yellow, pink, cyan) with a starburst backing on 
 ## B. HUD / interface family
 
 ### HUD-HELMET
+- Recipe (authoritative): `references/styles/15-HUD-HELMET.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Iron-Man-style (original design) holographic visor HUD in Hebrew: rotating dashed rings and tick scales, a cyan glass
 visor overlay, threat panels that go red on alert, a heart-rate ring, and the suit AI "Ora" speaking (Gemini TTS
 designed voice) with a voice meter driven by the real audio envelope.
@@ -241,6 +258,7 @@ designed voice) with a voice meter driven by the real audio envelope.
 - Prompt: `Titles: HUD-HELMET - holographic visor HUD, rotating rings + tick scales, cyan with red alerts, AI voice with live meter, Hebrew.`
 
 ### SCIFI-TARGETING
+- Recipe (authoritative): `references/styles/16-SCIFI-TARGETING.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 First-person targeting: brackets and ID tags locked to each robot (`T-01 // HEAVY`), a HOSTILE LOCK banner, FIRE,
 then TARGETS NEUTRALIZED.
 - Best for: action, gaming, defence/tech demos.
@@ -252,6 +270,7 @@ then TARGETS NEUTRALIZED.
 - Prompt: `Titles: SCIFI-TARGETING - tracked target brackets + ID tags, HOSTILE LOCK banner, amber military HUD.`
 
 ### ROAD-HUD
+- Recipe (authoritative): `references/styles/20-ROAD-HUD.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Automotive AR head-up display projected onto the road in true CSS 3D perspective: lane-keep chevrons, braking-distance
 band, amber contour on the cyclist with a warning strip, a split speed ring (54 -> 0) that doubles as the co-pilot's
 voice arc, an AEB pictogram flash, and an end line written as light on the wet road.
@@ -264,6 +283,7 @@ voice arc, an AEB pictogram flash, and an end line written as light on the wet r
 - Prompt: `Titles: ROAD-HUD - AR head-up display projected on the road in 3D perspective, speed ring + hazard contour, calm fades.`
 
 ### THERMAL-RESCUE
+- Recipe (authoritative): `references/styles/21-THERMAL-RESCUE.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 The frame becomes a thermal-imaging viewfinder: steel-blue luminance map with only the hottest tones amber->white,
 ironbow strip, crosshair with spot temperature, SCBA pressure-gauge dial (100 -> 7 %), live ECG line; the AI speaks as
 amber OSD text; the camera switches off to natural colour at the rescue.
@@ -276,6 +296,7 @@ amber OSD text; the camera switches off to natural colour at the rescue.
 - Prompt: `Titles: THERMAL-RESCUE - the frame is a thermal camera: blue-grey map, white-hot fire, gauge dial + ECG, amber OSD voice.`
 
 ### SPEC-SCAN
+- Recipe (authoritative): `references/styles/22-SPEC-SCAN.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Performance-lab language: the product starts as a volt CAD wireframe on a grid and scan-wipes into the photo; exploded
 assembly with numbered balloons, parts re-rendered as mesh / FEA heat maps masked to the real pixels, race-timer
 7-segment digits that flick and lock, a force-plate trace on the landing, end on a shoebox label.
@@ -288,6 +309,7 @@ assembly with numbered balloons, parts re-rendered as mesh / FEA heat maps maske
 - Prompt: `Titles: SPEC-SCAN - lab/CAD language: wireframe scan-in, exploded parts with numbered balloons, FEA heat map, 7-segment stats.`
 
 ### MAP-FLYOVER
+- Recipe (authoritative): `references/styles/23-MAP-FLYOVER.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Aerial map explorer: a route line draws across a planar-tracked city, pins with bilingual labels stick to places,
 a distance counter runs, then a landing card on arrival.
 - Best for: travel, real estate location, campus/venue arrival, logistics.
@@ -299,6 +321,7 @@ a distance counter runs, then a landing card on arrival.
 - Prompt: `Titles: MAP-FLYOVER - route drawing over a tracked aerial, pinned bilingual place labels, distance counter, arrival card.`
 
 ### CAMPUS-AR
+- Recipe (authoritative): `references/styles/24-CAMPUS-AR.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 AR place labels on a walking tour: small glass tags pinned to real features (Library, Study area, Podcast studio,
 Skylight), a voice waveform, a person tag, an end logo card.
 - Best for: campus/venue/office tours, museums, retail wayfinding.
@@ -310,6 +333,7 @@ Skylight), a voice waveform, a person tag, an end logo card.
 - Prompt: `Titles: CAMPUS-AR - small bilingual AR tags pinned to real places along a walk, glass panels, waveform for voice.`
 
 ### HUD-CLEAN
+- Recipe (authoritative): `references/styles/17-HUD-CLEAN.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 The first, quieter visor HUD: a thin vitals column, a heading tick scale, and one red alert panel. No rings, no voice.
 - Best for: when HUD-HELMET is too much; documentary-feeling sci-fi, pilots, divers, climbers.
 - Fonts: Secular One + JetBrains Mono. Palette: pale cyan-white, amber, alert red.
@@ -320,6 +344,7 @@ The first, quieter visor HUD: a thin vitals column, a heading tick scale, and on
 - Prompt: `Titles: HUD-CLEAN - quiet visor HUD: thin vitals column, heading tick scale, one red alert panel, no rings.`
 
 ### CYBER-DOSSIER
+- Recipe (authoritative): `references/styles/18-CYBER-DOSSIER.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 A character intro as a city dossier: a bilingual location card, a pilot ID panel, and suit status bars.
 - Best for: game trailers, character reveals, sci-fi shorts, "meet the hero" openers.
 - Fonts: JetBrains Mono + Secular One (Hebrew). Palette: amber #ffb547 on near-black glass.
@@ -329,6 +354,7 @@ A character intro as a city dossier: a bilingual location card, a pilot ID panel
 - Prompt: `Titles: CYBER-DOSSIER - character intro dossier: bilingual location card, pilot ID panel, suit status bars, amber mono type.`
 
 ### ARRIVAL-CARD
+- Recipe (authoritative): `references/styles/19-ARRIVAL-CARD.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 A destination lower-third: the place name in two languages, coordinates and a distance line, and a green ARRIVED chip.
 - Best for: travel, campus and real-estate arrivals; the last shot of a MAP-FLYOVER.
 - Fonts: Secular One + JetBrains Mono. Palette: green #9bd14a, dark glass, off-white.
@@ -340,6 +366,7 @@ A destination lower-third: the place name in two languages, coordinates and a di
 ## C. Editorial / crafted-world family (fully bespoke)
 
 ### HALLMARK-LUXE
+- Recipe (authoritative): `references/styles/25-HALLMARK-LUXE.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 A jeweller's bench after hours: the frame dims to velvet-black around the featured piece, a 10x loupe travels between
 pieces showing stabilised magnified crops with the grade engraved in its ring, prices on tiny gold hallmark plates,
 four-point glints on the metal, thin gold-foil words, an embossed black end card.
@@ -352,6 +379,7 @@ four-point glints on the metal, thin gold-foil words, an embossed black end card
 - Prompt: `Titles: HALLMARK-LUXE - spotlight on velvet black, a travelling jeweller's loupe, gold hallmark price plates, foil type.`
 
 ### ARCH-DRAWING
+- Recipe (authoritative): `references/styles/26-ARCH-DRAWING.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Architecture on paper: a vellum sheet slides over the drone shot with the facade inked on it, then a sepia elevation
 sheet where floors fill with watercolour wash as the drone climbs and the sight line to the sea clears; ends on an
 estate-agent floor plan and a brass building plaque.
@@ -364,6 +392,7 @@ estate-agent floor plan and a brass building plaque.
 - Prompt: `Titles: ARCH-DRAWING - vellum + sepia elevation sheets over the footage, floors fill with wash, hand-lettered lines, floor plan end.`
 
 ### MAGAZINE-EDITORIAL
+- Recipe (authoritative): `references/styles/27-MAGAZINE-EDITORIAL.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 The drone flight as an interior-design magazine spread: masthead and folios, circled numbers pinned on each piece with
 shopping credits, a running price-list column, red-pencil loops and margin notes, halftone + paper grain, a page that
 folds open for the pull quote and folds in for the total.
@@ -376,6 +405,7 @@ folds open for the pull quote and folds in for the total.
 - Prompt: `Titles: MAGAZINE-EDITORIAL - the video as a printed spread: masthead, numbered product credits, price column, red-pencil notes, page folds.`
 
 ### KITCHEN-TICKET
+- Recipe (authoritative): `references/styles/28-KITCHEN-TICKET.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 A restaurant kitchen at night: the order prints line by line as a thermal ticket under a steel rail, the VO words
 condense out of smoke and drift off as steam, a flame-shaped heat gauge fills to 260 degrees, grease-pencil notes on
 the plate, and the ending is the ticket torn, spiked and stamped DONE.
@@ -389,6 +419,7 @@ the plate, and the ending is the ticket torn, spiked and stamped DONE.
 - Prompt: `Titles: KITCHEN-TICKET - thermal order ticket printing on a steel rail, smoke-formed words, flame heat gauge, stamped finish.`
 
 ### LENS-POSTCARD
+- Recipe (authoritative): `references/styles/29-LENS-POSTCARD.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 The world seen through one smart-glasses lens: a real lens outline with frame edge and chromatic fringe, a
 postage-stamp mascot who lip-syncs the VO in paper speech bubbles, a sign repainted in Hebrew by homography and
 franked "translated", an airmail postcard for the landmark, a printed receipt, a postcard end card.
@@ -409,6 +440,7 @@ documented at its top) with a working example in `examples/<id>/`. Everything is
 effects are pure functions of time and a seed, never `Math.random`.
 
 ### VIRAL-CAPTIONS
+- Recipe (authoritative): `references/styles/30-VIRAL-CAPTIONS.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Hormozi / MrBeast social captions driven by word timings: 1-3 huge words at a time in the lower band, the group
 appears with unspoken words dimmed, each word pops to full and bounces as it is spoken (a second smaller bounce on
 long words), keywords in colour, and a colour emoji (Twemoji, fetched once and cached) pops above its own word.
@@ -421,6 +453,7 @@ long words), keywords in colour, and a colour emoji (Twemoji, fetched once and c
 - Prompt: `Titles: VIRAL-CAPTIONS - huge word-by-word captions from the VO timings, keywords in colour, emoji pops, bounce on every word.`
 
 ### DECODE-TYPE
+- Recipe (authoritative): `references/styles/31-DECODE-TYPE.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Terminal decode: each line types in while every character scrambles through random glyphs (Hebrew letters for Hebrew,
 A-Z/0-9 for Latin) and locks in reading order, with a blinking block cursor. The final text reserves its space so
 nothing jitters; digit runs stay one left-to-right island, so "98.6%" never reorders inside Hebrew.
@@ -433,6 +466,7 @@ nothing jitters; digit runs stay one left-to-right island, so "98.6%" never reor
 - Prompt: `Titles: DECODE-TYPE - terminal decode: scrambling glyphs lock into the words with a blinking cursor, status lines beside the face.`
 
 ### GLITCH-RGB
+- Recipe (authoritative): `references/styles/32-GLITCH-RGB.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 On every beat the plate itself tears (an SVG displacement band filter plus an RGB channel split on the video) and the
 titles split into red/green/blue copies and jittering slices, then snap clean. Between hits everything is still.
 - Best for: streetwear, music, gaming, tech drops.
@@ -444,6 +478,7 @@ titles split into red/green/blue copies and jittering slices, then snap clean. B
 - Prompt: `Titles: GLITCH-RGB - on each beat the frame tears and the words split into RGB slices, then snap clean.`
 
 ### NEON-SIGN
+- Recipe (authoritative): `references/styles/33-NEON-SIGN.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Neon tubes mounted in the scene: outline tubes (hollow stroke) and solid tubes with a white-hot core and coloured
 glow, a real stutter on strike and a rare buzz later, a coloured light spill on the plate, signs turned onto the wall
 plane in perspective towards the plate's vanishing point, and a mirrored reflection on the wet floor.
@@ -456,6 +491,7 @@ plane in perspective towards the plate's vanishing point, and a mirrored reflect
 - Prompt: `Titles: NEON-SIGN - neon tubes mounted on the walls in perspective, flicker-on, glow spill and a wet-floor reflection.`
 
 ### KEYNOTE-REVEAL
+- Recipe (authoritative): `references/styles/34-KEYNOTE-REVEAL.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Apple-keynote pacing: one huge number or word per shot, a mask-wipe reveal (right-to-left for Hebrew), numbers count
 up with their unit glued on, a small label beneath, a clean fade-and-blur exit and a soft vignette for contrast.
 - Best for: product specs, EV and tech launches, fundraising and results decks as video.
@@ -466,6 +502,7 @@ up with their unit glued on, a small label beneath, a clean fade-and-blur exit a
 - Prompt: `Titles: KEYNOTE-REVEAL - one huge counting number per shot, mask-wipe reveal, unit + small label, clean fades.`
 
 ### SPLIT-FLAP
+- Recipe (authoritative): `references/styles/35-SPLIT-FLAP.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 A departure board: every cell is a real split flap (top/bottom halves and a falling leaf in CSS 3D) that riffles
 through characters before landing, staggered in reading order; cells can re-flip later (a status change). Each column
 carries its own direction, so Hebrew destinations fill right-to-left while times stay left-to-right.
@@ -477,6 +514,7 @@ carries its own direction, so Hebrew destinations fill right-to-left while times
 - Prompt: `Titles: SPLIT-FLAP - departure board, every cell flips through letters and lands; a status re-flips later.`
 
 ### SIGNATURE-WRITE-ON
+- Recipe (authoritative): `references/styles/36-SIGNATURE-WRITE-ON.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Handwriting and marker annotations that draw themselves: notes write on (the outline draws while a sweep reveals the
 ink in reading direction), wobbly hand circles, boxes, underlines and arrows draw on with stroke-dashoffset, pinned to
 tracked objects so they ride the footage. Merges the proposed MARKER-WRITE-ON.
@@ -488,6 +526,7 @@ tracked objects so they ride the footage. Merges the proposed MARKER-WRITE-ON.
 - Prompt: `Titles: SIGNATURE-WRITE-ON - handwritten notes write on, red hand circles and arrows pinned to the tracked features.`
 
 ### BROADCAST-PACK
+- Recipe (authoritative): `references/styles/37-BROADCAST-PACK.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 A live sports package: score bug with a running match clock and a score change (flash + GOAL tab), a LIVE ticker, a
 lower-third riding the tracked player, a REPLAY bug and stinger wipes across the cuts. Hebrew mirrors the layout.
 Replaces the proposed SCOREBUG-LIVE.
@@ -499,6 +538,7 @@ Replaces the proposed SCOREBUG-LIVE.
 - Prompt: `Titles: BROADCAST-PACK - live score bug with running clock, ticker, lower-third on the tracked player, stinger wipes, goal update.`
 
 ### FILM-TITLE-CARD
+- Recipe (authoritative): `references/styles/38-FILM-TITLE-CARD.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Cinema title design in two card modes plus a credits roll: `anderson` (centred, symmetric, letter-spaced kicker, thin
 frame with corner ornaments, gentle fades) and `bass` (Saul Bass cut-paper bars slamming in on diagonals with the
 title set on them), then a two-column credits roll that mirrors for Hebrew.
@@ -510,6 +550,7 @@ title set on them), then a two-column credits roll that mirrors for Hebrew.
 - Prompt: `Titles: FILM-TITLE-CARD - a Wes Anderson chapter card, a Saul Bass cut-paper title and a two-column credits roll.`
 
 ### PARTICLE-TEXT
+- Recipe (authoritative): `references/styles/39-PARTICLE-TEXT.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Words that form out of embers, sand or smoke, resolve into the crisp word, and dissolve back. The text is rasterised
 into points once; every particle position is an analytic function of (t, seed), so any frame renders identically.
 An optional soft dark pool keeps the word legible on light plates.
@@ -521,6 +562,7 @@ An optional soft dark pool keeps the word legible on light plates.
 - Prompt: `Titles: PARTICLE-TEXT - words assemble from embers / sand / steam, resolve crisp, then dissolve back.`
 
 ### FLIP-MONTAGE-LOGO
+- Recipe (authoritative): `references/styles/40-FLIP-MONTAGE-LOGO.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 The Marvel-style closer: frames pulled from the plate itself flip past as 3D pages on an accelerating clock, each with
 its own punch-in and treatment and a growing brand tint, then the last page falls away to the wordmark on a colour
 block with a light sweep. Frames are extracted with ffmpeg at build time.
@@ -532,6 +574,7 @@ block with a light sweep. Frames are extracted with ffmpeg at build time.
 - Prompt: `Titles: FLIP-MONTAGE-LOGO - pages of the film flip faster and faster, then resolve into the logo on a colour block.`
 
 ### TEXT-ON-PATH
+- Recipe (authoritative): `references/styles/41-TEXT-ON-PATH.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Words riding a tracked road, river or trail: the path is rebuilt every frame through the tracked points (smoothed
 Catmull-Rom), the route draws on as a glowing line, and each line slides along it (SVG textPath) bending with the road.
 The text rides an upright copy of the route, so letters never stand on their heads; Hebrew works because Chrome's bidi
@@ -551,6 +594,7 @@ The twenty most-used title looks in video and tech, each demoed on a Kling 3.0 p
 **Broadcast & corporate**
 
 ### LOWER-THIRD-CORP
+- Recipe (authoritative): `references/styles/42-LOWER-THIRD-CORP.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 The interview name super: accent bar, masked name rise, title slide, drawn rule, one glint, clean masked exit.
 - Best for: corporate, news, youtube, hebrew.
 - Fonts: Hebrew Suez One + Secular One; Latin Manrope 700/500. Palette: #cc2419, #0a0c10, #ffffff.
@@ -560,6 +604,7 @@ The interview name super: accent bar, masked name rise, title slide, drawn rule,
 - Prompt: `Titles: LOWER-THIRD-CORP - accent-bar lower third, name masked rise, title slide, rule draw, one glint, Suez One + Secular One in Hebrew.`
 
 ### BREAKING-NEWS
+- Recipe (authoritative): `references/styles/43-BREAKING-NEWS.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Rolling-news package: red slab slam + shine, headline bar that types and flips, strap, LIVE bug with a running clock, ticker.
 - Best for: news, corporate, hebrew.
 - Fonts: Hebrew Karantina 700 + Secular One (Oswald numerals); Latin Oswald 700 + Archivo 500. Palette: #d6001c, #ffffff, #0a1a33.
@@ -569,6 +614,7 @@ Rolling-news package: red slab slam + shine, headline bar that types and flips, 
 - Prompt: `Titles: BREAKING-NEWS - red slab slam with shine, headline bar word-by-word, flip to the next headline, strap, LIVE bug with clock, ticker.`
 
 ### PODCAST-TAGS
+- Recipe (authoritative): `references/styles/51-PODCAST-TAGS.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Video-podcast package: tracked speaker tags light up with a live equalizer on whoever talks, episode chip, topic strip, audio waveform.
 - Best for: youtube, corporate, hebrew.
 - Fonts: Hebrew Suez One + Secular One (Manrope numerals); Latin Manrope 700/500. Palette: #ffb13b, #0e0c0a, #ffffff.
@@ -580,6 +626,7 @@ Video-podcast package: tracked speaker tags light up with a live equalizer on wh
 **Tech & UI**
 
 ### LEADER-CALLOUTS
+- Recipe (authoritative): `references/styles/44-LEADER-CALLOUTS.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Premium product callouts: dot + ring pulse on a tracked part, two-segment leader line, spec value counting up.
 - Best for: product, tech, luxury.
 - Fonts: Latin Space Grotesk 700/500; Hebrew Secular One. Palette: #ffffff, #7cf0ff, #0b0d10.
@@ -589,6 +636,7 @@ Premium product callouts: dot + ring pulse on a tracked part, two-segment leader
 - Prompt: `Titles: LEADER-CALLOUTS - dot + ring on each tracked part, thin two-segment leader lines, spaced caption over a counting spec value, cyan unit.`
 
 ### DATA-CHARTS
+- Recipe (authoritative): `references/styles/45-DATA-CHARTS.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Infographic glass card: gridlines draw, bars grow with counting values, then a line chart draws with an area fill and a value flag.
 - Best for: corporate, tech, hebrew.
 - Fonts: Hebrew Secular One; Latin Manrope 700/500. Palette: #0a0d12, #39d98a, #ffffff.
@@ -598,6 +646,7 @@ Infographic glass card: gridlines draw, bars grow with counting values, then a l
 - Prompt: `Titles: DATA-CHARTS - frosted card on the clean side, gridlines draw, bars grow with counters, hand-over to a line chart with area fill and a value flag.`
 
 ### KPI-COUNTERS
+- Recipe (authoritative): `references/styles/46-KPI-COUNTERS.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Results dashboard: frosted tiles cascade, big numbers count up, delta chips pop, sparklines draw with a glowing end dot.
 - Best for: corporate, tech, product.
 - Fonts: Latin Space Grotesk 700/500; Hebrew Secular One. Palette: #080b10, #3ddc84, #7cc8ff.
@@ -607,6 +656,7 @@ Results dashboard: frosted tiles cascade, big numbers count up, delta chips pop,
 - Prompt: `Titles: KPI-COUNTERS - frosted KPI tiles cascade in, numbers count up with separators, delta chips, sparklines with a glowing end dot.`
 
 ### GRADIENT-GLASS
+- Recipe (authoritative): `references/styles/56-GRADIENT-GLASS.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 The SaaS / tech launch look: a frosted glass card tilts in over a gradient plate with a glint along its border, a shimmering
 NEW pill, a gradient headline, a subhead, floating glass feature chips, and a cursor that glides to the CTA and clicks it (ripple + press).
 - Best for: SaaS and app launches, feature announcements, tech keynotes.
@@ -617,6 +667,7 @@ NEW pill, a gradient headline, a subhead, floating glass feature chips, and a cu
 - Prompt: `Titles: GRADIENT-GLASS - frosted glass card with border glint, NEW pill, gradient headline, subhead, CTA button, floating glass chips, cursor that clicks the CTA with a ripple.`
 
 ### LOGO-SHINE-REVEAL
+- Recipe (authoritative): `references/styles/58-LOGO-SHINE-REVEAL.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 The premium logo sting: a geometric logomark draws itself on and fills with brushed silver, the wordmark opens from a horizontal
 light slit, a specular shine crosses the lockup in time with the plate's own light sweep, a star glint catches on the mark, a tagline settles.
 - Best for: brand stings, openers and closers, product launches.
@@ -629,6 +680,7 @@ light slit, a specular shine crosses the lockup in time with the plate's own lig
 **Social & YouTube**
 
 ### APP-UI-POPUPS
+- Recipe (authoritative): `references/styles/47-APP-UI-POPUPS.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Phone-style UI floating beside the subject: notification banners spring in and stack, a progress-ring card fills, a toast confirms.
 - Best for: tech, product, youtube, hebrew.
 - Fonts: Hebrew Secular One; Latin Manrope 700/500. Palette: #f6f7fa, #35d07f, #0d1117.
@@ -638,6 +690,7 @@ Phone-style UI floating beside the subject: notification banners spring in and s
 - Prompt: `Titles: APP-UI-POPUPS - iOS-style notification banners spring in and stack, a progress-ring card fills, a toast confirms; glass, no logos.`
 
 ### CHAT-BUBBLES
+- Recipe (authoritative): `references/styles/48-CHAT-BUBBLES.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Messenger conversation over the shot: typing dots, springy bubbles, timestamps, double ticks turning blue. Outgoing on the left in Hebrew.
 - Best for: youtube, tech, hebrew.
 - Fonts: Hebrew Secular One; Latin Manrope 700/500. Palette: #d9fdd3, #ffffff, #53bdeb.
@@ -647,6 +700,7 @@ Messenger conversation over the shot: typing dots, springy bubbles, timestamps, 
 - Prompt: `Titles: CHAT-BUBBLES - messenger thread over the shot: typing indicator, bubbles pop from the tail, timestamps, read ticks turn blue.`
 
 ### SOCIAL-CTA
+- Recipe (authoritative): `references/styles/49-SOCIAL-CTA.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Subscribe CTA: channel chip with counting followers, cursor clicks a red pill that flips to Subscribed, bell rings, like counts up.
 - Best for: youtube, hebrew.
 - Fonts: Hebrew Secular One; Latin Manrope 700/500. Palette: #ff0033, #3a3f47, #ffffff.
@@ -656,6 +710,7 @@ Subscribe CTA: channel chip with counting followers, cursor clicks a red pill th
 - Prompt: `Titles: SOCIAL-CTA - channel chip with counting followers, cursor clicks SUBSCRIBE, pill flips to SUBSCRIBED, bell rings, like counts up; no platform logos.`
 
 ### END-SCREEN
+- Recipe (authoritative): `references/styles/50-END-SCREEN.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 YouTube-style end card: angled scrim wipe, WATCH NEXT, two video tiles flip up with Ken Burns thumbnails, avatar in a spinning ring.
 - Best for: youtube.
 - Fonts: Latin Manrope 700/500; Hebrew Secular One. Palette: #0b0d12, #ff0033, #ffffff.
@@ -665,6 +720,7 @@ YouTube-style end card: angled scrim wipe, WATCH NEXT, two video tiles flip up w
 - Prompt: `Titles: END-SCREEN - angled scrim wipe, WATCH NEXT, two thumbnail tiles flip up (Ken Burns, duration badge), avatar in a spinning dashed ring + SUBSCRIBE.`
 
 ### LYRIC-KINETIC-3D
+- Recipe (authoritative): `references/styles/59-LYRIC-KINETIC-3D.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Music-video kinetic lyrics in 3D space: every word flies in from depth on its sung syllable, big condensed key words and small
 italic connectives build a layered composition, chosen words live BEHIND the performer (matte), front and back planes counter-rotate for parallax.
 - Best for: music videos, lyric videos, performance promos, hype edits.
@@ -677,6 +733,7 @@ italic connectives build a layered composition, chosen words live BEHIND the per
 **Editorial & doc**
 
 ### CHAPTER-MARKERS
+- Recipe (authoritative): `references/styles/52-CHAPTER-MARKERS.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 Documentary / YouTube chapter card: a big numeral draws as an outline and fills, a hairline rule and the kicker sit beside it,
 the chapter title rises from a mask, a subtitle fades up, a segmented chapter bar fills along the bottom, and the card folds into a corner chip.
 - Best for: documentaries, YouTube long-form, brand films in parts, course lessons.
@@ -687,6 +744,7 @@ the chapter title rises from a mask, a subtitle fades up, a segmented chapter ba
 - Prompt: `Titles: CHAPTER-MARKERS - outline numeral that fills, chapter title rising from a mask, subtitle, a segmented chapter bar, then a corner chapter chip. Suez One + Secular One, gold accent.`
 
 ### QUOTE-TESTIMONIAL
+- Recipe (authoritative): `references/styles/53-QUOTE-TESTIMONIAL.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 The testimonial quote card: a quote mark drops in, the quote builds word by word IN SYNC with the speaker's own voice
 (word timings), the key phrase gets an accent underline as it is said, then a hairline, name, role and a five-star rating that pops star by star.
 - Best for: customer testimonials, reviews, founder quotes, case studies.
@@ -697,6 +755,7 @@ The testimonial quote card: a quote mark drops in, the quote builds word by word
 - Prompt: `Titles: QUOTE-TESTIMONIAL - quote mark drops in, quote builds word by word on the speaker's own voice, key phrase underlined as spoken, then name, role and five stars.`
 
 ### DOC-LOCATION-STAMP
+- Recipe (authoritative): `references/styles/54-DOC-LOCATION-STAMP.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 The documentary place/date stamp: cinema letterbox bars ease in, the place name types with a block cursor, a transliteration
 line follows, GPS coordinates scramble and lock digit by digit, time and date type out, and a crosshair collapses onto a tracked landmark with a leader label.
 - Best for: documentaries, travel films, real-estate area intros, news packages.
@@ -707,6 +766,7 @@ line follows, GPS coordinates scramble and lock digit by digit, time and date ty
 - Prompt: `Titles: DOC-LOCATION-STAMP - cinema letterbox, typewriter place name with block cursor, transliteration, GPS coordinates that scramble into place, time/date, crosshair locked on a tracked landmark.`
 
 ### SWISS-GRID
+- Recipe (authoritative): `references/styles/55-SWISS-GRID.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 International Typographic Style kinetic type: a 12-column grid draws over the shot, heavy grotesk statements rise line by line
 out of masks and snap to the columns, a Swiss-red square jumps between grid cells on the beat, a counter and caption column set the rhythm.
 - Best for: architecture, design studios, tech and brand manifestos.
@@ -717,6 +777,7 @@ out of masks and snap to the columns, a Swiss-red square jumps between grid cell
 - Prompt: `Titles: SWISS-GRID - 12-column grid draws in, black grotesk statements rise from masks and snap to columns, one red square jumping between cells, counter and caption column.`
 
 ### BEFORE-AFTER-SPLIT
+- Recipe (authoritative): `references/styles/57-BEFORE-AFTER-SPLIT.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 The renovation / upgrade comparison: two takes of the SAME camera move are stacked, a divider with a round handle sweeps across
 revealing the after, swings back and settles, big label chips name each side, a stat bar lands on the finished result.
 - Best for: renovations, home staging, beauty and retouch, product upgrades.
@@ -727,6 +788,7 @@ revealing the after, swings back and settles, big label chips name each side, a 
 - Prompt: `Titles: BEFORE-AFTER-SPLIT - two takes of one camera move, a white divider with a round handle sweeps and settles, big before/after label chips, a stat bar on the finished result.`
 
 ### TIMELINE-HISTORY
+- Recipe (authoritative): `references/styles/60-TIMELINE-HISTORY.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 The documentary history timeline: a rule with minor ticks draws across the lower third, a playhead travels it, nodes pop as it
 arrives, a big year counts up (odometer), captions rise above the nodes, and an archival sepia grade warms into full colour at the present.
 - Best for: heritage and history films, company milestones, city stories.
@@ -737,6 +799,7 @@ arrives, a big year counts up (odometer), captions rise above the nodes, and an 
 - Prompt: `Titles: TIMELINE-HISTORY - ruled timeline with minor ticks, travelling playhead, nodes pop and captions rise, big year odometer, sepia archival grade warming into colour at the present.`
 
 ### LISTING-SPECS
+- Recipe (authoritative): `references/styles/61-LISTING-SPECS.md`. The full build doc, with numbers taken from the code; where this summary differs, the recipe wins.
 The real-estate listing package: status pill, property title and an address rule, tracked pins with leader labels on the house and
 its features, a glass spec bar whose cells stagger in with line icons and count-up numbers, and an asking price that counts up.
 - Best for: property listings, developer promos, rentals, hospitality.

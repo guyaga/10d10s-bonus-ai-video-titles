@@ -37,7 +37,7 @@ The sample is an EXAMPLE. The user supplies their own footage and content; this 
 ## Typography
 - Latin: Manrope 700 title/card/toast, Manrope 500 app name (caps, +.04em), time and body.
 - Hebrew: `pair: "secular"` (default): Secular One throughout, RTL, no caps. Percentages and the ring label stay LTR.
-- Glyph lesson: the icon, ✓ and ₪ must exist in the chosen font. None of Suez One / Karantina / Secular One has ₪ or ✓: write amounts as "240 ש״ח"; the kit draws the toast check as an inline SVG path, not a character. Use a Hebrew letter or digits as the icon.
+- Glyph lesson: the icon, ✓ and ₪ must exist in the chosen font. None of the three has ✓, and Suez One / Secular One draw ₪ as a stylised "שח": write amounts as "240 ש״ח"; the kit draws the toast check as an inline SVG path, not a character. Use a Hebrew letter or digits as the icon.
 - Maximum copy: title ≈ 28 characters, body ≈ 40 (one line looks right; two lines push the stack), toast ≈ 24.
 
 ## Colour and surface

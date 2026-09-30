@@ -36,7 +36,7 @@ The reveal is a list of keyframes `moves` = [[time, position], …]; position 0.
 ## Typography
 - Latin: Oswald 700 chips (84 px, +.04em), Manrope 500 stat (36 px).
 - Hebrew: `pair: "karantina"` (default) = Karantina 700 chips "לפני" / "אחרי", Secular One stat. By default the AFTER reveals from the reading-start side (right in Hebrew, left in English).
-- Currency: none of Suez One / Karantina / Secular One has ₪: write "186,000 ש״ח". (The builder's docstring example still shows "₪"; don't copy it.)
+- Currency: Suez One / Secular One draw ₪ as a stylised "שח": write "186,000 ש״ח". (The builder's docstring example still shows "₪"; don't copy it.)
 - Maximum copy: chips ≤ 8 characters, stat ≈ 50 characters.
 
 ## Colour and surface
