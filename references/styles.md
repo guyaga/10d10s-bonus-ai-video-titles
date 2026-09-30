@@ -4,12 +4,14 @@ Every style below was built and rendered (source listed). Previews live in `cata
 `catalog/index.html` to browse them. The user picks by **ID**; you build from the entry.
 
 How to read an entry
-- **Build** says which route runs it. All 22 are runnable from the skill:
-  - `run_style` = parametrised builder: `python scripts/run_style.py <ID> --spec spec.json` (7 styles; copy
-    `examples/<id>/spec.json`; every key is documented at the top of `scripts/styles/<module>.py`).
-  - `adkit` = declarative elements in a spec: `python scripts/run_ad.py <AD> --spec spec.py` (7 styles).
+- **Build** says which route runs it. 27 of the 29 run from the skill (STICKER-POP and HUD-CLEAN through the
+  STOMP-ESCORT and HUD-HELMET builders); CYBER-DOSSIER and ARRIVAL-CARD are still reference recipes
+  (`references/recipes/legacy_shots.py` B1 / A2) to port into a spec. Routes:
+  - `run_style` = parametrised builder: `python scripts/run_style.py <ID> --spec spec.json` (STOMP-ESCORT, COUNTDOWN-CTA, HUD-HELMET,
+    SCIFI-TARGETING, MAP-FLYOVER, CAMPUS-AR, SPEED-STAT; copy `examples/<id>/spec.json`; every key is documented at the top of `scripts/styles/<module>.py`).
+  - `adkit` = declarative elements in a spec: `python scripts/run_ad.py <AD> --spec spec.py`.
   - `bespoke` = a run_ad spec whose look lives in the `html_front` / `html_behind` / `css` / `js` / `fonts` / `assets`
-    hooks (8 styles). The recipe files in `references/recipes/bespoke/` are the originals: they run once their media
+    hooks. The recipe files in `references/recipes/bespoke/` are the originals: they run once their media
     (clip, track, matte, VO, data files) is in place, but a new subject means rewriting them, not swapping the text.
     Only `examples/E8_tower_bespoke.py` ships with its data files.
 - **Prompt** is the one line a user pastes. Swap the brand colour and fonts freely; keep the motion recipe.
@@ -20,6 +22,26 @@ Two rules from the field:
    subject's own world: what does this product's industry print, measure, stamp or display?
 2. **Premium beats loud.** A single accent colour. Multi-colour comic pop (yellow/pink/cyan bursts) was built and
    rejected as childish; it is still in adkit (`theme` flag `pop`) but do not offer it.
+
+
+## Plate contracts
+
+Every style also has a **plate contract** in `references/plates.json`: what the AI video must contain for the style to
+work. This skill is post only; the contract is what a generator (ai-ad-studio) plans the shoot backwards from.
+- `take` one-take | cuts-ok | cut-list, `max_cuts`, `duration_s` [min, max], `aspect` (the kit renders 1920x1080, so 16:9)
+- `subject`, `framing`, `camera`: what must be in frame and how it is shot
+- `negative_space` {side, min_frac}: the free fraction of frame width (left/right/both) or height (top/bottom) the titles need
+- `separation`: the style needs a matte (text behind the subject); `track`: what must be trackable; `beats`: lands on a music grid
+- `text_in_frame`: always false. `seedance_lines`: 2-4 lines to paste into a Seedance 2.5 prompt that enforce the contract
+- `gate` {max_cuts, min_track_coverage, min_free_margin}: plate-checker thresholds. Cuts: count hard cuts with
+  ffmpeg `select='gt(scene,0.15)'` (0.35 and 0.25 both missed a real cut in the football plate; 0.15 caught every
+  cut with no false ones on the one-takes). A match cut that keeps the colours (the first interior plate) scores
+  below any threshold: for one-take styles also ask Gemini "is this one unbroken take?". Coverage: fraction of frames vtrack finds the
+  first `track` object (for cut-list styles, over the whole take). Free margin: the minimum over the take of the free
+  frame fraction on the `negative_space` side of that object's box.
+Numbers are derived from the plate behind each style's source render (`source` names it): durations and cuts as
+measured, free margins and coverage from its vtrack file, rounded down to leave room. Regenerate with
+`python references/build_plates.py`. Each style below carries a one-line `Plate:` summary.
 
 ---
 
@@ -35,6 +57,7 @@ index tag with a rule, and a white sticker card (thumbnail, italic Bodoni name, 
   thump; tag wipes in, card drops 0.3 s later; exit blur-out. Tracking: vtrack box per garment, anchor + side offset.
 - Build: run_style `STOMP-ESCORT` (`scripts/styles/runway.py`; example `examples/stomp-escort/`, runnable demo `examples/demo/`).
 - Source: `D2_runway_full_countdown_30s.mp4` (and `D1_stomp_sticker_v2.mp4`, same family).
+- Plate: one take, no cuts, 10-30 s · full body, centred, walks toward camera · 30% free both sides · locked-off or very slow push-in (or a dolly back matching her pace) · track: subject full body · music beat grid.
 - Prompt: `Titles: STOMP-ESCORT - Anton words escorting each tracked item, red index tags + white price stickers, accent #E63B2E, 120 BPM grid.`
 
 ### STOMP-BEHIND
@@ -45,6 +68,7 @@ Same words, but set **between the plate and a matted subject**, so the model wal
   (`npx hyperframes remove-background`). Keep words huge (500-700 px) so the occlusion reads.
 - Build: adkit `stomp {behind:true}` or `kine {behind:true}`.
 - Source: `D1_stomp_behind_v2.mp4`.
+- Plate: one take, no cuts, 8-30 s · full body, centred, walks toward camera; plain wall or backdrop behind the head and shoulders · 30% free both sides · slow dolly back matching the walk, or locked-off · track: subject full body · matte (subject separable), music beat grid.
 - Prompt: `Titles: STOMP-BEHIND - giant Anton words behind the subject (matte), white with red accent, stomp on the beat.`
 
 ### GLASS-CALLOUT
@@ -54,6 +78,7 @@ Transparent outlined words (translucent fill + stroke) and smoked-glass price ca
 - Motion: same beat grid, softer (no hard shadow), cards blur in.
 - Build: adkit `stomp {color:"rgba(17,17,17,.38)", stroke:"5px #fff"}` + `tag` (glass panel).
 - Source: `D1_stomp_glass_v2.mp4`.
+- Plate: one take, no cuts, 8-30 s · full body, centred, walks toward camera · 30% free both sides · slow dolly back matching the walk, or locked-off · track: subject full body, each advertised item · music beat grid.
 - Prompt: `Titles: GLASS-CALLOUT - transparent outlined Anton words + smoked-glass price cards, restrained, no hard shadows.`
 
 ### COUNTDOWN-CTA
@@ -65,6 +90,7 @@ button with a hard offset shadow.
 - Motion: elements slam in staggered 0.12 s; digits punch each second (scale 1.25 + red flash); rule shrinks linearly.
 - Build: run_style `COUNTDOWN-CTA` (`scripts/styles/runway.py`, `countdown` block; example `examples/countdown-cta/`).
 - Source: `D3_look08_runway_countdown_30s.mp4` (also `D2_...`).
+- Plate: one take, no cuts, 20-30 s · full body, centred; the last 15 s she stands in the centre facing camera · 30% free both sides · locked-off with an extremely slow push-in · track: subject full body · music beat grid.
 - Prompt: `Titles: COUNTDOWN-CTA - flash-sale stack with 15 s live countdown, struck total + sale price, SHOP NOW, accent #E63B2E.`
 
 ### KINETIC-HE
@@ -75,6 +101,7 @@ squash, one word in the accent colour, one outlined, hits shake the frame.
 - Motion: word time = the VO word onset (`word_times.py`); `kine` lines; `hit:true` = shake + thump.
 - Build: adkit `kine` (+ `ring`, `callout`, `counter`, `chip`, `lockup`), theme `he_bold`.
 - Source: `E6_guyaga_aero_sneaker_HE.mp4`.
+- Plate: cuts OK (max 5), 12-24 s · subject centred, room above it · 25% free top · slow orbit or slow push; energy from subject motion, not camera · track: hero object.
 - Prompt: `Titles: KINETIC-HE - Hebrew voice-synced word stomps, Rubik 900 + Karantina, one accent word per line, hit shakes.`
 
 ### TAPE-HE
@@ -85,6 +112,7 @@ rotated, hard drop shadow; used where plain Hebrew text over footage was unreada
 - Motion: strip clip-path wipe 0.28 s, text pops 0.12 s later; optional bottom scrim.
 - Build: adkit `tape` (+ `kine`, `counter`), theme `he_bold`.
 - Source: `E4_firelink_through_the_smoke_HK.mp4` (all `_HK` renders).
+- Plate: cuts OK (max 5), 12-24 s · subject off-centre or centred with a calm lower third · 25% free bottom · steady; cut-blocks welcome · track: subject per shot (optional, for tags).
 - Prompt: `Titles: TAPE-HE - Hebrew slogans on rotated highlight-tape strips (ink + accent), RTL wipe + slam, readable over anything.`
 
 ### KINETIC-KARAOKE
@@ -96,6 +124,7 @@ punch-zooms on the plate.
   its last word; `punch` zooms 1.1 -> 1 on key beats.
 - Build: adkit `captions` (words from `word_times.py`) + `punch` + `kine`/`tape`.
 - Source: `E9_lumen_lens_smart_glasses_SX.mp4` (all `_SX` renders).
+- Plate: cuts OK (max 5), 12-24 s · subject in the upper two thirds · 22% free bottom · stabilised; punch-zooms are added in post · no tracking.
 - Prompt: `Titles: KINETIC-KARAOKE - voice-synced karaoke captions (accent pill on the spoken word) + punch zooms + tape slogans.`
 
 ### FLASH-CARD
@@ -105,6 +134,7 @@ A 4-frame full-screen word card (accent background, huge Karantina word) cut int
 - Motion: on for `dur` 0.16 s, scale 1.25 -> 1. Use once or twice per piece, never more.
 - Build: adkit `flash`.
 - Source: `E3_aura_night_drive_SX.mp4` ("AURA!").
+- Plate: cuts OK (max 6), 6-30 s · any · no free space needed · any · no tracking · music beat grid.
 - Prompt: `Titles: FLASH-CARD - one 4-frame full-screen word card on the biggest beat, accent background.`
 
 ### SPEED-STAT
@@ -115,6 +145,7 @@ riding the tracked ball, then a giant red GOAL with a brand lockup.
 - Motion: counter eases 0 -> value while following the tracked object; GOAL 680 px stomp with shake.
 - Build: run_style `SPEED-STAT` (`scripts/styles/speedstat.py`; example `examples/speed-stat/`).
 - Source: `E1_guyaga_strike_soccer.mp4`.
+- Plate: planned cut list (max 4), 12-18 s · one idea per shot: wide player, extreme close-up on the contact, the object crossing the frame, hero wide · 30% free left side · energy from subject speed and speed ramps · track: athlete, the object (ball), the contact point (boot) · matte (subject separable).
 - Prompt: `Titles: SPEED-STAT - broadcast stat hits: huge Anton numbers, live counter on the tracked ball, giant GOAL finish.`
 
 ### PRESIDENTIAL-SERIF
@@ -125,6 +156,7 @@ a percent counter, few titles. Built after the comic version was rejected as chi
 - Motion: `soft` = opacity + 1.12 -> 1 + small rise over 0.6 s, tiny shake; long holds.
 - Build: adkit theme `sparta` (premium) with `stomp`, `tag`, `counter`, `lockup`, `meter`.
 - Source: `E2_sparta_spartan_vs_machine.mp4`.
+- Plate: planned cut list (max 6), 18-30 s · hero framed off-centre, sky or smoke above · 25% free top · cinematic, grounded; push-ins and tracking · track: hero, opponent.
 - Prompt: `Titles: PRESIDENTIAL-SERIF - few, big DM Serif words that ease in with an accent underline, glass tags, no comic colours.`
 
 ### STICKER-POP
@@ -136,6 +168,7 @@ price sticker. The loudest of the runway family that still reads premium.
 - Build: reference recipe `references/recipes/legacy_shots.py` → `D1S` (the sticker shot). Closest runnable:
   `run_style.py STOMP-ESCORT` with the word style set to white fill + ink stroke.
 - Source: `D1_stomp_sticker_v2.mp4` (v1: `D1_stomp_sticker.mp4`).
+- Plate: one take, no cuts, 8-30 s · full body, centred, walks toward camera · 30% free both sides · slow dolly back matching the walk, or locked-off · track: subject full body · music beat grid.
 - Prompt: `Titles: STICKER-POP - heavy white Anton sticker words with a hard ink shadow, red index tag, white price sticker, stomp on the beat.`
 
 ### STOMP-SX
@@ -146,6 +179,7 @@ secondary copy, and a closing slogan with one accent word. Busier and faster tha
 - Motion: word-synced `kine` stomps (blur + scale + squash), hit shakes, `tape` strips wiping RTL.
 - Build: adkit via `run_ad.py` with an SX spec. `examples/E6_sneaker_sx.py` is the template.
 - Source: `E10_ember_chefs_pass_SX.mp4` (also E3, E5, E6, E9 `_SX`).
+- Plate: planned cut list (max 5), 12-20 s · subject large, upper quarter free · 25% free top · energy from cuts and speed ramps · track: hero object per shot (optional).
 - Prompt: `Titles: STOMP-SX - dynamic Hebrew social stomp, coloured Karantina headline words, ink tape lines, closing slogan with one accent word.`
 
 ### TRACKED-TAGS
@@ -157,6 +191,7 @@ The original version of every ad before the Hebrew and bespoke passes.
 - Build: adkit `tag` / `callout` / `counter` elements via `run_ad.py`. Start from `examples/E6_sneaker_sx.py`
   and keep only `tag`, `callout` and `counter` (drop `kine`, `tape` and `flash`).
 - Source: `E6_guyaga_aero_sneaker.mp4` (also the plain E4, E5, E7, E8, E9, E10 renders).
+- Plate: cuts OK (max 4), 10-20 s · subject centred at medium size · 20% free both sides · slow orbit, slow glide or locked; no fast moves · track: each labelled object or part.
 - Prompt: `Titles: TRACKED-TAGS - numbered glass tags tracked to each object, one stat panel, price total, English, restrained motion.`
 
 ### COMIC-POP
@@ -165,6 +200,7 @@ Multi-colour comic burst words (yellow, pink, cyan) with a starburst backing on 
   Offer it only for kids, gaming or deliberately playful brands, and only on one or two beats.
 - Build: adkit theme flag `pop` on the big `stomp` words.
 - Source: `E3_aura_night_drive.mp4` ("BRAKING").
+- Plate: cuts OK (max 5), 10-20 s · subject centred, upper area free on the beat shots · 25% free top · any smooth move · no tracking · music beat grid.
 - Prompt: `Titles: COMIC-POP - multi-colour comic burst words on the biggest beats only, starburst backing, keep everything else calm.`
 
 ## B. HUD / interface family
@@ -178,6 +214,7 @@ designed voice) with a voice meter driven by the real audio envelope.
 - Motion: rings rotate continuously (seek-safe: angle = f(t)); alert = red wash + panel shake; perspective tilt.
 - Build: run_style `HUD-HELMET` (`scripts/styles/helmet.py`, `language` he/en, optional `voice` file drives the meter; example `examples/hud-helmet/`).
 - Source: `B4V_helmet_ora_voice_24s.mp4`.
+- Plate: one take, no cuts, 15-30 s · face close-up, eyes steady and centred, visor edges in frame · 22% free both sides · locked-off with a very slow continuous push-in · track: face, eyes.
 - Prompt: `Titles: HUD-HELMET - holographic visor HUD, rotating rings + tick scales, cyan with red alerts, AI voice with live meter, Hebrew.`
 
 ### SCIFI-TARGETING
@@ -188,6 +225,7 @@ then TARGETS NEUTRALIZED.
 - Motion: box brackets snap to tracked boxes (`data-box`), tags follow, banners wipe.
 - Build: run_style `SCIFI-TARGETING` (`scripts/styles/targeting.py`; example `examples/scifi-targeting/`).
 - Source: `B3_final.mp4`.
+- Plate: one take, no cuts, 6-12 s · POV; targets spread across the middle, weapon in a lower corner · 25% free right side · first-person, subtle natural head movement; one short blast shake allowed · track: each target, weapon/launcher.
 - Prompt: `Titles: SCIFI-TARGETING - tracked target brackets + ID tags, HOSTILE LOCK banner, amber military HUD.`
 
 ### ROAD-HUD
@@ -199,6 +237,7 @@ voice arc, an AEB pictogram flash, and an end line written as light on the wet r
 - Motion: slow fades and projected-light reveals; no stomps, no shakes.
 - Build: bespoke (`references/recipes/bespoke/E3_car_bespoke.py`).
 - Source: `E3_aura_night_drive_BESPOKE.mp4`.
+- Plate: planned cut list (max 4), 15-20 s · windscreen POV with the road's vanishing point visible; the hazard enters from one side · 30% free bottom · smooth, steady; no shake · track: hazard (cyclist/pedestrian), driver, car.
 - Prompt: `Titles: ROAD-HUD - AR head-up display projected on the road in 3D perspective, speed ring + hazard contour, calm fades.`
 
 ### THERMAL-RESCUE
@@ -210,6 +249,7 @@ amber OSD text; the camera switches off to natural colour at the rescue.
 - Motion: everything pulses on the heartbeat; switch-off bloom at the resolve.
 - Build: bespoke (`E4_fire_bespoke.py`; SVG colour-table filter on the plate).
 - Source: `E4_firelink_through_the_smoke_BESPOKE.mp4`.
+- Plate: planned cut list (max 5), 15-24 s · mid shots and close-ups; the searched object (door, person) clearly readable as a shape · no free space needed · steady handheld feel, no shake · track: searcher, door or target, found person.
 - Prompt: `Titles: THERMAL-RESCUE - the frame is a thermal camera: blue-grey map, white-hot fire, gauge dial + ECG, amber OSD voice.`
 
 ### SPEC-SCAN
@@ -221,6 +261,7 @@ assembly with numbered balloons, parts re-rendered as mesh / FEA heat maps maske
 - Motion: scan wipes, digit flicker-and-lock, no thump/shake.
 - Build: bespoke (`E6_sneaker_bespoke.py`, SVG filters `#fWire` / `#fHeat` over the matte).
 - Source: `E6_guyaga_aero_sneaker_BESPOKE.mp4`.
+- Plate: one take, no cuts, 10-18 s · product centred, fully in frame · 20% free both sides · slow smooth orbit · track: product, each layer / part · matte (subject separable).
 - Prompt: `Titles: SPEC-SCAN - lab/CAD language: wireframe scan-in, exploded parts with numbered balloons, FEA heat map, 7-segment stats.`
 
 ### MAP-FLYOVER
@@ -231,6 +272,7 @@ a distance counter runs, then a landing card on arrival.
 - Motion: pins ride `track.py` (planar homography) points; route draws with stroke-dashoffset.
 - Build: run_style `MAP-FLYOVER` (`scripts/styles/mapflyover.py`; points from `track.py`; example `examples/map-flyover/`).
 - Source: `TEST_A_map_to_ono.mp4`.
+- Plate: one take, no cuts, 8-12 s · high aerial, landmarks spread across the frame, horizon or sea as a fixed reference · 30% free left side · smooth drone, constant slow forward push and slight descent; no rotation · track: landmark points (planar, track.py).
 - Prompt: `Titles: MAP-FLYOVER - route drawing over a tracked aerial, pinned bilingual place labels, distance counter, arrival card.`
 
 ### CAMPUS-AR
@@ -241,6 +283,7 @@ Skylight), a voice waveform, a person tag, an end logo card.
 - Motion: tags clip-wipe in, ride tracked anchors, fade on exit.
 - Build: run_style `CAMPUS-AR` (`scripts/styles/campus.py`; example `examples/campus-ar/`).
 - Source: `TEST_C_campus_ar.mp4`.
+- Plate: one take, no cuts, 5-10 s · medium-wide, person centred, walking toward camera · 25% free both sides · slow steady dolly backwards at chest height matching the walk · track: person/head, each labelled place.
 - Prompt: `Titles: CAMPUS-AR - small bilingual AR tags pinned to real places along a walk, glass panels, waveform for voice.`
 
 ### HUD-CLEAN
@@ -250,6 +293,7 @@ The first, quieter visor HUD: a thin vitals column, a heading tick scale, and on
 - Build: `run_style.py HUD-HELMET` with the reticle, radar and voice blocks left out of the spec (every block is optional).
   The original recipe is `legacy_shots.py` → `B4` (Hebrew) / `B2` (English).
 - Source: `B4_helmet_hebrew_24s.mp4` (also `B2_final.mp4`, `TEST_B_scifi_pilot.mp4`).
+- Plate: one take, no cuts, 6-30 s · face close-up, eyes steady · 22% free both sides · locked-off with a very slight slow push-in · track: face, eyes.
 - Prompt: `Titles: HUD-CLEAN - quiet visor HUD: thin vitals column, heading tick scale, one red alert panel, no rings.`
 
 ### CYBER-DOSSIER
@@ -258,6 +302,7 @@ A character intro as a city dossier: a bilingual location card, a pilot ID panel
 - Fonts: JetBrains Mono + Assistant. Palette: amber #ffb547 on near-black glass.
 - Build: reference recipe `legacy_shots.py` → `B1`.
 - Source: `B1_final.mp4`.
+- Plate: one take, no cuts, 5-10 s · full body, centred, walks toward camera · 35% free both sides · low slow dolly backwards matching the walk · track: character, head.
 - Prompt: `Titles: CYBER-DOSSIER - character intro dossier: bilingual location card, pilot ID panel, suit status bars, amber mono type.`
 
 ### ARRIVAL-CARD
@@ -266,6 +311,7 @@ A destination lower-third: the place name in two languages, coordinates and a di
 - Fonts: Assistant + JetBrains Mono. Palette: green #9bd14a, dark glass, off-white.
 - Build: reference recipe `legacy_shots.py` → `A2`. It pairs with `run_style.py MAP-FLYOVER` as the next shot.
 - Source: `A2_final.mp4`.
+- Plate: one take, no cuts, 5-10 s · person walks toward camera, destination facade behind with a blank area for the logo · 35% free left side · slow steady dolly backwards at chest height matching the walk · track: head, blank facade area.
 - Prompt: `Titles: ARRIVAL-CARD - destination lower-third, bilingual place name, coordinates + distance line, green ARRIVED chip.`
 
 ## C. Editorial / crafted-world family (fully bespoke)
@@ -279,6 +325,7 @@ four-point glints on the metal, thin gold-foil words, an embossed black end card
 - Motion: slow fades only; glints computed from t.
 - Build: bespoke (`E7_gold_bespoke.py` + `E7_gold_bespoke_loupe.py` for the loupe crops).
 - Source: `E7_aurum_gold_on_velvet_BESPOKE.mp4`.
+- Plate: cuts OK (max 2), 10-15 s · macro; the featured piece on one side of the frame · 40% free right side · slow macro glide · track: each piece (watch, bracelet, rings).
 - Prompt: `Titles: HALLMARK-LUXE - spotlight on velvet black, a travelling jeweller's loupe, gold hallmark price plates, foil type.`
 
 ### ARCH-DRAWING
@@ -290,6 +337,7 @@ estate-agent floor plan and a brass building plaque.
 - Motion: sheet slides, line draws, wash fills tied to tracked slabs.
 - Build: bespoke (`E8_tower_bespoke.py`; runnable example in `examples/`).
 - Source: `E8_seaview24_tower_arrival_BESPOKE.mp4`.
+- Plate: one take, no cuts, 12-20 s · building on the right half, sky and neighbourhood on the left · 30% free left side · smooth vertical drone rise, constant speed · track: building, floor slabs / balconies.
 - Prompt: `Titles: ARCH-DRAWING - vellum + sepia elevation sheets over the footage, floors fill with wash, hand-lettered lines, floor plan end.`
 
 ### MAGAZINE-EDITORIAL
@@ -301,6 +349,7 @@ folds open for the pull quote and folds in for the total.
 - Motion: soft fades, slides, page folds only.
 - Build: bespoke (`E5_home_bespoke.py`).
 - Source: `E5_luma_drone_through_the_home_BESPOKE.mp4`.
+- Plate: one take, no cuts, 15-20 s · wide interior, pieces readable, camera travels through the room · 20% free left side · smooth stabilised FPV glide, constant speed · track: each furniture piece.
 - Prompt: `Titles: MAGAZINE-EDITORIAL - the video as a printed spread: masthead, numbered product credits, price column, red-pencil notes, page folds.`
 
 ### KITCHEN-TICKET
@@ -313,6 +362,7 @@ the plate, and the ending is the ticket torn, spiked and stamped DONE.
 - Motion: print-in, smoke condense (SVG turbulence), stamp slam at the end only.
 - Build: bespoke (`E10_chef_bespoke.py`).
 - Source: `E10_ember_chefs_pass_BESPOKE.mp4`.
+- Plate: planned cut list (max 5), 12-18 s · macro, subject centre-left · 30% free right side · energy from cuts and speed ramps · track: the dish/ingredient per shot.
 - Prompt: `Titles: KITCHEN-TICKET - thermal order ticket printing on a steel rail, smoke-formed words, flame heat gauge, stamped finish.`
 
 ### LENS-POSTCARD
@@ -324,6 +374,7 @@ franked "translated", an airmail postcard for the landmark, a printed receipt, a
 - Motion: paper pops, stamp franking, dotted map line.
 - Build: bespoke (`E9_glasses_bespoke.py`).
 - Source: `E9_lumen_lens_smart_glasses_BESPOKE.mp4`.
+- Plate: one take, no cuts, 15-20 s · POV at eye level, gentle head motion · 20% free bottom · natural first-person walk, stabilised · track: sign, landmark, person/cup.
 - Prompt: `Titles: LENS-POSTCARD - seen through a glasses lens: stamp mascot speech bubbles, translated sign, airmail postcards, receipt.`
 
 ---

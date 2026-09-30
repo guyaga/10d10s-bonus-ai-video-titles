@@ -1,6 +1,6 @@
 ---
 name: ai-video-titles
-description: After-Effects-style titles, HUD and motion graphics ON TOP of AI-generated video (Seedance 2.5 recommended) - stomp/social titles that ride a tracked subject, text behind the subject, Iron-Man-style HUDs, broadcast stat counters, Hebrew kinetic and tape titles, karaoke captions, flash-sale countdown CTAs, and fully bespoke crafted worlds (thermal camera, jeweller's loupe, architect's drawing, magazine spread, kitchen ticket). Frame-by-frame tracking (Gemini + optical flow), beat/voice sync, SFX + music + AI voice, HyperFrames render, Gemini QA. Ships with a visual style catalog (catalog/index.html) of 29 styles, each with an ID and a copy-paste prompt. Use when the user wants titles, callouts, HUD, lower-thirds, captions, kinetic typography, motion graphics or "AE-style" text over an AI video / Seedance clip, a shoppable or product-callout video, a Hebrew social ad with big titles, or asks which title style to use.
+description: After-Effects-style titles, HUD and motion graphics ON TOP of AI-generated video (Seedance 2.5 recommended) - stomp/social titles that ride a tracked subject, text behind the subject, Iron-Man-style HUDs, broadcast stat counters, Hebrew kinetic and tape titles, karaoke captions, flash-sale countdown CTAs, and fully bespoke crafted worlds (thermal camera, jeweller's loupe, architect's drawing, magazine spread, kitchen ticket). Frame-by-frame tracking (Gemini + optical flow), beat/voice sync, SFX + music + AI voice, HyperFrames render, Gemini QA. Ships with a visual style catalog of 29 styles, each with an ID, a copy-paste prompt and a plate contract (references/plates.json: how the video must be shot for that style). Post only: a clip goes in; to generate the video too, use ai-ad-studio. Use when the user wants titles, callouts, HUD, lower-thirds, captions, kinetic typography, motion graphics or "AE-style" text over an AI video / Seedance clip, a shoppable or product-callout video, a Hebrew social ad with big titles, or asks which title style to use.
 ---
 
 # AI Video Titles
@@ -23,18 +23,29 @@ doctor       python $SKILL/scripts/doctor.py  checks deps/keys/sibling skills, p
 Everything runs from a **project folder** (cwd, or `--root DIR`, or env `TITLES_ROOT`). Layout is in `scripts/paths.py`:
 `clips/ tracks/ mattes/ specs/ shared/sfx/ voice/ videos/ renders/`.
 
-Keys: `GEMINI_API_KEY` (tracking, TTS, QA), `ELEVEN_API_KEY` (SFX + music), a Seedance route (`KIE_API_KEY` via the
-seedance-make-video skill). Tools: Python 3.10+ (`pip install -r requirements.txt`), ffmpeg, Node 18+ (npx hyperframes).
+Keys: `GEMINI_API_KEY` (tracking, TTS, QA), `ELEVEN_API_KEY` (music + new SFX; a sound library ships with the kit).
+No video-generation key: generation belongs to ai-ad-studio. Tools: Python 3.10+ (`pip install -r requirements.txt`), ffmpeg, Node 18+ (npx hyperframes).
 First run on a new machine: `python $SKILL/scripts/doctor.py`. To show the user a result in minutes with no keys and
 no Seedance spend: `cd $SKILL/examples/demo && python ../../scripts/run_style.py STOMP-ESCORT --spec spec.json --render`.
 
 ---
 
+## Boundaries
+
+- **Post only.** A clip goes in, a titled video comes out. This skill owns the style knowledge (the catalog, the
+  builders, and each style's plate contract in `references/plates.json`). It does not generate video.
+- **To generate video and title it end to end, use ai-ad-studio.** It picks the style, reads `references/plates.json`
+  to plan the shoot backwards from it (take, framing, free space, matte, tracking, Seedance lines), generates through
+  seedance-2-prompt-engineer + seedance-make-video, gates the plate, then calls this skill for the titles.
+- A plate that breaks its style's contract (a cut in a one-take style, no room for the titles, text in frame) is sent
+  back for regeneration, not fixed in post.
+
 ## STEP 0 - Pick the style with the user (always first)
 
 1. Open or describe the catalog. Ask with **AskUserQuestion**: 2-4 style IDs that fit the subject, the first marked
    "(Recommended)", each with its one-line description. Users can also paste a catalog prompt line
-   (`Titles: STOMP-ESCORT - ...`). Map subject -> family:
+   (`Titles: STOMP-ESCORT - ...`). If a clip already exists, only offer styles whose plate contract it can meet.
+   Map subject -> family:
    - fashion / drops / e-commerce -> STOMP-ESCORT, STOMP-BEHIND, GLASS-CALLOUT, COUNTDOWN-CTA
    - Hebrew social ad -> KINETIC-HE, TAPE-HE, KINETIC-KARAOKE, FLASH-CARD
    - sport / measurable action -> SPEED-STAT; epic brand film -> PRESIDENTIAL-SERIF
@@ -48,21 +59,19 @@ no Seedance spend: `cd $SKILL/examples/demo && python ../../scripts/run_style.py
 3. Decide **the ending first** (the last title / CTA) and the **device** (the one structural idea). For multi-ad
    batches write an `EDIT-DOCTRINE.md` with the edit-director skill (example in `references/recipes/`).
 
-## STEP 1 - Generate a plate built for titles (Seedance 2.5)
+## STEP 1 - Check the plate against the style's contract
 
-Use **seedance-2-prompt-engineer** (Mode A director schema for film beats, Mode C bracketed cut-blocks for action)
-to write the prompt and **seedance-make-video** (`--v 2.5`, kie) to generate. Title-specific rules:
-- **Clean plate**: "no text, no logos, no signage, no UI at any time" in POSITIVE LOCKS. Text in the video fights yours.
-- **Reserve negative space** where titles go ("the model stays in the centre third; the upper third is plain wall").
-- **One continuous take** when anything must be tracked across the shot ("ONE SINGLE UNBROKEN TAKE, no cuts"); if the
-  model still cuts, regenerate or design the cut in (a cut breaks tracking).
-- **Separable hero** for text-behind-subject: solid silhouette against a simpler background, no motion blur smear.
-- **Event budgets** for anything the titles count ("exactly two shield blocks", "one kick").
-- **Silent-shoot for VO pieces**: "no music, no voices" - music, VO and SFX are added in post.
-- kie contract (Seedance 2.5): `first_frame` needs `aspect_ratio: "adaptive"`; first/last frames and reference images
-  are mutually exclusive -> put the opening still as the FIRST reference ("plate-as-lead-reference");
-  `nsfw_checker: false` lets real faces through; 720p = $0.315/s (~63 credits/s, 30 s ~ 1,890 credits); 4-30 s per take.
-- Start frames: GPT Image 2.5 (gpt2-image skill, `--model sunburst` for identity edits) with the same no-text rule.
+The clip comes in from outside (the user, or ai-ad-studio). Read the chosen style's entry in
+`references/plates.json` and check the clip before any post work:
+- **Cuts**: `ffmpeg -i clip.mp4 -vf "select='gt(scene,0.15)',showinfo" -an -f null -` and count `pts_time` hits
+  against `gate.max_cuts`. For one-take styles also ask Gemini "is this one unbroken take?" (match cuts score low).
+- **Duration / aspect**: inside `duration_s`; the kit renders 1920x1080, so a 9:16 clip needs reframing first.
+- **Tracking + space**: after STEP 2, the first `track` object must be found on at least `gate.min_track_coverage`
+  of frames, with at least `gate.min_free_margin` of the frame free on the `negative_space` side.
+- **Clean frame**: no readable text, logos or UI in the plate (`text_in_frame` is always false).
+- **Matte**: if `separation` is true, the subject must cut out cleanly (STEP 2 matte).
+If the clip fails, say which rule and how much, and recommend regenerating with the contract's `seedance_lines`
+through ai-ad-studio. Do not paper over a failed plate with titles.
 
 ## STEP 2 - Analyse the plate frame by frame
 

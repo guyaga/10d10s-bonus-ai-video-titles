@@ -29,8 +29,13 @@ Needs Python 3.10+, ffmpeg on PATH and Node 18+ (HyperFrames runs through npx, p
 |---|---|
 | `GEMINI_API_KEY` | tracking objects in your own clips, AI voiceover, QA of a render |
 | `ELEVEN_API_KEY` (or `ELEVENLABS_API_KEY`) | music beds and new sound effects (a UI/impact sound library ships with the kit) |
-| `KIE_API_KEY` | generating the video itself with Seedance 2.5 (seedance-make-video skill) |
-| `OPENAI_API_KEY` | start frames / product stills with GPT Image |
+
+## What this skill does and doesn't do
+
+Post only: a clip goes in, a titled video comes out. Each style has a **plate contract** in `references/plates.json`
+(take, framing, free space for the titles, matte, what must be trackable, and Seedance lines that enforce it), shown on
+every hub card as "Shoot it like this". To generate the video and title it end to end, use **ai-ad-studio**, which
+plans the Seedance shoot backwards from that contract.
 
 ## Try it in 5 minutes (no keys, no Seedance spend)
 

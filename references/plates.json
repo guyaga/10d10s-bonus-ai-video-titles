@@ -1,0 +1,982 @@
+{
+ "STOMP-ESCORT": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   10,
+   30
+  ],
+  "aspect": "16:9",
+  "subject": "one model (or product carrier) whose full body stays in frame; every advertised item visible on her",
+  "framing": "full body, centred, walks toward camera",
+  "negative_space": {
+   "side": "both",
+   "min_frac": 0.3
+  },
+  "camera": "locked-off or very slow push-in (or a dolly back matching her pace)",
+  "separation": false,
+  "track": [
+   "subject full body"
+  ],
+  "beats": true,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "CAMERA: Locked-off at the end of the runway at chest height with an extremely slow push-in. Her full body, head to boots, stays inside the frame and centred at all times. FORBIDDEN: cuts, whip-pans, zoom punches, shake.",
+   "She stays in the centre third of the frame for the whole take; the left and right thirds show only runway and audience.",
+   "POSITIVE LOCKS: Exactly one model on the runway. Every garment stays identical to the first frame. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.95,
+   "min_free_margin": 0.28
+  },
+  "source": "D2_full_runway_720p (30 s) / D1_runway_720p (10 s)"
+ },
+ "STOMP-BEHIND": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   8,
+   30
+  ],
+  "aspect": "16:9",
+  "subject": "one person with a clean, readable silhouette against a plain, evenly lit background",
+  "framing": "full body, centred, walks toward camera; plain wall or backdrop behind the head and shoulders",
+  "negative_space": {
+   "side": "both",
+   "min_frac": 0.3
+  },
+  "camera": "slow dolly back matching the walk, or locked-off",
+  "separation": true,
+  "track": [
+   "subject full body"
+  ],
+  "beats": true,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "CAMERA: Smooth steady dolly backwards at chest height matching her walking speed. Her full body, head to boots, stays inside the frame and centred at all times. FORBIDDEN: cuts, whip-pans, zoom punches, shake.",
+   "Behind her upper body there is only a plain, bright back wall: no people, no lights, no motion blur on her outline.",
+   "POSITIVE LOCKS: Exactly one model on the runway. Every garment stays identical to the first frame. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.95,
+   "min_free_margin": 0.28
+  },
+  "source": "D1_runway_720p (10 s) + matte"
+ },
+ "GLASS-CALLOUT": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   8,
+   30
+  ],
+  "aspect": "16:9",
+  "subject": "one model with every advertised item visible",
+  "framing": "full body, centred, walks toward camera",
+  "negative_space": {
+   "side": "both",
+   "min_frac": 0.3
+  },
+  "camera": "slow dolly back matching the walk, or locked-off",
+  "separation": false,
+  "track": [
+   "subject full body",
+   "each advertised item"
+  ],
+  "beats": true,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "CAMERA: Locked-off at the end of the runway at chest height with an extremely slow push-in. Her full body, head to boots, stays inside the frame and centred at all times. FORBIDDEN: cuts, whip-pans, zoom punches, shake.",
+   "She stays in the centre third; the side thirds stay calm and uncluttered.",
+   "POSITIVE LOCKS: Exactly one model on the runway. Every garment stays identical to the first frame. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.95,
+   "min_free_margin": 0.28
+  },
+  "source": "D1_runway_720p (10 s)"
+ },
+ "STICKER-POP": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   8,
+   30
+  ],
+  "aspect": "16:9",
+  "subject": "one model or product carrier, full body in frame, items visible",
+  "framing": "full body, centred, walks toward camera",
+  "negative_space": {
+   "side": "both",
+   "min_frac": 0.3
+  },
+  "camera": "slow dolly back matching the walk, or locked-off",
+  "separation": false,
+  "track": [
+   "subject full body"
+  ],
+  "beats": true,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "CAMERA: Locked-off at the end of the runway at chest height with an extremely slow push-in. Her full body, head to boots, stays inside the frame and centred at all times. FORBIDDEN: cuts, whip-pans, zoom punches, shake.",
+   "She stays in the centre third; the left and right thirds stay free.",
+   "POSITIVE LOCKS: Exactly one model on the runway. Every garment stays identical to the first frame. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.95,
+   "min_free_margin": 0.28
+  },
+  "source": "D1_runway_720p (10 s)"
+ },
+ "COUNTDOWN-CTA": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   20,
+   30
+  ],
+  "aspect": "16:9",
+  "subject": "one model: walk, one spin, then holds poses for the last 15 seconds (the countdown runs over the hold)",
+  "framing": "full body, centred; the last 15 s she stands in the centre facing camera",
+  "negative_space": {
+   "side": "both",
+   "min_frac": 0.3
+  },
+  "camera": "locked-off with an extremely slow push-in",
+  "separation": false,
+  "track": [
+   "subject full body"
+  ],
+  "beats": true,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "CAMERA: Locked-off at the end of the runway at chest height with an extremely slow push-in. Her full body, head to boots, stays inside the frame and centred at all times. FORBIDDEN: cuts, whip-pans, zoom punches, shake.",
+   "Timeline: she walks the full runway toward camera, one full spin only at 12-15s, then holds poses in the centre until the end.",
+   "POSITIVE LOCKS: Exactly one model on the runway. Every garment stays identical to the first frame. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.95,
+   "min_free_margin": 0.28
+  },
+  "source": "D2/D3 30 s runway takes"
+ },
+ "KINETIC-HE": {
+  "take": "cuts-ok",
+  "max_cuts": 5,
+  "duration_s": [
+   12,
+   24
+  ],
+  "aspect": "16:9",
+  "subject": "the product or hero, large and clear; one idea per shot",
+  "framing": "subject centred, room above it",
+  "negative_space": {
+   "side": "top",
+   "min_frac": 0.25
+  },
+  "camera": "slow orbit or slow push; energy from subject motion, not camera",
+  "separation": false,
+  "track": [
+   "hero object"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, or hard cuts only at the timecodes listed and nowhere else.",
+   "COMPOSITION: The subject stays in the centre and lower two thirds; the upper quarter of the frame is plain background (sky, wall, dark studio).",
+   "CAMERA: slow, very smooth. FORBIDDEN: whip-pans, shake. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 5,
+   "min_track_coverage": 0.6,
+   "min_free_margin": 0.2
+  },
+  "source": "E6_sneaker_720p (15 s orbit)"
+ },
+ "TAPE-HE": {
+  "take": "cuts-ok",
+  "max_cuts": 5,
+  "duration_s": [
+   12,
+   24
+  ],
+  "aspect": "16:9",
+  "subject": "any story footage; one clear subject per shot",
+  "framing": "subject off-centre or centred with a calm lower third",
+  "negative_space": {
+   "side": "bottom",
+   "min_frac": 0.25
+  },
+  "camera": "steady; cut-blocks welcome",
+  "separation": false,
+  "track": [
+   "subject per shot (optional, for tags)"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: Timestamped cut-blocks. HARD CUTS exactly at the listed timecodes and nowhere else.",
+   "COMPOSITION: Keep the lower third of every shot calm and low-detail: floor, table, dark area.",
+   "CAMERA: steady. FORBIDDEN: whip-pans, shaky zooms. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 5,
+   "min_track_coverage": 0.3,
+   "min_free_margin": 0.2
+  },
+  "source": "E4_fire_720p (20 s, 4 planned cuts)"
+ },
+ "KINETIC-KARAOKE": {
+  "take": "cuts-ok",
+  "max_cuts": 5,
+  "duration_s": [
+   12,
+   24
+  ],
+  "aspect": "16:9",
+  "subject": "any footage that carries a voiceover",
+  "framing": "subject in the upper two thirds",
+  "negative_space": {
+   "side": "bottom",
+   "min_frac": 0.22
+  },
+  "camera": "stabilised; punch-zooms are added in post",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, or hard cuts only at the listed timecodes.",
+   "COMPOSITION: Nothing important in the bottom fifth of the frame: captions sit there.",
+   "CAMERA: stabilised, gentle. FORBIDDEN: cuts elsewhere, shake. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 5,
+   "min_track_coverage": 0,
+   "min_free_margin": 0.18
+  },
+  "source": "E9_glasses_720p (18 s POV)"
+ },
+ "FLASH-CARD": {
+  "take": "cuts-ok",
+  "max_cuts": 6,
+  "duration_s": [
+   6,
+   30
+  ],
+  "aspect": "16:9",
+  "subject": "any footage; the card replaces the frame for 4 frames",
+  "framing": "any",
+  "negative_space": {
+   "side": "none",
+   "min_frac": 0
+  },
+  "camera": "any",
+  "separation": false,
+  "track": [],
+  "beats": true,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: Hard cuts allowed; mark the single biggest beat (the hit the card lands on) in the timeline.",
+   "POSITIVE LOCKS: No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 6,
+   "min_track_coverage": 0,
+   "min_free_margin": 0
+  },
+  "source": "E3_car_720p (card on the braking beat)"
+ },
+ "STOMP-SX": {
+  "take": "cut-list",
+  "max_cuts": 5,
+  "duration_s": [
+   12,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "product or food hero shots, one idea per cut",
+  "framing": "subject large, upper quarter free",
+  "negative_space": {
+   "side": "top",
+   "min_frac": 0.25
+  },
+  "camera": "energy from cuts and speed ramps",
+  "separation": false,
+  "track": [
+   "hero object per shot (optional)"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: Timestamped cut-blocks. HARD CUTS exactly at the listed timecodes and nowhere else.",
+   "COMPOSITION: The upper quarter of each shot stays plain (dark background, wall, steam).",
+   "CAMERA: energy from subject motion, cuts and speed ramps. FORBIDDEN: whip-pans, shake. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 5,
+   "min_track_coverage": 0.3,
+   "min_free_margin": 0.2
+  },
+  "source": "E10_chef_720p (15 s, 4 cuts)"
+ },
+ "TRACKED-TAGS": {
+  "take": "cuts-ok",
+  "max_cuts": 4,
+  "duration_s": [
+   10,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "the product(s) and each labelled part clearly visible and distinct",
+  "framing": "subject centred at medium size",
+  "negative_space": {
+   "side": "both",
+   "min_frac": 0.2
+  },
+  "camera": "slow orbit, slow glide or locked; no fast moves",
+  "separation": false,
+  "track": [
+   "each labelled object or part"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot preferred; if cutting, HARD CUTS only at the listed timecodes.",
+   "COMPOSITION: The product fills at most the centre 60 percent of the frame; plain background on both sides.",
+   "CAMERA: slow and very smooth. FORBIDDEN: shake, whip-pans. POSITIVE LOCKS: every labelled part stays identical and visible. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 4,
+   "min_track_coverage": 0.7,
+   "min_free_margin": 0.18
+  },
+  "source": "E6_sneaker_720p / E7_gold_720p (2 cuts)"
+ },
+ "COMIC-POP": {
+  "take": "cuts-ok",
+  "max_cuts": 5,
+  "duration_s": [
+   10,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "any action footage with one or two big beats",
+  "framing": "subject centred, upper area free on the beat shots",
+  "negative_space": {
+   "side": "top",
+   "min_frac": 0.25
+  },
+  "camera": "any smooth move",
+  "separation": false,
+  "track": [],
+  "beats": true,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: Hard cuts only at the listed timecodes.",
+   "COMPOSITION: On the big-beat shots the upper quarter of the frame is plain.",
+   "CAMERA: smooth. FORBIDDEN: shake. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 5,
+   "min_track_coverage": 0,
+   "min_free_margin": 0.2
+  },
+  "source": "E3_car_720p"
+ },
+ "SPEED-STAT": {
+  "take": "cut-list",
+  "max_cuts": 4,
+  "duration_s": [
+   12,
+   18
+  ],
+  "aspect": "16:9",
+  "subject": "a measurable action in shots: approach, macro contact, object in flight, celebration",
+  "framing": "one idea per shot: wide player, extreme close-up on the contact, the object crossing the frame, hero wide",
+  "negative_space": {
+   "side": "left",
+   "min_frac": 0.3
+  },
+  "camera": "energy from subject speed and speed ramps",
+  "separation": true,
+  "track": [
+   "athlete",
+   "the object (ball)",
+   "the contact point (boot)"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: Timestamped cut-blocks. HARD CUTS exactly at 3.0s, 8.0s and 11.0s and nowhere else.",
+   "CAMERA: energy from subject speed and speed ramps, not camera whips. FORBIDDEN: whip-pans, shaky zooms.",
+   "POSITIVE LOCKS: Exactly one ball, exactly one kick. Plain kit with no logos, badges, sponsor text or numbers. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 4,
+   "min_track_coverage": 0.4,
+   "min_free_margin": 0.25
+  },
+  "source": "E1_soccer_720p (15 s, 3 planned cuts)"
+ },
+ "PRESIDENTIAL-SERIF": {
+  "take": "cut-list",
+  "max_cuts": 6,
+  "duration_s": [
+   18,
+   30
+  ],
+  "aspect": "16:9",
+  "subject": "an epic story in shots with one hero and one opponent",
+  "framing": "hero framed off-centre, sky or smoke above",
+  "negative_space": {
+   "side": "top",
+   "min_frac": 0.25
+  },
+  "camera": "cinematic, grounded; push-ins and tracking",
+  "separation": false,
+  "track": [
+   "hero",
+   "opponent"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: Timestamped cut-blocks. HARD CUTS exactly at the listed timecodes and nowhere else.",
+   "COMPOSITION: Keep the upper quarter of the wide shots as sky, smoke or haze for the titles.",
+   "CAMERA: Cinematic, energy from subject speed and hard cuts. FORBIDDEN: whip-pans, shaky cam.",
+   "POSITIVE LOCKS: Exactly one hero and one opponent in focus. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 6,
+   "min_track_coverage": 0.5,
+   "min_free_margin": 0.2
+  },
+  "source": "E2_spartan_720p (24 s, 5 cuts)"
+ },
+ "HUD-HELMET": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   15,
+   30
+  ],
+  "aspect": "16:9",
+  "subject": "one face inside a helmet behind a clear visor",
+  "framing": "face close-up, eyes steady and centred, visor edges in frame",
+  "negative_space": {
+   "side": "both",
+   "min_frac": 0.22
+  },
+  "camera": "locked-off with a very slow continuous push-in",
+  "separation": false,
+  "track": [
+   "face",
+   "eyes"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "CAMERA: Locked-off extreme close-up with a very slow continuous push-in over the whole shot. FORBIDDEN: cuts, shake, rotation, zoom punches.",
+   "The face stays in the centre third; the left and right quarters show only helmet interior and soft background bokeh.",
+   "POSITIVE LOCKS: His face stays identical to the first frame. The visor glass stays completely clean: no displays, no graphics, no text, no UI at any time. Exactly one person."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.95,
+   "min_free_margin": 0.2
+  },
+  "source": "B4_helmet_long_720p (24 s)"
+ },
+ "HUD-CLEAN": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   6,
+   30
+  ],
+  "aspect": "16:9",
+  "subject": "one face inside a helmet behind a clear visor",
+  "framing": "face close-up, eyes steady",
+  "negative_space": {
+   "side": "both",
+   "min_frac": 0.22
+  },
+  "camera": "locked-off with a very slight slow push-in",
+  "separation": false,
+  "track": [
+   "face",
+   "eyes"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "CAMERA: Locked-off with a very slight slow push-in. FORBIDDEN: shake, rotation, cuts.",
+   "POSITIVE LOCKS: The visor glass stays completely clean: no displays, no graphics, no text, no UI at any time. His face stays identical to the first frame."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.95,
+   "min_free_margin": 0.2
+  },
+  "source": "B2 (6 s) / B4 (24 s)"
+ },
+ "SCIFI-TARGETING": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   6,
+   12
+  ],
+  "aspect": "16:9",
+  "subject": "first-person view: a counted set of targets (2-3) and the shooter's weapon in the foreground",
+  "framing": "POV; targets spread across the middle, weapon in a lower corner",
+  "negative_space": {
+   "side": "right",
+   "min_frac": 0.25
+  },
+  "camera": "first-person, subtle natural head movement; one short blast shake allowed",
+  "separation": false,
+  "track": [
+   "each target",
+   "weapon/launcher"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "CAMERA: First-person, subtle natural head movement, one short blast shake at the impact. FORBIDDEN: whip-pans, cuts.",
+   "POSITIVE LOCKS: Exactly two robots and one drone. Exactly two rockets, fired once. No text, no reticles, no UI, no logos at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.8,
+   "min_free_margin": 0.2
+  },
+  "source": "B3_seedance_720p (8 s)"
+ },
+ "ROAD-HUD": {
+  "take": "cut-list",
+  "max_cuts": 4,
+  "duration_s": [
+   15,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "a driver's view of the road ahead with a hazard that appears, plus exterior and reaction shots",
+  "framing": "windscreen POV with the road's vanishing point visible; the hazard enters from one side",
+  "negative_space": {
+   "side": "bottom",
+   "min_frac": 0.3
+  },
+  "camera": "smooth, steady; no shake",
+  "separation": false,
+  "track": [
+   "hazard (cyclist/pedestrian)",
+   "driver",
+   "car"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: Timestamped cut-blocks. HARD CUTS exactly at the listed timecodes and nowhere else.",
+   "COMPOSITION: In the driving shots the road surface ahead fills the lower third and its vanishing point stays visible.",
+   "CAMERA: smooth, steady. FORBIDDEN: shaky cam, whip-pans.",
+   "POSITIVE LOCKS: exactly one car, one driver, one hazard. The car never hits anything. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 4,
+   "min_track_coverage": 0.6,
+   "min_free_margin": 0.2
+  },
+  "source": "E3_car_720p (18 s)"
+ },
+ "THERMAL-RESCUE": {
+  "take": "cut-list",
+  "max_cuts": 5,
+  "duration_s": [
+   15,
+   24
+  ],
+  "aspect": "16:9",
+  "subject": "a search in darkness, smoke or fire, then a found person, then an exit to daylight",
+  "framing": "mid shots and close-ups; the searched object (door, person) clearly readable as a shape",
+  "negative_space": {
+   "side": "none",
+   "min_frac": 0
+  },
+  "camera": "steady handheld feel, no shake",
+  "separation": false,
+  "track": [
+   "searcher",
+   "door or target",
+   "found person"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: Timestamped cut-blocks. HARD CUTS exactly at the listed timecodes and nowhere else.",
+   "LIGHTING: dark interiors lit mainly by fire, so the hottest areas are the brightest (the post filter maps luminance to heat).",
+   "CAMERA: steady handheld feel, no shake. FORBIDDEN: whip-pans, zoom punches.",
+   "POSITIVE LOCKS: exactly one rescuer and one person rescued. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 5,
+   "min_track_coverage": 0.3,
+   "min_free_margin": 0
+  },
+  "source": "E4_fire_720p (20 s)"
+ },
+ "SPEC-SCAN": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   10,
+   18
+  ],
+  "aspect": "16:9",
+  "subject": "one engineered product floating in a dark studio; its layers separate (exploded view) and rejoin",
+  "framing": "product centred, fully in frame",
+  "negative_space": {
+   "side": "both",
+   "min_frac": 0.2
+  },
+  "camera": "slow smooth orbit",
+  "separation": true,
+  "track": [
+   "product",
+   "each layer / part"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "CAMERA: slow orbit, very smooth. FORBIDDEN: cuts, shake.",
+   "Dark plain studio background with rim light so the product's outline is crisp.",
+   "POSITIVE LOCKS: exactly one product, always the same design, the stated number of layers when separated. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.9,
+   "min_free_margin": 0.18
+  },
+  "source": "E6_sneaker_720p (15 s)"
+ },
+ "MAP-FLYOVER": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   8,
+   12
+  ],
+  "aspect": "16:9",
+  "subject": "an aerial over a city/region where every pinned place is visible from the first frame",
+  "framing": "high aerial, landmarks spread across the frame, horizon or sea as a fixed reference",
+  "negative_space": {
+   "side": "left",
+   "min_frac": 0.3
+  },
+  "camera": "smooth drone, constant slow forward push and slight descent; no rotation",
+  "separation": false,
+  "track": [
+   "landmark points (planar, track.py)"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "CAMERA: Smooth stabilized drone, constant slow speed, gentle forward push and slight descent only. FORBIDDEN: whip-pans, rotation, roll, zoom punches, shake, cuts.",
+   "POSITIVE LOCKS: No text, no labels, no map graphics, no UI, no logos appear at any time. The geography stays fixed for the whole shot."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 1.0,
+   "min_free_margin": 0.25
+  },
+  "source": "A1_seedance_720p (10 s)"
+ },
+ "CAMPUS-AR": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   5,
+   10
+  ],
+  "aspect": "16:9",
+  "subject": "one person walking through a real place; the labelled features (shelves, desks, a skylight) stay visible",
+  "framing": "medium-wide, person centred, walking toward camera",
+  "negative_space": {
+   "side": "both",
+   "min_frac": 0.25
+  },
+  "camera": "slow steady dolly backwards at chest height matching the walk",
+  "separation": false,
+  "track": [
+   "person/head",
+   "each labelled place"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "CAMERA: Slow steady dolly backwards at chest height matching his pace. FORBIDDEN: whip-pans, zooms, shake, cuts.",
+   "POSITIVE LOCKS: Exactly one person. The room layout stays identical to the first frame. No text, no signs, no UI, no logos."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.9,
+   "min_free_margin": 0.22
+  },
+  "source": "C1_seedance_720p (6 s)"
+ },
+ "CYBER-DOSSIER": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   5,
+   10
+  ],
+  "aspect": "16:9",
+  "subject": "one character walking toward camera in their setting",
+  "framing": "full body, centred, walks toward camera",
+  "negative_space": {
+   "side": "both",
+   "min_frac": 0.35
+  },
+  "camera": "low slow dolly backwards matching the walk",
+  "separation": false,
+  "track": [
+   "character",
+   "head"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "CAMERA: Low camera at waist height, slow steady dolly backwards matching his pace. FORBIDDEN: whip-pans, rotation, zooms, cuts.",
+   "POSITIVE LOCKS: The character's look stays identical to the first frame. No text, no holograms, no UI, no logos appear at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.95,
+   "min_free_margin": 0.3
+  },
+  "source": "B1_seedance_720p (6 s)"
+ },
+ "ARRIVAL-CARD": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   5,
+   10
+  ],
+  "aspect": "16:9",
+  "subject": "one person arriving in front of the destination (building, entrance)",
+  "framing": "person walks toward camera, destination facade behind with a blank area for the logo",
+  "negative_space": {
+   "side": "left",
+   "min_frac": 0.35
+  },
+  "camera": "slow steady dolly backwards at chest height matching the walk",
+  "separation": false,
+  "track": [
+   "head",
+   "blank facade area"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "CAMERA: Slow steady dolly backwards at chest height, matching his walking speed so he stays the same size in frame. FORBIDDEN: whip-pans, zooms, shake, cuts.",
+   "POSITIVE LOCKS: Exactly one person in focus. No text, no signs with readable letters, no logos, no UI appear at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.95,
+   "min_free_margin": 0.3
+  },
+  "source": "A2_seedance_720p (6 s)"
+ },
+ "HALLMARK-LUXE": {
+  "take": "cuts-ok",
+  "max_cuts": 2,
+  "duration_s": [
+   10,
+   15
+  ],
+  "aspect": "16:9",
+  "subject": "jewellery worn on a hand/wrist on a dark ground, each piece in turn",
+  "framing": "macro; the featured piece on one side of the frame",
+  "negative_space": {
+   "side": "right",
+   "min_frac": 0.4
+  },
+  "camera": "slow macro glide",
+  "separation": false,
+  "track": [
+   "each piece (watch, bracelet, rings)"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, or at most two soft cuts between pieces.",
+   "CAMERA: slow macro glide. FORBIDDEN: shake, fast moves.",
+   "LIGHTING: a single spotlight on the piece over black velvet; the rest of the frame falls to near-black.",
+   "POSITIVE LOCKS: one hand, the same pieces throughout. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 2,
+   "min_track_coverage": 0.7,
+   "min_free_margin": 0.3
+  },
+  "source": "E7_gold_720p (12 s, 2 cuts)"
+ },
+ "ARCH-DRAWING": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   12,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "one building rising through the frame; floors/slabs readable, the view it earns at the top",
+  "framing": "building on the right half, sky and neighbourhood on the left",
+  "negative_space": {
+   "side": "left",
+   "min_frac": 0.3
+  },
+  "camera": "smooth vertical drone rise, constant speed",
+  "separation": false,
+  "track": [
+   "building",
+   "floor slabs / balconies"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "CAMERA: smooth vertical drone rise, constant speed. FORBIDDEN: cuts, shake, spins.",
+   "COMPOSITION: The tower stays in the right half of the frame; the left third is sky and low surroundings.",
+   "POSITIVE LOCKS: one tower, the same architecture throughout. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.9,
+   "min_free_margin": 0.25
+  },
+  "source": "E8_tower_720p (18 s)"
+ },
+ "MAGAZINE-EDITORIAL": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   15,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "one styled room; each priced piece visible in turn",
+  "framing": "wide interior, pieces readable, camera travels through the room",
+  "negative_space": {
+   "side": "left",
+   "min_frac": 0.2
+  },
+  "camera": "smooth stabilised FPV glide, constant speed",
+  "separation": false,
+  "track": [
+   "each furniture piece"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: ONE SINGLE UNBROKEN CONTINUOUS TAKE. Absolutely no cuts, no dissolves, no fades, no jump in time or position.",
+   "CAMERA: smooth stabilised FPV drone, constant graceful speed, gentle banking. FORBIDDEN: cuts, shake, fast whips, collisions.",
+   "POSITIVE LOCKS: one continuous camera path, the same room from start to end; no people; every furniture piece stays identical to the first frame. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.7,
+   "min_free_margin": 0.15
+  },
+  "source": "E5_home_v2_720p (18 s; v1 had a cut and was regenerated)"
+ },
+ "KITCHEN-TICKET": {
+  "take": "cut-list",
+  "max_cuts": 5,
+  "duration_s": [
+   12,
+   18
+  ],
+  "aspect": "16:9",
+  "subject": "a dish being made in macro steps (fire, slice, sauce, salt, plated hero)",
+  "framing": "macro, subject centre-left",
+  "negative_space": {
+   "side": "right",
+   "min_frac": 0.3
+  },
+  "camera": "energy from cuts and speed ramps",
+  "separation": false,
+  "track": [
+   "the dish/ingredient per shot"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: Timestamped cut-blocks. HARD CUTS exactly at the listed timecodes and nowhere else.",
+   "COMPOSITION: Keep the right third of each shot dark and plain (the order ticket sits there).",
+   "CAMERA: energy from cuts and speed ramps. FORBIDDEN: whip-pans, shake. POSITIVE LOCKS: one dish, one plate. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 5,
+   "min_track_coverage": 0.6,
+   "min_free_margin": 0.2
+  },
+  "source": "E10_chef_720p (15 s, 4 cuts)"
+ },
+ "LENS-POSTCARD": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   15,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "a first-person walk that meets a sign, a landmark and a person to talk to",
+  "framing": "POV at eye level, gentle head motion",
+  "negative_space": {
+   "side": "bottom",
+   "min_frac": 0.2
+  },
+  "camera": "natural first-person walk, stabilised",
+  "separation": false,
+  "track": [
+   "sign",
+   "landmark",
+   "person/cup"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "CAMERA: natural first-person walk, stabilised, gentle head motion. FORBIDDEN: cuts, shake.",
+   "POSITIVE LOCKS: the sign keeps abstract unreadable symbols; no readable text anywhere. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.6,
+   "min_free_margin": 0.15
+  },
+  "source": "E9_glasses_720p (18 s)"
+ }
+}
