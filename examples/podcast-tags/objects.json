@@ -1,0 +1,5 @@
+{"context": "Video podcast: two hosts at microphones at a round wooden table. On the left a woman with curly brown hair in a cream sweater; on the right a man with glasses in a navy shirt.",
+ "objects": [
+  {"name": "host_left", "desc": "the woman on the left: head and upper body (tight box)"},
+  {"name": "host_right", "desc": "the man on the right: head and upper body (tight box)"}
+ ]}

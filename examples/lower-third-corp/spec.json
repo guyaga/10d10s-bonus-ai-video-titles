@@ -1,0 +1,27 @@
+{
+ "_comment": "LOWER-THIRD-CORP, Hebrew, Suez One name + Secular One title, on the Kling talking-head plate (creator centred, left and bottom clear). Fictional names.",
+ "name": "new-lower-third-he",
+ "clip": "clips/talking-head.mp4",
+ "language": "he",
+ "pair": "suez",
+ "logo": "N",
+ "y": 0.86,
+ "supers": [
+  {
+   "name": "יואב כהן",
+   "title": "יוצר תוכן · מייסד סטודיו נורת׳",
+   "t": 0.6,
+   "until": 4.7,
+   "side": "L"
+  },
+  {
+   "tag": "פרק 12",
+   "name": "איך בונים מותג בעידן ה-AI",
+   "title": "שלושה כלים שחוסכים עשר שעות בשבוע",
+   "t": 5.3,
+   "until": 9.7,
+   "side": "L"
+  }
+ ],
+ "plate_vol": 0.8
+}

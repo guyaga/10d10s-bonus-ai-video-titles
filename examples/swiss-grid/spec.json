@@ -1,0 +1,46 @@
+{
+ "_comment": "SWISS-GRID on a 10 s Kling 3.0 slider shot along white concrete (plate: G_studio/kling_plates/minimal_architecture.mp4). Black grotesk on the white facade, one red square, two statements that snap to a 12-column grid.",
+ "name": "swiss-grid",
+ "clip": "clips/minimal_architecture.mp4",
+ "language": "en",
+ "ink": "dark",
+ "size": 190,
+ "label": "STUDIO AUREL · ARCHITECTURE",
+ "frames": [
+  {
+   "lines": [
+    "FORM",
+    "FOLLOWS",
+    "FUNCTION."
+   ],
+   "t": 0.7,
+   "until": 5.0,
+   "col": 1,
+   "red": [
+    10,
+    0
+   ],
+   "caption": "Concrete, light and proportion. Nothing else.",
+   "cap_col": 9
+  },
+  {
+   "lines": [
+    "LESS,",
+    "BUT",
+    "BETTER."
+   ],
+   "t": 5.4,
+   "col": 1,
+   "red": [
+    7,
+    1
+   ],
+   "caption": "Twelve columns. One red square.",
+   "cap_col": 9
+  }
+ ],
+ "colors": {
+  "red": "#e3342f"
+ },
+ "plate_vol": 0.5
+}

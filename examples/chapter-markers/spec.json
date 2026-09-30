@@ -1,0 +1,32 @@
+{
+ "_comment": "CHAPTER-MARKERS on a 10 s Kling 3.0 aerial of an old stone port (plate: G_studio/kling_plates/aerial_doc.mp4). The city fills the right half, so the card sits on the sea side (left). Hebrew in Suez One + Secular One.",
+ "name": "chapter-markers",
+ "clip": "clips/aerial_doc.mp4",
+ "language": "he",
+ "pair": "suez",
+ "side": "left",
+ "chapter": {
+  "num": "01",
+  "kicker": "פרק",
+  "title": "העיר שמעל הים",
+  "sub": "נמל עתיק · 3,000 שנות היסטוריה",
+  "t": 0.6,
+  "until": 6.8
+ },
+ "bar": {
+  "labels": [
+   "העיר שמעל הים",
+   "הנמל",
+   "הכנסייה",
+   "השוק",
+   "הלילה"
+  ],
+  "current": 0,
+  "t": 0.3
+ },
+ "colors": {
+  "accent": "#e8c27a",
+  "scrim": 0.5
+ },
+ "plate_vol": 0.8
+}

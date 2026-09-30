@@ -1,0 +1,26 @@
+{
+ "_comment": "GRADIENT-GLASS on a 10 s Kling 3.0 abstract glass/gradient plate (G_studio/kling_plates/gradient_glass.mp4): shapes drift around the edges, the centre stays calm for the glass card. English SaaS launch, Sora 800 + Manrope.",
+ "name": "gradient-glass",
+ "clip": "clips/gradient_glass.mp4",
+ "language": "en",
+ "pill": "NEW · v4.0",
+ "title": "Meet Aurora.",
+ "sub": "Your whole workflow, one calm workspace.",
+ "cta": "Get early access  →",
+ "chips": [
+  "AI summaries",
+  "Realtime sync",
+  "SOC 2 ready",
+  "Works offline"
+ ],
+ "t": 0.6,
+ "click": 6.6,
+ "colors": {
+  "grad": [
+   "#c3a8ff",
+   "#7cc4ff",
+   "#ffa98a"
+  ]
+ },
+ "plate_vol": 0.4
+}

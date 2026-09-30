@@ -1360,5 +1360,652 @@
    "min_free_margin": 0
   },
   "source": "A1_seedance_720p (10 s aerial)"
+ },
+ "LOWER-THIRD-CORP": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   6,
+   30
+  ],
+  "aspect": "16:9",
+  "subject": "a person speaking (interview, creator, CEO)",
+  "framing": "chest-up, the person centre or one side; the lower-left/lower-right quarter calm",
+  "negative_space": {
+   "side": "bottom",
+   "min_frac": 0.18
+  },
+  "camera": "locked-off tripod or a very slow push",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "COMPOSITION: the lower quarter of the frame stays calm and uncluttered on the side opposite the speaker's gesturing hand.",
+   "CAMERA: locked-off tripod at eye level. FORBIDDEN: cuts, zooms, shake.",
+   "POSITIVE LOCKS: No text, no logos, no captions, no UI, no graphics, no screens showing text at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0,
+   "min_free_margin": 0.15
+  },
+  "source": "Kling talking-head (10 s, one take)"
+ },
+ "BREAKING-NEWS": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   6,
+   30
+  ],
+  "aspect": "16:9",
+  "subject": "news b-roll: a street, a scene, an event location",
+  "framing": "wide; key action in the upper two thirds; the bottom third is road/ground",
+  "negative_space": {
+   "side": "bottom",
+   "min_frac": 0.3
+  },
+  "camera": "locked-off or a very slow push from an elevated position",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "COMPOSITION: the lower third of the frame is road or ground without important detail.",
+   "POSITIVE LOCKS: no readable text, no signs with words, no logos, no license plates, no billboards, no UI at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0,
+   "min_free_margin": 0
+  },
+  "source": "Kling city-news (10 s, one take)"
+ },
+ "LEADER-CALLOUTS": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   8,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "one product on a plain dark set, parts clearly separable",
+  "framing": "product centred in the middle third, large empty dark space left and right",
+  "negative_space": {
+   "side": "both",
+   "min_frac": 0.3
+  },
+  "camera": "slow orbit or turntable with a gentle push-in",
+  "separation": false,
+  "track": [
+   "product parts (2-4)"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "COMPOSITION: the product occupies the centre third; the left and right thirds are empty dark background.",
+   "CAMERA: slow smooth orbit and push-in. FORBIDDEN: cuts, shake, fast moves.",
+   "POSITIVE LOCKS: exactly one product. No text, no logos, no brand marks, no labels, no UI at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.9,
+   "min_free_margin": 0.25
+  },
+  "source": "Kling product-macro (10 s, one take)"
+ },
+ "DATA-CHARTS": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   8,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "business b-roll: people working, meeting, reviewing",
+  "framing": "people on one side; the other half soft out-of-focus space (window, wall)",
+  "negative_space": {
+   "side": "left",
+   "min_frac": 0.42
+  },
+  "camera": "slow smooth dolly or locked-off",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "COMPOSITION: the people stay in the right half; the left half is soft bright out-of-focus space, completely empty.",
+   "POSITIVE LOCKS: no walls with writing, no whiteboards, no signs, no screens facing the camera, no readable text anywhere, no logos, no UI."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0,
+   "min_free_margin": 0.35
+  },
+  "source": "Kling office-b-roll v2 (10 s, one take; v1 rejected for AI lettering on the wall)"
+ },
+ "KPI-COUNTERS": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   6,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "business or product b-roll",
+  "framing": "subject on one side, a clean half for a tile column",
+  "negative_space": {
+   "side": "left",
+   "min_frac": 0.35
+  },
+  "camera": "slow dolly or locked-off",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "COMPOSITION: the subject stays in the right half; the left half is calm soft background.",
+   "POSITIVE LOCKS: no readable text on screens or walls, no logos, no UI at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0,
+   "min_free_margin": 0.3
+  },
+  "source": "Kling office-b-roll v2 (10 s, one take)"
+ },
+ "APP-UI-POPUPS": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   6,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "a person using a phone (screen never visible)",
+  "framing": "the person in the left third; the right two thirds soft and empty",
+  "negative_space": {
+   "side": "right",
+   "min_frac": 0.35
+  },
+  "camera": "locked-off, shallow depth of field",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "COMPOSITION: she sits in the left third; the right two thirds are soft and empty.",
+   "POSITIVE LOCKS: the phone screen is never visible. No text, no logos, no UI, no captions at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0,
+   "min_free_margin": 0.3
+  },
+  "source": "Kling phone-hands (10 s, one take)"
+ },
+ "CHAT-BUBBLES": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   6,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "a person texting (screen never visible)",
+  "framing": "the person in one third; a tall clean area on the other side for the thread",
+  "negative_space": {
+   "side": "right",
+   "min_frac": 0.33
+  },
+  "camera": "locked-off",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "COMPOSITION: she sits in the left third; the right third is clean.",
+   "POSITIVE LOCKS: the phone screen is never visible. No text, no logos, no UI at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0,
+   "min_free_margin": 0.3
+  },
+  "source": "Kling phone-hands (10 s, one take)"
+ },
+ "SOCIAL-CTA": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   6,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "a creator talking to camera, ideally pointing at the CTA side at the end",
+  "framing": "creator centre-right; the lower-left quarter clean",
+  "negative_space": {
+   "side": "left",
+   "min_frac": 0.25
+  },
+  "camera": "locked-off tripod",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "8.0-10.0s: he smiles, points toward the left side of the frame, and keeps looking at the lens.",
+   "COMPOSITION: he stays in the right half; the left half is soft background.",
+   "POSITIVE LOCKS: No text, no logos, no captions, no UI, no graphics, no screens showing text at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0,
+   "min_free_margin": 0.2
+  },
+  "source": "Kling talking-head (10 s, one take)"
+ },
+ "END-SCREEN": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   6,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "the creator's closing line to camera",
+  "framing": "creator on one side (centre-right); the other half free for the card",
+  "negative_space": {
+   "side": "left",
+   "min_frac": 0.4
+  },
+  "camera": "locked-off",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "COMPOSITION: he stays in the right half of the frame.",
+   "POSITIVE LOCKS: No text, no logos, no captions, no UI, no graphics, no screens showing text at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0,
+   "min_free_margin": 0.3
+  },
+  "source": "Kling talking-head (10 s, one take)"
+ },
+ "PODCAST-TAGS": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   8,
+   30
+  ],
+  "aspect": "16:9",
+  "subject": "two hosts talking at microphones, turn-taking",
+  "framing": "wide two-shot, hosts in the left and right thirds, the table edge along the bottom",
+  "negative_space": {
+   "side": "bottom",
+   "min_frac": 0.15
+  },
+  "camera": "locked-off with a very slow push",
+  "separation": false,
+  "track": [
+   "host_left",
+   "host_right"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "0.0-5.0s: the host on the left talks while the other listens; 5.0-10.0s: the host on the right answers.",
+   "COMPOSITION: wide two-shot; the lower third of the frame is the table edge, calm and empty.",
+   "POSITIVE LOCKS: exactly two people. No brand names on the microphones, no screens, no text, no logos, no UI at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.9,
+   "min_free_margin": 0
+  },
+  "source": "Kling podcast (10 s, one take)"
+ },
+ "CHAPTER-MARKERS": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   6,
+   30
+  ],
+  "aspect": "16:9",
+  "subject": "a calm establishing shot of the place the chapter is about",
+  "framing": "subject in one half of the frame; the other half open (sea, sky, wall)",
+  "negative_space": {
+   "side": "left",
+   "min_frac": 0.4
+  },
+  "camera": "slow steady glide, level horizon",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "COMPOSITION: The subject fills the right half; the left half is open water and sky for a chapter card.",
+   "CAMERA: smooth stabilised drone or slider, constant slow speed, level horizon. FORBIDDEN: cuts, fast moves, shake.",
+   "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0,
+   "min_free_margin": 0
+  },
+  "source": "kling_plates/aerial_doc.mp4 (Kling 3.0, 10 s)"
+ },
+ "QUOTE-TESTIMONIAL": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   6,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "one person speaking a short testimonial line (native speech on the plate, or a VO)",
+  "framing": "medium close-up, the speaker on one third, the other half a soft bright wall or window",
+  "negative_space": {
+   "side": "left",
+   "min_frac": 0.35
+  },
+  "camera": "locked tripod with an imperceptible push-in",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "COMPOSITION: medium close-up, the speaker on the RIGHT third; the LEFT half is a softly out-of-focus bright wall with empty space.",
+   "CAMERA: locked-off tripod, imperceptibly slow push-in, 85mm. FORBIDDEN: cuts, zooms, shake. Exactly one person.",
+   "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0,
+   "min_free_margin": 0.3
+  },
+  "source": "kling_plates/portrait_testimonial.mp4 (Kling 3.0, 10 s, native speech)"
+ },
+ "DOC-LOCATION-STAMP": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   6,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "an establishing shot of a real place with one clear landmark",
+  "framing": "landmark in one half; a calm corner for the stamp",
+  "negative_space": {
+   "side": "left",
+   "min_frac": 0.35
+  },
+  "camera": "slow steady glide",
+  "separation": false,
+  "track": [
+   "the landmark (tower, bridge, building)"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "COMPOSITION: one clear landmark in the right half; the lower-left corner calm (water, sky or plain ground).",
+   "CAMERA: smooth slow glide, level horizon. FORBIDDEN: cuts, shake, fast moves.",
+   "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.9,
+   "min_free_margin": 0.25
+  },
+  "source": "kling_plates/aerial_doc.mp4 (Kling 3.0, 10 s)"
+ },
+ "SWISS-GRID": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   6,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "clean minimal geometry (white wall, concrete, studio cyclorama)",
+  "framing": "large flat light surfaces across the left and centre",
+  "negative_space": {
+   "side": "left",
+   "min_frac": 0.5
+  },
+  "camera": "slow slider move, perfectly level",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "COMPOSITION: large flat empty white wall areas in the left and centre of the frame, strong horizontal and vertical lines.",
+   "CAMERA: smooth slider move, constant slow speed, perfectly level. FORBIDDEN: cuts, shake, tilts.",
+   "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0,
+   "min_free_margin": 0
+  },
+  "source": "kling_plates/minimal_architecture.mp4 (Kling 3.0, 10 s)"
+ },
+ "GRADIENT-GLASS": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   6,
+   15
+  ],
+  "aspect": "16:9",
+  "subject": "abstract gradient/glass motion background (or a softly blurred office)",
+  "framing": "motion around the edges, the centre calm and darker",
+  "negative_space": {
+   "side": "none",
+   "min_frac": 0
+  },
+  "camera": "very slow push-in",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "COMPOSITION: shapes mostly around the edges, the centre of the frame calmer and darker for a glass card.",
+   "CAMERA: very slow push-in, perfectly smooth. FORBIDDEN: cuts, shake. Abstract only, no people, no objects, no numbers.",
+   "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0,
+   "min_free_margin": 0
+  },
+  "source": "kling_plates/gradient_glass.mp4 (Kling 3.0, 10 s)"
+ },
+ "BEFORE-AFTER-SPLIT": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   6,
+   12
+  ],
+  "aspect": "16:9",
+  "subject": "the SAME space or product in two states, shot with an identical camera move",
+  "framing": "identical framing in both takes (make both from one start frame + its edit)",
+  "negative_space": {
+   "side": "none",
+   "min_frac": 0
+  },
+  "camera": "identical slow dolly in both takes",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous take; the attached image is the exact first frame.",
+   "CAMERA: the camera dollies very slowly straight forward at chest height, perfectly smooth and level, constant speed.",
+   "Nothing in the room moves or changes; FORBIDDEN: cuts, pans, tilts, shake, people, new objects.",
+   "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0,
+   "min_free_margin": 0
+  },
+  "source": "kling_plates/ba_before.mp4 + ba_after.mp4 (Kling 3.0 image_to_video from a text_to_image frame + its image_to_image 'before' edit)"
+ },
+ "LOGO-SHINE-REVEAL": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   5,
+   12
+  ],
+  "aspect": "16:9",
+  "subject": "a dark premium surface (brushed metal, stone, fabric) with one moving light",
+  "framing": "surface fills the frame; the centre clear and even",
+  "negative_space": {
+   "side": "none",
+   "min_frac": 0
+  },
+  "camera": "locked, imperceptible push-in",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "SUBJECT: a dark brushed-metal surface; a single soft light sweep glides slowly left to right, then settles into a soft glow.",
+   "CAMERA: locked-off with an imperceptible slow push-in, macro. FORBIDDEN: cuts, shake. Abstract surface only, no objects, no engraving.",
+   "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0,
+   "min_free_margin": 0
+  },
+  "source": "kling_plates/logo_metal.mp4 (Kling 3.0, 10 s)"
+ },
+ "LYRIC-KINETIC-3D": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   6,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "one performer singing (native vocal on the plate or the song as a ref), dark haze stage",
+  "framing": "medium shot, performer centred, dark space above and on both sides",
+  "negative_space": {
+   "side": "both",
+   "min_frac": 0.18
+  },
+  "camera": "very slow orbit",
+  "separation": true,
+  "track": [
+   "performer body",
+   "face"
+  ],
+  "beats": true,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "COMPOSITION: medium shot, the singer centred, large dark negative space with haze on both sides and above him.",
+   "CAMERA: very slow orbit, 50mm, shallow depth of field. FORBIDDEN: cuts, shake. Exactly one person.",
+   "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.95,
+   "min_free_margin": 0.15
+  },
+  "source": "kling_plates/singer.mp4 (Kling 3.0, 10 s, native singing)"
+ },
+ "TIMELINE-HISTORY": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   8,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "a place or product with a history (old city, factory, building)",
+  "framing": "the lower third calm enough for a timeline band; one open side for the big year",
+  "negative_space": {
+   "side": "left",
+   "min_frac": 0.3
+  },
+  "camera": "slow steady glide",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "COMPOSITION: the subject in the right half; the lower third calm (water, ground, sky) for a timeline.",
+   "CAMERA: smooth slow glide, level. FORBIDDEN: cuts, shake.",
+   "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0,
+   "min_free_margin": 0.25
+  },
+  "source": "kling_plates/aerial_doc.mp4 (Kling 3.0, 10 s)"
+ },
+ "LISTING-SPECS": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   8,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "a property exterior (or interior) approached slowly",
+  "framing": "the house centre-right; sky across the top quarter; calm ground across the bottom quarter",
+  "negative_space": {
+   "side": "left",
+   "min_frac": 0.3
+  },
+  "camera": "slow gimbal dolly, level",
+  "separation": false,
+  "track": [
+   "the house",
+   "one feature (pool, terrace, view)"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "COMPOSITION: the house sits centre-right; clear sky across the top quarter and calm ground or water across the bottom quarter.",
+   "CAMERA: smooth gimbal dolly at chest height, constant slow speed, level. FORBIDDEN: cuts, shake, drones, fast moves.",
+   "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.9,
+   "min_free_margin": 0.25
+  },
+  "source": "kling_plates/property_villa.mp4 (Kling 3.0, 10 s)"
  }
 }

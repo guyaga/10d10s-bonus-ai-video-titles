@@ -1,0 +1,30 @@
+{
+ "_comment": "DOC-LOCATION-STAMP on a 10 s Kling 3.0 aerial of an old stone port (plate: G_studio/kling_plates/aerial_doc.mp4). Bilingual: the place types in Hebrew (Secular One), transliteration + coordinates + time in JetBrains Mono. The crosshair locks on the bell tower tracked with vtrack.py (tracks/aerial_track.json).",
+ "name": "doc-location-stamp",
+ "clip": "clips/aerial_doc.mp4",
+ "track": "aerial_track.json",
+ "language": "he",
+ "pair": "secular",
+ "place": "עכו העתיקה, ישראל",
+ "translit": "AKKO · OLD CITY · ISRAEL",
+ "coords": "32.9206° N   35.0691° E",
+ "when": "06:42  ·  14.05.2026",
+ "t": 0.9,
+ "cps": 15,
+ "corner": "bl",
+ "letterbox": 2.39,
+ "landmark": {
+  "obj": "tower",
+  "anchor": "t",
+  "dx": 0,
+  "dy": 95,
+  "label": "כנסיית סנט ג׳ון · 1737",
+  "t": 5.2,
+  "side": "L"
+ },
+ "colors": {
+  "accent": "#ffcf6e"
+ },
+ "plate_vol": 0.8,
+ "width": 580
+}

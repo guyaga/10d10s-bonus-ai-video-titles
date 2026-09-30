@@ -11,11 +11,17 @@ Spec keys. Required: clip, beats.
   position   "center" (default) | "lower"   where the beat sits
   sfx (true), music, music_vol, plate_vol, name, track (optional)
 """
-from styles.common import (audio_cues, cue, e, js, project_dir, res, tracks, type_pair)
+from styles.common import (audio_cues, cue, e, fonts, js, project_dir, res, tracks, type_pair)
 
 
 def build(spec, base, style="KEYNOTE-REVEAL"):
     tp = type_pair(spec, latin=("Jost", 700, "Jost", 300), default_pair="suez")
+    numfam, numw = f'"{tp["display"]}"', tp["dw"]
+    if tp["display"] == "Suez One":            # Suez One ships old-style figures ('620' reads '62o'); hero stats need lining digits
+        c, f = fonts("Jost")
+        tp["css"] += c
+        tp["files"].update(f)
+        numfam, numw = '"Jost","Suez One"', 600
     col = {"text": "#ffffff", "grad": ["#ffffff", "#9fd8ff"], "label": "#d6dbe3", "vignette": .55, **spec.get("colors", {})}
     B, h = spec["beats"], []
     top = {"center": 540, "lower": 760}[spec.get("position", "center")]
@@ -30,7 +36,7 @@ def build(spec, base, style="KEYNOTE-REVEAL"):
 #vig{{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% {round(top / 10.8)}%,rgba(0,0,0,{col['vignette']}),rgba(0,0,0,{col['vignette'] * .35}) 60%,transparent 100%);opacity:0}}
 .bt{{position:absolute;left:0;right:0;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;direction:{tp['dir']};opacity:0}}
 .row{{display:flex;align-items:baseline;gap:.12em;line-height:1;white-space:nowrap}}
-.num{{font-family:"{tp['display']}",sans-serif;font-weight:{tp['dw']};letter-spacing:-.02em;background:linear-gradient(180deg,{g0},{g1});
+.num{{font-family:{numfam},sans-serif;font-weight:{numw};letter-spacing:-.02em;background:linear-gradient(180deg,{g0},{g1});
   -webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums;padding:0 .04em}}
 .unit{{font-family:"{tp['body']}",sans-serif;font-weight:{tp['bw']};color:{col['text']}}}
 .lab{{font-family:"{tp['body']}",sans-serif;font-weight:{tp['bw']};color:{col['label']};text-shadow:0 2px 14px rgba(0,0,0,.7);letter-spacing:{'0' if tp['rtl'] else '.08em'};margin-top:.35em}}

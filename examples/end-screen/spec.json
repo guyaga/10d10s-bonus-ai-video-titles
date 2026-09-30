@@ -1,0 +1,33 @@
+{
+ "_comment": "END-SCREEN, English, Manrope 700/500, on the Kling talking-head plate. Thumbnails come from other Kling plates; the avatar is cropped from the plate itself.",
+ "name": "new-end-screen",
+ "clip": "clips/talking-head.mp4",
+ "language": "en",
+ "t": 5.2,
+ "side": "L",
+ "tile_w": 380,
+ "heading": "WATCH NEXT",
+ "tiles": [
+  {
+   "src": "clips/podcast.mp4",
+   "at": 4.0,
+   "title": "The AI podcast · Ep. 42",
+   "dur": "48:12"
+  },
+  {
+   "src": "clips/product-macro.mp4",
+   "at": 9.0,
+   "title": "Unboxing the quietest earbuds",
+   "dur": "12:48"
+  }
+ ],
+ "avatar": {
+  "src": "clips/talking-head.mp4",
+  "at": 1.0,
+  "x": 0.64,
+  "y": 0.2,
+  "zoom": 3.4,
+  "label": "SUBSCRIBE"
+ },
+ "plate_vol": 0.9
+}

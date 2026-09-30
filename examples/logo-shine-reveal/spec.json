@@ -1,0 +1,15 @@
+{
+ "_comment": "LOGO-SHINE-REVEAL on a 10 s Kling 3.0 brushed-metal plate with one soft light sweep (G_studio/kling_plates/logo_metal.mp4). Bilingual: Michroma wordmark, Hebrew tagline in Secular One, mono sub-line. The shine is timed to the plate's own light sweep.",
+ "name": "logo-shine-reveal",
+ "clip": "clips/logo_metal.mp4",
+ "language": "he",
+ "pair": "secular",
+ "word": "NOVA",
+ "mark": "ring",
+ "tagline": "הטכנולוגיה שמרגישה אנושית",
+ "sub": "NOVA LABS · 2026",
+ "t": 0.5,
+ "shine": 3.4,
+ "y": 380,
+ "plate_vol": 0.5
+}

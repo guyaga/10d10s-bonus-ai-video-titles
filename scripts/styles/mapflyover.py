@@ -26,8 +26,9 @@ def build(spec, base, style="MAP-FLYOVER"):
     pins = spec["pins"]
     draw = spec.get("draw", [2.0, 7.0])
     title, rd, iris = spec.get("title"), spec.get("readout"), spec.get("iris")
-    faces, extra = fonts("Assistant", "JetBrains Mono")
+    faces, extra = fonts("Secular One", "JetBrains Mono")
     css = faces + f"""
+#root{{font-family:"Secular One",sans-serif}}
 :root{{--fg:{col['fg']};--mute:{col['mute']};--acc:{col['accent']};--panel:rgba(7,13,9,.78);--line:color-mix(in srgb,var(--acc) 55%,transparent)}}
 .mono{{font-family:"JetBrains Mono",monospace}}
 #chip{{position:absolute;right:112px;top:60px;display:flex;align-items:center;gap:12px;font-size:20px;letter-spacing:.14em;color:var(--fg);background:var(--panel);padding:10px 16px;border-radius:4px}}

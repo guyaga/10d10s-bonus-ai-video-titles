@@ -1,0 +1,58 @@
+{
+ "_comment": "CHAT-BUBBLES, Hebrew, Secular One, on the Kling phone-hands plate. Outgoing bubbles sit on the left (RTL messenger). Typing dots, double ticks that turn blue. Fictional chat.",
+ "name": "new-chat-he",
+ "clip": "clips/phone-hands.mp4",
+ "language": "he",
+ "pair": "secular",
+ "contact": {
+  "name": "נועה",
+  "status": "מחוברת",
+  "initial": "נ",
+  "t": 0.5
+ },
+ "area": {
+  "x": 1230,
+  "top": 70,
+  "w": 640,
+  "bottom": 1010
+ },
+ "messages": [
+  {
+   "from": "them",
+   "text": "עוד לא יצאת, נכון?",
+   "t": 1.5,
+   "time": "20:41"
+  },
+  {
+   "from": "me",
+   "text": "חמש דקות ואני בחוץ",
+   "t": 2.9,
+   "time": "20:41"
+  },
+  {
+   "from": "them",
+   "text": "מושלם, שמרתי לנו שולחן",
+   "t": 4.7,
+   "time": "20:42"
+  },
+  {
+   "from": "me",
+   "text": "את אלופה",
+   "t": 6.1,
+   "time": "20:42"
+  },
+  {
+   "from": "them",
+   "text": "תביאי את המטען שלי",
+   "t": 7.6,
+   "time": "20:43"
+  },
+  {
+   "from": "me",
+   "text": "כבר בתיק",
+   "t": 8.9,
+   "time": "20:43"
+  }
+ ],
+ "plate_vol": 0.6
+}

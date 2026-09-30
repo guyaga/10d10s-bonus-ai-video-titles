@@ -1,0 +1,54 @@
+{
+ "_comment": "PODCAST-TAGS, Hebrew, Suez One names + Secular One labels, on the Kling podcast plate. Hosts tracked with vtrack.py; the meters follow the plate's own audio. Fictional show.",
+ "name": "new-podcast-he",
+ "clip": "clips/podcast.mp4",
+ "track": "tracks/podcast_vtrack.json",
+ "language": "he",
+ "pair": "suez",
+ "hosts": [
+  {
+   "follow": "host_left",
+   "anchor": "b",
+   "dx": 0,
+   "dy": -30,
+   "name": "מאיה לוין",
+   "role": "מגישה"
+  },
+  {
+   "follow": "host_right",
+   "anchor": "b",
+   "dx": 0,
+   "dy": -30,
+   "name": "דני אורן",
+   "role": "אורח · חוקר AI"
+  }
+ ],
+ "talk": [
+  {
+   "host": 0,
+   "t": 0,
+   "until": 5.0
+  },
+  {
+   "host": 1,
+   "t": 5.0,
+   "until": 10.1
+  }
+ ],
+ "episode": {
+  "no": "042",
+  "title": "בינה מלאכותית בחיי היומיום",
+  "t": 0.4
+ },
+ "topics": [
+  {
+   "text": "למה כולם מדברים על סוכנים",
+   "t": 1.2
+  },
+  {
+   "text": "מה זה אומר על העבודה שלנו",
+   "t": 5.4
+  }
+ ],
+ "plate_vol": 0.95
+}

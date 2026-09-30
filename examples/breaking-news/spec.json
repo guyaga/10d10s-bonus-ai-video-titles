@@ -1,0 +1,34 @@
+{
+ "_comment": "BREAKING-NEWS, Hebrew, Karantina 700 slab/headlines + Secular One labels (Oswald numerals on the bug), on the Kling city-news plate. Fictional channel.",
+ "name": "new-breaking-news-he",
+ "clip": "clips/city-news.mp4",
+ "language": "he",
+ "pair": "karantina",
+ "slab": "מבזק",
+ "headlines": [
+  {
+   "text": "עומסי תנועה כבדים במרכז העיר",
+   "t": 1.0
+  },
+  {
+   "text": "המשטרה סוגרת את רחוב המרכז לתנועה",
+   "t": 5.6
+  }
+ ],
+ "strap": {
+  "text": "תל אביב · שידור חי מהשטח",
+  "t": 1.9
+ },
+ "bug": {
+  "name": "חדשות צפון",
+  "clock": "19:42:08"
+ },
+ "live": true,
+ "ticker": {
+  "text": "גשם כבד צפוי הלילה באזור המרכז  ·  נתיבי איילון: עומס חריג בשני הכיוונים  ·  שירותי ההצלה בכוננות מוגברת",
+  "t": 0.6,
+  "speed": 150,
+  "label": "עוד"
+ },
+ "plate_vol": 0.7
+}

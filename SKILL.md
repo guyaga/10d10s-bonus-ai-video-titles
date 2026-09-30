@@ -161,9 +161,13 @@ Pairings (`"pair"` in any run_style spec; defined in `scripts/styles/common.py` 
 
 Rules: Hebrew titles never use Anton, Bodoni or any Latin-only face (`type_pair` refuses them). `dir=rtl`; wipes and
 motion mirror; numbers stay glued to the word they belong to (`words()` in common.py) and digit runs stay one
-left-to-right island. Assistant remains only inside styles shipped before this system: HUD-HELMET, SCIFI-TARGETING,
-MAP-FLYOVER and CAMPUS-AR (Hebrew HUD and label text) and the adkit themes `he_bold` / `he_premium` (KINETIC-HE,
-TAPE-HE, KINETIC-KARAOKE, STOMP-SX), whose shipped renders it matches. New work uses the three faces above.
+left-to-right island. Every Hebrew style in the kit renders with these three, including the ones shipped before
+the switch: adkit remaps the old family names at build time (`HE_REMAP` in adkit.py: Assistant/Heebo/Plex/Varela/Miriam
+-> Secular One, Rubik/Rubik Dirt/Amatic -> Karantina, Frank Ruhl/Bellefair -> Suez One; a spec can override with
+`"he_fonts"`), `hfkit` maps the Hebrew range of the base font to Secular One, and HUD digits may stay in a Latin mono.
+Missing glyphs: none of the three has a **₪** sign, so Hebrew prices are written with **ש״ח** (`9,600 ש״ח`), never ₪.
+Suez One's digits are old-style (`620` reads `62o`); a hero number set in Suez One takes lining figures from a Latin
+face (KEYNOTE-REVEAL uses Jost 600 for the digits), the Hebrew words stay Suez One.
 
 ## STEP 4 - Sound
 

@@ -1,0 +1,66 @@
+{
+ "_comment": "LISTING-SPECS on a 10 s Kling 3.0 golden-hour dolly toward a villa (G_studio/kling_plates/property_villa.mp4). Hebrew, Suez One + Secular One. Pins ride the villa and the pool tracked with vtrack.py (tracks/villa_track.json). The title block sits in the left sky because the roofline fills the right.",
+ "name": "listing-specs",
+ "clip": "clips/property_villa.mp4",
+ "track": "villa_track.json",
+ "language": "he",
+ "pair": "suez",
+ "head_side": "left",
+ "status": "למכירה · בלעדי",
+ "title": "וילה בקיסריה",
+ "address": "רחוב הדקל 12 · קיסריה",
+ "specs": [
+  {
+   "icon": "bed",
+   "n": 6,
+   "unit": "חדרים"
+  },
+  {
+   "icon": "bath",
+   "n": 4,
+   "unit": "חדרי רחצה"
+  },
+  {
+   "icon": "area",
+   "n": 480,
+   "unit": "מ״ר בנוי"
+  },
+  {
+   "icon": "plot",
+   "n": 1200,
+   "unit": "מ״ר מגרש"
+  }
+ ],
+ "t_specs": 2.4,
+ "price": {
+  "n": 12900000,
+  "unit": "ש״ח",
+  "label": "מחיר מבוקש",
+  "t": 5.6
+ },
+ "pins": [
+  {
+   "obj": "villa",
+   "anchor": "t",
+   "dx": 180,
+   "dy": 110,
+   "label": "חזית דרום · קירות זכוכית",
+   "t": 3.6,
+   "side": "R"
+  },
+  {
+   "obj": "pool",
+   "anchor": "c",
+   "dx": 40,
+   "dy": -40,
+   "label": "בריכת אינסוף · 14 מ׳",
+   "t": 4.4,
+   "side": "R"
+  }
+ ],
+ "agent": "נוף ים נדל״ן",
+ "colors": {
+  "accent": "#e3b35d"
+ },
+ "plate_vol": 0.7
+}

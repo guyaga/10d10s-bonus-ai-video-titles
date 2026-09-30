@@ -1,0 +1,40 @@
+{
+ "_comment": "BEFORE-AFTER-SPLIT on two 10 s Kling 3.0 takes of the same dolly: start frame by Kling text_to_image (renovated), the dated version by image_to_image with the same camera, then image_to_video on both with one identical camera prompt (plates: G_studio/kling_plates/ba_before.mp4 + ba_after.mp4). Hebrew: Karantina chips + Secular One stat bar. The two takes drift apart after ~6 s, so the last move sweeps fully to AFTER and the stat lands on the finished room.",
+ "name": "before-after-split",
+ "clip": "clips/ba_before.mp4",
+ "after": "clips/ba_after.mp4",
+ "language": "he",
+ "pair": "karantina",
+ "labels": {
+  "before": "לפני",
+  "after": "אחרי"
+ },
+ "moves": [
+  [
+   0.9,
+   0
+  ],
+  [
+   2.8,
+   0.8
+  ],
+  [
+   4.3,
+   0.28
+  ],
+  [
+   5.6,
+   0.5
+  ],
+  [
+   7.3,
+   1.0
+  ]
+ ],
+ "stat": "שיפוץ מלא · 42 ימי עבודה · 186,000 ש״ח",
+ "stat_t": 7.5,
+ "colors": {
+  "accent": "#ffd23f"
+ },
+ "plate_vol": 0.5
+}

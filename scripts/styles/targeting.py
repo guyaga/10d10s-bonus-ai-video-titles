@@ -23,8 +23,9 @@ def build(spec, base, style="SCIFI-TARGETING"):
     impact = spec.get("impact", fire["t"] + .8)
     banner = spec.get("banner", {"t": impact + 1.5, "title": "TARGETS NEUTRALIZED"})
     n_lock = sum(1 for x in T if x.get("lock", True))
-    faces, extra = fonts("Assistant", "JetBrains Mono")
+    faces, extra = fonts("Secular One", "JetBrains Mono")
     css = faces + f"""
+#root{{font-family:"Secular One",sans-serif}}
 :root{{--acc:{col['hud']};--fg:{col['fg']};--mute:{col['mute']};--warn:{col['alert']};--panel:rgba(12,8,4,.78)}}
 .mono{{font-family:"JetBrains Mono",monospace}}
 .tick{{border-color:color-mix(in srgb,var(--acc) 70%,transparent)}}

@@ -20,8 +20,9 @@ PLACE = {"right": "translate(0,-50%)", "left": "translate(-100%,-50%)", "above":
 def build(spec, base, style="CAMPUS-AR"):
     col = {"accent": "#9bd14a", "fg": "#eef4e8", "mute": "#b9c7b0", **spec.get("colors", {})}
     tags, end = spec["tags"], spec.get("end")
-    faces, extra = fonts("Assistant", "JetBrains Mono")
+    faces, extra = fonts("Secular One", "JetBrains Mono")
     css = faces + f"""
+#root{{font-family:"Secular One",sans-serif}}
 :root{{--fg:{col['fg']};--mute:{col['mute']};--acc:{col['accent']};--panel:rgba(7,13,9,.8);--line:color-mix(in srgb,var(--acc) 60%,transparent)}}
 .mono{{font-family:"JetBrains Mono",monospace}}
 .chip{{position:absolute;right:112px;top:60px;display:flex;align-items:center;gap:12px;font-size:20px;letter-spacing:.14em;padding:10px 16px}}

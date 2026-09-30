@@ -32,6 +32,28 @@ STYLES = {  # catalog ID -> module in scripts/styles
     "VIRAL-CAPTIONS": "viral", "DECODE-TYPE": "decode", "GLITCH-RGB": "glitch", "NEON-SIGN": "neon",
     "KEYNOTE-REVEAL": "keynote", "SPLIT-FLAP": "splitflap", "SIGNATURE-WRITE-ON": "writeon", "BROADCAST-PACK": "broadcast",
     "FILM-TITLE-CARD": "filmcard", "PARTICLE-TEXT": "particles", "FLIP-MONTAGE-LOGO": "flipmontage", "TEXT-ON-PATH": "textpath",
+    # N20 BEGIN  #42-#61 (Kling plates)
+    "LOWER-THIRD-CORP": "lowerthird",
+    "BREAKING-NEWS": "breakingnews",
+    "LEADER-CALLOUTS": "leadercallouts",
+    "DATA-CHARTS": "datacharts",
+    "KPI-COUNTERS": "kpicounters",
+    "APP-UI-POPUPS": "appui",
+    "CHAT-BUBBLES": "chatbubbles",
+    "SOCIAL-CTA": "socialcta",
+    "END-SCREEN": "endscreen",
+    "PODCAST-TAGS": "podcasttags",
+    "CHAPTER-MARKERS": "chapters",
+    "QUOTE-TESTIMONIAL": "quote",
+    "DOC-LOCATION-STAMP": "docstamp",
+    "SWISS-GRID": "swissgrid",
+    "GRADIENT-GLASS": "glass",
+    "BEFORE-AFTER-SPLIT": "beforeafter",
+    "LOGO-SHINE-REVEAL": "logoshine",
+    "LYRIC-KINETIC-3D": "lyric3d",
+    "TIMELINE-HISTORY": "timeline",
+    "LISTING-SPECS": "listing",
+    # N20 END
 }
 ADKIT = ["STOMP-BEHIND", "GLASS-CALLOUT", "KINETIC-HE", "TAPE-HE", "KINETIC-KARAOKE", "FLASH-CARD", "PRESIDENTIAL-SERIF"]
 

@@ -27,7 +27,7 @@ def build(spec, base, style="SPEED-STAT"):
     faces, extra = fonts("Anton", "Archivo", "JetBrains Mono")
     css = faces + f"""
 :root{{--w:{col['white']};--red:{col['accent']};--k:{col['ink']};--panel:color-mix(in srgb,var(--k) 82%,transparent)}}
-#root{{font-family:"Archivo","Assistant",sans-serif}}
+#root{{font-family:"Archivo","Secular One",sans-serif}}
 #stage,#stage2{{position:absolute;inset:0}}
 #flash{{position:absolute;inset:0;background:#fff;opacity:0}}
 #brand{{position:absolute;left:84px;top:64px;display:flex;align-items:center;gap:12px}}

@@ -1,0 +1,43 @@
+{
+ "_comment": "TIMELINE-HISTORY on a 10 s Kling 3.0 aerial of an old stone port (plate: G_studio/kling_plates/aerial_doc.mp4). Hebrew, right-to-left (earliest on the right), Suez One years + Secular One captions. Archival sepia warms into colour as the playhead reaches today.",
+ "name": "timeline-history",
+ "clip": "clips/aerial_doc.mp4",
+ "language": "he",
+ "pair": "suez",
+ "events": [
+  {
+   "year": 1104,
+   "text": "הצלבנים כובשים את עכו",
+   "t": 1.2
+  },
+  {
+   "year": 1291,
+   "text": "הממלוכים מחריבים את הנמל",
+   "t": 3.0
+  },
+  {
+   "year": 1799,
+   "text": "נפוליאון נעצר בחומות",
+   "t": 4.8
+  },
+  {
+   "year": 1948,
+   "text": "עכו במדינת ישראל",
+   "t": 6.6
+  },
+  {
+   "year": 2026,
+   "text": "היום · אתר מורשת עולמית",
+   "t": 8.4
+  }
+ ],
+ "margin": 215,
+ "big": {
+  "side": "end",
+  "y": 400
+ },
+ "colors": {
+  "accent": "#f2c46d"
+ },
+ "plate_vol": 0.8
+}

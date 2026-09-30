@@ -42,9 +42,10 @@ Pairings (`"pair"` in any run_style spec; defined in `scripts/styles/common.py` 
 
 Rules: Hebrew titles never use Anton, Bodoni or any Latin-only face (`type_pair` refuses them). `dir=rtl`; wipes and
 motion mirror; numbers stay glued to the word they belong to (`words()` in common.py) and digit runs stay one
-left-to-right island. Assistant remains only inside styles shipped before this system: HUD-HELMET, SCIFI-TARGETING,
-MAP-FLYOVER and CAMPUS-AR (Hebrew HUD and label text) and the adkit themes `he_bold` / `he_premium` (KINETIC-HE,
-TAPE-HE, KINETIC-KARAOKE, STOMP-SX), whose shipped renders it matches. New work uses the three faces above.
+left-to-right island. Every Hebrew style in the kit renders with these three, including the ones shipped before
+the switch: adkit remaps the old family names at build time (`HE_REMAP` in adkit.py: Assistant/Heebo/Plex/Varela/Miriam
+-> Secular One, Rubik/Rubik Dirt/Amatic -> Karantina, Frank Ruhl/Bellefair -> Suez One; a spec can override with
+`"he_fonts"`), `hfkit` maps the Hebrew range of the base font to Secular One, and HUD digits may stay in a Latin mono.
 
 ## Plate contracts
 
@@ -116,21 +117,21 @@ button with a hard offset shadow.
 - Prompt: `Titles: COUNTDOWN-CTA - flash-sale stack with 15 s live countdown, struck total + sale price, SHOP NOW, accent #E63B2E.`
 
 ### KINETIC-HE
-Hebrew word-by-word social stomps synced to the voice: Rubik 900 / Karantina 700 words that land blurred->sharp with a
+Hebrew word-by-word social stomps synced to the voice: Karantina 700 words that land blurred->sharp with a
 squash, one word in the accent colour, one outlined, hits shake the frame.
 - Best for: Hebrew social ads, product launches, anything with a punchy VO.
-- Fonts: Rubik 900 + Karantina 700 (big words), Assistant for small lines. Palette: white + one accent.
+- Fonts: Karantina 700 (words) + Secular One (small lines, labels, counters). Palette: white + one accent.
 - Motion: word time = the VO word onset (`word_times.py`); `kine` lines; `hit:true` = shake + thump.
 - Build: adkit `kine` (+ `ring`, `callout`, `counter`, `chip`, `lockup`), theme `he_bold`.
 - Source: `E6_guyaga_aero_sneaker_HE.mp4`.
 - Plate: cuts OK (max 5), 12-24 s · subject centred, room above it · 25% free top · slow orbit or slow push; energy from subject motion, not camera · track: hero object.
-- Prompt: `Titles: KINETIC-HE - Hebrew voice-synced word stomps, Rubik 900 + Karantina, one accent word per line, hit shakes.`
+- Prompt: `Titles: KINETIC-HE - Hebrew voice-synced word stomps in Karantina, one accent word per line, hit shakes.`
 
 ### TAPE-HE
 Hebrew slogans on highlight-tape strips (ink / accent / light), each strip wipes in right-to-left and slams, slightly
 rotated, hard drop shadow; used where plain Hebrew text over footage was unreadable.
 - Best for: Hebrew slogans, stats, CTAs over busy footage; readable at phone size.
-- Fonts: Rubik 900 / Karantina. Palette: strips in ink + one accent; `tacc` auto-picks legible text colour.
+- Fonts: Karantina 700 (strips) + Secular One (labels). Palette: strips in ink + one accent; `tacc` auto-picks legible text colour.
 - Motion: strip clip-path wipe 0.28 s, text pops 0.12 s later; optional bottom scrim.
 - Build: adkit `tape` (+ `kine`, `counter`), theme `he_bold`.
 - Source: `E4_firelink_through_the_smoke_HK.mp4` (all `_HK` renders).
@@ -141,7 +142,7 @@ rotated, hard drop shadow; used where plain Hebrew text over footage was unreada
 TAPE/KINETIC plus karaoke captions: 2-3 word groups at the bottom, the spoken word highlighted in an accent pill, plus
 punch-zooms on the plate.
 - Best for: talking/VO-driven social cuts, reels, accessibility.
-- Fonts: Rubik 900 with a thick black stroke. Palette: white words, accent pill.
+- Fonts: Secular One captions with a thick black stroke; Karantina for the stomps. Palette: white words, accent pill.
 - Motion: groups break on punctuation or 3 words; digits glue to the next word ("6 שעות"); a group holds <= 1 s after
   its last word; `punch` zooms 1.1 -> 1 on key beats.
 - Build: adkit `captions` (words from `word_times.py`) + `punch` + `kine`/`tape`.
@@ -197,7 +198,7 @@ price sticker. The loudest of the runway family that still reads premium.
 The dynamic Hebrew social version: coloured Karantina headline words that stomp in, ink tape lines for the
 secondary copy, and a closing slogan with one accent word. Busier and faster than TAPE-HE.
 - Best for: food, product, travel and brand social ads in Hebrew that need energy.
-- Fonts: Karantina + Rubik 900. Palette: brand accent (e.g. #ff7a1a), ink, white.
+- Fonts: Karantina 700 + Secular One. Palette: brand accent (e.g. #ff7a1a), ink, white.
 - Motion: word-synced `kine` stomps (blur + scale + squash), hit shakes, `tape` strips wiping RTL.
 - Build: adkit via `run_ad.py` with an SX spec. `examples/E6_sneaker_sx.py` is the template.
 - Source: `E10_ember_chefs_pass_SX.mp4` (also E3, E5, E6, E9 `_SX`).
@@ -232,7 +233,7 @@ Iron-Man-style (original design) holographic visor HUD in Hebrew: rotating dashe
 visor overlay, threat panels that go red on alert, a heart-rate ring, and the suit AI "Ora" speaking (Gemini TTS
 designed voice) with a voice meter driven by the real audio envelope.
 - Best for: sci-fi, gaming, tech launches, "AI assistant" stories.
-- Fonts: Assistant 300-800 (Hebrew) + JetBrains Mono. Palette: cyan `#6fe3ff`, text `#e6fbff`, red `#ff4a5a`, amber.
+- Fonts: Secular One (Hebrew HUD text) + JetBrains Mono (digits). Palette: cyan `#6fe3ff`, text `#e6fbff`, red `#ff4a5a`, amber.
 - Motion: rings rotate continuously (seek-safe: angle = f(t)); alert = red wash + panel shake; perspective tilt.
 - Build: run_style `HUD-HELMET` (`scripts/styles/helmet.py`, `language` he/en, optional `voice` file drives the meter; example `examples/hud-helmet/`).
 - Source: `B4V_helmet_ora_voice_24s.mp4`.
@@ -243,7 +244,7 @@ designed voice) with a voice meter driven by the real audio envelope.
 First-person targeting: brackets and ID tags locked to each robot (`T-01 // HEAVY`), a HOSTILE LOCK banner, FIRE,
 then TARGETS NEUTRALIZED.
 - Best for: action, gaming, defence/tech demos.
-- Fonts: JetBrains Mono + Assistant. Palette: amber `#ffb547`, warn red, dark panels.
+- Fonts: JetBrains Mono + Secular One (Hebrew). Palette: amber `#ffb547`, warn red, dark panels.
 - Motion: box brackets snap to tracked boxes (`data-box`), tags follow, banners wipe.
 - Build: run_style `SCIFI-TARGETING` (`scripts/styles/targeting.py`; example `examples/scifi-targeting/`).
 - Source: `B3_final.mp4`.
@@ -255,7 +256,7 @@ Automotive AR head-up display projected onto the road in true CSS 3D perspective
 band, amber contour on the cyclist with a warning strip, a split speed ring (54 -> 0) that doubles as the co-pilot's
 voice arc, an AEB pictogram flash, and an end line written as light on the wet road.
 - Best for: automotive, mobility, safety tech.
-- Fonts: Heebo 200/300/500/700 only. Palette: cool white, cyan, amber for hazards.
+- Fonts: Secular One (Hebrew HUD text). Palette: cool white, cyan, amber for hazards.
 - Motion: slow fades and projected-light reveals; no stomps, no shakes.
 - Build: bespoke (`references/recipes/bespoke/E3_car_bespoke.py`).
 - Source: `E3_aura_night_drive_BESPOKE.mp4`.
@@ -267,7 +268,7 @@ The frame becomes a thermal-imaging viewfinder: steel-blue luminance map with on
 ironbow strip, crosshair with spot temperature, SCBA pressure-gauge dial (100 -> 7 %), live ECG line; the AI speaks as
 amber OSD text; the camera switches off to natural colour at the rescue.
 - Best for: emergency services, safety equipment, industrial, documentary tension.
-- Fonts: IBM Plex Sans Hebrew / Mono. Palette: steel blue, amber, white-hot.
+- Fonts: Secular One (Hebrew OSD) + mono digits. Palette: steel blue, amber, white-hot.
 - Motion: everything pulses on the heartbeat; switch-off bloom at the resolve.
 - Build: bespoke (`E4_fire_bespoke.py`; SVG colour-table filter on the plate).
 - Source: `E4_firelink_through_the_smoke_BESPOKE.mp4`.
@@ -279,7 +280,7 @@ Performance-lab language: the product starts as a volt CAD wireframe on a grid a
 assembly with numbered balloons, parts re-rendered as mesh / FEA heat maps masked to the real pixels, race-timer
 7-segment digits that flick and lock, a force-plate trace on the landing, end on a shoebox label.
 - Best for: sneakers, gear, hardware, any engineered product.
-- Fonts: Chakra Petch + Rubik (Hebrew). Palette: black + volt, orange only on the box and hot stress.
+- Fonts: Chakra Petch (digits) + Karantina (Hebrew). Palette: black + volt, orange only on the box and hot stress.
 - Motion: scan wipes, digit flicker-and-lock, no thump/shake.
 - Build: bespoke (`E6_sneaker_bespoke.py`, SVG filters `#fWire` / `#fHeat` over the matte).
 - Source: `E6_guyaga_aero_sneaker_BESPOKE.mp4`.
@@ -290,7 +291,7 @@ assembly with numbered balloons, parts re-rendered as mesh / FEA heat maps maske
 Aerial map explorer: a route line draws across a planar-tracked city, pins with bilingual labels stick to places,
 a distance counter runs, then a landing card on arrival.
 - Best for: travel, real estate location, campus/venue arrival, logistics.
-- Fonts: Assistant + JetBrains Mono. Palette: dark glass panels, lime/acc route.
+- Fonts: Secular One + JetBrains Mono. Palette: dark glass panels, lime/acc route.
 - Motion: pins ride `track.py` (planar homography) points; route draws with stroke-dashoffset.
 - Build: run_style `MAP-FLYOVER` (`scripts/styles/mapflyover.py`; points from `track.py`; example `examples/map-flyover/`).
 - Source: `TEST_A_map_to_ono.mp4`.
@@ -301,7 +302,7 @@ a distance counter runs, then a landing card on arrival.
 AR place labels on a walking tour: small glass tags pinned to real features (Library, Study area, Podcast studio,
 Skylight), a voice waveform, a person tag, an end logo card.
 - Best for: campus/venue/office tours, museums, retail wayfinding.
-- Fonts: Assistant + mono. Palette: dark glass, thin accent rule.
+- Fonts: Secular One + mono. Palette: dark glass, thin accent rule.
 - Motion: tags clip-wipe in, ride tracked anchors, fade on exit.
 - Build: run_style `CAMPUS-AR` (`scripts/styles/campus.py`; example `examples/campus-ar/`).
 - Source: `TEST_C_campus_ar.mp4`.
@@ -311,7 +312,7 @@ Skylight), a voice waveform, a person tag, an end logo card.
 ### HUD-CLEAN
 The first, quieter visor HUD: a thin vitals column, a heading tick scale, and one red alert panel. No rings, no voice.
 - Best for: when HUD-HELMET is too much; documentary-feeling sci-fi, pilots, divers, climbers.
-- Fonts: Assistant + JetBrains Mono. Palette: pale cyan-white, amber, alert red.
+- Fonts: Secular One + JetBrains Mono. Palette: pale cyan-white, amber, alert red.
 - Build: `run_style.py HUD-HELMET` with the reticle, radar and voice blocks left out of the spec (every block is optional).
   The original recipe is `legacy_shots.py` → `B4` (Hebrew) / `B2` (English).
 - Source: `B4_helmet_hebrew_24s.mp4` (also `B2_final.mp4`, `TEST_B_scifi_pilot.mp4`).
@@ -321,7 +322,7 @@ The first, quieter visor HUD: a thin vitals column, a heading tick scale, and on
 ### CYBER-DOSSIER
 A character intro as a city dossier: a bilingual location card, a pilot ID panel, and suit status bars.
 - Best for: game trailers, character reveals, sci-fi shorts, "meet the hero" openers.
-- Fonts: JetBrains Mono + Assistant. Palette: amber #ffb547 on near-black glass.
+- Fonts: JetBrains Mono + Secular One (Hebrew). Palette: amber #ffb547 on near-black glass.
 - Build: reference recipe `legacy_shots.py` → `B1`.
 - Source: `B1_final.mp4`.
 - Plate: one take, no cuts, 5-10 s · full body, centred, walks toward camera · 35% free both sides · low slow dolly backwards matching the walk · track: character, head.
@@ -330,7 +331,7 @@ A character intro as a city dossier: a bilingual location card, a pilot ID panel
 ### ARRIVAL-CARD
 A destination lower-third: the place name in two languages, coordinates and a distance line, and a green ARRIVED chip.
 - Best for: travel, campus and real-estate arrivals; the last shot of a MAP-FLYOVER.
-- Fonts: Assistant + JetBrains Mono. Palette: green #9bd14a, dark glass, off-white.
+- Fonts: Secular One + JetBrains Mono. Palette: green #9bd14a, dark glass, off-white.
 - Build: reference recipe `legacy_shots.py` → `A2`. It pairs with `run_style.py MAP-FLYOVER` as the next shot.
 - Source: `A2_final.mp4`.
 - Plate: one take, no cuts, 5-10 s · person walks toward camera, destination facade behind with a blank area for the logo · 35% free left · slow steady dolly backwards at chest height matching the walk · track: head, blank facade area.
@@ -343,7 +344,7 @@ A jeweller's bench after hours: the frame dims to velvet-black around the featur
 pieces showing stabilised magnified crops with the grade engraved in its ring, prices on tiny gold hallmark plates,
 four-point glints on the metal, thin gold-foil words, an embossed black end card.
 - Best for: jewellery, watches, fragrance, any luxury object.
-- Fonts: Frank Ruhl Libre 300 (Hebrew), Cormorant caps, Pinyon Script. Palette: velvet black + gold foil.
+- Fonts: Suez One (Hebrew), Cormorant caps, Pinyon Script. Palette: velvet black + gold foil.
 - Motion: slow fades only; glints computed from t.
 - Build: bespoke (`E7_gold_bespoke.py` + `E7_gold_bespoke_loupe.py` for the loupe crops).
 - Source: `E7_aurum_gold_on_velvet_BESPOKE.mp4`.
@@ -355,7 +356,7 @@ Architecture on paper: a vellum sheet slides over the drone shot with the facade
 sheet where floors fill with watercolour wash as the drone climbs and the sight line to the sea clears; ends on an
 estate-agent floor plan and a brass building plaque.
 - Best for: real estate, architecture, developments, hotels.
-- Fonts: Karantina (hand lettering) + Heebo 300. Palette: vellum cream, graphite, sepia, terracotta, sea blue, brass.
+- Fonts: Karantina (hand lettering) + Secular One (labels) + Suez One (plaque). Palette: vellum cream, graphite, sepia, terracotta, sea blue, brass.
 - Motion: sheet slides, line draws, wash fills tied to tracked slabs.
 - Build: bespoke (`E8_tower_bespoke.py`; runnable example in `examples/`).
 - Source: `E8_seaview24_tower_arrival_BESPOKE.mp4`.
@@ -367,7 +368,7 @@ The drone flight as an interior-design magazine spread: masthead and folios, cir
 shopping credits, a running price-list column, red-pencil loops and margin notes, halftone + paper grain, a page that
 folds open for the pull quote and folds in for the total.
 - Best for: interiors, furniture, home, hospitality, shoppable rooms.
-- Fonts: Frank Ruhl Libre + Heebo Light + Amatic SC (pencil). Palette: paper cream, ink, editor red.
+- Fonts: Suez One (magazine serif) + Secular One (captions) + Karantina (pencil note). Palette: paper cream, ink, editor red.
 - Motion: soft fades, slides, page folds only.
 - Build: bespoke (`E5_home_bespoke.py`).
 - Source: `E5_luma_drone_through_the_home_BESPOKE.mp4`.
@@ -379,7 +380,7 @@ A restaurant kitchen at night: the order prints line by line as a thermal ticket
 condense out of smoke and drift off as steam, a flame-shaped heat gauge fills to 260 degrees, grease-pencil notes on
 the plate, and the ending is the ticket torn, spiked and stamped DONE.
 - Best for: restaurants, food, delivery, chefs.
-- Fonts: Frank Ruhl Libre (VO words), Miriam Libre (receipt), Amatic SC (grease pencil), Rubik Dirt (station label).
+- Fonts: Suez One (VO words), Secular One (receipt), Karantina (grease pencil and station label).
 - Palette: steel, ember orange, receipt white, stamp red.
 - Motion: print-in, smoke condense (SVG turbulence), stamp slam at the end only.
 - Build: bespoke (`E10_chef_bespoke.py`).
@@ -392,7 +393,7 @@ The world seen through one smart-glasses lens: a real lens outline with frame ed
 postage-stamp mascot who lip-syncs the VO in paper speech bubbles, a sign repainted in Hebrew by homography and
 franked "translated", an airmail postcard for the landmark, a printed receipt, a postcard end card.
 - Best for: travel, translation/AI wearables, tourism, playful consumer tech.
-- Fonts: Varela Round + IBM Plex Sans Hebrew + IBM Plex Mono. Palette: navy ink, postal red, airmail blue, cream, sun yellow.
+- Fonts: Secular One (voice, postcards, labels) + IBM Plex Mono (receipt digits). Palette: navy ink, postal red, airmail blue, cream, sun yellow.
 - Motion: paper pops, stamp franking, dotted map line.
 - Build: bespoke (`E9_glasses_bespoke.py`).
 - Source: `E9_lumen_lens_smart_glasses_BESPOKE.mp4`.
@@ -541,6 +542,211 @@ orders it (never put direction="rtl" on a textPath: Chrome drops the text).
 - Source: `AE_TEXT-ON-PATH` (coastal aerial).
 - Plate: one take, no cuts, 8-15 s · the route clearly visible and roughly flat to camera, not hidden behind buildings · no free space needed · smooth drone, constant slow push and slight descent; no rotation · track: route points (planar, track.py).
 - Prompt: `Titles: TEXT-ON-PATH - the words ride the tracked road as a glowing route draws on.`
+
+<!-- N20 BEGIN -->
+## E. Industry staples (#42-#61, Kling 3.0 plates)
+
+The twenty most-used title looks in video and tech, each demoed on a Kling 3.0 plate made for its shooting requirements. Hebrew samples use only Suez One, Karantina 700 and Secular One.
+
+**Broadcast & corporate**
+
+### LOWER-THIRD-CORP
+The interview name super: accent bar, masked name rise, title slide, drawn rule, one glint, clean masked exit.
+- Best for: corporate, news, youtube, hebrew.
+- Fonts: Hebrew Suez One + Secular One; Latin Manrope 700/500. Palette: #cc2419, #0a0c10, #ffffff.
+- Build: run_style `LOWER-THIRD-CORP` (`scripts/styles/lowerthird.py`; example `examples/lower-third-corp/`).
+- Source: Kling 3.0 plate `talking-head` (G_studio/kling_plates), sample `LOWER-THIRD-CORP.mp4` in HE.
+- Plate: one take, no cuts, 6-30 s · chest-up, the person centre or one side; the lower-left/lower-right quarter calm · 18% free bottom · locked-off tripod or a very slow push · no tracking.
+- Prompt: `Titles: LOWER-THIRD-CORP - accent-bar lower third, name masked rise, title slide, rule draw, one glint, Suez One + Secular One in Hebrew.`
+
+### BREAKING-NEWS
+Rolling-news package: red slab slam + shine, headline bar that types and flips, strap, LIVE bug with a running clock, ticker.
+- Best for: news, corporate, hebrew.
+- Fonts: Hebrew Karantina 700 + Secular One (Oswald numerals); Latin Oswald 700 + Archivo 500. Palette: #d6001c, #ffffff, #0a1a33.
+- Build: run_style `BREAKING-NEWS` (`scripts/styles/breakingnews.py`; example `examples/breaking-news/`).
+- Source: Kling 3.0 plate `city-news` (G_studio/kling_plates), sample `BREAKING-NEWS.mp4` in HE.
+- Plate: one take, no cuts, 6-30 s · wide; key action in the upper two thirds; the bottom third is road/ground · 30% free bottom · locked-off or a very slow push from an elevated position · no tracking.
+- Prompt: `Titles: BREAKING-NEWS - red slab slam with shine, headline bar word-by-word, flip to the next headline, strap, LIVE bug with clock, ticker.`
+
+### PODCAST-TAGS
+Video-podcast package: tracked speaker tags light up with a live equalizer on whoever talks, episode chip, topic strip, audio waveform.
+- Best for: youtube, corporate, hebrew.
+- Fonts: Hebrew Suez One + Secular One (Manrope numerals); Latin Manrope 700/500. Palette: #ffb13b, #0e0c0a, #ffffff.
+- Build: run_style `PODCAST-TAGS` (`scripts/styles/podcasttags.py`; example `examples/podcast-tags/`).
+- Source: Kling 3.0 plate `podcast` (G_studio/kling_plates), sample `PODCAST-TAGS.mp4` in HE.
+- Plate: one take, no cuts, 8-30 s · wide two-shot, hosts in the left and right thirds, the table edge along the bottom · 15% free bottom · locked-off with a very slow push · track: host_left, host_right.
+- Prompt: `Titles: PODCAST-TAGS - tracked speaker tags, active speaker lit with a live equalizer from the real audio, episode chip + REC, topic strip, waveform.`
+
+**Tech & UI**
+
+### LEADER-CALLOUTS
+Premium product callouts: dot + ring pulse on a tracked part, two-segment leader line, spec value counting up.
+- Best for: product, tech, luxury.
+- Fonts: Latin Space Grotesk 700/500; Hebrew Secular One. Palette: #ffffff, #7cf0ff, #0b0d10.
+- Build: run_style `LEADER-CALLOUTS` (`scripts/styles/leadercallouts.py`; example `examples/leader-callouts/`).
+- Source: Kling 3.0 plate `product-macro` (G_studio/kling_plates), sample `LEADER-CALLOUTS.mp4` in EN.
+- Plate: one take, no cuts, 8-20 s · product centred in the middle third, large empty dark space left and right · 30% free both sides · slow orbit or turntable with a gentle push-in · track: product parts (2-4).
+- Prompt: `Titles: LEADER-CALLOUTS - dot + ring on each tracked part, thin two-segment leader lines, spaced caption over a counting spec value, cyan unit.`
+
+### DATA-CHARTS
+Infographic glass card: gridlines draw, bars grow with counting values, then a line chart draws with an area fill and a value flag.
+- Best for: corporate, tech, hebrew.
+- Fonts: Hebrew Secular One; Latin Manrope 700/500. Palette: #0a0d12, #39d98a, #ffffff.
+- Build: run_style `DATA-CHARTS` (`scripts/styles/datacharts.py`; example `examples/data-charts/`).
+- Source: Kling 3.0 plate `office-b-roll` (G_studio/kling_plates), sample `DATA-CHARTS.mp4` in HE.
+- Plate: one take, no cuts, 8-20 s · people on one side; the other half soft out-of-focus space (window, wall) · 42% free left · slow smooth dolly or locked-off · no tracking.
+- Prompt: `Titles: DATA-CHARTS - frosted card on the clean side, gridlines draw, bars grow with counters, hand-over to a line chart with area fill and a value flag.`
+
+### KPI-COUNTERS
+Results dashboard: frosted tiles cascade, big numbers count up, delta chips pop, sparklines draw with a glowing end dot.
+- Best for: corporate, tech, product.
+- Fonts: Latin Space Grotesk 700/500; Hebrew Secular One. Palette: #080b10, #3ddc84, #7cc8ff.
+- Build: run_style `KPI-COUNTERS` (`scripts/styles/kpicounters.py`; example `examples/kpi-counters/`).
+- Source: Kling 3.0 plate `office-b-roll` (G_studio/kling_plates), sample `KPI-COUNTERS.mp4` in EN.
+- Plate: one take, no cuts, 6-20 s · subject on one side, a clean half for a tile column · 35% free left · slow dolly or locked-off · no tracking.
+- Prompt: `Titles: KPI-COUNTERS - frosted KPI tiles cascade in, numbers count up with separators, delta chips, sparklines with a glowing end dot.`
+
+### GRADIENT-GLASS
+The SaaS / tech launch look: a frosted glass card tilts in over a gradient plate with a glint along its border, a shimmering
+NEW pill, a gradient headline, a subhead, floating glass feature chips, and a cursor that glides to the CTA and clicks it (ripple + press).
+- Best for: SaaS and app launches, feature announcements, tech keynotes.
+- Fonts: Sora 800 · Manrope 500 (Hebrew: Secular One). Palette: #c3a8ff, #7cc4ff, #ffa98a.
+- Build: run_style `GRADIENT-GLASS` (`scripts/styles/glass.py`; example `examples/gradient-glass/`).
+- Source: `new20/renders/GRADIENT-GLASS.mp4` (Kling 3.0 plate `gradient_glass.mp4`, English).
+- Plate: one take, no cuts, 6-15 s · motion around the edges, the centre calm and darker · no free space needed · very slow push-in · no tracking.
+- Prompt: `Titles: GRADIENT-GLASS - frosted glass card with border glint, NEW pill, gradient headline, subhead, CTA button, floating glass chips, cursor that clicks the CTA with a ripple.`
+
+### LOGO-SHINE-REVEAL
+The premium logo sting: a geometric logomark draws itself on and fills with brushed silver, the wordmark opens from a horizontal
+light slit, a specular shine crosses the lockup in time with the plate's own light sweep, a star glint catches on the mark, a tagline settles.
+- Best for: brand stings, openers and closers, product launches.
+- Fonts: Michroma wordmark · Secular One tagline · JetBrains Mono. Palette: #e9edf2, #6d7582, #9fd3ff.
+- Build: run_style `LOGO-SHINE-REVEAL` (`scripts/styles/logoshine.py`; example `examples/logo-shine-reveal/`).
+- Source: `new20/renders/LOGO-SHINE-REVEAL.mp4` (Kling 3.0 plate `logo_metal.mp4`, Hebrew).
+- Plate: one take, no cuts, 5-12 s · surface fills the frame; the centre clear and even · no free space needed · locked, imperceptible push-in · no tracking.
+- Prompt: `Titles: LOGO-SHINE-REVEAL - logomark strokes draw then fill with brushed silver, wordmark opens from a light slit, specular shine + star glint in sync with the plate's light sweep, tagline settles, slow push-in.`
+
+**Social & YouTube**
+
+### APP-UI-POPUPS
+Phone-style UI floating beside the subject: notification banners spring in and stack, a progress-ring card fills, a toast confirms.
+- Best for: tech, product, youtube, hebrew.
+- Fonts: Hebrew Secular One; Latin Manrope 700/500. Palette: #f6f7fa, #35d07f, #0d1117.
+- Build: run_style `APP-UI-POPUPS` (`scripts/styles/appui.py`; example `examples/app-ui-popups/`).
+- Source: Kling 3.0 plate `phone-hands` (G_studio/kling_plates), sample `APP-UI-POPUPS.mp4` in HE.
+- Plate: one take, no cuts, 6-20 s · the person in the left third; the right two thirds soft and empty · 35% free right · locked-off, shallow depth of field · no tracking.
+- Prompt: `Titles: APP-UI-POPUPS - iOS-style notification banners spring in and stack, a progress-ring card fills, a toast confirms; glass, no logos.`
+
+### CHAT-BUBBLES
+Messenger conversation over the shot: typing dots, springy bubbles, timestamps, double ticks turning blue. Outgoing on the left in Hebrew.
+- Best for: youtube, tech, hebrew.
+- Fonts: Hebrew Secular One; Latin Manrope 700/500. Palette: #d9fdd3, #ffffff, #53bdeb.
+- Build: run_style `CHAT-BUBBLES` (`scripts/styles/chatbubbles.py`; example `examples/chat-bubbles/`).
+- Source: Kling 3.0 plate `phone-hands` (G_studio/kling_plates), sample `CHAT-BUBBLES.mp4` in HE.
+- Plate: one take, no cuts, 6-20 s · the person in one third; a tall clean area on the other side for the thread · 33% free right · locked-off · no tracking.
+- Prompt: `Titles: CHAT-BUBBLES - messenger thread over the shot: typing indicator, bubbles pop from the tail, timestamps, read ticks turn blue.`
+
+### SOCIAL-CTA
+Subscribe CTA: channel chip with counting followers, cursor clicks a red pill that flips to Subscribed, bell rings, like counts up.
+- Best for: youtube, hebrew.
+- Fonts: Hebrew Secular One; Latin Manrope 700/500. Palette: #ff0033, #3a3f47, #ffffff.
+- Build: run_style `SOCIAL-CTA` (`scripts/styles/socialcta.py`; example `examples/social-cta/`).
+- Source: Kling 3.0 plate `talking-head` (G_studio/kling_plates), sample `SOCIAL-CTA.mp4` in HE.
+- Plate: one take, no cuts, 6-20 s · creator centre-right; the lower-left quarter clean · 25% free left · locked-off tripod · no tracking.
+- Prompt: `Titles: SOCIAL-CTA - channel chip with counting followers, cursor clicks SUBSCRIBE, pill flips to SUBSCRIBED, bell rings, like counts up; no platform logos.`
+
+### END-SCREEN
+YouTube-style end card: angled scrim wipe, WATCH NEXT, two video tiles flip up with Ken Burns thumbnails, avatar in a spinning ring.
+- Best for: youtube.
+- Fonts: Latin Manrope 700/500; Hebrew Secular One. Palette: #0b0d12, #ff0033, #ffffff.
+- Build: run_style `END-SCREEN` (`scripts/styles/endscreen.py`; example `examples/end-screen/`).
+- Source: Kling 3.0 plate `talking-head` (G_studio/kling_plates), sample `END-SCREEN.mp4` in EN.
+- Plate: one take, no cuts, 6-20 s · creator on one side (centre-right); the other half free for the card · 40% free left · locked-off · no tracking.
+- Prompt: `Titles: END-SCREEN - angled scrim wipe, WATCH NEXT, two thumbnail tiles flip up (Ken Burns, duration badge), avatar in a spinning dashed ring + SUBSCRIBE.`
+
+### LYRIC-KINETIC-3D
+Music-video kinetic lyrics in 3D space: every word flies in from depth on its sung syllable, big condensed key words and small
+italic connectives build a layered composition, chosen words live BEHIND the performer (matte), front and back planes counter-rotate for parallax.
+- Best for: music videos, lyric videos, performance promos, hype edits.
+- Fonts: Anton · Cormorant Garamond italic (Hebrew: Karantina · Suez One). Palette: #ffffff, #ff3fb4, #1a1030.
+- Build: run_style `LYRIC-KINETIC-3D` (`scripts/styles/lyric3d.py`; example `examples/lyric-kinetic-3d/`).
+- Source: `new20/renders/LYRIC-KINETIC-3D.mp4` (Kling 3.0 plate `singer.mp4`, English).
+- Plate: one take, no cuts, 6-20 s · medium shot, performer centred, dark space above and on both sides · 18% free both sides · very slow orbit · track: performer body, face · matte (subject separable), music beat grid.
+- Prompt: `Titles: LYRIC-KINETIC-3D - words fly in from depth on the sung syllables, big condensed key words + small italic connectives, chosen words behind the performer (matte), counter-rotating planes, glow on the hook word.`
+
+**Editorial & doc**
+
+### CHAPTER-MARKERS
+Documentary / YouTube chapter card: a big numeral draws as an outline and fills, a hairline rule and the kicker sit beside it,
+the chapter title rises from a mask, a subtitle fades up, a segmented chapter bar fills along the bottom, and the card folds into a corner chip.
+- Best for: documentaries, YouTube long-form, brand films in parts, course lessons.
+- Fonts: Suez One · Secular One (Latin: DM Serif Display · Manrope). Palette: #ffffff, #e8c27a, #0b0f16.
+- Build: run_style `CHAPTER-MARKERS` (`scripts/styles/chapters.py`; example `examples/chapter-markers/`).
+- Source: `new20/renders/CHAPTER-MARKERS.mp4` (Kling 3.0 plate `aerial_doc.mp4`, Hebrew).
+- Plate: one take, no cuts, 6-30 s · subject in one half of the frame; the other half open (sea, sky, wall) · 40% free left · slow steady glide, level horizon · no tracking.
+- Prompt: `Titles: CHAPTER-MARKERS - outline numeral that fills, chapter title rising from a mask, subtitle, a segmented chapter bar, then a corner chapter chip. Suez One + Secular One, gold accent.`
+
+### QUOTE-TESTIMONIAL
+The testimonial quote card: a quote mark drops in, the quote builds word by word IN SYNC with the speaker's own voice
+(word timings), the key phrase gets an accent underline as it is said, then a hairline, name, role and a five-star rating that pops star by star.
+- Best for: customer testimonials, reviews, founder quotes, case studies.
+- Fonts: DM Serif Display · Manrope (Hebrew: Suez One · Secular One). Palette: #1c1712, #d9892b, #f4efe6.
+- Build: run_style `QUOTE-TESTIMONIAL` (`scripts/styles/quote.py`; example `examples/quote-testimonial/`).
+- Source: `new20/renders/QUOTE-TESTIMONIAL.mp4` (Kling 3.0 plate `portrait_testimonial.mp4`, English).
+- Plate: one take, no cuts, 6-20 s · medium close-up, the speaker on one third, the other half a soft bright wall or window · 35% free left · locked tripod with an imperceptible push-in · no tracking.
+- Prompt: `Titles: QUOTE-TESTIMONIAL - quote mark drops in, quote builds word by word on the speaker's own voice, key phrase underlined as spoken, then name, role and five stars.`
+
+### DOC-LOCATION-STAMP
+The documentary place/date stamp: cinema letterbox bars ease in, the place name types with a block cursor, a transliteration
+line follows, GPS coordinates scramble and lock digit by digit, time and date type out, and a crosshair collapses onto a tracked landmark with a leader label.
+- Best for: documentaries, travel films, real-estate area intros, news packages.
+- Fonts: Secular One · JetBrains Mono (Latin: Manrope · JetBrains Mono). Palette: #ffffff, #ffcf6e, #000000.
+- Build: run_style `DOC-LOCATION-STAMP` (`scripts/styles/docstamp.py`; example `examples/doc-location-stamp/`).
+- Source: `new20/renders/DOC-LOCATION-STAMP.mp4` (Kling 3.0 plate `aerial_doc.mp4`, Hebrew).
+- Plate: one take, no cuts, 6-20 s · landmark in one half; a calm corner for the stamp · 35% free left · slow steady glide · track: the landmark (tower, bridge, building).
+- Prompt: `Titles: DOC-LOCATION-STAMP - cinema letterbox, typewriter place name with block cursor, transliteration, GPS coordinates that scramble into place, time/date, crosshair locked on a tracked landmark.`
+
+### SWISS-GRID
+International Typographic Style kinetic type: a 12-column grid draws over the shot, heavy grotesk statements rise line by line
+out of masks and snap to the columns, a Swiss-red square jumps between grid cells on the beat, a counter and caption column set the rhythm.
+- Best for: architecture, design studios, tech and brand manifestos.
+- Fonts: Manrope 700 · Manrope 500 (Hebrew: Secular One). Palette: #111111, #e3342f, #f2f2ee.
+- Build: run_style `SWISS-GRID` (`scripts/styles/swissgrid.py`; example `examples/swiss-grid/`).
+- Source: `new20/renders/SWISS-GRID.mp4` (Kling 3.0 plate `minimal_architecture.mp4`, English).
+- Plate: one take, no cuts, 6-20 s · large flat light surfaces across the left and centre · 50% free left · slow slider move, perfectly level · no tracking.
+- Prompt: `Titles: SWISS-GRID - 12-column grid draws in, black grotesk statements rise from masks and snap to columns, one red square jumping between cells, counter and caption column.`
+
+### BEFORE-AFTER-SPLIT
+The renovation / upgrade comparison: two takes of the SAME camera move are stacked, a divider with a round handle sweeps across
+revealing the after, swings back and settles, big label chips name each side, a stat bar lands on the finished result.
+- Best for: renovations, home staging, beauty and retouch, product upgrades.
+- Fonts: Karantina 700 · Secular One (Latin: Oswald · Manrope). Palette: #ffd23f, #111111, #ffffff.
+- Build: run_style `BEFORE-AFTER-SPLIT` (`scripts/styles/beforeafter.py`; example `examples/before-after-split/`).
+- Source: `new20/renders/BEFORE-AFTER-SPLIT.mp4` (Kling 3.0 plate `ba_before.mp4 + ba_after.mp4`, Hebrew).
+- Plate: one take, no cuts, 6-12 s · identical framing in both takes (make both from one start frame + its edit) · no free space needed · identical slow dolly in both takes · no tracking.
+- Prompt: `Titles: BEFORE-AFTER-SPLIT - two takes of one camera move, a white divider with a round handle sweeps and settles, big before/after label chips, a stat bar on the finished result.`
+
+### TIMELINE-HISTORY
+The documentary history timeline: a rule with minor ticks draws across the lower third, a playhead travels it, nodes pop as it
+arrives, a big year counts up (odometer), captions rise above the nodes, and an archival sepia grade warms into full colour at the present.
+- Best for: heritage and history films, company milestones, city stories.
+- Fonts: Suez One · Secular One (Latin: DM Serif Display · Manrope). Palette: #f2c46d, #ffffff, #1a140c.
+- Build: run_style `TIMELINE-HISTORY` (`scripts/styles/timeline.py`; example `examples/timeline-history/`).
+- Source: `new20/renders/TIMELINE-HISTORY.mp4` (Kling 3.0 plate `aerial_doc.mp4`, Hebrew).
+- Plate: one take, no cuts, 8-20 s · the lower third calm enough for a timeline band; one open side for the big year · 30% free left · slow steady glide · no tracking.
+- Prompt: `Titles: TIMELINE-HISTORY - ruled timeline with minor ticks, travelling playhead, nodes pop and captions rise, big year odometer, sepia archival grade warming into colour at the present.`
+
+### LISTING-SPECS
+The real-estate listing package: status pill, property title and an address rule, tracked pins with leader labels on the house and
+its features, a glass spec bar whose cells stagger in with line icons and count-up numbers, and an asking price that counts up.
+- Best for: property listings, developer promos, rentals, hospitality.
+- Fonts: Suez One · Secular One (Latin: DM Serif Display · Manrope). Palette: #e3b35d, #ffffff, #0c0e12.
+- Build: run_style `LISTING-SPECS` (`scripts/styles/listing.py`; example `examples/listing-specs/`).
+- Source: `new20/renders/LISTING-SPECS.mp4` (Kling 3.0 plate `property_villa.mp4`, Hebrew).
+- Plate: one take, no cuts, 8-20 s · the house centre-right; sky across the top quarter; calm ground across the bottom quarter · 30% free left · slow gimbal dolly, level · track: the house, one feature (pool, terrace, view).
+- Prompt: `Titles: LISTING-SPECS - status pill, property title and address, tracked pins with labels on the house, glass spec bar with line icons and count-up numbers, asking price counting up.`
+
+<!-- N20 END -->
 
 ## Not offered
 - Comic multi-colour pop as the main language of a premium ad (see COMIC-POP: beats only, playful brands only).

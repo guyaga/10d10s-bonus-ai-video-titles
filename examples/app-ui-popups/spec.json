@@ -1,0 +1,62 @@
+{
+ "_comment": "APP-UI-POPUPS, Hebrew, Secular One, on the Kling phone-hands plate (she sits in the left third; the right two thirds are clean). Fictional apps, no logos.",
+ "name": "new-app-ui-he",
+ "clip": "clips/phone-hands.mp4",
+ "language": "he",
+ "pair": "secular",
+ "area": {
+  "side": "R",
+  "x": 1250,
+  "top": 90,
+  "w": 600
+ },
+ "notes": [
+  {
+   "app": "ארנק",
+   "icon": "א",
+   "grad": [
+    "#34c759",
+    "#0a8f3a"
+   ],
+   "title": "התקבל תשלום",
+   "body": "נועה העבירה לך 240 ש״ח · ארוחת שישי",
+   "time": "עכשיו",
+   "t": 1.0
+  },
+  {
+   "app": "שליחויות",
+   "icon": "ש",
+   "grad": [
+    "#dd6b08",
+    "#b33a0a"
+   ],
+   "title": "ההזמנה יצאה לדרך",
+   "body": "השליח יגיע בעוד 12 דקות",
+   "time": "עכשיו",
+   "t": 2.6
+  },
+  {
+   "app": "יומן",
+   "icon": "30",
+   "grad": [
+    "#ff453a",
+    "#c9190b"
+   ],
+   "title": "פגישה בעוד 15 דקות",
+   "body": "שיחת צוות שבועית",
+   "time": "עכשיו",
+   "t": 4.0
+  }
+ ],
+ "card": {
+  "title": "ההזמנה בדרך אלייך",
+  "sub": "12 דקות · 2.4 ק״מ",
+  "ring": 0.72,
+  "t": 5.6
+ },
+ "toast": {
+  "text": "התשלום אושר",
+  "t": 8.2
+ },
+ "plate_vol": 0.6
+}

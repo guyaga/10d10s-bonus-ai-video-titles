@@ -1,0 +1,56 @@
+{
+ "_comment": "DATA-CHARTS, Hebrew, Secular One, on the Kling office plate (people on the right, the left half is clean window light). Bars hand over to a line chart. Fictional numbers.",
+ "name": "new-data-charts-he",
+ "clip": "clips/office-b-roll.mp4",
+ "language": "he",
+ "pair": "secular",
+ "panel": {
+  "side": "L",
+  "t": 0.6,
+  "until": 9.75,
+  "title": "צמיחה בהכנסות",
+  "sub": "2026 · לפי רבעון",
+  "w": 760
+ },
+ "bars": {
+  "labels": [
+   "Q1",
+   "Q2",
+   "Q3",
+   "Q4"
+  ],
+  "values": [
+   42,
+   58,
+   71,
+   94
+  ],
+  "unit": "%",
+  "t": 1.3,
+  "hi": 3
+ },
+ "line": {
+  "values": [
+   12,
+   18,
+   16,
+   27,
+   34,
+   41,
+   58
+  ],
+  "labels": [
+   "ינו׳",
+   "פבר׳",
+   "מרץ",
+   "אפר׳",
+   "מאי",
+   "יוני",
+   "יולי"
+  ],
+  "t": 5.4,
+  "flag": "+312%",
+  "title": "משתמשים פעילים"
+ },
+ "plate_vol": 0.6
+}

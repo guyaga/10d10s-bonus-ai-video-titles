@@ -52,8 +52,9 @@ FAM = {
 }
 # theme: display (stomps/titles), dstyle (css for display), label, mono, accentfont (taglines)
 THEMES = {
-    "he_bold":    dict(display="Assistant", dw=800, ds="normal", label="Assistant", mono="Space Mono", tag="Assistant", tagstyle="normal", chroma=False, rtl=True),
-    "he_premium": dict(display="Assistant", dw=800, ds="normal", label="Assistant", mono="Space Mono", tag="Assistant", tagstyle="normal", chroma=False, premium=True, rtl=True),
+    # Hebrew themes use only Guy's three faces: Karantina (loud display), Suez One (premium display), Secular One (labels, captions, UI)
+    "he_bold":    dict(display="Karantina", dw=700, ds="normal", label="Secular One", mono="Space Mono", tag="Secular One", tagstyle="normal", chroma=False, rtl=True),
+    "he_premium": dict(display="Suez One", dw=400, ds="normal", label="Secular One", mono="Space Mono", tag="Secular One", tagstyle="normal", chroma=False, premium=True, rtl=True),
     "sparta":   dict(display="DM Serif Display", dw=400, ds="normal", label="Space Grotesk", mono="Space Mono", tag="DM Serif Display", tagstyle="italic", chroma=False, premium=True),
     "guyaga":   dict(display="Anton", dw=400, ds="normal", label="Space Grotesk", mono="Space Mono", tag="DM Serif Display", tagstyle="italic", chroma=True),
     "tech":     dict(display="Michroma", dw=400, ds="normal", label="Sora", mono="Space Mono", tag="Sora", tagstyle="normal", chroma=True),
@@ -65,13 +66,14 @@ THEMES = {
 
 
 def font_faces(theme):
-    fams = {theme["display"], theme["label"], theme["mono"], theme["tag"], "Rubik", "Karantina"} if theme.get("rtl") else {theme["display"], theme["label"], theme["mono"], theme["tag"]}
+    fams = {theme["display"], theme["label"], theme["mono"], theme["tag"], "Karantina", "Suez One", "Secular One"} if theme.get("rtl") else {theme["display"], theme["label"], theme["mono"], theme["tag"]}
     css, files = [], {}
     for fam in fams:
         for stem, w, st in FAM[fam]:
             ur = (";unicode-range:U+0590-05FF,U+FB1D-FB4F,U+200C-2010,U+20AA,U+25CC" if "-hebrew-" in stem
                   else ";unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2190-2199,U+2212,U+2215" if "-latin-" in stem and any("-hebrew-" in x[0] for x in FAM[fam]) else "")
-            css.append(f'@font-face{{font-family:"{fam}";font-weight:{w};font-style:{st};src:url(assets/fonts/{stem}.woff2) format("woff2"){ur}}}')
+            wt = "100 900" if len({x[1] for x in FAM[fam]}) == 1 else w   # single-weight faces cover every weight: no faux bold
+            css.append(f'@font-face{{font-family:"{fam}";font-weight:{wt};font-style:{st};src:url(assets/fonts/{stem}.woff2) format("woff2"){ur}}}')
             files[f"fonts/{stem}.woff2"] = paths.fonts() / f"{stem}.woff2"
     return "".join(css), files
 
@@ -89,11 +91,11 @@ def css_for(p, th):
     rtl = """
 .st span,.tg,.co,#chip,#lock,#meter{{direction:rtl}}
 .st span{{letter-spacing:0!important}}
-.st i.he{{font-family:"Assistant",sans-serif;font-weight:300;letter-spacing:0;background:none;padding:0;color:var(--lt);text-shadow:0 4px 24px rgba(0,0,0,.6);direction:rtl}}
-.tg .a,.co .a{{font-weight:800}}
-.tg .b,.co .b,#chip .b,#meter .k{{font-family:"Assistant",sans-serif;font-weight:400;letter-spacing:0;font-size:22px}}
+.st i.he{{font-family:"Secular One",sans-serif;font-weight:400;letter-spacing:0;background:none;padding:0;color:var(--lt);text-shadow:0 4px 24px rgba(0,0,0,.6);direction:rtl}}
+.tg .a,.co .a,#chip .a{{font-family:"Secular One",sans-serif;font-weight:400}}
+.tg .b,.co .b,#chip .b,#meter .k,.ct .u{{font-family:"Secular One",sans-serif;font-weight:400;letter-spacing:0;font-size:22px}}
 .tg .n{{font-family:"Space Mono",monospace}}
-#lock .b{{font-weight:300}}
+#lock .b{{font-family:"Secular One",sans-serif;font-weight:400}}
 """.replace("{{", "{").replace("}}", "}") if th.get("rtl") else ""
     chroma = "-3px 0 rgba(255,40,80,.55),3px 0 rgba(40,220,255,.45)," if (th["chroma"] and not th.get("pop")) else ""
     return f"""
@@ -116,7 +118,7 @@ def css_for(p, th):
 .kn{{position:absolute;display:flex;flex-direction:column;align-items:center;direction:rtl}}
 .kr{{display:flex;gap:0;align-items:baseline;direction:rtl;white-space:nowrap}}
 .kw{{margin:0 .11em}}
-.kw{{display:inline-block;font-family:"Rubik",sans-serif;font-weight:900;line-height:.98;color:var(--lt);text-shadow:0 16px 60px rgba(0,0,0,.55),0 2px 6px rgba(0,0,0,.35)}}
+.kw{{display:inline-block;font-family:"Karantina",sans-serif;font-weight:700;line-height:.98;color:var(--lt);text-shadow:0 16px 60px rgba(0,0,0,.55),0 2px 6px rgba(0,0,0,.35)}}
 .kw.accent{{color:var(--acc)}}
 .kw.outline{{color:rgba(17,17,17,.38);-webkit-text-stroke:5px var(--lt);paint-order:stroke fill;text-shadow:none}}
 .kw.big{{font-family:"Karantina",sans-serif;font-weight:700;line-height:.86}}
@@ -124,7 +126,7 @@ def css_for(p, th):
 /* tape slogans (social highlight strips) */
 .tp{{position:absolute;display:flex;flex-direction:column;gap:12px;direction:rtl}}
 .tp.al-r{{align-items:flex-end}}.tp.al-l{{align-items:flex-start}}.tp.al-c{{align-items:center}}
-.tl{{display:block;width:max-content;padding:.06em .34em .14em;font-family:"Rubik",sans-serif;font-weight:900;line-height:1.08;box-shadow:9px 9px 0 rgba(0,0,0,.38)}}
+.tl{{display:block;width:max-content;padding:.06em .34em .14em;font-family:"Karantina",sans-serif;font-weight:700;line-height:1.08;box-shadow:9px 9px 0 rgba(0,0,0,.38)}}
 .tl.w7{{font-weight:700}}
 .tl.acc{{background:var(--acc);color:var(--tacc,#fff)}}
 .tl.ink{{background:var(--ink);color:var(--lt)}}
@@ -136,7 +138,7 @@ def css_for(p, th):
 .fc{{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0}}
 .fc span{{font-family:"Karantina",sans-serif;font-weight:700;line-height:.9;direction:rtl;white-space:nowrap}}
 #cap{{position:absolute;left:0;right:0;bottom:150px;display:flex;justify-content:center;direction:rtl}}
-.cg{{position:absolute;display:flex;gap:.28em;direction:rtl;white-space:nowrap;font-family:"Rubik",sans-serif;font-weight:900;font-size:66px;line-height:1.1;opacity:0}}
+.cg{{position:absolute;display:flex;gap:.28em;direction:rtl;white-space:nowrap;font-family:"Secular One",sans-serif;font-weight:400;font-size:66px;line-height:1.1;opacity:0}}
 .cw{{display:inline-block;color:#fff;-webkit-text-stroke:9px #000;paint-order:stroke fill;text-shadow:0 6px 18px rgba(0,0,0,.6)}}
 .cw.on{{color:var(--tacc);background:var(--acc);-webkit-text-stroke:0;padding:0 .14em;border-radius:6px;text-shadow:none;box-shadow:6px 6px 0 rgba(0,0,0,.45)}}
 /* glass panel shared */
@@ -194,6 +196,37 @@ BRK = '<div class="brk"><i></i><i></i><i></i><i></i></div>'
 POP = [("#FFD60A", "#FF2D87", "#00E5FF"), ("#00E5FF", "#FF3D00", "#FFD60A"), ("#FF2D87", "#FFD60A", "#7B2CFF"),
        ("#B6FF00", "#7B2CFF", "#FF2D87"), ("#FF7A00", "#00E5FF", "#FFD60A"), ("#FFFFFF", "#FF2D87", "#00E5FF")]
 STAR = "polygon(50% 0%,58% 22%,78% 6%,72% 30%,98% 24%,80% 44%,100% 56%,76% 62%,90% 86%,64% 76%,58% 100%,48% 80%,34% 98%,32% 74%,8% 86%,20% 62%,0% 50%,22% 40%,4% 18%,30% 26%,26% 2%,44% 20%)"
+
+
+# Old Hebrew families -> Guy's three faces. Applied to every Hebrew spec (css, markup, js), so specs written before the
+# switch render with the new system without being rewritten. A spec may override or extend it with "he_fonts".
+HE_REMAP = {
+    "Assistant": "Secular One", "Heebo": "Secular One", "Miriam Libre": "Secular One", "IBM Plex Sans Hebrew": "Secular One",
+    "Plex He": "Secular One", "PlexHe": "Secular One", "Varela Round": "Secular One",
+    "Rubik": "Karantina", "Rubik Dirt": "Karantina", "Amatic SC": "Karantina",
+    "Frank Ruhl Libre": "Suez One", "FRL He": "Suez One", "Bellefair": "Suez One",
+}
+
+
+def he_remap(css, hud, js, extra, remap):
+    import re as _re
+    for old, new in sorted(remap.items(), key=lambda kv: -len(kv[0])):
+        q = _re.escape(old)
+        css = _re.sub(r"@font-face\{font-family:\s*[\"']" + q + r"[\"'][^}]*\}", "", css)          # drop the old faces
+        for text in ("css", "hud", "js"):
+            v = {"css": css, "hud": hud, "js": js}[text]
+            v = _re.sub(r"([\"'])" + q + r"\1", lambda m: m.group(1) + new + m.group(1), v)
+            v = _re.sub(r"&quot;" + q + r"&quot;", "&quot;" + new + "&quot;", v)
+            v = _re.sub(r"(font-family:\s*)" + q + r"(?=\s*[,;}])", lambda m: m.group(1) + '"' + new + '"', v)
+            if text == "css":
+                css = v
+            elif text == "hud":
+                hud = v
+            else:
+                js = v
+    faces, files = font_faces({"display": "Karantina", "label": "Suez One", "mono": "Secular One", "tag": "Secular One"})
+    extra.update(files)
+    return faces + css, hud, js
 
 
 def build(ad, spec):
@@ -354,7 +387,8 @@ def build(ad, spec):
             i = "chip"
             front.append(f'<div id="chip" class="gl"><span class="b">{e.get("sub", "")}</span><span class="a">{e["text"]}</span></div>')
             js.append(f'tl.fromTo("#chip", {{opacity:0, x:-20}}, {{opacity:1, x:0, duration:.35, ease:"power3.out"}}, {t});')
-        elif k == "lockup" and th.get("rtl"):
+        elif k == "lockup" and e.get("look", "tape" if th.get("rtl") and (not th.get("premium") or "#lockA" in spec.get("css", "")) else "plain") == "tape":
+            # Hebrew tape lock (Karantina strips). Premium themes keep the restrained one-line lock unless the spec styles #lockA
             i = "lock"
             rows = [f'<span class="tl ink big" id="lockA" style="font-size:{e.get("size", 118)}px;transform:rotate(-2deg)"><b>{e["brand"]}</b></span>']
             if e.get("line"):
@@ -364,11 +398,11 @@ def build(ad, spec):
             if any(x["type"] == "meter" for x in els):
                 js.append(f'tl.to("#meter", {{opacity:0, duration:.2}}, {t - .2});')
             js.append(f'tl.fromTo("#lockA", {{clipPath:"inset(0 0 0 100%)"}}, {{clipPath:"inset(0 0 0 0%)", duration:.3, ease:"expo.out"}}, {t});')
-            js.append(f'tl.fromTo("#lockA b", {{opacity:0, scale:1.3}}, {{opacity:1, scale:1, duration:.18, ease:"power4.out"}}, {t + .12});')
+            js.append(f'tl.fromTo("#lockA b", {{opacity:0, scale:1.3}}, {{opacity:1, scale:1, duration:.18, ease:"power4.out"}}, {t + .03});')   # word lands with the strip: never an empty bar
             js.append(f'shake({t + .12}, .45);')
             if e.get("line"):
                 js.append(f'tl.fromTo("#lockB", {{clipPath:"inset(0 0 0 100%)"}}, {{clipPath:"inset(0 0 0 0%)", duration:.3, ease:"expo.out"}}, {t + .3});')
-                js.append(f'tl.fromTo("#lockB b", {{opacity:0, scale:1.3}}, {{opacity:1, scale:1, duration:.18, ease:"power4.out"}}, {t + .42});')
+                js.append(f'tl.fromTo("#lockB b", {{opacity:0, scale:1.3}}, {{opacity:1, scale:1, duration:.18, ease:"power4.out"}}, {t + .33});')
         elif k == "lockup":
             i = "lock"
             front.append(f'<div id="lock" class="gl"><span class="a">{e["brand"]}</span>' + (f'<span class="s"></span><span class="b">{e["line"]}</span>' if e.get("line") else "") + "</div>")
@@ -404,9 +438,14 @@ def build(ad, spec):
   Rr.setAttribute("cx",px);Rr.setAttribute("cy",py);Rr.setAttribute("r",12+10*((t*1.6)%1));Rr.setAttribute("opacity",1-((t*1.6)%1));}}
   else{{L.setAttribute("d","");D.setAttribute("cx",-50);Rr.setAttribute("cx",-50);}}}}''')
         if e["type"] == "counter":
+            # keep the panel inside the 5% safe frame at its FINAL width (a wider suffix like ש״ח must not run off the edge)
+            fin = f'{e.get("pre", "")}{e["b"]:,.{e.get("dec", 0)}f}{e.get("suf", "")}'
             live.append(f'''{{const u=Math.max(0,Math.min(1,(t-{e["t0"]})/({e["t1"]}-{e["t0"]}))),w=1-Math.pow(1-u,3),v={e["a"]}+({e["b"]}-{e["a"]})*w;
   document.getElementById("{i}V").textContent="{e.get("pre", "")}"+v.toFixed({e.get("dec", 0)}).replace(/\\B(?=(\\d{{3}})+(?!\\d))/g,",")+"{e.get("suf", "")}";
-  document.getElementById("{i}P").style.transform=`scaleX(${{w}})`;}}''')
+  document.getElementById("{i}P").style.transform=`scaleX(${{w}})`;
+  const C=document.getElementById("{i}"),V=document.getElementById("{i}V");
+  if(!C.dataset.fx&&document.fonts.status==="loaded"){{const s=V.textContent;V.textContent={json.dumps(fin, ensure_ascii=False)};
+    const over=C.offsetLeft+C.offsetWidth-1824;if(over>0)C.style.left=(C.offsetLeft-over)+"px";C.dataset.fx=1;V.textContent=s;}}}}''')
         if e["type"] == "ring":
             sp = e.get("spin", 1)
             live.append(f'document.getElementById("{i}A").setAttribute("transform",`rotate(${{t*160*{sp}}})`);'
@@ -446,6 +485,12 @@ if (document.querySelector("#wm")) tl.fromTo("#wm", {opacity: 0}, {opacity: .92,
     if spec.get("thumps", True):   # a soft sub thump under every stomp / counter / lockup / kinetic hit (ElevenLabs SFX, cached)
         sfx += [(*thump, e["t"], .45) for e in els if e["type"] in ("stomp", "counter", "lockup")]
         sfx += [(*thump, wd["t"], .55) for e in els if e["type"] == "kine" for row in e["lines"] for wd in row if wd.get("hit")]
+    css_all = faces + css_for(p, th) + spec.get("css", "")
+    blob = css_all + hud + json.dumps(spec.get("elements", []), ensure_ascii=False)
+    if th.get("rtl") or spec.get("he_fonts") or any("֐" <= ch <= "׿" for ch in blob):
+        css_all, hud, jsall = he_remap(css_all, hud, jsall, extra, {**HE_REMAP, **spec.get("he_fonts", {})})
+        # none of the three Hebrew faces has a shekel sign (Chrome falls back to a stray face): write it out
+        hud, jsall = (x.replace("₪", "ש״ח") for x in (hud, jsall))
     return dict(project=R / f"videos/{ad.lower().replace('_', '-')}{spec.get('project_suffix', '')}", clip=Path(spec.get("clip") or R / f"clips/{ad}_720p.mp4"),
-                track=Path(spec.get("track") or R / f"tracks/{ad}_vtrack.json"), css=faces + css_for(p, th) + spec.get("css", ""), hud=hud, js=jsall, sfx=sfx,
+                track=Path(spec.get("track") or R / f"tracks/{ad}_vtrack.json"), css=css_all, hud=hud, js=jsall, sfx=sfx,
                 plate_vol=spec.get("plate_vol", .4), extra=extra)

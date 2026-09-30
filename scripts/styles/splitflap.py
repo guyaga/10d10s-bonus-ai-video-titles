@@ -29,7 +29,9 @@ def build(spec, base, style="SPLIT-FLAP"):
     cw = bd["cell"]
     chh = round(cw * 1.42)
     cells, h = [], []
-    head = "".join(f'<div class="col lab" style="width:{c["w"] * (cw + 4)}px;direction:{c.get("dir", tp["dir"])}">{e(c.get("label", ""))}</div>' for c in C)
+    # a header spans exactly its column (w cells + the 4 px gaps between them) and is centred on it, so it reads as
+    # belonging to that column whatever the column's own direction (LTR times sit next to RTL names on a Hebrew board)
+    head = "".join(f'<div class="col lab" style="width:{c["w"] * cw + (c["w"] - 1) * 4}px;direction:{tp["dir"]}">{e(c.get("label", ""))}</div>' for c in C)
     rows_html = []
     for ri, r in enumerate(R):
         cols_html = []
@@ -61,7 +63,7 @@ def build(spec, base, style="SPLIT-FLAP"):
 .row{{display:flex;gap:{round(cw * .5)}px;margin-top:6px}}
 .row.hd{{margin:0 0 4px}}
 .col{{display:flex;gap:4px}}
-.col.lab{{font-family:"{tp['body']}",sans-serif;font-weight:{max(400, tp['bw'])};font-size:{round(cw * .56)}px;color:{col['label']};letter-spacing:{'0' if tp['rtl'] else '.14em'};padding:0 4px}}
+.col.lab{{font-family:"{tp['body']}",sans-serif;font-weight:{max(400, tp['bw'])};font-size:{round(cw * .56)}px;color:{col['label']};letter-spacing:{'0' if tp['rtl'] else '.14em'};justify-content:center;box-sizing:border-box;padding:0 4px}}
 .cell{{position:relative;width:{cw}px;height:{chh}px;perspective:{cw * 8}px}}
 .h,.leaf{{position:absolute;left:0;width:100%;height:50%;overflow:hidden;background:{col['cell']};border-radius:4px}}
 .h.t,.leaf.t{{top:0;border-bottom:1px solid rgba(0,0,0,.65)}}

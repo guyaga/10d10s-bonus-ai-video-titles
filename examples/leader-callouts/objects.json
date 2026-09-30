@@ -1,0 +1,7 @@
+{"context": "Product film: a matte black wireless earbuds charging case with the lid open, earbuds inside, on a rotating dark stone plinth.",
+ "objects": [
+  {"name": "case", "desc": "the whole earbuds charging case (body and lid)"},
+  {"name": "lid", "desc": "the open lid of the case"},
+  {"name": "buds", "desc": "the two earbuds sitting inside the case (one box around both)"},
+  {"name": "plinth", "desc": "the round dark stone plinth under the case"}
+ ]}

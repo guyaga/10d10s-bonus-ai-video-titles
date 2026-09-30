@@ -1,0 +1,75 @@
+{
+ "_comment": "QUOTE-TESTIMONIAL on a 10 s Kling 3.0 testimonial (plate: G_studio/kling_plates/portrait_testimonial.mp4). She actually says the quote; word timings from a Gemini transcription drive the build. Bright wall on the left: dark ink, no card.",
+ "name": "quote-testimonial",
+ "clip": "clips/portrait_testimonial.mp4",
+ "language": "en",
+ "words": [
+  {
+   "w": "It",
+   "s": 0.67,
+   "e": 0.83
+  },
+  {
+   "w": "has",
+   "s": 0.83,
+   "e": 1.03
+  },
+  {
+   "w": "really",
+   "s": 1.03,
+   "e": 1.48
+  },
+  {
+   "w": "changed",
+   "s": 1.52,
+   "e": 2.15
+  },
+  {
+   "w": "my",
+   "s": 2.15,
+   "e": 2.45
+  },
+  {
+   "w": "daily",
+   "s": 2.48,
+   "e": 2.97
+  },
+  {
+   "w": "life",
+   "s": 3.0,
+   "e": 3.47
+  },
+  {
+   "w": "for",
+   "s": 3.55,
+   "e": 3.75
+  },
+  {
+   "w": "the",
+   "s": 3.78,
+   "e": 3.98
+  },
+  {
+   "w": "better.",
+   "s": 4.03,
+   "e": 4.67
+  }
+ ],
+ "key": [
+  3,
+  6
+ ],
+ "side": "left",
+ "ink": "dark",
+ "size": 74,
+ "width": 640,
+ "top": 300,
+ "colors": {
+  "accent": "#d9892b"
+ },
+ "plate_vol": 0.95,
+ "person": "Maya Levi",
+ "role": "Customer since 2024 · NOVA Home",
+ "stars": 5,
+ "logo": "NOVA HOME"
+}

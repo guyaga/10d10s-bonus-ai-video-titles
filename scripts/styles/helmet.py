@@ -5,7 +5,7 @@ An optional AI voice file drives a live voice meter (envelope computed from the 
 
 Spec keys. Required: clip, track. Every block below is optional; omit it to drop it, or set "t"/"until" to move it.
   eyes / face    tracked object names (default "eyes" / "face"); the reticle sits on eyes, parallax follows face
-  language       "he" (RTL, Assistant) | "en"
+  language       "he" (RTL, Secular One) | "en"
   colors         {"hud": "#6fe3ff", "text": "#e6fbff", "alert": "#ff4a5a", "ok": "#ffb547"}
   system         short OS tag in the data stream, e.g. "VNG-OS"
   boot           {"title", "sub", "ok", "t": .5, "until": 3.85}
@@ -68,12 +68,12 @@ def build(spec, base, style="HUD-HELMET"):
         C[b] = None if not v else {**DEF[b], **v}
     col = {"hud": "#6fe3ff", "text": "#e6fbff", "alert": "#ff4a5a", "ok": "#ffb547", **spec.get("colors", {})}
     rtl = lang == "he"
-    faces, extra = fonts("Assistant", "JetBrains Mono")
+    faces, extra = fonts("Secular One", "JetBrains Mono")
     sysname = spec.get("system", "VNG-OS")
 
     css = faces + f"""
 :root{{--cy:{col['hud']};--txt:{col['text']};--red:{col['alert']};--amb:{col['ok']};--bk:rgba(2,14,22,.62)}}
-#root{{font-family:"Assistant",sans-serif}}
+#root{{font-family:"Secular One",sans-serif}}
 .he{{direction:{'rtl' if rtl else 'ltr'}}}
 .g{{color:var(--txt);text-shadow:0 0 10px color-mix(in srgb,var(--cy) 85%,transparent),-1.5px 0 rgba(255,60,120,.4),1.5px 0 rgba(60,200,255,.4)}}
 .num{{font-family:"JetBrains Mono",monospace;direction:ltr;unicode-bidi:isolate;display:inline-block}}
@@ -98,11 +98,11 @@ svg{{overflow:visible}}
 .mini{{display:flex;gap:26px;margin-top:10px;margin-inline-start:20px}}
 .mg{{position:relative;width:120px;height:120px}}.mg svg{{position:absolute;left:0;top:0}}
 .mg .v{{font-size:30px}}.mg .k{{font-size:18px;font-weight:600}}
-#rc{{position:absolute;right:70px;top:190px;width:600px;perspective:1000px}}
+#rc{{position:absolute;right:196px;top:190px;width:560px;perspective:1000px}}
 #rci{{transform:rotateY(-24deg);transform-origin:100% 50%}}
 .frame{{position:relative;padding:22px 30px 24px;background:var(--bk);clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,28px 100%,0 calc(100% - 28px));border-right:3px solid var(--cy)}}
 .frame .h{{display:block;font-size:24px;font-weight:700;color:var(--cy)}}
-.frame .l{{display:block;font-size:32px;font-weight:600;line-height:1.4;min-height:1.4em}}
+.frame .l{{display:block;font-size:32px;font-weight:600;line-height:1.4;min-height:1.4em;overflow-wrap:anywhere}}
 #warn{{position:absolute;right:70px;top:560px;width:600px;perspective:1000px}}
 #warn .frame{{border-right-color:var(--red);background:rgba(40,4,10,.72)}}
 #warn .t{{display:block;font-size:40px;font-weight:800;color:#ffe3e6;text-shadow:0 0 12px var(--red)}}

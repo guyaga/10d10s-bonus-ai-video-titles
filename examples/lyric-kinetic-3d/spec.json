@@ -1,0 +1,145 @@
+{
+ "_comment": "LYRIC-KINETIC-3D on a 10 s Kling 3.0 performance (G_studio/kling_plates/singer.mp4) with native singing: 'In the shadows of the light, I find my way back home'. Word timings from a Gemini transcription; SHADOWS and the HOME echo sit behind the singer via the matte (npx hyperframes remove-background). Front words stay in the free left/right columns and across his chest, never on the face.",
+ "name": "lyric-kinetic-3d",
+ "clip": "clips/singer.mp4",
+ "matte": "mattes/singer_alpha.webm",
+ "language": "en",
+ "drift": 6,
+ "words": [
+  {
+   "w": "In",
+   "t": 0.44,
+   "x": 110,
+   "y": 480,
+   "size": 104,
+   "kind": "script",
+   "align": "left",
+   "phrase": 0
+  },
+  {
+   "w": "the",
+   "t": 0.9,
+   "x": 110,
+   "y": 592,
+   "size": 104,
+   "kind": "script",
+   "align": "left",
+   "phrase": 0
+  },
+  {
+   "w": "SHADOWS",
+   "t": 1.08,
+   "x": 960,
+   "y": 110,
+   "size": 390,
+   "kind": "big",
+   "align": "center",
+   "layer": "back",
+   "phrase": 0
+  },
+  {
+   "w": "of the",
+   "t": 2.06,
+   "x": 1820,
+   "y": 515,
+   "size": 92,
+   "kind": "script",
+   "align": "right",
+   "phrase": 0,
+   "tight": true
+  },
+  {
+   "w": "LIGHT",
+   "t": 2.58,
+   "x": 1840,
+   "y": 640,
+   "size": 250,
+   "kind": "big",
+   "align": "right",
+   "glow": true,
+   "phrase": 0,
+   "tight": true
+  },
+  {
+   "w": "I",
+   "t": 4.48,
+   "x": 120,
+   "y": 240,
+   "size": 118,
+   "kind": "script",
+   "align": "left",
+   "phrase": 1
+  },
+  {
+   "w": "find",
+   "t": 4.7,
+   "x": 120,
+   "y": 360,
+   "size": 118,
+   "kind": "script",
+   "align": "left",
+   "phrase": 1
+  },
+  {
+   "w": "MY",
+   "t": 5.16,
+   "x": 90,
+   "y": 540,
+   "size": 210,
+   "kind": "big",
+   "align": "left",
+   "phrase": 1,
+   "tight": true
+  },
+  {
+   "w": "WAY",
+   "t": 5.56,
+   "x": 90,
+   "y": 780,
+   "size": 210,
+   "kind": "big",
+   "align": "left",
+   "phrase": 1,
+   "tight": true
+  },
+  {
+   "w": "back",
+   "t": 6.66,
+   "x": 1820,
+   "y": 300,
+   "size": 118,
+   "kind": "script",
+   "align": "right",
+   "phrase": 1
+  },
+  {
+   "w": "HOME",
+   "t": 7.3,
+   "x": 960,
+   "y": 100,
+   "size": 460,
+   "kind": "outline",
+   "align": "center",
+   "layer": "back",
+   "phrase": 1
+  },
+  {
+   "w": "HOME",
+   "t": 7.42,
+   "x": 960,
+   "y": 770,
+   "size": 300,
+   "kind": "big",
+   "align": "center",
+   "glow": true,
+   "phrase": 1
+  }
+ ],
+ "exits": {
+  "0": 4.3
+ },
+ "colors": {
+  "glow": "#ff3fb4"
+ },
+ "plate_vol": 1.0
+}

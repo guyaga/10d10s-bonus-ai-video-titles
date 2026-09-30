@@ -1,6 +1,6 @@
 """Build (+ check, + optionally render) one titled video from a declarative spec.
 
-python run_ad.py <AD> [--variant NAME] [--spec path/to/spec.py] [--root DIR] [--render [--sting sting.mp4] [--out NAME]]
+python run_ad.py <AD> [--variant NAME] [--spec path/to/spec.py] [--root DIR] [--watermark logo.png] [--render [--sting sting.mp4] [--out NAME]]
 
   <AD>        id of the piece, e.g. E6_sneaker. Media defaults: clips/<AD>_720p.mp4, tracks/<AD>_vtrack.json (see paths.py)
   --spec      spec file (a module exposing SPEC). Default: <root>/specs/<AD>.py or <root>/specs/<AD>_<variant>.py
@@ -41,6 +41,8 @@ def main():
     ad = sys.argv[1]
     var = arg("--variant")
     spec = load_spec(ad, var, arg("--spec"))
+    if arg("--watermark"):
+        spec.setdefault("watermark", arg("--watermark"))
     if var:
         spec.setdefault("vo_name", f"{ad}_{var}_vo")
         spec.setdefault("project_suffix", f"-{var}")

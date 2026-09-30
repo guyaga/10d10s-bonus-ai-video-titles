@@ -1,0 +1,28 @@
+{
+ "_comment": "SOCIAL-CTA, Hebrew, Secular One, on the Kling talking-head plate (he points left at 8-10 s, at the button row). Fictional channel, no platform logos.",
+ "name": "new-social-cta-he",
+ "clip": "clips/talking-head.mp4",
+ "language": "he",
+ "pair": "secular",
+ "channel": {
+  "name": "סטודיו נורת׳",
+  "handle": "@studio.north",
+  "subs": 128400,
+  "initial": "N",
+  "t": 0.8,
+  "until": 4.8
+ },
+ "cta": {
+  "t": 6.1,
+  "click": 7.3,
+  "label": "הירשמו",
+  "done": "נרשמתם",
+  "bell": true,
+  "like": 12400
+ },
+ "pos": {
+  "x": 130,
+  "y": 790
+ },
+ "plate_vol": 0.9
+}

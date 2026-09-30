@@ -1,0 +1,60 @@
+{
+ "_comment": "LEADER-CALLOUTS, English, Space Grotesk 700/500, on the Kling product-macro plate (earbuds case on a rotating plinth). Parts tracked with vtrack.py (case, lid, buds, plinth). Fictional specs.",
+ "name": "new-leader-callouts",
+ "clip": "clips/product-macro.mp4",
+ "track": "tracks/product_vtrack.json",
+ "language": "en",
+ "callouts": [
+  {
+   "follow": "buds",
+   "anchor": "tr",
+   "side": "R",
+   "rise": -170,
+   "run": 240,
+   "label": "Active noise cancelling",
+   "value": 42,
+   "prefix": "-",
+   "unit": "dB",
+   "t": 1.0,
+   "until": 9.7
+  },
+  {
+   "follow": "buds",
+   "anchor": "l",
+   "side": "L",
+   "rise": -150,
+   "run": 250,
+   "label": "Battery life",
+   "value": 36,
+   "unit": "H",
+   "t": 2.2,
+   "until": 9.7
+  },
+  {
+   "follow": "case",
+   "anchor": "r",
+   "side": "R",
+   "rise": 140,
+   "run": 200,
+   "label": "Fast charge",
+   "value": 10,
+   "unit": "MIN",
+   "t": 3.4,
+   "until": 9.7
+  },
+  {
+   "follow": "case",
+   "anchor": "l",
+   "side": "L",
+   "rise": 150,
+   "run": 150,
+   "label": "Water resistant",
+   "value": 5,
+   "prefix": "IPX",
+   "unit": "",
+   "t": 4.6,
+   "until": 9.7
+  }
+ ],
+ "plate_vol": 0.5
+}
