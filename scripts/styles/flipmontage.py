@@ -10,12 +10,13 @@ Spec keys. Required: clip.
   logo       {"text": "NORTHLINE", "sub": "WINTER DROP 01", "image": "logo.png" (optional, replaces the text)}
   colors     {"brand": "#e8321f", "text": "#ffffff", "tint": .55}   tint = how red the last pages get
   language   "he" | "en";  pair (Hebrew, default "karantina"; see common.HE_PAIRS); Latin: Oswald 700 + Jost 300
+  seed       integer (default 21): the per-page punch-in and treatment variety
   sfx (true), music, music_vol, plate_vol, name, track (optional)
 """
 import subprocess
 
 import paths
-from styles.common import (JS_UTIL, audio_cues, cue, e, js, project_dir, res, tracks, type_pair)
+from styles.common import (optional_file, JS_UTIL, audio_cues, cue, e, js, project_dir, res, tracks, type_pair)
 
 
 def dur_of(clip):
@@ -45,6 +46,9 @@ def build(spec, base, style="FLIP-MONTAGE-LOGO"):
         extra[f"flip/f{k:02d}.jpg"] = out
         imgs.append(f"assets/flip/f{k:02d}.jpg")
     logo = spec.get("logo", {"text": "LOGO"})
+    if logo.get("image") and not optional_file(base, logo["image"], "logo image", "the text logo is used instead"):
+        logo = {k: v for k, v in logo.items() if k != "image"}
+        logo.setdefault("text", "LOGO")
     if logo.get("image"):
         li = res(base, logo["image"])
         extra["flip/logo" + li.suffix] = li

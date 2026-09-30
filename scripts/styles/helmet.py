@@ -8,7 +8,8 @@ Spec keys. Required: clip, track. Every block below is optional; omit it to drop
   language       "he" (RTL, Secular One) | "en"
   colors         {"hud": "#6fe3ff", "text": "#e6fbff", "alert": "#ff4a5a", "ok": "#ffb547"}
   system         short OS tag in the data stream, e.g. "VNG-OS"
-  boot           {"title", "sub", "ok", "t": .5, "until": 3.85}
+  boot           {"title", "sub", "ok", "t": .5, "until": 3.85};  false = no boot message AND no boot ring
+  reticle        true (default) | false: the counter-rotating rings on the eyes (false + boot false + no radar/voice = HUD-CLEAN)
   vitals         {"t": 4.1, "hr_label", "hr_unit", "g1_label", "g1_value", "g2_label", "g2_value",
                   "bpm": [[0,72],[11,72],[15,118],[18,94],[23,102]]}          heart-rate keyframes (t, bpm)
   radar          {"t": 5.2, "label", "contacts": 3, "contacts_at": 11}
@@ -22,7 +23,7 @@ Spec keys. Required: clip, track. Every block below is optional; omit it to drop
   voice          {"file": "ora.mp3", "label": "ORA · VOICE", "vol": 1}      optional AI voice + meter; other sfx duck
   sfx            true (default) = the timed UI sound design;  plate_vol, music, music_vol, name
 """
-from styles.common import (audio_cues, cue, e, envelope, fonts, js, project_dir, res, scale_cues, tracks)
+from styles.common import (optional_file, audio_cues, cue, e, envelope, fonts, js, project_dir, res, scale_cues, tracks)
 
 HE = dict(
     boot={"title": "מערכת ואנגארד מופעלת", "sub": "סנכרון עצבי", "ok": "כל המערכות תקינות", "t": .5, "until": 3.85},
@@ -183,6 +184,8 @@ svg{{overflow:visible}}
     if C["final"]:
         h.append(f'<div id="go" class="ctr g he">{e(C["final"]["text"])}</div>')
     vo = spec.get("voice")
+    if vo and not optional_file(base, vo.get("file"), "voice file", "the HUD runs without the AI voice and its meter"):
+        vo = None
     env = None
     if vo:
         vf = res(base, vo["file"])
@@ -292,5 +295,9 @@ glitch("#vox", .15, .3);
     if vo:
         sfx = [(str(res(base, vo["file"])), "voice", 30, float(vo.get("at", 0)), vo.get("vol", 1.0))] + scale_cues(sfx, .6)
     sfx += audio_cues(spec, base, .4)
+    if not spec.get("reticle", True):          # HUD-CLEAN: no rings on the eyes
+        css += " #ret{display:none}"
+    if not C["boot"]:                           # no boot message, no boot ring either
+        css += " #boot{display:none}"
     return dict(project=project_dir(spec, style), clip=res(base, spec["clip"]), track=tracks(spec, base), css=css,
                 hud="\n".join(h), js="\n".join(j), sfx=sfx, plate_vol=spec.get("plate_vol", .45 if vo else .7), extra=extra)

@@ -6,7 +6,8 @@ rippling). Signs can sit flat or turned onto a wall plane in perspective. Hebrew
 Spec keys. Required: clip, signs.
   signs      [{"lines": [{"text": "חורף ברחוב", "tube": "outline|solid", "weight": "display|body", "size": 150, "color": "#ff3da8"}],
                "x": 400, "y": 420, "align": "center|left|right", "wall": "left|right|none", "angle": 34,
-               "t": 1.0, "until": null, "floor": 650, "reflect": .38}]
+               "t": 1.0, "until": null, "floor": 650, "reflect": .38, "spill": .35}]
+             per-sign spill overrides the global spill below
              floor = the y where the wall meets the floor (the mirror line); reflect = reflection opacity (0 = none)
   spill      .35   strength of the coloured light spill on the plate around each sign
   vanishing  [960, 540]   the plate's vanishing point; wall signs are projected towards it

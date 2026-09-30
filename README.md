@@ -16,6 +16,7 @@ hub, and Claude writes the build brief from that style plus your project (brand,
 python scripts/catalog.py list --tag hebrew          # search by use case, or --q news
 python scripts/catalog.py show 43                    # one style: look, fonts, samples, how to shoot it, how to build it
 python scripts/catalog.py brief 43 "your project"    # style + context → the build brief
+python scripts/catalog.py make 43 my_clip.mp4 "your project"   # start a project on your footage (see below)
 ```
 `references/catalog.json` is the same data as the hub: https://ai-video-titles-guyaga.netlify.app
 
@@ -50,16 +51,17 @@ Post only: a clip goes in, a titled video comes out. Each style has a **plate co
 every hub card as "Shoot it like this". To generate the video and title it end to end, use **ai-ad-studio**, which
 plans the Seedance shoot backwards from that contract.
 
-## Try it in 5 minutes (no keys, no Seedance spend)
+## Try any style in 5 minutes (no keys, no footage)
 
-An 8-second runway clip, its tracking, music, product images and sounds are bundled in `examples/demo/`.
-
+An 8-second runway clip, its tracking, music, product stills and sounds are bundled in `examples/demo/`. Any of the
+41 `run_style` styles previews on it:
 ```bash
-cd ~/.claude/skills/ai-video-titles/examples/demo
-python ../../scripts/run_style.py STOMP-ESCORT --spec spec.json --render
-# -> examples/demo/renders/demo-stomp-escort.mp4  (a few minutes: most of it is the headless-browser render)
+cd ~/.claude/skills/ai-video-titles
+python scripts/run_style.py BREAKING-NEWS --demo --render     # → titles-demo/renders/demo-breaking-news.mp4
 ```
-Then change a name or a price in `spec.json` and render again. That is the whole loop: spec in, video out.
+`--demo` loops the clip to the style's own length, derives every tracked object the style rides from the demo's
+tracked model (face, feet, torso …) or pins it to a fixed anchor, and swaps in the bundled music. It shows the
+style's motion on neutral footage with the example's placeholder words: good for choosing a style, not the final look.
 
 ## Hebrew
 
@@ -77,22 +79,56 @@ the line into Claude Code. The same page runs locally:
 
 | Route | Styles | Command |
 |---|---|---|
-| `run_style.py` (parametrised JSON spec) | STOMP-ESCORT, COUNTDOWN-CTA, HUD-HELMET, SCIFI-TARGETING, MAP-FLYOVER, CAMPUS-AR, SPEED-STAT, VIRAL-CAPTIONS, DECODE-TYPE, GLITCH-RGB, NEON-SIGN, KEYNOTE-REVEAL, SPLIT-FLAP, SIGNATURE-WRITE-ON, BROADCAST-PACK, FILM-TITLE-CARD, PARTICLE-TEXT, FLIP-MONTAGE-LOGO, TEXT-ON-PATH | `python scripts/run_style.py HUD-HELMET --spec spec.json [--render]` |
-| `run_ad.py` (adkit elements) | STOMP-BEHIND, GLASS-CALLOUT, KINETIC-HE, TAPE-HE, KINETIC-KARAOKE, FLASH-CARD, PRESIDENTIAL-SERIF | `python scripts/run_ad.py AD --spec spec.py [--render]` |
+| `run_style.py` (parametrised JSON spec, 41 styles) | STOMP-ESCORT, COUNTDOWN-CTA, HUD-HELMET, SCIFI-TARGETING, MAP-FLYOVER, CAMPUS-AR, SPEED-STAT, VIRAL-CAPTIONS, DECODE-TYPE, GLITCH-RGB, NEON-SIGN, KEYNOTE-REVEAL, SPLIT-FLAP, SIGNATURE-WRITE-ON, BROADCAST-PACK, FILM-TITLE-CARD, PARTICLE-TEXT, FLIP-MONTAGE-LOGO, TEXT-ON-PATH, LOWER-THIRD-CORP, BREAKING-NEWS, LEADER-CALLOUTS, DATA-CHARTS, KPI-COUNTERS, APP-UI-POPUPS, CHAT-BUBBLES, SOCIAL-CTA, END-SCREEN, PODCAST-TAGS, CHAPTER-MARKERS, QUOTE-TESTIMONIAL, DOC-LOCATION-STAMP, SWISS-GRID, GRADIENT-GLASS, BEFORE-AFTER-SPLIT, LOGO-SHINE-REVEAL, LYRIC-KINETIC-3D, TIMELINE-HISTORY, LISTING-SPECS | `python scripts/run_style.py <ID> --spec spec.json [--render]` |
+| `run_ad.py` (adkit elements) | STOMP-BEHIND, GLASS-CALLOUT, KINETIC-HE, TAPE-HE, KINETIC-KARAOKE, FLASH-CARD, PRESIDENTIAL-SERIF, STOMP-SX, TRACKED-TAGS, COMIC-POP | `python scripts/run_ad.py AD --spec spec.py [--render]` |
 | bespoke (run_ad + html/css/js hooks) | ROAD-HUD, THERMAL-RESCUE, SPEC-SCAN, HALLMARK-LUXE, ARCH-DRAWING, MAGAZINE-EDITORIAL, KITCHEN-TICKET, LENS-POSTCARD | start from `references/recipes/bespoke/` |
 
-Every `run_style` style has a working spec in `examples/<style>/` (plus the `objects.json` to track with).
+Every `run_style` style has a spec in `examples/<style>/` showing every key (the builder documents them at the top of
+`scripts/styles/<module>.py`). Those specs point at the plates the hub samples were made on, which are not shipped:
+your footage goes in through `catalog.py make` below. `catalog.py show <n>` prints a style's **tier**:
+- **one-command**: needs only your clip and your words
+- **track-first**: the titles ride objects in the frame, so they get tracked first (vtrack.py, GEMINI_API_KEY)
+- **bespoke-rewrite**: a crafted world; the recipe is the reference and Claude rewrites it for your subject
 
-## Your own video, by hand
+## Planning a shoot (no footage yet)
 
-From a project folder (layout and overrides in `scripts/paths.py`):
+```bash
+python scripts/check_clip.py plan 43 "rolling news package for a city marathon, Hebrew"
+```
+Prints what the footage must contain for that style (one take or cuts, framing, free space for the titles, what must
+be trackable) and ready-to-paste lines for a Seedance / Kling / Veo prompt or a shot list, plus the objects to track
+afterwards. To generate the footage and title it end to end, use the **ai-ad-studio** skill.
+
+## Use it on your own footage
+
 ```bash
 S=~/.claude/skills/ai-video-titles/scripts
-python $S/vtrack.py clips/AD_720p.mp4 tracks/AD_objects.json tracks/AD_vtrack.json --preview tracks/check.mp4
-python $S/run_style.py STOMP-ESCORT --spec specs/AD.json --render     # or run_ad.py for adkit / bespoke specs
-python $S/qa.py renders/AD.mp4 "what it should show"
+python $S/catalog.py make 43 ~/Videos/marathon.mp4 "rolling news for the Tel Aviv marathon, Hebrew, brand red #d6001c"
 ```
-Inside Claude Code just ask: *"Make a 15 s Seedance 2.5 sneaker ad and add titles in KINETIC-HE with a Hebrew
-voiceover."* The skill picks the style with you, generates a clean plate, tracks it, builds, renders and QA-checks it.
+`make` creates `breaking-news-project/` with your clip in `clips/`, a starter `spec.json` (the style's example with
+your clip swapped in, your context saved in `_context`, every content field listed in `_todo`), an `objects.json`
+when the style rides tracked objects, then runs the clip check and prints the verdict and the next commands:
+
+1. **Check**: `check_clip.py check` measures cuts, tracking coverage, title space and edge crop (plus a Gemini
+   second look when `GEMINI_API_KEY` is set). FAIL → trim or reframe as printed, or pick a style it lists as fitting.
+2. **Track** (track-first styles): describe each object in `objects.json` as it looks in *your* clip, then
+   `python $S/vtrack.py clips/marathon.mp4 objects.json tracks/track.json --preview tracks/check.mp4` and watch the preview.
+   (`make ... --track` does this for you once the descriptions are filled in.)
+3. **Edit** `spec.json`: your words, names, prices, language (`"language": "he"` + a Hebrew `pair`), brand colours,
+   the music bed and its beat grid. Keys you don't need can go; missing music, voice or matte only warn.
+4. **Build**: `python $S/run_style.py BREAKING-NEWS --spec breaking-news-project/spec.json --root breaking-news-project`
+   (a missing input stops with the exact fix).
+5. **Render**: the same command with `--render` → `breaking-news-project/renders/`.
+6. **Review**: `python $S/qa.py breaking-news-project/renders/breaking-news.mp4 --root breaking-news-project`, and look
+   at 4–6 frames yourself.
+
+Inside Claude Code just ask for titles: the skill offers the catalog, asks whether you have footage, and runs
+these steps with you.
+
+## Testing
+
+`python scripts/selftest.py` builds every `run_style` style on the bundled footage (`--demo`, with hyperframes'
+lint / runtime / layout / motion checks), runs the clip checker's planning stage for all 61 styles and its post stage
+on the demo clip. Results of the last clean-install run are in `TESTING.md`.
 
 Brands in the examples (Atelier Veyra, Firelink, Seaview 24) are fictional demo brands.

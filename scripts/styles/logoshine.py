@@ -5,14 +5,19 @@ Works on any dark surface plate (brushed metal, stone, fabric). Wordmark is Lati
 
 Spec keys. Required: clip, word.
   word       "NOVA"                 wordmark (Latin display, default Michroma)
-  mark       "ring" (default) | "hex" | "none"    built-in SVG logomark;  svg: path to your own single-colour SVG (optional)
+  mark       "ring" (default) | "hex" | "none"    built-in SVG logomark
+  svg        path to your own single-colour SVG logomark (replaces "mark"): its shapes draw on as strokes, then fill with the
+             metal gradient (fills, strokes and styles inside the file are ignored; keep it simple, viewBox required)
+  word_font  Latin display face for the wordmark (default "Michroma"; any face in the kit's font library)
   tagline    "הטכנולוגיה שמרגישה אנושית"      sub  "NOVA LABS · 2026" (small mono line under the tagline, optional)
   t          start (default .5);  shine  time the shine crosses (default 3.2; sync to the plate's light sweep);  y  lockup centre y (default 470)
   language   "he" | "en" (tagline);  pair (Hebrew, default "secular"); Latin tagline Manrope 500
   colors     {"metal": ["#ffffff", "#aeb6c2", "#e9edf2", "#6d7582"], "accent": "#9fd3ff"}
   sfx (true), plate_vol, music, music_vol, name
 """
-from styles.common import (audio_cues, cue, e, fonts, js, project_dir, res, tracks, type_pair)
+import re
+
+from styles.common import (audio_cues, cue, e, fonts, js, optional_file, project_dir, res, tracks, type_pair)
 
 MARKS = {
     "ring": ('<circle cx="60" cy="60" r="46" /><path d="M28 92 L92 28" />', 400),
@@ -29,6 +34,15 @@ def build(spec, base, style="LOGO-SHINE-REVEAL"):
     t0, shine, y = spec.get("t", .5), spec.get("shine", 3.2), spec.get("y", 470)
     mark = spec.get("mark", "ring")
     paths_svg, plen = MARKS.get(mark, ("", 0))
+    viewbox = "0 0 120 120"
+    own = optional_file(base, spec.get("svg"), "svg logomark", f"using the built-in '{mark}' mark")
+    if own:
+        raw = own.read_text(encoding="utf-8")
+        vb = re.search(r'viewBox="([^"]+)"', raw)
+        viewbox = vb.group(1) if vb else viewbox
+        inner = re.sub(r"(?s)^.*?<svg[^>]*>|</svg>\s*$", "", raw)
+        inner = re.sub(r"(?s)<defs>.*?</defs>|<title>.*?</title>", "", inner)
+        paths_svg = re.sub(r'\s(fill|stroke|stroke-width|style|class)="[^"]*"', "", inner)
     metal = f"linear-gradient(100deg,{m3} 0%,{m1} 18%,{m0} 34%,{m2} 50%,{m1} 66%,{m0} 80%,{m3} 100%)"
     css = tp["css"] + wm_css + f"""
 #vig{{position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 50% {round(y / 10.8)}%,rgba(0,0,0,.0),rgba(0,0,0,.45) 100%)}}
@@ -56,7 +70,7 @@ def build(spec, base, style="LOGO-SHINE-REVEAL"):
     css += mono_css
     svg = ""
     if paths_svg:
-        svg = (f'<svg viewBox="0 0 120 120"><defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{m3}"/>'
+        svg = (f'<svg viewBox="{viewbox}"><defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{m3}"/>'
                f'<stop offset=".35" stop-color="{m0}"/><stop offset=".6" stop-color="{m1}"/><stop offset="1" stop-color="{m0}"/></linearGradient></defs>'
                f'<g class="fl">{paths_svg}</g><g class="st">{paths_svg}</g></svg>')
     hud = ('<div id="vig"></div><div id="lock"><div id="row">' + (f'<div id="mk">{svg}</div>' if svg else "")

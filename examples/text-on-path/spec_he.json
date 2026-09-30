@@ -1,5 +1,5 @@
 {
- "_comment": "TEXT-ON-PATH, Hebrew (Heebo 900): the same route with a Hebrew line; verified to read right-to-left in the correct order.",
+ "_comment": "TEXT-ON-PATH, Hebrew in Secular One (pair \"secular\"; Hebrew titles use Suez One / Karantina / Secular One only). Verified to read right-to-left in the correct order.",
  "name": "ae-text-on-path-he",
  "clip": "clips/aerial_720p.mp4",
  "track": "tracks/aerial_points.json",
@@ -32,5 +32,5 @@
  ],
  "plate_vol": 0.55,
  "language": "he",
- "pair": "heebo"
+ "pair": "secular"
 }

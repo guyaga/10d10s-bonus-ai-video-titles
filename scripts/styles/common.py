@@ -50,12 +50,47 @@ def audio_cues(spec, base, default_vol=.6):
     """Music bed / voiceover files from the spec: {"music": path, "music_vol": .6, "vo": path, "vo_vol": 1}."""
     out = []
     for key, vk, dv in (("music", "music_vol", default_vol), ("vo", "vo_vol", 1.0)):
-        if spec.get(key):
-            f = res(base, spec[key])
-            if not f.exists():
-                raise SystemExit(f"{key} file not found: {f}")
+        f = optional_file(base, spec.get(key), key, "the piece renders without it")
+        if f:
             out.append((str(f), key, 30, float(spec.get(key + "_at", 0)), spec.get(vk, dv)))
     return out
+
+
+def warn(msg):
+    print(f"  [warn] {msg}")
+
+
+def optional_file(base, value, what, consequence="skipped"):
+    """An optional input (music, vo, matte, image): return its resolved path, or None with a warning when it is missing,
+    so a spec copied from an example still builds on someone else's footage."""
+    if not value:
+        return None
+    f = res(base, value)
+    if f.exists():
+        return f
+    warn(f"{what} not found ({value}): {consequence}.")
+    return None
+
+
+# spec keys whose string values name tracked objects (vtrack.py / track.py object names)
+OBJECT_KEYS = ("follow", "obj", "point", "to", "eyes", "face", "trail", "launcher", "landmark")
+
+
+def spec_objects(spec):
+    """Every tracked-object name the spec refers to (walks nested dicts/lists)."""
+    found = []
+
+    def walk(o, key=None):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                walk(v, k)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v, key)
+        elif isinstance(o, str) and key in OBJECT_KEYS and o and "/" not in o and "." not in o:
+            found.append(o)
+    walk(spec)
+    return list(dict.fromkeys(found))
 
 
 def scale_cues(cues, k):

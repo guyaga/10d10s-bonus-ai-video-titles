@@ -6,9 +6,10 @@ Hebrew: RTL text, the stack sits on the chosen side and aligns to it.
 Spec keys. Required: clip, notes.
   notes     [{"app": "Wallet", "icon": "₪" | a letter | digits (glyphs must exist in the chosen font), "grad": ["#34c759", "#0a8f3a"], "title": "...", "body": "...",
               "time": "now", "t": 1.0}]
-  card      {"title": "Your order", "sub": "On the way · 12 min", "ring": .72, "t": 5.0, "label": "72%"}   optional
+  card      {"title": "Your order", "sub": "On the way · 12 min", "ring": .72, "t": 5.0}   optional (the ring counts up to ring×100 %)
   toast     {"text": "Payment sent", "t": 7.8}                                                    optional
-  area      {"side": "R", "x": 1160, "top": 110, "w": 620}     stack position (x = left edge in px)
+  area      {"side": "R|L", "top": 110, "w": 620, "x": 1160}   stack position: side picks the free third (R → x 1160, L → x 140);
+            an explicit x (left edge in px) overrides it
   until     everything leaves (optional)
   language  "he" | "en";  pair (Hebrew default "secular"); Latin default Manrope 700 + Manrope 500
   sfx (true), music, music_vol, plate_vol, name
@@ -20,7 +21,10 @@ def build(spec, base, style="APP-UI-POPUPS"):
     tp = type_pair(spec, latin=("Manrope", 700, "Manrope", 500), default_pair="secular")
     rtl = tp["rtl"]
     D, B = tp["display"], tp["body"]
-    A = {"side": "R", "x": 1160, "top": 110, "w": 620, **spec.get("area", {})}
+    area = spec.get("area", {})
+    A = {"side": "R", "top": 110, "w": 620, **area}
+    if "x" not in area:          # side picks the free third of the frame unless an exact x is given
+        A["x"] = 140 if A["side"] == "L" else 1160
     notes = spec["notes"]
     h = [f'<div id="ui" style="left:{A["x"]}px;top:{A["top"]}px;width:{A["w"]}px">']
     for i, n in enumerate(notes):

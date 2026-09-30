@@ -11,11 +11,13 @@ Code-driven motion graphics over AI footage. The video is generated **clean**; e
 ```
 SKILL=~/.claude/skills/ai-video-titles
 catalog      https://ai-video-titles-guyaga.netlify.app   (hosted hub: 61 numbered cards, send this link)
-catalog db   $SKILL/references/catalog.json   + scripts/catalog.py  list | show <n|ID> | brief <n|ID> "context" | build
+catalog db   $SKILL/references/catalog.json   + scripts/catalog.py  list | show | brief | make <n|ID> clip.mp4 "context" | build
+clip check   $SKILL/scripts/check_clip.py     plan <n|ID> "context" (no footage yet) | check <n|ID> clip.mp4 (footage in hand)
              $SKILL/catalog/index.html        the same page locally (serve it, e.g. npx http-server)
 style specs  $SKILL/references/styles.md      what each style is, fonts, palette, motion, how to build it
 kit          $SKILL/scripts/                  run_style (41 parametrised styles), run_ad (adkit + bespoke specs), vtrack, track,
-                                              finalize, qa, music, vo_take2, word_times, doctor
+                                              finalize, qa, music, vo_take2, word_times, doctor, selftest
+                                              run_style.py <ID> --demo [--render]: any style on the bundled footage
 examples     $SKILL/examples/                 one spec per run_style style + 3 adkit/bespoke specs + demo/ (8 s, no keys needed)
 recipes      $SKILL/references/recipes/       the original hand-built compositions (reference source for bespoke work)
 doctor       python $SKILL/scripts/doctor.py  checks deps/keys/sibling skills, prints which steps are available
@@ -26,8 +28,10 @@ Everything runs from a **project folder** (cwd, or `--root DIR`, or env `TITLES_
 
 Keys: `GEMINI_API_KEY` (tracking, TTS, QA), `ELEVEN_API_KEY` (music + new SFX; a sound library ships with the kit).
 No video-generation key: generation belongs to ai-ad-studio. Tools: Python 3.10+ (`pip install -r requirements.txt`), ffmpeg, Node 18+ (npx hyperframes).
-First run on a new machine: `python $SKILL/scripts/doctor.py`. To show the user a result in minutes with no keys and
-no Seedance spend: `cd $SKILL/examples/demo && python ../../scripts/run_style.py STOMP-ESCORT --spec spec.json --render`.
+First run on a new machine: `python $SKILL/scripts/doctor.py`, then `python $SKILL/scripts/selftest.py` (every style
+builds on the bundled footage; see TESTING.md). To show the user any style in minutes with no keys and no footage:
+`python $SKILL/scripts/run_style.py <ID> --demo --render`. The examples/<style>/ specs reference the plates the hub
+samples were made on; those plates are not shipped. The user's own footage goes in through `catalog.py make`.
 
 ---
 
@@ -57,15 +61,27 @@ requirements and how to build it: `references/catalog.json` (the same data as th
    - **I know what I want**: take the number, ID or prompt line they give.
 2. **Show the choice back.** Run `python scripts/catalog.py show <n|ID>` and confirm the pick in two lines:
    what it looks like and the sample to watch.
-3. **Write the build brief = style + their context.** Run
-   `python scripts/catalog.py brief <n|ID> "<the user's project context>"`.
-   - The context is everything relevant from the conversation: product or subject, brand name and colours, language
-     (Hebrew → Suez One / Karantina / Secular One only), the real words, names and prices, length and aspect, music or
-     VO, the ending/CTA, and the clip if one exists.
-   - Ask only for what is missing and matters, in one question.
-   - The brief carries the style's look, fonts and palette (brand colours win), its shooting requirements, the example
-     to adapt and the exact build command. Work from it through STEP 1-5.
-4. **No clip yet?** Hand the brief to ai-ad-studio. It reads the style's shooting requirements and generates a plate that fits.
+3. **Gather the context.** Everything relevant from the conversation: product or subject, brand name and colours,
+   language (Hebrew → Suez One / Karantina / Secular One only), the real words, names and prices, length and aspect,
+   music or VO, the ending/CTA. Ask only for what is missing and matters, in one question.
+   `python scripts/catalog.py brief <n|ID> "<context>"` prints the whole brief (look, fonts, palette with brand colours
+   winning, shooting requirements, the example, the build command) when you want it in one place.
+4. **Ask: "Do you have footage yet?"** (AskUserQuestion)
+   - **No, plan it first** → `python scripts/check_clip.py plan <n|ID> "<context>"`: the shooting requirements for this
+     style plus ready-to-paste lines for a Seedance / Kling / Veo prompt or a shot list, and the objects to track
+     afterwards. To generate the footage end to end (prompt → generate → gate), hand it to ai-ad-studio.
+   - **Yes** → `python scripts/catalog.py make <n|ID> <their_clip.mp4> "<context>" [--track]`. It sets up the project
+     folder, copies the clip, writes a starter spec from the style's example (clip swapped in, context saved,
+     every content field listed as a TODO), writes objects.json when the style rides tracked objects (and tracks them
+     with `--track` once the descriptions are filled in and GEMINI_API_KEY is set), then runs
+     `check_clip.py check` on the clip and prints its verdict:
+       - **FAIL** → fix the clip first (its printed trim points / reframing), or pick one of the styles it lists as fitting.
+       - **PASS / PASS WITH WARNINGS** → fill the spec's TODOs with their words, then build (STEP 3).
+   - **Just show me the style** → `python scripts/run_style.py <ID> --demo --render`: the style on the footage bundled with
+     the skill (placeholder content, no keys). Good for choosing, not for delivering.
+   Tiers (`catalog.py show` prints it): **one-command** styles need only the clip and the words; **track-first** styles
+   ride objects in the frame, so tracking comes before the build; **bespoke-rewrite** styles are crafted worlds: the
+   recipe is the reference and you rewrite it for their subject.
 5. **Make it the project's own.** A catalog style is the starting grammar, not a template to fill. Ask what this
    subject's world prints, measures, stamps or displays, and let that shape the details. One accent colour, few big
    meaningful titles, and decide the ending (the last title or CTA) first. The lesson that cost a full rebuild:
@@ -76,17 +92,22 @@ requirements and how to build it: `references/catalog.json` (the same data as th
 
 ## STEP 1 - Check the plate against the style's contract
 
-The clip comes in from outside (the user, or ai-ad-studio). Read the chosen style's entry in
-`references/plates.json` and check the clip before any post work:
-- **Cuts**: `ffmpeg -i clip.mp4 -vf "select='gt(scene,0.15)',showinfo" -an -f null -` and count `pts_time` hits
-  against `gate.max_cuts`. For one-take styles also ask Gemini "is this one unbroken take?" (match cuts score low).
-- **Duration / aspect**: inside `duration_s`; the kit renders 1920x1080, so a 9:16 clip needs reframing first.
-- **Tracking + space**: after STEP 2, the first `track` object must be found on at least `gate.min_track_coverage`
-  of frames, with at least `gate.min_free_margin` of the frame free on the `negative_space` side.
-- **Clean frame**: no readable text, logos or UI in the plate (`text_in_frame` is always false).
-- **Matte**: if `separation` is true, the subject must cut out cleanly (STEP 2 matte).
-If the clip fails, say which rule and how much, and recommend regenerating with the contract's `seedance_lines`
-through ai-ad-studio. Do not paper over a failed plate with titles.
+The clip comes in from outside (the user, or ai-ad-studio). Check it before any post work (`catalog.py make`
+already ran this; run it again after tracking, or after a trim):
+
+```bash
+python scripts/check_clip.py check <n|ID> clips/your_clip.mp4 [--track tracks/track.json | --objects objects.json] [--no-gemini]
+```
+It measures the clip against the style's shooting requirements in `references/plates.json`:
+- **cuts** by motion continuity (ffmpeg's scene score misses the soft same-room cuts AI video makes)
+- **tracking coverage** of every object the titles ride, **title space** on the side the style needs
+- **edge crop** for full-body styles (feet or head cut), and a **Gemini second look** (text or logos in frame, subject,
+  framing, camera, one unbroken take)
+
+It prints PASS / PASS WITH WARNINGS / FAIL, the fixes (trim points with the ffmpeg command, reframing) and the catalog
+styles the clip already fits. The kit renders 1920x1080, so a 9:16 clip needs reframing first. If the clip fails,
+say which rule and by how much; fix the clip (trim, reframe) or regenerate it through ai-ad-studio, or switch to a
+style it fits. Do not paper over a failed clip with titles.
 
 ## STEP 2 - Analyse the plate frame by frame
 

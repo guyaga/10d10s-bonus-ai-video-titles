@@ -96,7 +96,7 @@ J.heads.forEach((hd, i) => {
 tl.set(J.heads.map((_, i) => `#hl${i} .w`).join(","), {opacity: 0}, 0);
 if (J.strap) tl.fromTo("#strap", {opacity: 0, y: -24}, {opacity: 1, y: 0, duration: .4, ease: "power3.out"}, J.strap.t);
 tl.fromTo("#bug", {opacity: 0, y: -20}, {opacity: 1, y: 0, duration: .45, ease: "power3.out"}, Math.max(.2, T0 - .8));
-if (J.live) tl.to("#bug .lv i", {opacity: .15, duration: .5, repeat: 30, yoyo: true, ease: "sine.inOut"}, 0);
+if (J.live) tl.to("#bug .lv i", {opacity: .15, duration: .5, repeat: Math.max(1, Math.ceil(DUR / .5)), yoyo: true, ease: "sine.inOut"}, 0);
 if (J.ticker) tl.fromTo("#tk", {y: 70}, {y: 0, duration: .45, ease: "power3.out"}, J.ticker.t);
 """]
     sfx = []

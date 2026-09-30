@@ -10,7 +10,7 @@ Spec keys. Required: clip, lines.
              face: anchor "r", align "left"); dur = seconds from first glyph to the last locked character
   language   "he" | "en";  pair (Hebrew, default "secular"; see common.HE_PAIRS); latin fonts: IBM Plex Mono + JetBrains Mono
   colors     {"text": "#e8fff4", "scramble": "#5cffb0", "cursor": "#5cffb0", "panel": "rgba(4,12,10,.72)"}
-  seed       integer (default 7);  track (optional), music, music_vol, plate_vol, name
+  seed       integer (default 7);  sfx (true = typing ticks);  track (optional), music, music_vol, plate_vol, name
 """
 from styles.common import (JS_UTIL, audio_cues, cue, e, js, project_dir, res, tracks, type_pair)
 

@@ -1023,8 +1023,8 @@
    },
    "runner": "run_ad",
    "tier": "one-command",
-   "build": "python scripts/run_ad.py COMIC-POP --spec <spec.py> --render  (\"theme\": \"pop\")",
-   "example": "examples/comic-pop/spec.py",
+   "build": "python scripts/run_ad.py <AD> --spec <spec.py> --render  (theme flag pop on the big stomp words only)",
+   "example": "examples/E6_sneaker_sx.py",
    "preview": "https://ai-video-titles-guyaga.netlify.app/previews/comic-pop.mp4",
    "renders": [
     {
@@ -1221,9 +1221,9 @@
     "source": "B2 (6 s) / B4 (24 s)"
    },
    "runner": "run_style",
-   "tier": "track-first",
-   "build": "python scripts/run_style.py HUD-CLEAN --spec <spec.json> --render  (HUD-HELMET with boot/reticle/radar/voice off)",
-   "example": "examples/hud-clean",
+   "tier": "one-command",
+   "build": "python scripts/run_style.py HUD-HELMET --spec <spec.json> --render  (leave out the reticle, radar and voice blocks)",
+   "example": "examples/hud-helmet",
    "preview": "https://ai-video-titles-guyaga.netlify.app/previews/hud-clean.mp4",
    "renders": [
     {

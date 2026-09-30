@@ -37,12 +37,12 @@ def build(spec, base, style="SWISS-GRID"):
 .gh{{position:absolute;left:{M}px;right:{M}px;height:1px;background:{line};transform-origin:0 50%}}
 .fr{{position:absolute;top:{M + 150}px;direction:{tp['dir']}}}
 .fr .l{{overflow:hidden;height:{round(size * .98)}px}}
-.fr .l span{{display:block;font-family:"{tp['display']}",sans-serif;font-weight:700;font-size:{size}px;line-height:{round(size * .98)}px;
+.fr .l span{{display:block;font-family:"{tp['display']}",sans-serif;font-weight:{tp['dw']};font-size:{size}px;line-height:{round(size * .98)}px;
   letter-spacing:{'0' if rtl else '-.045em'};color:{ink};white-space:nowrap}}
 #red{{position:absolute;left:0;top:0;width:{round(CW)}px;height:{round(CW)}px;background:{col['red']}}}
 #meta{{position:absolute;top:{M + 24}px;left:{cx(0)}px;right:{M}px;display:flex;justify-content:space-between;align-items:baseline;
   font-family:"{tp['body']}",sans-serif;font-weight:500;font-size:24px;letter-spacing:.06em;color:{ink};direction:{tp['dir']}}}
-#meta b{{font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:0}}
+#meta b{{font-weight:{400 if tp['rtl'] else 700};font-variant-numeric:tabular-nums;letter-spacing:0}}
 .cap{{position:absolute;bottom:{M + 30}px;width:{round(CW * 3)}px;font-family:"{tp['body']}",sans-serif;font-weight:500;font-size:28px;line-height:1.3;color:{ink};
   direction:{tp['dir']};border-top:2px solid {ink};padding-top:14px}}
 """

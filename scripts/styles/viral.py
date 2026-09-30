@@ -13,7 +13,7 @@ Spec keys. Required: clip, words.
   y            caption centre as a fraction of frame height (default .72)
   size         font size px for the spoken words (default 150)
   colors       {"text": "#ffffff", "key": "#ffe14d", "stroke": "#000000", "key2": "#39ff88"}  key2 = every 2nd keyword
-  vo           voiceover file (the words' audio), vo_vol;  music, music_vol, plate_vol, name, track (optional)
+  vo           voiceover file (the words' audio), vo_vol;  sfx (true = pops);  music, music_vol, plate_vol, name, track (optional)
 """
 import json
 import urllib.request

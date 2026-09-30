@@ -13,7 +13,7 @@ Spec keys. Required: clip (the BEFORE plate), after (the AFTER clip).
              (default [[0.9, 0], [2.9, .78], [4.6, .3], [6.0, .5]]). Two generated takes drift apart over time: keep the
              split moves early and end on 1.0 (full AFTER) if the seam starts to show.
   NOTE       write currency in words for Hebrew (ש״ח): the three Hebrew faces have no ₪ glyph
-  stat       "שיפוץ מלא · 42 ימי עבודה · 186,000 ₪"  bottom bar text (optional), stat_t (default 6.6)
+  stat       "שיפוץ מלא · 42 ימי עבודה · 186,000 ש״ח"  bottom bar text (optional), stat_t (default 6.6)
   language   "he" | "en";  pair (Hebrew, default "karantina": Karantina labels + Secular One stat); Latin: Oswald + Manrope
   colors     {"accent": "#ffd23f"}
   sfx (true), plate_vol, music, music_vol, name
@@ -55,7 +55,7 @@ def build(spec, base, style="BEFORE-AFTER-SPLIT"):
   font-family:"{tp['display']}",sans-serif;font-weight:{tp['dw']};font-size:84px;line-height:1;color:#fff;letter-spacing:{'0' if rtl else '.04em'};backdrop-filter:blur(6px)}}
 .chip.after{{background:{col['accent']};color:#111;border-color:transparent}}
 #cb{{{'right' if not start_is_right else 'left'}:80px}} #ca{{{'right' if start_is_right else 'left'}:80px}}
-#stat{{position:absolute;left:50%;bottom:74px;transform:translateX(-50%);display:flex;align-items:center;gap:22px;padding:18px 34px;
+#stat{{position:absolute;left:50%;bottom:74px;display:flex;align-items:center;gap:22px;padding:18px 34px;
   background:rgba(10,10,12,.72);border-radius:60px;border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px);white-space:nowrap;
   font-family:"{tp['body']}",sans-serif;font-weight:{tp['bw']};font-size:36px;color:#fff;direction:{tp['dir']}}}
 #stat i{{width:14px;height:14px;border-radius:50%;background:{col['accent']};flex:none}}
@@ -92,7 +92,7 @@ tl.fromTo("#div .hd", {scale: 0}, {scale: 1, duration: .5, ease: "back.out(2.4)"
 for (let i = 1; i < kf.length; i++) tl.fromTo("#div .hd", {scale: 1.15}, {scale: 1, duration: .5, ease: "power2.out"}, kf[i][0] - .05);
 const lk = kf[kf.length - 1];
 if (lk[1] >= .99) tl.to("#cb", {opacity: 0, y: -12, duration: .45, ease: "power2.in"}, lk[0] - .4);
-if (B.stat) tl.fromTo("#stat", {opacity: 0, y: 30}, {opacity: 1, y: 0, duration: .7, ease: "power3.out"}, B.st);
+if (B.stat) { tl.set("#stat", {xPercent: -50}, 0); tl.fromTo("#stat", {opacity: 0, y: 30}, {opacity: 1, y: 0, xPercent: -50, duration: .7, ease: "power3.out"}, B.st); }
 """]
     sfx = []
     if spec.get("sfx", True):

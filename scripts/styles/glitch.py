@@ -10,7 +10,7 @@ Spec keys. Required: clip, titles.
   strength   1.0   global glitch amount (tear displacement + split px)
   language   "he" | "en";  pair (Hebrew, default "karantina"; see common.HE_PAIRS); Latin: Oswald 700 + IBM Plex Mono 500
   colors     {"text": "#ffffff", "sub": "#ff5a1f", "r": "#ff2a3c", "g": "#29ff9a", "b": "#2d6bff"}
-  seed;  music, music_vol, plate_vol, name, track (for follow titles)
+  seed;  sfx (true = glitch hits);  music, music_vol, plate_vol, name, track (for follow titles)
 """
 from styles.common import (JS_UTIL, audio_cues, cue, e, js, project_dir, res, tracks, type_pair)
 

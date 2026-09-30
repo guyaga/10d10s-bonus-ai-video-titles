@@ -18,7 +18,7 @@ Spec keys. Required: clip, tiles.
 import subprocess
 
 import paths
-from styles.common import (JS_UTIL, audio_cues, cue, e, js, project_dir, res, tracks, type_pair)
+from styles.common import (optional_file, JS_UTIL, audio_cues, cue, e, js, project_dir, res, tracks, type_pair)
 
 
 def frame(src, at, out):
@@ -41,14 +41,14 @@ def build(spec, base, style="END-SCREEN"):
     TW = spec.get("tile_w", 460)
     th = []
     for i, tl_ in enumerate(tiles):
-        f = frame(res(base, tl_["src"]), tl_.get("at", 2), tmp / f"tile{i}.jpg")
+        f = frame(optional_file(base, tl_.get("src"), f"end-screen tile {i} video", "using a frame of the main clip") or res(base, spec["clip"]), tl_.get("at", 2), tmp / f"tile{i}.jpg")
         extra[f"es/tile{i}.jpg"] = f
         th.append(f'<div class="tile" id="t{i}"><div class="th"><img src="assets/es/tile{i}.jpg" alt=""><span class="du">{e(tl_.get("dur", ""))}</span>'
                   f'<i class="pl"></i></div><div class="tt">{e(tl_["title"])}</div></div>')
     av = spec.get("avatar")
     avh = ""
     if av:
-        f = frame(res(base, av["src"]), av.get("at", 1), tmp / "avatar.jpg")
+        f = frame(optional_file(base, av.get("src"), "avatar video", "using a frame of the main clip") or res(base, spec["clip"]), av.get("at", 1), tmp / "avatar.jpg")
         extra["es/avatar.jpg"] = f
         z = av.get("zoom", 3)
         avh = (f'<div id="av"><svg class="ring" width="236" height="236" viewBox="0 0 236 236"><circle cx="118" cy="118" r="110" fill="none" stroke="{col["accent"]}" '

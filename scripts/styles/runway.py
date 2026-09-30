@@ -19,7 +19,7 @@ Spec keys (JSON). Required: clip, track, items (escort) and/or countdown.
   fonts         {"display": "Anton", "serif": "Bodoni Moda", "body": "Archivo"}
   currency      "$" | "€" | "₪" ...     music, music_vol, plate_vol, matte, name
 """
-from styles.common import (STOMP_JS, audio_cues, cue, e, fonts, js, money, project_dir, res, tracks)
+from styles.common import (STOMP_JS, audio_cues, cue, e, fonts, js, money, optional_file, project_dir, res, tracks)
 
 DEF_COL = {"paper": "#f6f1e8", "ink": "#16130f", "accent": "#ff3d2e"}
 DEF_FONT = {"display": "Anton", "serif": "Bodoni Moda", "body": "Archivo"}
@@ -43,7 +43,7 @@ def build(spec, base, style="STOMP-ESCORT"):
     look = spec.get("look")
     big = spec.get("big_word")
     fin = spec.get("finale")
-    matte = res(base, spec["matte"]) if spec.get("matte") else None
+    matte = optional_file(base, spec.get("matte"), "matte", "the big word sits in front of the subject instead of behind")
     n_items = len(items)
     end_beats = [x["beat"] for x in (big, fin, cd) if x]
     end_beat = min(end_beats) if end_beats else (items[-1]["beat"] + 4 if items else 0)
@@ -53,6 +53,9 @@ def build(spec, base, style="STOMP-ESCORT"):
 
     faces, extra = fonts(fnt["display"], fnt["serif"], fnt["body"])
     D, SF, BD = fnt["display"], fnt["serif"], fnt["body"]
+    for it in items:
+        if it.get("image") and not optional_file(base, it["image"], f"item image for {it.get('key')}", "sticker without a product image"):
+            it.pop("image")
     for it in items:
         if it.get("image"):
             extra[f"items/{it['key']}{res(base, it['image']).suffix}"] = res(base, it["image"])

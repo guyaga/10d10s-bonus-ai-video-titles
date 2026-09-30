@@ -6,6 +6,7 @@ LTR; Hebrew mirrors the layout (card on the right if asked, bars ordered right-t
 Spec keys. Required: clip, bars and/or line.
   panel     {"side": "L|R", "t": .6, "until": 9.6, "title": "...", "sub": "...", "w": 760}
   bars      {"labels": ["Q1","Q2","Q3","Q4"], "values": [42, 58, 71, 94], "unit": "%", "t": 1.3, "until": 5.2, "hi": 3}
+            until = the bars leave (when a line chart follows, they hand over at line.t instead)
             hi = index of the highlighted bar (accent colour)
   line      {"values": [12, 18, 16, 27, 34, 41, 58], "labels": ["ינו", ...], "t": 5.4, "flag": "+312%", "title": "..."}
   language  "he" | "en";  pair (Hebrew default "secular"); Latin default Manrope 700 + Manrope 500
@@ -107,6 +108,7 @@ if (BR) {
   });
   tl.fromTo(".bl", {opacity: 0}, {opacity: 1, duration: .4, stagger: .1}, BR.t);
   if (LN) tl.to("#chb", {opacity: 0, y: 20, duration: .4, ease: "power2.in"}, LN.t - .45);
+  else if (BR.until != null) tl.to("#chb", {opacity: 0, y: 20, duration: .4, ease: "power2.in"}, BR.until - .4);
 }
 if (LN) {
   tl.set("#chl", {opacity: 1}, LN.t - .01);

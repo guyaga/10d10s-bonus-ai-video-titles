@@ -12,7 +12,7 @@ Spec keys. Required: clip, track, tags.
   colors   {"accent": "#9bd14a", "fg": "#eef4e8", "mute": "#b9c7b0"}
   sfx (true), music, music_vol, plate_vol, name
 """
-from styles.common import (TICKS, audio_cues, cue, e, fonts, js, project_dir, res, tracks)
+from styles.common import (optional_file, TICKS, audio_cues, cue, e, fonts, js, project_dir, res, tracks)
 
 PLACE = {"right": "translate(0,-50%)", "left": "translate(-100%,-50%)", "above": "translate(-50%,-100%)", "below": "translate(-50%,0)"}
 
@@ -61,6 +61,8 @@ def build(spec, base, style="CAMPUS-AR"):
     if spec.get("wave"):
         h.append('<div id="wave" class="panel">' + "<b></b>" * 36 + "</div>")
     if end:
+        if end.get("logo") and not optional_file(base, end["logo"], "end logo image", "end card without the logo"):
+            end = {k: v for k, v in end.items() if k != "logo"}
         if end.get("logo"):
             lp = res(base, end["logo"])
             extra["end_logo" + lp.suffix] = lp

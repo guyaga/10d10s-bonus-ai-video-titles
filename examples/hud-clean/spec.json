@@ -1,0 +1,29 @@
+{
+ "_comment": "HUD-CLEAN: the quiet visor HUD. HUD-HELMET with the boot, the reticle rings, the radar and the voice left out: a thin vitals column, the heading tape, one red alert panel. Track eyes + face with vtrack.py (objects.json here).",
+ "name": "hud-clean",
+ "clip": "clips/helmet_720p.mp4",
+ "track": "tracks/helmet_vtrack.json",
+ "language": "he",
+ "system": "VNG-OS",
+ "boot": false,
+ "reticle": false,
+ "radar": false,
+ "ai": false,
+ "lock": false,
+ "confirm": false,
+ "vitals": {
+  "t": 1.0
+ },
+ "compass": {
+  "t": 0.6
+ },
+ "messages": {
+  "t": 3.0,
+  "until": 7.5
+ },
+ "alert": {
+  "t": 8.0,
+  "until": 11.5
+ },
+ "final": false
+}

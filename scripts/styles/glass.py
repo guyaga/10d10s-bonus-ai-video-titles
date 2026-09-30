@@ -74,7 +74,7 @@ if (S.cta) { tl.fromTo("#cta", {opacity: 0, y: 18, scale: .96}, {opacity: 1, y: 
              tl.fromTo("#cta b", {xPercent: -120}, {xPercent: 120, duration: 1.0, ease: "power2.inOut"}, S.t0 + 2.4); }
 for (let i = 0; i < S.n; i++) {
   tl.fromTo("#k" + i, {opacity: 0, y: 40, scale: .9}, {opacity: 1, y: 0, scale: 1, duration: .8, ease: "back.out(1.6)"}, S.t0 + 1.8 + i * .22);
-  tl.to("#k" + i, {y: (i % 2 ? 14 : -14), duration: 2.6, ease: "sine.inOut", yoyo: true, repeat: 2}, S.t0 + 2.6 + i * .22);
+  tl.to("#k" + i, {y: (i % 2 ? 14 : -14), duration: 2.6, ease: "sine.inOut", yoyo: true, repeat: Math.max(0, Math.ceil((DUR - S.t0 - 2.6 - i * .22) / 2.6) - 1)}, S.t0 + 2.6 + i * .22);
 }
 if (S.cur) {
   // the cursor enters from the lower right, glides to the CTA centre, presses it, the ripple rings out

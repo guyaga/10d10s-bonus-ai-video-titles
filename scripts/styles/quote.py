@@ -11,9 +11,9 @@ Spec keys. Required: clip, words (or quote + t).
   side       "left" (default) | "right": the half of the frame the quote lives in (keep it off the face)
   ink        "dark" (default, for bright walls/windows) | "light" (for dark backgrounds; adds a soft scrim)
   language   "he" | "en";  pair (Hebrew, default "suez"); Latin: DM Serif Display + Manrope
-  colors     {"accent": "#d9892b"}
+  colors     {"accent": "#d9892b", "mark": "#b8651a"}   mark = the big quotation marks
   size       quote font px (default 72), width (default 640), top (default 250)
-  sfx (true), plate_vol (default .9: the speaker's voice is the soundtrack), music, music_vol, name
+  sfx (true), plate_vol (default .95: the speaker's voice is the soundtrack), music, music_vol, name
 """
 from styles.common import (audio_cues, cue, e, js, project_dir, res, tracks, type_pair)
 

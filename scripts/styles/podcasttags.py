@@ -9,13 +9,14 @@ Spec keys. Required: clip, track, hosts.
   topics    [{"text": "...", "t": 1.0}]                 lower strip, each replaces the previous
   audio     path of the file whose loudness drives the meters (default: the clip's own audio)
   language  "he" | "en";  pair (Hebrew default "suez": Suez One names + Secular One labels)
-  colors    {"panel": "rgba(14,12,10,.72)", "accent": "#ffb13b", "text": "#ffffff", "sub": "#d6ccc0"}
-  sfx (true), music, music_vol, plate_vol, name
+  colors    {"panel": "rgba(14,12,10,.82)", "accent": "#ffb13b", "text": "#ffffff", "sub": "#ece4da"}
+  hosts_t   seconds the host tags appear (default .3)
+  sfx (true), music, music_vol, plate_vol (default .9), name
 """
 import subprocess
 
 import paths
-from styles.common import (JS_UTIL, audio_cues, cue, e, envelope, js, project_dir, res, tracks, type_pair)
+from styles.common import (warn, optional_file, JS_UTIL, audio_cues, cue, e, envelope, js, project_dir, res, tracks, type_pair)
 
 NBAR = 5
 
@@ -26,11 +27,18 @@ def build(spec, base, style="PODCAST-TAGS"):
     col = {"panel": "rgba(14,12,10,.82)", "accent": "#ffb13b", "text": "#ffffff", "sub": "#ece4da", **spec.get("colors", {})}
     D, B = tp["display"], tp["body"]
     clip = res(base, spec["clip"])
-    src = res(base, spec["audio"]) if spec.get("audio") else clip
+    src = optional_file(base, spec.get("audio"), "audio", "the waveform follows the clip's own sound") or clip
     wav = paths.root() / "tmp" / (spec.get("name", "podcast") + "_env.wav")
     wav.parent.mkdir(parents=True, exist_ok=True)
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(src), "-vn", "-ac", "1", "-ar", "22050", str(wav)], check=True)
-    env = envelope(wav)
+    r = subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(src), "-vn", "-ac", "1", "-ar", "22050", str(wav)],
+                       capture_output=True, text=True)
+    if r.returncode == 0 and wav.exists() and wav.stat().st_size > 1000:
+        env = envelope(wav)
+    else:   # a silent clip: a gentle idle pulse keeps the tag meters alive
+        warn("no audio in the clip or 'audio': the host meters idle (add \"audio\": your dialogue track)")
+        dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(clip)],
+                                   capture_output=True, text=True).stdout.strip() or 10)
+        env = [round(.18 + .12 * abs(((f * 7) % 24) / 12 - 1), 3) for f in range(int(dur * 24))]
     h = []
     for i, ho in enumerate(spec["hosts"]):
         eq = "".join("<i></i>" for _ in range(NBAR))
@@ -79,7 +87,21 @@ const $$ = (id) => document.getElementById(id);
 const envAt = (t) => { const i = Math.max(0, Math.min(J.env.length - 1, Math.round(t * J.fps))); return J.env[i] || 0; };
 const WAVE = [...document.querySelectorAll("#wave i")];
 const who = (t) => { for (const s of J.talk) if (t >= s.t && t < s.until) return s.host; return -1; };
+// collision avoidance: when two hosts sit close (or the tracker puts their heads near each other) the later tag
+// stacks below the earlier one instead of overlapping it. Runs after the driver has placed every [data-follow].
+const HG = [...document.querySelectorAll(".hg")];
+const unstack = () => {
+  const r = HG.map(g => { const b = g.firstElementChild.getBoundingClientRect(); return {g, x0: b.left, x1: b.right, y0: b.top, y1: b.bottom}; });
+  for (let j = 1; j < r.length; j++) for (let i = 0; i < j; i++) {
+    const A = r[i], B = r[j];
+    if (A.x0 < B.x1 && B.x0 < A.x1 && A.y0 < B.y1 && B.y0 < A.y1) {
+      const dy = A.y1 - B.y0 + 14, k = (document.body.getBoundingClientRect().width / 1920) || 1;   // viewport px → composition px
+      B.g.style.top = (parseFloat(B.g.style.top) + dy / k) + "px"; B.y0 += dy; B.y1 += dy;
+    }
+  }
+};
 window.onPlace = (t) => {
+  unstack();
   const a = who(t), lv = envAt(t);
   for (let i = 0; i < J.n; i++) {
     const on = i === a;
@@ -99,7 +121,7 @@ tl.set(".tg", {xPercent: -50, yPercent: -100}, 0);
 tl.fromTo(".tg", {y: 20}, {y: 0, duration: .6, ease: "expo.out", stagger: .12}, J.hosts_t);
 if (J.ep != null) {
   tl.fromTo("#ep", {opacity: 0, y: -24}, {opacity: 1, y: 0, duration: .55, ease: "expo.out"}, J.ep);
-  tl.to("#ep .rec i", {opacity: .15, duration: .5, yoyo: true, repeat: 20, ease: "sine.inOut"}, J.ep + .5);
+  tl.to("#ep .rec i", {opacity: .15, duration: .5, yoyo: true, repeat: Math.max(1, Math.ceil((DUR - J.ep - .5) / .5)), ease: "sine.inOut"}, J.ep + .5);
 }
 J.tops.forEach((t0, i) => {
   if (i === 0) tl.fromTo("#tp", {opacity: 0, y: 24, xPercent: -50}, {opacity: 1, y: 0, xPercent: -50, duration: .55, ease: "expo.out"}, t0 - .1);

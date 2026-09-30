@@ -9,7 +9,7 @@ Spec keys. Required: clip, events.
   y          timeline y in px (default 850);  margin (default 170)
   big        {"side": "start" | "end", "y": 430}   where the big counting year sits (default: the reading start side)
   language   "he" | "en";  pair (Hebrew, default "suez"); Latin: DM Serif Display + Manrope
-  colors     {"accent": "#f2c46d", "line": "rgba(255,255,255,.75)"}
+  colors     {"accent": "#f2c46d", "line": "rgba(255,255,255,.78)"}
   sfx (true), plate_vol, music, music_vol, name
 """
 from styles.common import (audio_cues, cue, e, js, project_dir, res, tracks, type_pair)

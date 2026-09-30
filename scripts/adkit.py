@@ -63,10 +63,14 @@ THEMES = {
     "chef":     dict(display="Fraunces", dw=900, ds="italic", label="Manrope", mono="Space Mono", tag="Fraunces", tagstyle="italic", chroma=False),
     "travel":   dict(display="Sora", dw=800, ds="normal", label="Sora", mono="Space Mono", tag="Sora", tagstyle="normal", chroma=False),
 }
+# COMIC-POP (#14): the guyaga theme with multi-colour comic burst words ("theme": "pop"). Loud and young: beats only.
+THEMES["pop"] = dict(THEMES["guyaga"], pop=True)
 
 
 def font_faces(theme):
-    fams = {theme["display"], theme["label"], theme["mono"], theme["tag"], "Karantina", "Suez One", "Secular One"} if theme.get("rtl") else {theme["display"], theme["label"], theme["mono"], theme["tag"]}
+    # the three Hebrew faces load for every theme: the shared CSS names them as fallbacks (Hebrew words inside English
+    # ads, the .he sub-lines), and their unicode-range keeps Latin text on the theme's own faces
+    fams = {theme["display"], theme["label"], theme["mono"], theme["tag"], "Karantina", "Suez One", "Secular One"}
     css, files = [], {}
     for fam in fams:
         for stem, w, st in FAM[fam]:

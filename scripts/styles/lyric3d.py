@@ -11,11 +11,11 @@ Spec keys. Required: clip, words; matte (for any "back" word).
   exits      {"0": 4.25, "1": null}   phrase -> exit time (null: holds to the end)
   matte      subject matte webm (npx hyperframes remove-background plate.mp4 -o matte.webm)
   drift      degrees of plane rotation over the clip (default 5; front and back turn opposite ways)
-  language   "en" | "he";  pair (Hebrew, default "karantina": Karantina display + Suez One script); Latin: Anton + Cormorant Garamond italic
+  language   "en" | "he";  pair (Hebrew, default "karantina-suez": Karantina display + Suez One script); Latin: Anton + Cormorant Garamond italic
   colors     {"text": "#ffffff", "glow": "#ff3fb4", "outline": "rgba(255,63,180,.85)"}
   sfx (false by default: the song is the soundtrack), plate_vol (default 1), music, music_vol, name
 """
-from styles.common import (audio_cues, e, fonts, js, project_dir, res, tracks, type_pair)
+from styles.common import (optional_file, audio_cues, e, fonts, js, project_dir, res, tracks, type_pair)
 
 
 def build(spec, base, style="LYRIC-KINETIC-3D"):
@@ -23,6 +23,9 @@ def build(spec, base, style="LYRIC-KINETIC-3D"):
     rtl = tp["rtl"]
     col = {"text": "#ffffff", "glow": "#ff3fb4", "outline": "rgba(255,63,180,.85)", **spec.get("colors", {})}
     W = spec["words"]
+    matte = optional_file(base, spec.get("matte"), "matte", "'back' words move to the front layer")
+    if not matte:
+        W = [{**w, "layer": "front"} for w in W]
     script_style = "normal" if rtl else "italic"
     css = tp["css"] + f"""
 .plane{{position:absolute;inset:0;perspective:1500px;perspective-origin:50% 45%}}
@@ -73,7 +76,7 @@ K.W.forEach((w, n) => {
 """]
     extra = dict(tp["files"])
     if has_back:
-        extra["matte.webm"] = res(base, spec["matte"])
+        extra["matte.webm"] = matte
     sfx = audio_cues(spec, base, .5)
     return dict(project=project_dir(spec, style), clip=res(base, spec["clip"]), track=tracks(spec, base), css=css, hud=hud,
                 js="\n".join(j), sfx=sfx, plate_vol=spec.get("plate_vol", 1.0), extra=extra)

@@ -9,7 +9,8 @@ Spec keys. Required: clip.
   goal       {"team": 0, "t": 11.4, "label": "GOAL"}    score change + flash + tab on the bug
   lower      [{"follow": "player", "anchor": "b", "dx": 0, "dy": 30, "name": "#9 LIOR AVNI", "role": "STRIKER · 3 GOALS",
                "t": .5, "until": 2.5}]
-  ticker     {"text": "...", "t": 0, "until": null, "speed": 160}      px/s crawl; label "LIVE"
+  ticker     {"text": "...", "t": 0, "until": null, "speed": 160, "label": "LIVE"}   speed = px/s crawl; label = the tab text
+  bug_t      seconds the score bug slides in (default .3)
   replay     [{"t": 2.6, "until": 11.0, "label": "REPLAY"}]
   wipes      [2.54, 11.125]      cut times: a stinger panel crosses the frame centred on each
   brand      "SPARTA LEAGUE"     text on the wipe panel + bug header

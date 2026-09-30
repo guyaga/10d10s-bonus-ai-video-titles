@@ -4,10 +4,11 @@ simulation state, so any frame can be seeked and rendered identically. Hebrew or
 
 Spec keys. Required: clip, words.
   words      [{"text": "SEA SALT", "mode": "embers|sand|smoke", "t": 7.0, "form": 1.2, "hold_until": 9.6, "out": 1.0,
-               "x": 960, "y": 380, "size": 210, "weight": "display|body", "sub": "FLEUR DE SEL", "density": 5}]
+               "x": 960, "y": 380, "size": 210, "weight": "display|body", "sub": "FLEUR DE SEL", "subsize": 55, "density": 5}]
+             subsize = the sub-line font size px (default 26% of size)
              form = seconds to assemble, out = seconds to dissolve (null hold_until = stays to the end)
              density = sampling step in px (smaller = more particles; 4-6); scrim = 0..1 soft dark pool behind the word (light plates)
-  palette    {"embers": ["#ffb13b", "#ff5a1f", "#fff1c9"], "sand": ["#f3e3c3", "#d9c29b", "#ffffff"], "smoke": ["#f2efe9", "#cfc8bd", "#ffffff"]}
+  palette    {"embers": ["#ffb13b", "#ff5a1f", "#fff1c9"], "sand": ["#f3e3c3", "#d9c29b", "#ffffff"], "smoke": ["#f4f1ec", "#cfc8bd", "#ffffff"]}
   language   "he" | "en";  pair (Hebrew, default "suez"; see common.HE_PAIRS); Latin: Jost 700 + Jost 300
   seed;  sfx (true), music, music_vol, plate_vol, name, track (optional)
 """

@@ -16,15 +16,15 @@ Spec keys. Required: clip, track. Every block is optional.
   colors     {"white": "#ffffff", "accent": "#E63B2E", "ink": "#0b0b0d"}
   sfx (true), music, music_vol, vo, plate_vol, matte, name
 """
-from styles.common import (BRK, STOMP_JS, audio_cues, cue, e, fonts, js, project_dir, res, tracks)
+from styles.common import (optional_file, BRK, STOMP_JS, audio_cues, cue, e, fonts, js, project_dir, res, tracks)
 
 
 def build(spec, base, style="SPEED-STAT"):
     col = {"white": "#ffffff", "accent": "#E63B2E", "ink": "#0b0b0d", **spec.get("colors", {})}
     brand, player, stat, co, ring, cnt, trail, big, lock = (spec.get(k) for k in ("brand", "player", "stat", "callouts", "ring", "counter", "trail", "big", "lockup"))
     co = co or []
-    matte = res(base, spec["matte"]) if spec.get("matte") else None
-    faces, extra = fonts("Anton", "Archivo", "JetBrains Mono")
+    matte = optional_file(base, spec.get("matte"), "matte", "the big word sits in front of the subject instead of behind")
+    faces, extra = fonts("Anton", "Archivo", "JetBrains Mono", "Secular One")   # Secular One: the Hebrew fallback in #root
     css = faces + f"""
 :root{{--w:{col['white']};--red:{col['accent']};--k:{col['ink']};--panel:color-mix(in srgb,var(--k) 82%,transparent)}}
 #root{{font-family:"Archivo","Secular One",sans-serif}}
@@ -49,7 +49,7 @@ def build(spec, base, style="SPEED-STAT"):
 #ringl{{position:absolute;left:0;top:0;width:0;height:0}}
 #ringl span{{position:absolute;left:0;top:0;white-space:nowrap;font-family:"JetBrains Mono",monospace;font-size:24px;color:var(--w);background:var(--k);padding:6px 12px;transform:translateX(-50%)}}
 #spd{{position:absolute}}
-#spd .v{{display:block;font-family:"Anton",sans-serif;font-size:220px;line-height:1.15;margin-bottom:22px;color:var(--w);text-shadow:8px 8px 0 var(--red)}}
+#spd .v{{display:block;font-family:"Anton",sans-serif;font-size:220px;line-height:1.15;margin-bottom:40px;color:var(--w);text-shadow:8px 8px 0 var(--red)}}
 #spd .u{{display:block;font-family:"JetBrains Mono",monospace;font-size:26px;letter-spacing:.2em;color:var(--w);background:var(--k);padding:6px 12px;width:max-content}}
 #goal{{position:absolute;left:0;right:0;top:60px;text-align:center}}
 #goal span{{display:inline-block;font-family:"Anton",sans-serif;line-height:1;color:var(--red);-webkit-text-stroke:6px var(--k);text-shadow:14px 14px 0 var(--k)}}

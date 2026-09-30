@@ -12,7 +12,8 @@ Spec keys. Required: clip, columns, rows.
   board      {"x": 1860, "y": 90, "align": "right", "cell": 58}     position (x,y of the aligned top corner) and cell width px
   language   "he" | "en";  pair (Hebrew, default "karantina"; see common.HE_PAIRS); Latin: Oswald 700 + Jost 300
   colors     {"board": "rgba(12,12,12,.86)", "cell": "#1d1d1d", "text": "#f4f1e8", "label": "#b9b3a8"}
-  flip       seconds per flip (default .055);  seed;  sfx (true), music, music_vol, plate_vol, name, track (optional)
+  until      seconds: the whole board fades out (default: stays to the end)
+  flip       seconds per flip (default .055);  seed;  sfx (true = flip clatter), music, music_vol, plate_vol, name, track (optional)
 """
 from styles.common import (JS_UTIL, audio_cues, cue, e, js, project_dir, res, tracks, type_pair)
 
