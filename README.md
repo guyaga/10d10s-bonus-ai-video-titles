@@ -6,6 +6,19 @@ After-Effects-style titles, HUDs and motion graphics on top of AI-generated vide
 code: frame-by-frame tracking, beat and voice sync, HyperFrames render, Gemini QA. 41 styles, each with a live
 preview on the hub, a style ID and a one-line prompt to paste into Claude Code.
 
+
+## The catalog (61 styles, a database)
+
+Ask Claude for titles and it starts with **"Do you want to see the catalog?"** Pick a card by number or ID on the
+hub, and Claude writes the build brief from that style plus your project (brand, language, words, prices, music).
+
+```bash
+python scripts/catalog.py list --tag hebrew          # search by use case, or --q news
+python scripts/catalog.py show 43                    # one style: look, fonts, samples, how to shoot it, how to build it
+python scripts/catalog.py brief 43 "your project"    # style + context → the build brief
+```
+`references/catalog.json` is the same data as the hub: https://ai-video-titles-guyaga.netlify.app
+
 ## Install
 
 Paste this into Claude Code:

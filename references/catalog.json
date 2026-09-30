@@ -1,0 +1,4040 @@
+{
+ "hub": "https://ai-video-titles-guyaga.netlify.app",
+ "count": 61,
+ "styles": [
+  {
+   "n": 1,
+   "id": "STOMP-ESCORT",
+   "family": "Social stomp",
+   "one": "Giant Anton words that ride beside each tracked item, red index tags and white price stickers.",
+   "tags": [
+    "fashion",
+    "product"
+   ],
+   "fonts": "Anton · Bodoni Moda · Archivo",
+   "palette": [
+    "#f6f1e8",
+    "#16130f",
+    "#ff3d2e"
+   ],
+   "sample": "D2 runway · 30 s",
+   "kling": false,
+   "prompt": "Titles: STOMP-ESCORT - Anton words escorting each tracked item, red index tags + white price stickers, accent #E63B2E, 120 BPM grid.",
+   "shoot_it_like_this": "One take, no cuts · full body, centred, walks toward camera · 30% free both sides",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     10,
+     30
+    ],
+    "aspect": "16:9",
+    "subject": "one model (or product carrier) whose full body stays in frame; every advertised item visible on her",
+    "framing": "full body, centred, walks toward camera",
+    "negative_space": {
+     "side": "both",
+     "min_frac": 0.3
+    },
+    "camera": "locked-off or very slow push-in (or a dolly back matching her pace)",
+    "separation": false,
+    "track": [
+     "subject full body"
+    ],
+    "beats": true,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "CAMERA: Locked-off at the end of the runway at chest height with an extremely slow push-in. Her full body, head to boots, stays inside the frame and centred at all times. FORBIDDEN: cuts, whip-pans, zoom punches, shake.",
+     "She stays in the centre third of the frame for the whole take; the left and right thirds show only runway and audience.",
+     "POSITIVE LOCKS: Exactly one model on the runway. Every garment stays identical to the first frame. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.95,
+     "min_free_margin": 0.28
+    },
+    "source": "D2_full_runway_720p (30 s) / D1_runway_720p (10 s)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py STOMP-ESCORT --spec <spec.json> --render",
+   "example": "examples/stomp-escort",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/stomp-escort.mp4",
+   "renders": [
+    {
+     "label": "Look 07 · escort + countdown",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/D2_runway_full_countdown_30s.mp4"
+    },
+    {
+     "label": "Look 08 · escort + countdown",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/D3_look08_runway_countdown_30s.mp4"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "id": "STOMP-BEHIND",
+   "family": "Social stomp",
+   "one": "The subject walks in front of her own giant title (matte cut-out).",
+   "tags": [
+    "fashion",
+    "sport",
+    "product"
+   ],
+   "fonts": "Anton · Bodoni Moda",
+   "palette": [
+    "#ffffff",
+    "#16130f",
+    "#ff3d2e"
+   ],
+   "sample": "D1 runway · 10 s",
+   "kling": false,
+   "prompt": "Titles: STOMP-BEHIND - giant Anton words behind the subject (matte), white with red accent, stomp on the beat.",
+   "shoot_it_like_this": "One take, no cuts · full body, centred, walks toward camera; plain wall or backdrop behind the head and shoulders · 30% free both sides · subject matte",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     8,
+     30
+    ],
+    "aspect": "16:9",
+    "subject": "one person with a clean, readable silhouette against a plain, evenly lit background",
+    "framing": "full body, centred, walks toward camera; plain wall or backdrop behind the head and shoulders",
+    "negative_space": {
+     "side": "both",
+     "min_frac": 0.3
+    },
+    "camera": "slow dolly back matching the walk, or locked-off",
+    "separation": true,
+    "track": [
+     "subject full body"
+    ],
+    "beats": true,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "CAMERA: Smooth steady dolly backwards at chest height matching her walking speed. Her full body, head to boots, stays inside the frame and centred at all times. FORBIDDEN: cuts, whip-pans, zoom punches, shake.",
+     "Behind her upper body there is only a plain, bright back wall: no people, no lights, no motion blur on her outline.",
+     "POSITIVE LOCKS: Exactly one model on the runway. Every garment stays identical to the first frame. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.95,
+     "min_free_margin": 0.28
+    },
+    "source": "D1_runway_720p (10 s) + matte"
+   },
+   "runner": "run_ad",
+   "build": "python scripts/run_ad.py <AD> --spec <spec.py> --render   (adkit spec; see examples/*_sx.py, *_hk.py)",
+   "example": "examples/E6_sneaker_sx.py",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/stomp-behind.mp4",
+   "renders": [
+    {
+     "label": "Stomp behind v2",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/D1_stomp_behind_v2.mp4"
+    },
+    {
+     "label": "Stomp behind v1",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/D1_stomp_behind.mp4"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "id": "GLASS-CALLOUT",
+   "family": "Social stomp",
+   "one": "Transparent outlined words and smoked-glass price cards. Quiet luxury.",
+   "tags": [
+    "fashion",
+    "luxury",
+    "product"
+   ],
+   "fonts": "Anton outline · Bodoni Moda",
+   "palette": [
+    "#ffffff",
+    "#2a2522",
+    "#d8ccb8"
+   ],
+   "sample": "D1 runway · 10 s",
+   "kling": false,
+   "prompt": "Titles: GLASS-CALLOUT - transparent outlined Anton words + smoked-glass price cards, restrained, no hard shadows.",
+   "shoot_it_like_this": "One take, no cuts · full body, centred, walks toward camera · 30% free both sides",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     8,
+     30
+    ],
+    "aspect": "16:9",
+    "subject": "one model with every advertised item visible",
+    "framing": "full body, centred, walks toward camera",
+    "negative_space": {
+     "side": "both",
+     "min_frac": 0.3
+    },
+    "camera": "slow dolly back matching the walk, or locked-off",
+    "separation": false,
+    "track": [
+     "subject full body",
+     "each advertised item"
+    ],
+    "beats": true,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "CAMERA: Locked-off at the end of the runway at chest height with an extremely slow push-in. Her full body, head to boots, stays inside the frame and centred at all times. FORBIDDEN: cuts, whip-pans, zoom punches, shake.",
+     "She stays in the centre third; the side thirds stay calm and uncluttered.",
+     "POSITIVE LOCKS: Exactly one model on the runway. Every garment stays identical to the first frame. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.95,
+     "min_free_margin": 0.28
+    },
+    "source": "D1_runway_720p (10 s)"
+   },
+   "runner": "run_ad",
+   "build": "python scripts/run_ad.py <AD> --spec <spec.py> --render   (adkit spec; see examples/*_sx.py, *_hk.py)",
+   "example": "examples/E6_sneaker_sx.py",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/glass-callout.mp4",
+   "renders": [
+    {
+     "label": "Glass v2",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/D1_stomp_glass_v2.mp4"
+    },
+    {
+     "label": "Glass v1",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/D1_stomp_glass.mp4"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "id": "COUNTDOWN-CTA",
+   "family": "Social stomp",
+   "one": "Flash-sale stack: struck total, sale price, live 00:15 countdown, SHOP NOW.",
+   "tags": [
+    "fashion",
+    "product"
+   ],
+   "fonts": "Anton · Bodoni Moda italic · Archivo",
+   "palette": [
+    "#E63B2E",
+    "#111111",
+    "#ffffff"
+   ],
+   "sample": "D3 runway · 30 s",
+   "kling": false,
+   "prompt": "Titles: COUNTDOWN-CTA - flash-sale stack with 15 s live countdown, struck total + sale price, SHOP NOW, accent #E63B2E.",
+   "shoot_it_like_this": "One take, no cuts · full body, centred; the last 15 s she stands in the centre facing camera · 30% free both sides",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     20,
+     30
+    ],
+    "aspect": "16:9",
+    "subject": "one model: walk, one spin, then holds poses for the last 15 seconds (the countdown runs over the hold)",
+    "framing": "full body, centred; the last 15 s she stands in the centre facing camera",
+    "negative_space": {
+     "side": "both",
+     "min_frac": 0.3
+    },
+    "camera": "locked-off with an extremely slow push-in",
+    "separation": false,
+    "track": [
+     "subject full body"
+    ],
+    "beats": true,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "CAMERA: Locked-off at the end of the runway at chest height with an extremely slow push-in. Her full body, head to boots, stays inside the frame and centred at all times. FORBIDDEN: cuts, whip-pans, zoom punches, shake.",
+     "Timeline: she walks the full runway toward camera, one full spin only at 12-15s, then holds poses in the centre until the end.",
+     "POSITIVE LOCKS: Exactly one model on the runway. Every garment stays identical to the first frame. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.95,
+     "min_free_margin": 0.28
+    },
+    "source": "D2/D3 30 s runway takes"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py COUNTDOWN-CTA --spec <spec.json> --render",
+   "example": "examples/countdown-cta",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/countdown-cta.mp4",
+   "renders": [
+    {
+     "label": "Look 08 · escort + countdown",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/D3_look08_runway_countdown_30s.mp4"
+    },
+    {
+     "label": "Look 07 · escort + countdown",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/D2_runway_full_countdown_30s.mp4"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "id": "KINETIC-HE",
+   "family": "Social stomp",
+   "one": "Hebrew words stomp in on the voice, one accent word per line, hits shake the frame.",
+   "tags": [
+    "hebrew",
+    "product",
+    "sport"
+   ],
+   "fonts": "Karantina 700 · Secular One",
+   "palette": [
+    "#ffffff",
+    "#111111",
+    "#E63B2E"
+   ],
+   "sample": "GUYAGA AERO · 15 s",
+   "kling": false,
+   "prompt": "Titles: KINETIC-HE - Hebrew voice-synced word stomps, Rubik 900 + Karantina, one accent word per line, hit shakes.",
+   "shoot_it_like_this": "Cuts OK (max 5) · subject centred, room above it · 25% free top",
+   "plate_contract": {
+    "take": "cuts-ok",
+    "max_cuts": 5,
+    "duration_s": [
+     12,
+     24
+    ],
+    "aspect": "16:9",
+    "subject": "the product or hero, large and clear; one idea per shot",
+    "framing": "subject centred, room above it",
+    "negative_space": {
+     "side": "top",
+     "min_frac": 0.25
+    },
+    "camera": "slow orbit or slow push; energy from subject motion, not camera",
+    "separation": false,
+    "track": [
+     "hero object"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, or hard cuts only at the timecodes listed and nowhere else.",
+     "COMPOSITION: The subject stays in the centre and lower two thirds; the upper quarter of the frame is plain background (sky, wall, dark studio).",
+     "CAMERA: slow, very smooth. FORBIDDEN: whip-pans, shake. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 5,
+     "min_track_coverage": 0.6,
+     "min_free_margin": 0.2
+    },
+    "source": "E6_sneaker_720p (15 s orbit)"
+   },
+   "runner": "run_ad",
+   "build": "python scripts/run_ad.py <AD> --spec <spec.py> --render   (adkit spec; see examples/*_sx.py, *_hk.py)",
+   "example": "examples/E6_sneaker_sx.py",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/kinetic-he.mp4",
+   "renders": [
+    {
+     "label": "Hebrew · big titles",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E6_guyaga_aero_sneaker_HE.mp4"
+    },
+    {
+     "label": "Hebrew · big titles",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E3_aura_night_drive_HE.mp4"
+    },
+    {
+     "label": "Hebrew · big titles",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E4_firelink_through_the_smoke_HE.mp4"
+    },
+    {
+     "label": "Hebrew · big titles",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E7_aurum_gold_on_velvet_HE.mp4"
+    },
+    {
+     "label": "Hebrew · big titles",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E8_seaview24_tower_arrival_HE.mp4"
+    },
+    {
+     "label": "Hebrew · big titles",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E9_lumen_lens_smart_glasses_HE.mp4"
+    },
+    {
+     "label": "Hebrew · big titles",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E10_ember_chefs_pass_HE.mp4"
+    },
+    {
+     "label": "Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E2_sparta_spartan_vs_machine_HE.mp4"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "id": "TAPE-HE",
+   "family": "Social stomp",
+   "one": "Hebrew slogans on rotated highlight-tape strips. Readable over anything.",
+   "tags": [
+    "hebrew",
+    "product",
+    "tech"
+   ],
+   "fonts": "Karantina 700 · Secular One",
+   "palette": [
+    "#0c0806",
+    "#ff7a1a",
+    "#fff4ea"
+   ],
+   "sample": "FIRELINK · 20 s",
+   "kling": false,
+   "prompt": "Titles: TAPE-HE - Hebrew slogans on rotated highlight-tape strips (ink + accent), RTL wipe + slam, readable over anything.",
+   "shoot_it_like_this": "Cuts OK (max 5) · subject off-centre or centred with a calm lower third · 25% free bottom",
+   "plate_contract": {
+    "take": "cuts-ok",
+    "max_cuts": 5,
+    "duration_s": [
+     12,
+     24
+    ],
+    "aspect": "16:9",
+    "subject": "any story footage; one clear subject per shot",
+    "framing": "subject off-centre or centred with a calm lower third",
+    "negative_space": {
+     "side": "bottom",
+     "min_frac": 0.25
+    },
+    "camera": "steady; cut-blocks welcome",
+    "separation": false,
+    "track": [
+     "subject per shot (optional, for tags)"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: Timestamped cut-blocks. HARD CUTS exactly at the listed timecodes and nowhere else.",
+     "COMPOSITION: Keep the lower third of every shot calm and low-detail: floor, table, dark area.",
+     "CAMERA: steady. FORBIDDEN: whip-pans, shaky zooms. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 5,
+     "min_track_coverage": 0.3,
+     "min_free_margin": 0.2
+    },
+    "source": "E4_fire_720p (20 s, 4 planned cuts)"
+   },
+   "runner": "run_ad",
+   "build": "python scripts/run_ad.py <AD> --spec <spec.py> --render   (adkit spec; see examples/*_sx.py, *_hk.py)",
+   "example": "examples/E4_fire_hk.py",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/tape-he.mp4",
+   "renders": [
+    {
+     "label": "Hebrew · tape",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E4_firelink_through_the_smoke_HK.mp4"
+    },
+    {
+     "label": "Hebrew · tape",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E3_aura_night_drive_HK.mp4"
+    },
+    {
+     "label": "Hebrew · tape",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E5_luma_drone_through_the_home_HK.mp4"
+    },
+    {
+     "label": "Hebrew · tape",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E6_guyaga_aero_sneaker_HK.mp4"
+    },
+    {
+     "label": "Hebrew · tape",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E7_aurum_gold_on_velvet_HK.mp4"
+    },
+    {
+     "label": "Hebrew · tape",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E8_seaview24_tower_arrival_HK.mp4"
+    },
+    {
+     "label": "Hebrew · tape",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E9_lumen_lens_smart_glasses_HK.mp4"
+    },
+    {
+     "label": "Hebrew · tape",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E10_ember_chefs_pass_HK.mp4"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "id": "KINETIC-KARAOKE",
+   "family": "Social stomp",
+   "one": "Voice-synced karaoke captions with an accent pill on the spoken word, plus punch zooms.",
+   "tags": [
+    "hebrew",
+    "travel",
+    "tech"
+   ],
+   "fonts": "Secular One captions · Karantina",
+   "palette": [
+    "#ffffff",
+    "#000000",
+    "#2ed3a4"
+   ],
+   "sample": "LUMEN LENS · 18 s",
+   "kling": false,
+   "prompt": "Titles: KINETIC-KARAOKE - voice-synced karaoke captions (accent pill on the spoken word) + punch zooms + tape slogans.",
+   "shoot_it_like_this": "Cuts OK (max 5) · subject in the upper two thirds · 22% free bottom",
+   "plate_contract": {
+    "take": "cuts-ok",
+    "max_cuts": 5,
+    "duration_s": [
+     12,
+     24
+    ],
+    "aspect": "16:9",
+    "subject": "any footage that carries a voiceover",
+    "framing": "subject in the upper two thirds",
+    "negative_space": {
+     "side": "bottom",
+     "min_frac": 0.22
+    },
+    "camera": "stabilised; punch-zooms are added in post",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, or hard cuts only at the listed timecodes.",
+     "COMPOSITION: Nothing important in the bottom fifth of the frame: captions sit there.",
+     "CAMERA: stabilised, gentle. FORBIDDEN: cuts elsewhere, shake. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 5,
+     "min_track_coverage": 0,
+     "min_free_margin": 0.18
+    },
+    "source": "E9_glasses_720p (18 s POV)"
+   },
+   "runner": "run_ad",
+   "build": "python scripts/run_ad.py <AD> --spec <spec.py> --render   (adkit spec; see examples/*_sx.py, *_hk.py)",
+   "example": "examples/E6_sneaker_sx.py",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/kinetic-karaoke.mp4",
+   "renders": [
+    {
+     "label": "Hebrew · dynamic stomp",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E9_lumen_lens_smart_glasses_SX.mp4"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "id": "FLASH-CARD",
+   "family": "Social stomp",
+   "one": "A 4-frame full-screen word card on the single biggest beat.",
+   "tags": [
+    "hebrew",
+    "product",
+    "sport"
+   ],
+   "fonts": "Karantina 700",
+   "palette": [
+    "#4cc9ff",
+    "#0a0c10",
+    "#ffffff"
+   ],
+   "sample": "AURA EV · 18 s",
+   "kling": false,
+   "prompt": "Titles: FLASH-CARD - one 4-frame full-screen word card on the biggest beat, accent background.",
+   "shoot_it_like_this": "Cuts OK (max 6) · any · no free space needed",
+   "plate_contract": {
+    "take": "cuts-ok",
+    "max_cuts": 6,
+    "duration_s": [
+     6,
+     30
+    ],
+    "aspect": "16:9",
+    "subject": "any footage; the card replaces the frame for 4 frames",
+    "framing": "any",
+    "negative_space": {
+     "side": "none",
+     "min_frac": 0
+    },
+    "camera": "any",
+    "separation": false,
+    "track": [],
+    "beats": true,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: Hard cuts allowed; mark the single biggest beat (the hit the card lands on) in the timeline.",
+     "POSITIVE LOCKS: No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 6,
+     "min_track_coverage": 0,
+     "min_free_margin": 0
+    },
+    "source": "E3_car_720p (card on the braking beat)"
+   },
+   "runner": "run_ad",
+   "build": "python scripts/run_ad.py <AD> --spec <spec.py> --render   (adkit spec; see examples/*_sx.py, *_hk.py)",
+   "example": "examples/E6_sneaker_sx.py",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/flash-card.mp4",
+   "renders": [
+    {
+     "label": "Hebrew · dynamic stomp",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E3_aura_night_drive_SX.mp4"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "id": "SPEED-STAT",
+   "family": "Social stomp",
+   "one": "Broadcast stat hits: 9 MS contact time, a live counter on the ball, a giant GOAL.",
+   "tags": [
+    "sport",
+    "product"
+   ],
+   "fonts": "Anton · Archivo",
+   "palette": [
+    "#ffffff",
+    "#E63B2E",
+    "#0b0b0d"
+   ],
+   "sample": "GUYAGA STRIKE · 15 s",
+   "kling": false,
+   "prompt": "Titles: SPEED-STAT - broadcast stat hits: huge Anton numbers, live counter on the tracked ball, giant GOAL finish.",
+   "shoot_it_like_this": "Planned cuts (max 4) · one idea per shot: wide player, extreme close-up on the contact, the object crossing the frame, hero wide · 30% free left · subject matte",
+   "plate_contract": {
+    "take": "cut-list",
+    "max_cuts": 4,
+    "duration_s": [
+     12,
+     18
+    ],
+    "aspect": "16:9",
+    "subject": "a measurable action in shots: approach, macro contact, object in flight, celebration",
+    "framing": "one idea per shot: wide player, extreme close-up on the contact, the object crossing the frame, hero wide",
+    "negative_space": {
+     "side": "left",
+     "min_frac": 0.3
+    },
+    "camera": "energy from subject speed and speed ramps",
+    "separation": true,
+    "track": [
+     "athlete",
+     "the object (ball)",
+     "the contact point (boot)"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: Timestamped cut-blocks. HARD CUTS exactly at 3.0s, 8.0s and 11.0s and nowhere else.",
+     "CAMERA: energy from subject speed and speed ramps, not camera whips. FORBIDDEN: whip-pans, shaky zooms.",
+     "POSITIVE LOCKS: Exactly one ball, exactly one kick. Plain kit with no logos, badges, sponsor text or numbers. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 4,
+     "min_track_coverage": 0.4,
+     "min_free_margin": 0.25
+    },
+    "source": "E1_soccer_720p (15 s, 3 planned cuts)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py SPEED-STAT --spec <spec.json> --render",
+   "example": "examples/speed-stat",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/speed-stat.mp4",
+   "renders": [
+    {
+     "label": "GUYAGA STRIKE",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E1_guyaga_strike_soccer.mp4"
+    },
+    {
+     "label": "First cut",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E1_the_strike_soccer_15s.mp4"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "id": "PRESIDENTIAL-SERIF",
+   "family": "Social stomp",
+   "one": "Few, big serif words that ease in with an accent underline. Expensive, never comic.",
+   "tags": [
+    "sport",
+    "luxury",
+    "tech"
+   ],
+   "fonts": "DM Serif Display · Space Grotesk",
+   "palette": [
+    "#F5F3EE",
+    "#111111",
+    "#E63B2E"
+   ],
+   "sample": "SPARTA · 24 s",
+   "kling": false,
+   "prompt": "Titles: PRESIDENTIAL-SERIF - few, big DM Serif words that ease in with an accent underline, glass tags, no comic colours.",
+   "shoot_it_like_this": "Planned cuts (max 6) · hero framed off-centre, sky or smoke above · 25% free top",
+   "plate_contract": {
+    "take": "cut-list",
+    "max_cuts": 6,
+    "duration_s": [
+     18,
+     30
+    ],
+    "aspect": "16:9",
+    "subject": "an epic story in shots with one hero and one opponent",
+    "framing": "hero framed off-centre, sky or smoke above",
+    "negative_space": {
+     "side": "top",
+     "min_frac": 0.25
+    },
+    "camera": "cinematic, grounded; push-ins and tracking",
+    "separation": false,
+    "track": [
+     "hero",
+     "opponent"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: Timestamped cut-blocks. HARD CUTS exactly at the listed timecodes and nowhere else.",
+     "COMPOSITION: Keep the upper quarter of the wide shots as sky, smoke or haze for the titles.",
+     "CAMERA: Cinematic, energy from subject speed and hard cuts. FORBIDDEN: whip-pans, shaky cam.",
+     "POSITIVE LOCKS: Exactly one hero and one opponent in focus. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 6,
+     "min_track_coverage": 0.5,
+     "min_free_margin": 0.2
+    },
+    "source": "E2_spartan_720p (24 s, 5 cuts)"
+   },
+   "runner": "run_ad",
+   "build": "python scripts/run_ad.py <AD> --spec <spec.py> --render   (adkit spec; see examples/*_sx.py, *_hk.py)",
+   "example": "examples/E6_sneaker_sx.py",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/presidential-serif.mp4",
+   "renders": [
+    {
+     "label": "Presidential · English",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E2_sparta_spartan_vs_machine.mp4"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "id": "STICKER-POP",
+   "family": "Social stomp",
+   "one": "Heavy white sticker words with a hard ink shadow and a price sticker. Loud but clean.",
+   "tags": [
+    "fashion",
+    "product"
+   ],
+   "fonts": "Anton · Bodoni Moda italic",
+   "palette": [
+    "#ffffff",
+    "#16130f",
+    "#ff3d2e"
+   ],
+   "sample": "D1 runway · 10 s",
+   "kling": false,
+   "prompt": "Titles: STICKER-POP - heavy white Anton sticker words with a hard ink shadow, red index tag, white price sticker, stomp on the beat.",
+   "shoot_it_like_this": "One take, no cuts · full body, centred, walks toward camera · 30% free both sides",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     8,
+     30
+    ],
+    "aspect": "16:9",
+    "subject": "one model or product carrier, full body in frame, items visible",
+    "framing": "full body, centred, walks toward camera",
+    "negative_space": {
+     "side": "both",
+     "min_frac": 0.3
+    },
+    "camera": "slow dolly back matching the walk, or locked-off",
+    "separation": false,
+    "track": [
+     "subject full body"
+    ],
+    "beats": true,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "CAMERA: Locked-off at the end of the runway at chest height with an extremely slow push-in. Her full body, head to boots, stays inside the frame and centred at all times. FORBIDDEN: cuts, whip-pans, zoom punches, shake.",
+     "She stays in the centre third; the left and right thirds stay free.",
+     "POSITIVE LOCKS: Exactly one model on the runway. Every garment stays identical to the first frame. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.95,
+     "min_free_margin": 0.28
+    },
+    "source": "D1_runway_720p (10 s)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py STOMP-ESCORT --spec <spec.json> --render  (word style: white fill + ink stroke + hard shadow)",
+   "example": "examples/stomp-escort",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/sticker-pop.mp4",
+   "renders": [
+    {
+     "label": "Sticker v2",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/D1_stomp_sticker_v2.mp4"
+    },
+    {
+     "label": "Sticker v1",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/D1_stomp_sticker.mp4"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "id": "STOMP-SX",
+   "family": "Social stomp",
+   "one": "Dynamic Hebrew social stomp: coloured headline words, tape lines, a closing slogan with one accent word.",
+   "tags": [
+    "hebrew",
+    "food",
+    "product",
+    "travel"
+   ],
+   "fonts": "Karantina 700 · Secular One",
+   "palette": [
+    "#ff7a1a",
+    "#111111",
+    "#ffffff"
+   ],
+   "sample": "EMBER · 15 s",
+   "kling": false,
+   "prompt": "Titles: STOMP-SX - dynamic Hebrew social stomp, coloured Karantina headline words, ink tape lines, closing slogan with one accent word.",
+   "shoot_it_like_this": "Planned cuts (max 5) · subject large, upper quarter free · 25% free top",
+   "plate_contract": {
+    "take": "cut-list",
+    "max_cuts": 5,
+    "duration_s": [
+     12,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "product or food hero shots, one idea per cut",
+    "framing": "subject large, upper quarter free",
+    "negative_space": {
+     "side": "top",
+     "min_frac": 0.25
+    },
+    "camera": "energy from cuts and speed ramps",
+    "separation": false,
+    "track": [
+     "hero object per shot (optional)"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: Timestamped cut-blocks. HARD CUTS exactly at the listed timecodes and nowhere else.",
+     "COMPOSITION: The upper quarter of each shot stays plain (dark background, wall, steam).",
+     "CAMERA: energy from subject motion, cuts and speed ramps. FORBIDDEN: whip-pans, shake. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 5,
+     "min_track_coverage": 0.3,
+     "min_free_margin": 0.2
+    },
+    "source": "E10_chef_720p (15 s, 4 cuts)"
+   },
+   "runner": "run_ad",
+   "build": "python scripts/run_ad.py <AD> --spec <spec.py> --render",
+   "example": "examples/E6_sneaker_sx.py",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/stomp-sx.mp4",
+   "renders": [
+    {
+     "label": "Hebrew · dynamic stomp",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E10_ember_chefs_pass_SX.mp4"
+    },
+    {
+     "label": "Hebrew · dynamic stomp",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E3_aura_night_drive_SX.mp4"
+    },
+    {
+     "label": "Hebrew · dynamic stomp",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E5_luma_drone_through_the_home_SX.mp4"
+    },
+    {
+     "label": "Hebrew · dynamic stomp",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E6_guyaga_aero_sneaker_SX.mp4"
+    },
+    {
+     "label": "Hebrew · dynamic stomp",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E9_lumen_lens_smart_glasses_SX.mp4"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "id": "TRACKED-TAGS",
+   "family": "Social stomp",
+   "one": "Clean English callouts: numbered glass tags tracked to each object, a stat panel, a price total.",
+   "tags": [
+    "product",
+    "real estate",
+    "luxury",
+    "food",
+    "tech"
+   ],
+   "fonts": "Space Grotesk · Space Mono · DM Serif",
+   "palette": [
+    "#f3eee6",
+    "#1a1714",
+    "#E63B2E"
+   ],
+   "sample": "GUYAGA AERO · 15 s",
+   "kling": false,
+   "prompt": "Titles: TRACKED-TAGS - numbered glass tags tracked to each object, one stat panel, price total, English, restrained motion.",
+   "shoot_it_like_this": "Cuts OK (max 4) · subject centred at medium size · 20% free both sides",
+   "plate_contract": {
+    "take": "cuts-ok",
+    "max_cuts": 4,
+    "duration_s": [
+     10,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "the product(s) and each labelled part clearly visible and distinct",
+    "framing": "subject centred at medium size",
+    "negative_space": {
+     "side": "both",
+     "min_frac": 0.2
+    },
+    "camera": "slow orbit, slow glide or locked; no fast moves",
+    "separation": false,
+    "track": [
+     "each labelled object or part"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot preferred; if cutting, HARD CUTS only at the listed timecodes.",
+     "COMPOSITION: The product fills at most the centre 60 percent of the frame; plain background on both sides.",
+     "CAMERA: slow and very smooth. FORBIDDEN: shake, whip-pans. POSITIVE LOCKS: every labelled part stays identical and visible. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 4,
+     "min_track_coverage": 0.7,
+     "min_free_margin": 0.18
+    },
+    "source": "E6_sneaker_720p / E7_gold_720p (2 cuts)"
+   },
+   "runner": "run_ad",
+   "build": "python scripts/run_ad.py <AD> --spec <spec.py> --render  (keep only tag / callout / counter elements)",
+   "example": "examples/E6_sneaker_sx.py",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/tracked-tags.mp4",
+   "renders": [
+    {
+     "label": "English · tracked tags",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E6_guyaga_aero_sneaker.mp4"
+    },
+    {
+     "label": "English · tracked tags",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E4_firelink_through_the_smoke.mp4"
+    },
+    {
+     "label": "English · tracked tags",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E5_luma_drone_through_the_home.mp4"
+    },
+    {
+     "label": "English · tracked tags",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E7_aurum_gold_on_velvet.mp4"
+    },
+    {
+     "label": "English · tracked tags",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E8_seaview24_tower_arrival.mp4"
+    },
+    {
+     "label": "English · tracked tags",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E9_lumen_lens_smart_glasses.mp4"
+    },
+    {
+     "label": "English · tracked tags",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E10_ember_chefs_pass.mp4"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "id": "COMIC-POP",
+   "family": "Social stomp",
+   "one": "Multi-colour comic burst words on the big beats. Loud and young, so we moved away from it for premium brands.",
+   "tags": [
+    "sport",
+    "product"
+   ],
+   "fonts": "Comic display · Archivo",
+   "palette": [
+    "#ffd400",
+    "#ff3d8b",
+    "#29d3ff"
+   ],
+   "sample": "AURA EV · 18 s",
+   "kling": false,
+   "prompt": "Titles: COMIC-POP - multi-colour comic burst words on the biggest beats only, starburst backing, keep everything else calm.",
+   "shoot_it_like_this": "Cuts OK (max 5) · subject centred, upper area free on the beat shots · 25% free top",
+   "plate_contract": {
+    "take": "cuts-ok",
+    "max_cuts": 5,
+    "duration_s": [
+     10,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "any action footage with one or two big beats",
+    "framing": "subject centred, upper area free on the beat shots",
+    "negative_space": {
+     "side": "top",
+     "min_frac": 0.25
+    },
+    "camera": "any smooth move",
+    "separation": false,
+    "track": [],
+    "beats": true,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: Hard cuts only at the listed timecodes.",
+     "COMPOSITION: On the big-beat shots the upper quarter of the frame is plain.",
+     "CAMERA: smooth. FORBIDDEN: shake. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 5,
+     "min_track_coverage": 0,
+     "min_free_margin": 0.2
+    },
+    "source": "E3_car_720p"
+   },
+   "runner": "run_ad",
+   "build": "python scripts/run_ad.py <AD> --spec <spec.py> --render  (theme flag pop on the big stomp words only)",
+   "example": "examples/E6_sneaker_sx.py",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/comic-pop.mp4",
+   "renders": [
+    {
+     "label": "English · tags + comic pop",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E3_aura_night_drive.mp4"
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "id": "HUD-HELMET",
+   "family": "HUD & interface",
+   "one": "Holographic visor HUD in Hebrew: rotating rings, red alerts, an AI voice with a live meter.",
+   "tags": [
+    "tech",
+    "hebrew"
+   ],
+   "fonts": "Secular One · JetBrains Mono",
+   "palette": [
+    "#6fe3ff",
+    "#e6fbff",
+    "#ff4a5a"
+   ],
+   "sample": "Helmet · 24 s",
+   "kling": false,
+   "prompt": "Titles: HUD-HELMET - holographic visor HUD, rotating rings + tick scales, cyan with red alerts, AI voice with live meter, Hebrew.",
+   "shoot_it_like_this": "One take, no cuts · face close-up, eyes steady and centred, visor edges in frame · 22% free both sides",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     15,
+     30
+    ],
+    "aspect": "16:9",
+    "subject": "one face inside a helmet behind a clear visor",
+    "framing": "face close-up, eyes steady and centred, visor edges in frame",
+    "negative_space": {
+     "side": "both",
+     "min_frac": 0.22
+    },
+    "camera": "locked-off with a very slow continuous push-in",
+    "separation": false,
+    "track": [
+     "face",
+     "eyes"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "CAMERA: Locked-off extreme close-up with a very slow continuous push-in over the whole shot. FORBIDDEN: cuts, shake, rotation, zoom punches.",
+     "The face stays in the centre third; the left and right quarters show only helmet interior and soft background bokeh.",
+     "POSITIVE LOCKS: His face stays identical to the first frame. The visor glass stays completely clean: no displays, no graphics, no text, no UI at any time. Exactly one person."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.95,
+     "min_free_margin": 0.2
+    },
+    "source": "B4_helmet_long_720p (24 s)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py HUD-HELMET --spec <spec.json> --render",
+   "example": "examples/hud-helmet",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/hud-helmet.mp4",
+   "renders": [
+    {
+     "label": "Holo HUD + Ora voice",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/B4V_helmet_ora_voice_24s.mp4"
+    },
+    {
+     "label": "Holo HUD",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/B4X_helmet_holo_hebrew_24s.mp4"
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "id": "SCIFI-TARGETING",
+   "family": "HUD & interface",
+   "one": "Brackets and ID tags locked to each target, HOSTILE LOCK, then TARGETS NEUTRALIZED.",
+   "tags": [
+    "tech"
+   ],
+   "fonts": "JetBrains Mono · Secular One",
+   "palette": [
+    "#ffb547",
+    "#ff5046",
+    "#0c0804"
+   ],
+   "sample": "Exosuit POV · 8 s",
+   "kling": false,
+   "prompt": "Titles: SCIFI-TARGETING - tracked target brackets + ID tags, HOSTILE LOCK banner, amber military HUD.",
+   "shoot_it_like_this": "One take, no cuts · POV; targets spread across the middle, weapon in a lower corner · 25% free right",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     6,
+     12
+    ],
+    "aspect": "16:9",
+    "subject": "first-person view: a counted set of targets (2-3) and the shooter's weapon in the foreground",
+    "framing": "POV; targets spread across the middle, weapon in a lower corner",
+    "negative_space": {
+     "side": "right",
+     "min_frac": 0.25
+    },
+    "camera": "first-person, subtle natural head movement; one short blast shake allowed",
+    "separation": false,
+    "track": [
+     "each target",
+     "weapon/launcher"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "CAMERA: First-person, subtle natural head movement, one short blast shake at the impact. FORBIDDEN: whip-pans, cuts.",
+     "POSITIVE LOCKS: Exactly two robots and one drone. Exactly two rockets, fired once. No text, no reticles, no UI, no logos at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.8,
+     "min_free_margin": 0.2
+    },
+    "source": "B3_seedance_720p (8 s)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py SCIFI-TARGETING --spec <spec.json> --render",
+   "example": "examples/scifi-targeting",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/scifi-targeting.mp4",
+   "renders": [
+    {
+     "label": "Targeting",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/B3_final.mp4"
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "id": "HUD-CLEAN",
+   "family": "HUD & interface",
+   "one": "The first, quieter visor HUD: thin vitals column, heading scale, one red alert panel.",
+   "tags": [
+    "tech",
+    "hebrew"
+   ],
+   "fonts": "Secular One · JetBrains Mono",
+   "palette": [
+    "#e6fbff",
+    "#ffb547",
+    "#ff4a5a"
+   ],
+   "sample": "Helmet · 24 s",
+   "kling": false,
+   "prompt": "Titles: HUD-CLEAN - quiet visor HUD: thin vitals column, heading tick scale, one red alert panel, no rings.",
+   "shoot_it_like_this": "One take, no cuts · face close-up, eyes steady · 22% free both sides",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     6,
+     30
+    ],
+    "aspect": "16:9",
+    "subject": "one face inside a helmet behind a clear visor",
+    "framing": "face close-up, eyes steady",
+    "negative_space": {
+     "side": "both",
+     "min_frac": 0.22
+    },
+    "camera": "locked-off with a very slight slow push-in",
+    "separation": false,
+    "track": [
+     "face",
+     "eyes"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "CAMERA: Locked-off with a very slight slow push-in. FORBIDDEN: shake, rotation, cuts.",
+     "POSITIVE LOCKS: The visor glass stays completely clean: no displays, no graphics, no text, no UI at any time. His face stays identical to the first frame."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.95,
+     "min_free_margin": 0.2
+    },
+    "source": "B2 (6 s) / B4 (24 s)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py HUD-HELMET --spec <spec.json> --render  (leave out the reticle, radar and voice blocks)",
+   "example": "examples/hud-helmet",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/hud-clean.mp4",
+   "renders": [
+    {
+     "label": "Clean HUD · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/B4_helmet_hebrew_24s.mp4"
+    },
+    {
+     "label": "Clean HUD · English",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/B2_final.mp4"
+    },
+    {
+     "label": "Pilot HUD test",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/TEST_B_scifi_pilot.mp4"
+    }
+   ]
+  },
+  {
+   "n": 18,
+   "id": "CYBER-DOSSIER",
+   "family": "HUD & interface",
+   "one": "Character intro as a city dossier: location card, pilot ID, suit status bars.",
+   "tags": [
+    "tech"
+   ],
+   "fonts": "JetBrains Mono · Secular One",
+   "palette": [
+    "#ffb547",
+    "#e8eef2",
+    "#0b0d10"
+   ],
+   "sample": "Neo-TLV · 6 s",
+   "kling": false,
+   "prompt": "Titles: CYBER-DOSSIER - character intro dossier: bilingual location card, pilot ID panel, suit status bars, amber mono type.",
+   "shoot_it_like_this": "One take, no cuts · full body, centred, walks toward camera · 35% free both sides",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     5,
+     10
+    ],
+    "aspect": "16:9",
+    "subject": "one character walking toward camera in their setting",
+    "framing": "full body, centred, walks toward camera",
+    "negative_space": {
+     "side": "both",
+     "min_frac": 0.35
+    },
+    "camera": "low slow dolly backwards matching the walk",
+    "separation": false,
+    "track": [
+     "character",
+     "head"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "CAMERA: Low camera at waist height, slow steady dolly backwards matching his pace. FORBIDDEN: whip-pans, rotation, zooms, cuts.",
+     "POSITIVE LOCKS: The character's look stays identical to the first frame. No text, no holograms, no UI, no logos appear at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.95,
+     "min_free_margin": 0.3
+    },
+    "source": "B1_seedance_720p (6 s)"
+   },
+   "runner": "bespoke",
+   "build": "bespoke recipe: references/recipes/ (rewrite for the new subject; see styles.md)",
+   "example": null,
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/cyber-dossier.mp4",
+   "renders": [
+    {
+     "label": "Dossier",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/B1_final.mp4"
+    }
+   ]
+  },
+  {
+   "n": 19,
+   "id": "ARRIVAL-CARD",
+   "family": "HUD & interface",
+   "one": "Destination lower-third: place name in two languages, coordinates, route line, an ARRIVED chip.",
+   "tags": [
+    "travel",
+    "real estate",
+    "hebrew"
+   ],
+   "fonts": "Secular One · JetBrains Mono",
+   "palette": [
+    "#9bd14a",
+    "#0b1a22",
+    "#eef4e8"
+   ],
+   "sample": "Ono campus · 6 s",
+   "kling": false,
+   "prompt": "Titles: ARRIVAL-CARD - destination lower-third, bilingual place name, coordinates + distance line, green ARRIVED chip.",
+   "shoot_it_like_this": "One take, no cuts · person walks toward camera, destination facade behind with a blank area for the logo · 35% free left",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     5,
+     10
+    ],
+    "aspect": "16:9",
+    "subject": "one person arriving in front of the destination (building, entrance)",
+    "framing": "person walks toward camera, destination facade behind with a blank area for the logo",
+    "negative_space": {
+     "side": "left",
+     "min_frac": 0.35
+    },
+    "camera": "slow steady dolly backwards at chest height matching the walk",
+    "separation": false,
+    "track": [
+     "head",
+     "blank facade area"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "CAMERA: Slow steady dolly backwards at chest height, matching his walking speed so he stays the same size in frame. FORBIDDEN: whip-pans, zooms, shake, cuts.",
+     "POSITIVE LOCKS: Exactly one person in focus. No text, no signs with readable letters, no logos, no UI appear at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.95,
+     "min_free_margin": 0.3
+    },
+    "source": "A2_seedance_720p (6 s)"
+   },
+   "runner": "bespoke",
+   "build": "bespoke recipe: references/recipes/ (rewrite for the new subject; see styles.md)",
+   "example": null,
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/arrival-card.mp4",
+   "renders": [
+    {
+     "label": "Arrival card",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/A2_final.mp4"
+    }
+   ]
+  },
+  {
+   "n": 20,
+   "id": "ROAD-HUD",
+   "family": "HUD & interface",
+   "one": "AR head-up display projected on the road in 3D perspective, speed ring, hazard contour.",
+   "tags": [
+    "tech",
+    "hebrew"
+   ],
+   "fonts": "Secular One",
+   "palette": [
+    "#eaf6ff",
+    "#4cc9ff",
+    "#ffb547"
+   ],
+   "sample": "AURA EV · 18 s",
+   "kling": false,
+   "prompt": "Titles: ROAD-HUD - AR head-up display projected on the road in 3D perspective, speed ring + hazard contour, calm fades.",
+   "shoot_it_like_this": "Planned cuts (max 4) · windscreen POV with the road's vanishing point visible; the hazard enters from one side · 30% free bottom",
+   "plate_contract": {
+    "take": "cut-list",
+    "max_cuts": 4,
+    "duration_s": [
+     15,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "a driver's view of the road ahead with a hazard that appears, plus exterior and reaction shots",
+    "framing": "windscreen POV with the road's vanishing point visible; the hazard enters from one side",
+    "negative_space": {
+     "side": "bottom",
+     "min_frac": 0.3
+    },
+    "camera": "smooth, steady; no shake",
+    "separation": false,
+    "track": [
+     "hazard (cyclist/pedestrian)",
+     "driver",
+     "car"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: Timestamped cut-blocks. HARD CUTS exactly at the listed timecodes and nowhere else.",
+     "COMPOSITION: In the driving shots the road surface ahead fills the lower third and its vanishing point stays visible.",
+     "CAMERA: smooth, steady. FORBIDDEN: shaky cam, whip-pans.",
+     "POSITIVE LOCKS: exactly one car, one driver, one hazard. The car never hits anything. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 4,
+     "min_track_coverage": 0.6,
+     "min_free_margin": 0.2
+    },
+    "source": "E3_car_720p (18 s)"
+   },
+   "runner": "bespoke",
+   "build": "bespoke recipe: references/recipes/ (rewrite for the new subject; see styles.md)",
+   "example": null,
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/road-hud.mp4",
+   "renders": [
+    {
+     "label": "Bespoke world",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E3_aura_night_drive_BESPOKE.mp4"
+    }
+   ]
+  },
+  {
+   "n": 21,
+   "id": "THERMAL-RESCUE",
+   "family": "HUD & interface",
+   "one": "The frame is a thermal camera: blue-grey map, white-hot fire, gauge dial and ECG.",
+   "tags": [
+    "tech",
+    "hebrew"
+   ],
+   "fonts": "Secular One · mono digits",
+   "palette": [
+    "#3d5a73",
+    "#ffb13b",
+    "#ffffff"
+   ],
+   "sample": "FIRELINK · 20 s",
+   "kling": false,
+   "prompt": "Titles: THERMAL-RESCUE - the frame is a thermal camera: blue-grey map, white-hot fire, gauge dial + ECG, amber OSD voice.",
+   "shoot_it_like_this": "Planned cuts (max 5) · mid shots and close-ups; the searched object (door, person) clearly readable as a shape · no free space needed",
+   "plate_contract": {
+    "take": "cut-list",
+    "max_cuts": 5,
+    "duration_s": [
+     15,
+     24
+    ],
+    "aspect": "16:9",
+    "subject": "a search in darkness, smoke or fire, then a found person, then an exit to daylight",
+    "framing": "mid shots and close-ups; the searched object (door, person) clearly readable as a shape",
+    "negative_space": {
+     "side": "none",
+     "min_frac": 0
+    },
+    "camera": "steady handheld feel, no shake",
+    "separation": false,
+    "track": [
+     "searcher",
+     "door or target",
+     "found person"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: Timestamped cut-blocks. HARD CUTS exactly at the listed timecodes and nowhere else.",
+     "LIGHTING: dark interiors lit mainly by fire, so the hottest areas are the brightest (the post filter maps luminance to heat).",
+     "CAMERA: steady handheld feel, no shake. FORBIDDEN: whip-pans, zoom punches.",
+     "POSITIVE LOCKS: exactly one rescuer and one person rescued. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 5,
+     "min_track_coverage": 0.3,
+     "min_free_margin": 0
+    },
+    "source": "E4_fire_720p (20 s)"
+   },
+   "runner": "bespoke",
+   "build": "bespoke recipe: references/recipes/ (rewrite for the new subject; see styles.md)",
+   "example": null,
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/thermal-rescue.mp4",
+   "renders": [
+    {
+     "label": "Bespoke world",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E4_firelink_through_the_smoke_BESPOKE.mp4"
+    }
+   ]
+  },
+  {
+   "n": 22,
+   "id": "SPEC-SCAN",
+   "family": "HUD & interface",
+   "one": "Lab language: wireframe scan-in, exploded parts with balloons, FEA heat map, 7-segment stats.",
+   "tags": [
+    "product",
+    "sport",
+    "tech"
+   ],
+   "fonts": "Chakra Petch · Karantina",
+   "palette": [
+    "#0a0a0a",
+    "#c6ff1a",
+    "#ff6a13"
+   ],
+   "sample": "GUYAGA AERO · 15 s",
+   "kling": false,
+   "prompt": "Titles: SPEC-SCAN - lab/CAD language: wireframe scan-in, exploded parts with numbered balloons, FEA heat map, 7-segment stats.",
+   "shoot_it_like_this": "One take, no cuts · product centred, fully in frame · 20% free both sides · subject matte",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     10,
+     18
+    ],
+    "aspect": "16:9",
+    "subject": "one engineered product floating in a dark studio; its layers separate (exploded view) and rejoin",
+    "framing": "product centred, fully in frame",
+    "negative_space": {
+     "side": "both",
+     "min_frac": 0.2
+    },
+    "camera": "slow smooth orbit",
+    "separation": true,
+    "track": [
+     "product",
+     "each layer / part"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "CAMERA: slow orbit, very smooth. FORBIDDEN: cuts, shake.",
+     "Dark plain studio background with rim light so the product's outline is crisp.",
+     "POSITIVE LOCKS: exactly one product, always the same design, the stated number of layers when separated. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.9,
+     "min_free_margin": 0.18
+    },
+    "source": "E6_sneaker_720p (15 s)"
+   },
+   "runner": "bespoke",
+   "build": "bespoke recipe: references/recipes/ (rewrite for the new subject; see styles.md)",
+   "example": null,
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/spec-scan.mp4",
+   "renders": [
+    {
+     "label": "Bespoke world",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E6_guyaga_aero_sneaker_BESPOKE.mp4"
+    }
+   ]
+  },
+  {
+   "n": 23,
+   "id": "MAP-FLYOVER",
+   "family": "HUD & interface",
+   "one": "A route draws across a tracked aerial, pinned bilingual places, distance counter, arrival card.",
+   "tags": [
+    "real estate",
+    "travel"
+   ],
+   "fonts": "Secular One · JetBrains Mono",
+   "palette": [
+    "#0b1a22",
+    "#9bd14a",
+    "#eef4e8"
+   ],
+   "sample": "TLV → Ono · 16 s",
+   "kling": false,
+   "prompt": "Titles: MAP-FLYOVER - route drawing over a tracked aerial, pinned bilingual place labels, distance counter, arrival card.",
+   "shoot_it_like_this": "One take, no cuts · high aerial, landmarks spread across the frame, horizon or sea as a fixed reference · 30% free left",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     8,
+     12
+    ],
+    "aspect": "16:9",
+    "subject": "an aerial over a city/region where every pinned place is visible from the first frame",
+    "framing": "high aerial, landmarks spread across the frame, horizon or sea as a fixed reference",
+    "negative_space": {
+     "side": "left",
+     "min_frac": 0.3
+    },
+    "camera": "smooth drone, constant slow forward push and slight descent; no rotation",
+    "separation": false,
+    "track": [
+     "landmark points (planar, track.py)"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "CAMERA: Smooth stabilized drone, constant slow speed, gentle forward push and slight descent only. FORBIDDEN: whip-pans, rotation, roll, zoom punches, shake, cuts.",
+     "POSITIVE LOCKS: No text, no labels, no map graphics, no UI, no logos appear at any time. The geography stays fixed for the whole shot."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 1.0,
+     "min_free_margin": 0.25
+    },
+    "source": "A1_seedance_720p (10 s)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py MAP-FLYOVER --spec <spec.json> --render",
+   "example": "examples/map-flyover",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/map-flyover.mp4",
+   "renders": [
+    {
+     "label": "Map flyover",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/TEST_A_map_to_ono.mp4"
+    },
+    {
+     "label": "Map · short",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/A1_final.mp4"
+    }
+   ]
+  },
+  {
+   "n": 24,
+   "id": "CAMPUS-AR",
+   "family": "HUD & interface",
+   "one": "Small bilingual AR tags pinned to real places along a walking tour.",
+   "tags": [
+    "real estate",
+    "travel"
+   ],
+   "fonts": "Secular One · mono",
+   "palette": [
+    "#101512",
+    "#9bd14a",
+    "#eef4e8"
+   ],
+   "sample": "Campus tour · 18 s",
+   "kling": false,
+   "prompt": "Titles: CAMPUS-AR - small bilingual AR tags pinned to real places along a walk, glass panels, waveform for voice.",
+   "shoot_it_like_this": "One take, no cuts · medium-wide, person centred, walking toward camera · 25% free both sides",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     5,
+     10
+    ],
+    "aspect": "16:9",
+    "subject": "one person walking through a real place; the labelled features (shelves, desks, a skylight) stay visible",
+    "framing": "medium-wide, person centred, walking toward camera",
+    "negative_space": {
+     "side": "both",
+     "min_frac": 0.25
+    },
+    "camera": "slow steady dolly backwards at chest height matching the walk",
+    "separation": false,
+    "track": [
+     "person/head",
+     "each labelled place"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "CAMERA: Slow steady dolly backwards at chest height matching his pace. FORBIDDEN: whip-pans, zooms, shake, cuts.",
+     "POSITIVE LOCKS: Exactly one person. The room layout stays identical to the first frame. No text, no signs, no UI, no logos."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.9,
+     "min_free_margin": 0.22
+    },
+    "source": "C1_seedance_720p (6 s)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py CAMPUS-AR --spec <spec.json> --render",
+   "example": "examples/campus-ar",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/campus-ar.mp4",
+   "renders": [
+    {
+     "label": "Campus AR",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/TEST_C_campus_ar.mp4"
+    },
+    {
+     "label": "Library",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/C1_final.mp4"
+    },
+    {
+     "label": "Podcast studio",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/C2_final.mp4"
+    },
+    {
+     "label": "Atrium",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/C3_final.mp4"
+    }
+   ]
+  },
+  {
+   "n": 25,
+   "id": "HALLMARK-LUXE",
+   "family": "Crafted worlds",
+   "one": "Velvet-black spotlight, a travelling jeweller's loupe, gold hallmark price plates.",
+   "tags": [
+    "luxury",
+    "product",
+    "hebrew"
+   ],
+   "fonts": "Suez One · Cormorant · Pinyon Script",
+   "palette": [
+    "#0b0908",
+    "#c9a45c",
+    "#f3e6c8"
+   ],
+   "sample": "AURUM · 12 s",
+   "kling": false,
+   "prompt": "Titles: HALLMARK-LUXE - spotlight on velvet black, a travelling jeweller's loupe, gold hallmark price plates, foil type.",
+   "shoot_it_like_this": "Cuts OK (max 2) · macro; the featured piece on one side of the frame · 40% free right",
+   "plate_contract": {
+    "take": "cuts-ok",
+    "max_cuts": 2,
+    "duration_s": [
+     10,
+     15
+    ],
+    "aspect": "16:9",
+    "subject": "jewellery worn on a hand/wrist on a dark ground, each piece in turn",
+    "framing": "macro; the featured piece on one side of the frame",
+    "negative_space": {
+     "side": "right",
+     "min_frac": 0.4
+    },
+    "camera": "slow macro glide",
+    "separation": false,
+    "track": [
+     "each piece (watch, bracelet, rings)"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, or at most two soft cuts between pieces.",
+     "CAMERA: slow macro glide. FORBIDDEN: shake, fast moves.",
+     "LIGHTING: a single spotlight on the piece over black velvet; the rest of the frame falls to near-black.",
+     "POSITIVE LOCKS: one hand, the same pieces throughout. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 2,
+     "min_track_coverage": 0.7,
+     "min_free_margin": 0.3
+    },
+    "source": "E7_gold_720p (12 s, 2 cuts)"
+   },
+   "runner": "bespoke",
+   "build": "bespoke recipe: references/recipes/ (rewrite for the new subject; see styles.md)",
+   "example": null,
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/hallmark-luxe.mp4",
+   "renders": [
+    {
+     "label": "Bespoke world",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E7_aurum_gold_on_velvet_BESPOKE.mp4"
+    }
+   ]
+  },
+  {
+   "n": 26,
+   "id": "ARCH-DRAWING",
+   "family": "Crafted worlds",
+   "one": "Vellum and sepia elevation sheets over the drone shot; floors fill with wash as it climbs.",
+   "tags": [
+    "real estate",
+    "hebrew"
+   ],
+   "fonts": "Karantina · Suez One · Secular One",
+   "palette": [
+    "#f1e8d6",
+    "#5a3b27",
+    "#4f86a8"
+   ],
+   "sample": "SEAVIEW 24 · 18 s",
+   "kling": false,
+   "prompt": "Titles: ARCH-DRAWING - vellum + sepia elevation sheets over the footage, floors fill with wash, hand-lettered lines, floor plan end.",
+   "shoot_it_like_this": "One take, no cuts · building on the right half, sky and neighbourhood on the left · 30% free left",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     12,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "one building rising through the frame; floors/slabs readable, the view it earns at the top",
+    "framing": "building on the right half, sky and neighbourhood on the left",
+    "negative_space": {
+     "side": "left",
+     "min_frac": 0.3
+    },
+    "camera": "smooth vertical drone rise, constant speed",
+    "separation": false,
+    "track": [
+     "building",
+     "floor slabs / balconies"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "CAMERA: smooth vertical drone rise, constant speed. FORBIDDEN: cuts, shake, spins.",
+     "COMPOSITION: The tower stays in the right half of the frame; the left third is sky and low surroundings.",
+     "POSITIVE LOCKS: one tower, the same architecture throughout. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.9,
+     "min_free_margin": 0.25
+    },
+    "source": "E8_tower_720p (18 s)"
+   },
+   "runner": "bespoke",
+   "build": "bespoke recipe: references/recipes/ (rewrite for the new subject; see styles.md)",
+   "example": "examples/E8_tower_bespoke.py",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/arch-drawing.mp4",
+   "renders": [
+    {
+     "label": "Bespoke world",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E8_seaview24_tower_arrival_BESPOKE.mp4"
+    }
+   ]
+  },
+  {
+   "n": 27,
+   "id": "MAGAZINE-EDITORIAL",
+   "family": "Crafted worlds",
+   "one": "The flight as a printed spread: numbered product credits, price column, red-pencil notes.",
+   "tags": [
+    "real estate",
+    "product",
+    "hebrew"
+   ],
+   "fonts": "Suez One · Secular One · Karantina",
+   "palette": [
+    "#f4efe4",
+    "#1d1a16",
+    "#c8321f"
+   ],
+   "sample": "LUMA HOME · 18 s",
+   "kling": false,
+   "prompt": "Titles: MAGAZINE-EDITORIAL - the video as a printed spread: masthead, numbered product credits, price column, red-pencil notes, page folds.",
+   "shoot_it_like_this": "One take, no cuts · wide interior, pieces readable, camera travels through the room · 20% free left",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     15,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "one styled room; each priced piece visible in turn",
+    "framing": "wide interior, pieces readable, camera travels through the room",
+    "negative_space": {
+     "side": "left",
+     "min_frac": 0.2
+    },
+    "camera": "smooth stabilised FPV glide, constant speed",
+    "separation": false,
+    "track": [
+     "each furniture piece"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: ONE SINGLE UNBROKEN CONTINUOUS TAKE. Absolutely no cuts, no dissolves, no fades, no jump in time or position.",
+     "CAMERA: smooth stabilised FPV drone, constant graceful speed, gentle banking. FORBIDDEN: cuts, shake, fast whips, collisions.",
+     "POSITIVE LOCKS: one continuous camera path, the same room from start to end; no people; every furniture piece stays identical to the first frame. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.7,
+     "min_free_margin": 0.15
+    },
+    "source": "E5_home_v2_720p (18 s; v1 had a cut and was regenerated)"
+   },
+   "runner": "bespoke",
+   "build": "bespoke recipe: references/recipes/ (rewrite for the new subject; see styles.md)",
+   "example": null,
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/magazine-editorial.mp4",
+   "renders": [
+    {
+     "label": "Bespoke world",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E5_luma_drone_through_the_home_BESPOKE.mp4"
+    }
+   ]
+  },
+  {
+   "n": 28,
+   "id": "KITCHEN-TICKET",
+   "family": "Crafted worlds",
+   "one": "A thermal order ticket prints on a steel rail, smoke-formed words, a flame heat gauge.",
+   "tags": [
+    "food",
+    "hebrew"
+   ],
+   "fonts": "Suez One · Secular One · Karantina",
+   "palette": [
+    "#1a1714",
+    "#ff7a1a",
+    "#f5f1e8"
+   ],
+   "sample": "EMBER · 15 s",
+   "kling": false,
+   "prompt": "Titles: KITCHEN-TICKET - thermal order ticket printing on a steel rail, smoke-formed words, flame heat gauge, stamped finish.",
+   "shoot_it_like_this": "Planned cuts (max 5) · macro, subject centre-left · 30% free right",
+   "plate_contract": {
+    "take": "cut-list",
+    "max_cuts": 5,
+    "duration_s": [
+     12,
+     18
+    ],
+    "aspect": "16:9",
+    "subject": "a dish being made in macro steps (fire, slice, sauce, salt, plated hero)",
+    "framing": "macro, subject centre-left",
+    "negative_space": {
+     "side": "right",
+     "min_frac": 0.3
+    },
+    "camera": "energy from cuts and speed ramps",
+    "separation": false,
+    "track": [
+     "the dish/ingredient per shot"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: Timestamped cut-blocks. HARD CUTS exactly at the listed timecodes and nowhere else.",
+     "COMPOSITION: Keep the right third of each shot dark and plain (the order ticket sits there).",
+     "CAMERA: energy from cuts and speed ramps. FORBIDDEN: whip-pans, shake. POSITIVE LOCKS: one dish, one plate. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 5,
+     "min_track_coverage": 0.6,
+     "min_free_margin": 0.2
+    },
+    "source": "E10_chef_720p (15 s, 4 cuts)"
+   },
+   "runner": "bespoke",
+   "build": "bespoke recipe: references/recipes/ (rewrite for the new subject; see styles.md)",
+   "example": null,
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/kitchen-ticket.mp4",
+   "renders": [
+    {
+     "label": "Bespoke world",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E10_ember_chefs_pass_BESPOKE.mp4"
+    }
+   ]
+  },
+  {
+   "n": 29,
+   "id": "LENS-POSTCARD",
+   "family": "Crafted worlds",
+   "one": "Seen through a glasses lens: a stamp mascot's speech bubbles, a translated sign, airmail postcards.",
+   "tags": [
+    "travel",
+    "tech",
+    "hebrew"
+   ],
+   "fonts": "Secular One · IBM Plex Mono",
+   "palette": [
+    "#1d2b4f",
+    "#d8322b",
+    "#f6f0e0"
+   ],
+   "sample": "LUMEN LENS · 18 s",
+   "kling": false,
+   "prompt": "Titles: LENS-POSTCARD - seen through a glasses lens: stamp mascot speech bubbles, translated sign, airmail postcards, receipt.",
+   "shoot_it_like_this": "One take, no cuts · POV at eye level, gentle head motion · 20% free bottom",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     15,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "a first-person walk that meets a sign, a landmark and a person to talk to",
+    "framing": "POV at eye level, gentle head motion",
+    "negative_space": {
+     "side": "bottom",
+     "min_frac": 0.2
+    },
+    "camera": "natural first-person walk, stabilised",
+    "separation": false,
+    "track": [
+     "sign",
+     "landmark",
+     "person/cup"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "CAMERA: natural first-person walk, stabilised, gentle head motion. FORBIDDEN: cuts, shake.",
+     "POSITIVE LOCKS: the sign keeps abstract unreadable symbols; no readable text anywhere. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.6,
+     "min_free_margin": 0.15
+    },
+    "source": "E9_glasses_720p (18 s)"
+   },
+   "runner": "bespoke",
+   "build": "bespoke recipe: references/recipes/ (rewrite for the new subject; see styles.md)",
+   "example": null,
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/lens-postcard.mp4",
+   "renders": [
+    {
+     "label": "Bespoke world",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/E9_lumen_lens_smart_glasses_BESPOKE.mp4"
+    }
+   ]
+  },
+  {
+   "n": 30,
+   "id": "VIRAL-CAPTIONS",
+   "family": "New · AE classics",
+   "one": "Hormozi-style word-by-word captions from the voice, keywords in colour, emoji pops.",
+   "tags": [
+    "product",
+    "tech",
+    "hebrew"
+   ],
+   "fonts": "Secular One (Hebrew) · Rubik 900 (Latin)",
+   "palette": [
+    "#ffffff",
+    "#ffe14d",
+    "#000000"
+   ],
+   "sample": "GUYAGA AERO · 15 s",
+   "kling": false,
+   "prompt": "Titles: VIRAL-CAPTIONS - huge word-by-word captions from the VO timings, keywords in colour, emoji pops, bounce on every word.",
+   "shoot_it_like_this": "Cuts OK (max 6) · subject in the upper two thirds · 25% free bottom",
+   "plate_contract": {
+    "take": "cuts-ok",
+    "max_cuts": 6,
+    "duration_s": [
+     8,
+     30
+    ],
+    "aspect": "16:9",
+    "subject": "anything carried by a voiceover; the subject sits high enough to leave the lower band free",
+    "framing": "subject in the upper two thirds",
+    "negative_space": {
+     "side": "bottom",
+     "min_frac": 0.25
+    },
+    "camera": "any smooth move; cuts on the voice's phrases",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, or hard cuts only at the listed timecodes.",
+     "COMPOSITION: Keep the bottom quarter of every shot low-detail (floor, table, dark studio): the captions sit there.",
+     "AUDIO: no voices, no music (the voiceover is added in post). No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 6,
+     "min_track_coverage": 0,
+     "min_free_margin": 0.2
+    },
+    "source": "E6_sneaker_720p (15 s) + Hebrew VO word timings"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py VIRAL-CAPTIONS --spec <spec.json> --render",
+   "example": "examples/viral-captions",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/viral-captions.mp4",
+   "renders": [
+    {
+     "label": "Sample · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/AE_VIRAL-CAPTIONS.mp4"
+    }
+   ]
+  },
+  {
+   "n": 31,
+   "id": "DECODE-TYPE",
+   "family": "New · AE classics",
+   "one": "Letters scramble through glyphs and lock into the words, with a blinking terminal cursor.",
+   "tags": [
+    "tech",
+    "hebrew"
+   ],
+   "fonts": "Secular One (Hebrew) · IBM Plex Mono",
+   "palette": [
+    "#e8fff4",
+    "#5cffb0",
+    "#04120e"
+   ],
+   "sample": "Helmet · 12 s",
+   "kling": false,
+   "prompt": "Titles: DECODE-TYPE - terminal decode: scrambling glyphs lock into the words with a blinking cursor, status lines beside the face.",
+   "shoot_it_like_this": "Cuts OK (max 4) · subject centred or off-centre, calm space on one side for the status lines · 22% free right",
+   "plate_contract": {
+    "take": "cuts-ok",
+    "max_cuts": 4,
+    "duration_s": [
+     6,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "a tech, sci-fi or data subject (a face in a helmet, a screen, a machine); lines decode beside it",
+    "framing": "subject centred or off-centre, calm space on one side for the status lines",
+    "negative_space": {
+     "side": "right",
+     "min_frac": 0.22
+    },
+    "camera": "locked or very slow push",
+    "separation": false,
+    "track": [
+     "face or subject (optional, to pin lines to it)"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts (or cuts only at the listed timecodes).",
+     "CAMERA: Locked-off with a very slow push-in. FORBIDDEN: shake, whip-pans.",
+     "The right quarter of the frame stays dark and calm (background bokeh, helmet interior). No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 4,
+     "min_track_coverage": 0,
+     "min_free_margin": 0.2
+    },
+    "source": "B4_helmet_long_720p (first 12 s)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py DECODE-TYPE --spec <spec.json> --render",
+   "example": "examples/decode-type",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/decode-type.mp4",
+   "renders": [
+    {
+     "label": "Sample · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/AE_DECODE-TYPE.mp4"
+    }
+   ]
+  },
+  {
+   "n": 32,
+   "id": "GLITCH-RGB",
+   "family": "New · AE classics",
+   "one": "On each beat the frame tears and the words split into RGB slices, then snap clean.",
+   "tags": [
+    "fashion",
+    "tech"
+   ],
+   "fonts": "Oswald 700 · IBM Plex Mono",
+   "palette": [
+    "#ffffff",
+    "#ff5a1f",
+    "#2d6bff"
+   ],
+   "sample": "NORTHLINE · 10 s",
+   "kling": false,
+   "prompt": "Titles: GLITCH-RGB - on each beat the frame tears and the words split into RGB slices, then snap clean.",
+   "shoot_it_like_this": "Cuts OK (max 6) · subject centred, walking or posing; plain walls or sky either side · 25% free both sides",
+   "plate_contract": {
+    "take": "cuts-ok",
+    "max_cuts": 6,
+    "duration_s": [
+     6,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "a bold subject (streetwear, music, tech) with graphic negative space around it",
+    "framing": "subject centred, walking or posing; plain walls or sky either side",
+    "negative_space": {
+     "side": "both",
+     "min_frac": 0.25
+    },
+    "camera": "locked or slow push; hits come from the music",
+    "separation": false,
+    "track": [
+     "items/garments (optional, for pinned words)"
+    ],
+    "beats": true,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot preferred; hard cuts only on the beat if cutting.",
+     "COMPOSITION: The subject stays in the centre third; the left and right thirds are plain (concrete, sky, wall).",
+     "CAMERA: Locked-off or very slow push-in. FORBIDDEN: shake (the glitch adds all the energy). No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 6,
+     "min_track_coverage": 0,
+     "min_free_margin": 0.22
+    },
+    "source": "NORTHLINE plate (10 s underpass walk)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py GLITCH-RGB --spec <spec.json> --render",
+   "example": "examples/glitch-rgb",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/glitch-rgb.mp4",
+   "renders": [
+    {
+     "label": "Sample · English",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/AE_GLITCH-RGB.mp4"
+    }
+   ]
+  },
+  {
+   "n": 33,
+   "id": "NEON-SIGN",
+   "family": "New · AE classics",
+   "one": "Neon tubes mounted on the walls in perspective: flicker-on, glow spill, a wet-floor reflection.",
+   "tags": [
+    "fashion",
+    "food",
+    "hebrew"
+   ],
+   "fonts": "Karantina 700 + Suez One (Hebrew) · Tilt Neon",
+   "palette": [
+    "#ff3da8",
+    "#3de0ff",
+    "#ff8a1a"
+   ],
+   "sample": "NORTHLINE · 10 s",
+   "kling": false,
+   "prompt": "Titles: NEON-SIGN - neon tubes mounted on the walls in perspective, flicker-on, glow spill and a wet-floor reflection.",
+   "shoot_it_like_this": "One take, no cuts · symmetrical corridor or street, subject in the centre third, blank walls left and right · 25% free both sides",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     6,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "a night location with blank walls or surfaces to mount the signs and a wet or glossy floor to reflect them",
+    "framing": "symmetrical corridor or street, subject in the centre third, blank walls left and right",
+    "negative_space": {
+     "side": "both",
+     "min_frac": 0.25
+    },
+    "camera": "locked-off or very slow push",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "LOCATION: night; bare, evenly lit walls on the left and right; a wet floor with soft reflections.",
+     "CAMERA: Locked-off or extremely slow push-in, vanishing point near the centre. FORBIDDEN: cuts, shake.",
+     "POSITIVE LOCKS: no signs, no lettering, no screens on the walls. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0,
+     "min_free_margin": 0.22
+    },
+    "source": "NORTHLINE plate (10 s underpass walk)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py NEON-SIGN --spec <spec.json> --render",
+   "example": "examples/neon-sign",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/neon-sign.mp4",
+   "renders": [
+    {
+     "label": "Sample · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/AE_NEON-SIGN.mp4"
+    }
+   ]
+  },
+  {
+   "n": 34,
+   "id": "KEYNOTE-REVEAL",
+   "family": "New · AE classics",
+   "one": "Apple-keynote pacing: one huge counting number per shot, mask-wipe reveal, clean fades.",
+   "tags": [
+    "tech",
+    "product",
+    "hebrew"
+   ],
+   "fonts": "Suez One + Secular One (Hebrew) · Jost 600 figures",
+   "palette": [
+    "#ffffff",
+    "#9fd8ff",
+    "#d6dbe3"
+   ],
+   "sample": "AURA EV · 18 s",
+   "kling": false,
+   "prompt": "Titles: KEYNOTE-REVEAL - one huge counting number per shot, mask-wipe reveal, unit + small label, clean fades.",
+   "shoot_it_like_this": "Cuts OK (max 6) · subject off-centre or small; the centre third calm (sky, windscreen, dark interior) · no free space needed",
+   "plate_contract": {
+    "take": "cuts-ok",
+    "max_cuts": 6,
+    "duration_s": [
+     8,
+     24
+    ],
+    "aspect": "16:9",
+    "subject": "one idea per shot, each with a calm, low-detail centre where the number lands",
+    "framing": "subject off-centre or small; the centre third calm (sky, windscreen, dark interior)",
+    "negative_space": {
+     "side": "none",
+     "min_frac": 0
+    },
+    "camera": "slow, smooth, steady",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: Timestamped cut-blocks, one stat per shot. HARD CUTS only at the listed timecodes.",
+     "COMPOSITION: Keep the centre of each shot low-detail and not too bright (a big number sits there).",
+     "CAMERA: slow and smooth. FORBIDDEN: shake, whip-pans. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 6,
+     "min_track_coverage": 0,
+     "min_free_margin": 0
+    },
+    "source": "E3_car_720p (18 s, 4 cuts)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py KEYNOTE-REVEAL --spec <spec.json> --render",
+   "example": "examples/keynote-reveal",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/keynote-reveal.mp4",
+   "renders": [
+    {
+     "label": "Sample · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/AE_KEYNOTE-REVEAL.mp4"
+    }
+   ]
+  },
+  {
+   "n": 35,
+   "id": "SPLIT-FLAP",
+   "family": "New · AE classics",
+   "one": "A departure board: every cell flips through letters and lands; a status re-flips later.",
+   "tags": [
+    "travel",
+    "hebrew"
+   ],
+   "fonts": "Karantina 700 + Secular One (Hebrew) · Oswald",
+   "palette": [
+    "#1d1d1d",
+    "#f4f1e8",
+    "#ffd23f"
+   ],
+   "sample": "LUMEN LENS · 18 s",
+   "kling": false,
+   "prompt": "Titles: SPLIT-FLAP - departure board, every cell flips through letters and lands; a status re-flips later.",
+   "shoot_it_like_this": "Cuts OK (max 4) · subject in the lower two thirds; the top band free for the board · 30% free top",
+   "plate_contract": {
+    "take": "cuts-ok",
+    "max_cuts": 4,
+    "duration_s": [
+     8,
+     24
+    ],
+    "aspect": "16:9",
+    "subject": "travel, transport, hospitality or any place with a departure/arrival story",
+    "framing": "subject in the lower two thirds; the top band free for the board",
+    "negative_space": {
+     "side": "top",
+     "min_frac": 0.3
+    },
+    "camera": "gentle walk or glide",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot preferred.",
+     "COMPOSITION: The upper third of the frame is sky, facade or calm background: a departure board sits there.",
+     "CAMERA: stabilised, gentle. FORBIDDEN: shake, whip-pans. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 4,
+     "min_track_coverage": 0,
+     "min_free_margin": 0.25
+    },
+    "source": "E9_glasses_720p (18 s POV)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py SPLIT-FLAP --spec <spec.json> --render",
+   "example": "examples/split-flap",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/split-flap.mp4",
+   "renders": [
+    {
+     "label": "Sample · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/AE_SPLIT-FLAP.mp4"
+    }
+   ]
+  },
+  {
+   "n": 36,
+   "id": "SIGNATURE-WRITE-ON",
+   "family": "New · AE classics",
+   "one": "Handwritten notes write on; red hand circles and arrows ride the tracked features.",
+   "tags": [
+    "real estate",
+    "product"
+   ],
+   "fonts": "Caveat 700 · Karantina (Hebrew hand)",
+   "palette": [
+    "#14213d",
+    "#e5251d",
+    "#fff8eb"
+   ],
+   "sample": "SEAVIEW 24 · 18 s",
+   "kling": false,
+   "prompt": "Titles: SIGNATURE-WRITE-ON - handwritten notes write on, red hand circles and arrows pinned to the tracked features.",
+   "shoot_it_like_this": "One take, no cuts · features readable and not moving too fast; open sky or wall on one side for the handwriting · 30% free left",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     8,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "a subject with clear features to circle and point at (a building's terrace, a product's parts, a room's pieces)",
+    "framing": "features readable and not moving too fast; open sky or wall on one side for the handwriting",
+    "negative_space": {
+     "side": "left",
+     "min_frac": 0.3
+    },
+    "camera": "smooth drone climb, slow glide or locked",
+    "separation": false,
+    "track": [
+     "each annotated feature"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "CAMERA: smooth, constant speed. FORBIDDEN: cuts, shake, spins.",
+     "COMPOSITION: The left third keeps open sky or a plain wall for handwritten notes. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.8,
+     "min_free_margin": 0.25
+    },
+    "source": "E8_tower_720p (18 s drone climb)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py SIGNATURE-WRITE-ON --spec <spec.json> --render",
+   "example": "examples/signature-write-on",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/signature-write-on.mp4",
+   "renders": [
+    {
+     "label": "Sample · English",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/AE_SIGNATURE-WRITE-ON.mp4"
+    }
+   ]
+  },
+  {
+   "n": 37,
+   "id": "BROADCAST-PACK",
+   "family": "New · AE classics",
+   "one": "Live sports package: score bug and clock, ticker, a lower-third on the player, stinger wipes.",
+   "tags": [
+    "sport"
+   ],
+   "fonts": "Oswald 700 · Archivo · Secular One (Hebrew)",
+   "palette": [
+    "#0b1f3a",
+    "#e63b2e",
+    "#ffd23f"
+   ],
+   "sample": "GUYAGA STRIKE · 15 s",
+   "kling": false,
+   "prompt": "Titles: BROADCAST-PACK - live score bug with running clock, ticker, lower-third on the tracked player, stinger wipes, goal update.",
+   "shoot_it_like_this": "Planned cuts (max 4) · player readable in the intro and result shots; top corners and the bottom band free · 15% free top",
+   "plate_contract": {
+    "take": "cut-list",
+    "max_cuts": 4,
+    "duration_s": [
+     10,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "a sports moment in shots: player intro, the action (slow-motion replay), the result",
+    "framing": "player readable in the intro and result shots; top corners and the bottom band free",
+    "negative_space": {
+     "side": "top",
+     "min_frac": 0.15
+    },
+    "camera": "broadcast-style: tracking, slow motion on the replay",
+    "separation": false,
+    "track": [
+     "player"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: Timestamped cut-blocks. HARD CUTS exactly at the listed timecodes and nowhere else.",
+     "COMPOSITION: Keep the top-left corner and the bottom tenth free of key action (score bug and ticker).",
+     "POSITIVE LOCKS: plain kits with no logos, badges, sponsor text or numbers; no scoreboards or screens in frame. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 4,
+     "min_track_coverage": 0.4,
+     "min_free_margin": 0.12
+    },
+    "source": "E1_soccer_720p (15 s, 3 planned cuts)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py BROADCAST-PACK --spec <spec.json> --render",
+   "example": "examples/broadcast-pack",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/broadcast-pack.mp4",
+   "renders": [
+    {
+     "label": "Sample · English",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/AE_BROADCAST-PACK.mp4"
+    }
+   ]
+  },
+  {
+   "n": 38,
+   "id": "FILM-TITLE-CARD",
+   "family": "New · AE classics",
+   "one": "A Wes Anderson chapter card, a Saul Bass cut-paper title and a two-column credits roll.",
+   "tags": [
+    "luxury",
+    "tech"
+   ],
+   "fonts": "Jost · Oswald 700 · Suez One (Hebrew)",
+   "palette": [
+    "#f6e7c8",
+    "#d7261e",
+    "#111111"
+   ],
+   "sample": "SPARTA · 24 s",
+   "kling": false,
+   "prompt": "Titles: FILM-TITLE-CARD - a Wes Anderson chapter card, a Saul Bass cut-paper title and a two-column credits roll.",
+   "shoot_it_like_this": "Planned cuts (max 6) · wide establishing shots with dust, sky or floor space; hero off-centre in the last shot · 25% free bottom",
+   "plate_contract": {
+    "take": "cut-list",
+    "max_cuts": 6,
+    "duration_s": [
+     12,
+     30
+    ],
+    "aspect": "16:9",
+    "subject": "a cinematic story in shots; at least one wide shot with a calm lower third and a final hero shot",
+    "framing": "wide establishing shots with dust, sky or floor space; hero off-centre in the last shot",
+    "negative_space": {
+     "side": "bottom",
+     "min_frac": 0.25
+    },
+    "camera": "cinematic, grounded; no whips",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: Timestamped cut-blocks. HARD CUTS exactly at the listed timecodes and nowhere else.",
+     "COMPOSITION: The wide shots keep the lower third calm (ground, haze); the final shot leaves the left third open for credits.",
+     "CAMERA: cinematic, grounded. FORBIDDEN: whip-pans, shaky cam. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 6,
+     "min_track_coverage": 0,
+     "min_free_margin": 0.2
+    },
+    "source": "E2_spartan_720p (24 s, 5 cuts)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py FILM-TITLE-CARD --spec <spec.json> --render",
+   "example": "examples/film-title-card",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/film-title-card.mp4",
+   "renders": [
+    {
+     "label": "Sample · English",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/AE_FILM-TITLE-CARD.mp4"
+    }
+   ]
+  },
+  {
+   "n": 39,
+   "id": "PARTICLE-TEXT",
+   "family": "New · AE classics",
+   "one": "Words assemble from embers, salt or steam, resolve crisp, then dissolve back.",
+   "tags": [
+    "food",
+    "luxury"
+   ],
+   "fonts": "Jost 700 · Suez One (Hebrew)",
+   "palette": [
+    "#ffb13b",
+    "#f3e3c3",
+    "#f4f1ec"
+   ],
+   "sample": "EMBER · 15 s",
+   "kling": false,
+   "prompt": "Titles: PARTICLE-TEXT - words assemble from embers / sand / steam, resolve crisp, then dissolve back.",
+   "shoot_it_like_this": "Cuts OK (max 5) · subject low or to one side; dark, low-detail space above it · 30% free top",
+   "plate_contract": {
+    "take": "cuts-ok",
+    "max_cuts": 5,
+    "duration_s": [
+     8,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "footage with natural particles to borrow (fire and embers, salt or sand, steam or smoke) and a dark area for the words",
+    "framing": "subject low or to one side; dark, low-detail space above it",
+    "negative_space": {
+     "side": "top",
+     "min_frac": 0.3
+    },
+    "camera": "slow push or locked; cuts on the recipe steps",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, or hard cuts only at the listed timecodes.",
+     "COMPOSITION: The upper third of each shot stays dark and uncluttered (the words form there).",
+     "CAMERA: slow. FORBIDDEN: shake, whip-pans. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 5,
+     "min_track_coverage": 0,
+     "min_free_margin": 0.25
+    },
+    "source": "E10_chef_720p (15 s, 4 cuts)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py PARTICLE-TEXT --spec <spec.json> --render",
+   "example": "examples/particle-text",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/particle-text.mp4",
+   "renders": [
+    {
+     "label": "Sample · English",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/AE_PARTICLE-TEXT.mp4"
+    }
+   ]
+  },
+  {
+   "n": 40,
+   "id": "FLIP-MONTAGE-LOGO",
+   "family": "New · AE classics",
+   "one": "Marvel-style closer: pages of the film flip faster and faster into the logo.",
+   "tags": [
+    "fashion",
+    "product"
+   ],
+   "fonts": "Oswald 700 · Jost · Karantina (Hebrew)",
+   "palette": [
+    "#ff5a1f",
+    "#ffffff",
+    "#000000"
+   ],
+   "sample": "NORTHLINE · 10 s",
+   "kling": false,
+   "prompt": "Titles: FLIP-MONTAGE-LOGO - pages of the film flip faster and faster, then resolve into the logo on a colour block.",
+   "shoot_it_like_this": "Cuts OK (max 6) · variety across the shot (close-ups, wides, details) makes the flip read · no free space needed",
+   "plate_contract": {
+    "take": "cuts-ok",
+    "max_cuts": 6,
+    "duration_s": [
+     6,
+     30
+    ],
+    "aspect": "16:9",
+    "subject": "any footage with varied moments to flip through; the montage takes the last ~3.5 s",
+    "framing": "variety across the shot (close-ups, wides, details) makes the flip read",
+    "negative_space": {
+     "side": "none",
+     "min_frac": 0
+    },
+    "camera": "any",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: Any; plan the last 3-4 seconds as the logo montage (the plate underneath is replaced).",
+     "COMPOSITION: Vary framing across the take (wide, medium, detail) so the flipped pages differ. No text, no logos, no signage, no UI, no graphics at any time."
+    ],
+    "gate": {
+     "max_cuts": 6,
+     "min_track_coverage": 0,
+     "min_free_margin": 0
+    },
+    "source": "NORTHLINE plate (10 s; 18 frames of it flip)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py FLIP-MONTAGE-LOGO --spec <spec.json> --render",
+   "example": "examples/flip-montage-logo",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/flip-montage-logo.mp4",
+   "renders": [
+    {
+     "label": "Sample · English",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/AE_FLIP-MONTAGE-LOGO.mp4"
+    }
+   ]
+  },
+  {
+   "n": 41,
+   "id": "TEXT-ON-PATH",
+   "family": "New · AE classics",
+   "one": "Words ride the tracked road while a glowing route draws on.",
+   "tags": [
+    "travel",
+    "real estate"
+   ],
+   "fonts": "Oswald 700 · Jost · Secular One (Hebrew)",
+   "palette": [
+    "#9bd14a",
+    "#ffffff",
+    "#0b1a22"
+   ],
+   "sample": "Aerial · 10 s",
+   "kling": false,
+   "prompt": "Titles: TEXT-ON-PATH - the words ride the tracked road as a glowing route draws on.",
+   "shoot_it_like_this": "One take, no cuts · the route clearly visible and roughly flat to camera, not hidden behind buildings · no free space needed",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     8,
+     15
+    ],
+    "aspect": "16:9",
+    "subject": "a high aerial with a visible road, river or trail that is tracked point by point",
+    "framing": "the route clearly visible and roughly flat to camera, not hidden behind buildings",
+    "negative_space": {
+     "side": "none",
+     "min_frac": 0
+    },
+    "camera": "smooth drone, constant slow push and slight descent; no rotation",
+    "separation": false,
+    "track": [
+     "route points (planar, track.py)"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "CAMERA: Smooth stabilized drone, constant slow speed, gentle forward push and slight descent only. FORBIDDEN: whip-pans, rotation, roll, cuts.",
+     "POSITIVE LOCKS: the road/route stays visible for the whole shot. No text, no labels, no map graphics, no UI, no logos at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 1.0,
+     "min_free_margin": 0
+    },
+    "source": "A1_seedance_720p (10 s aerial)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py TEXT-ON-PATH --spec <spec.json> --render",
+   "example": "examples/text-on-path",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/text-on-path.mp4",
+   "renders": [
+    {
+     "label": "Sample · English",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/AE_TEXT-ON-PATH.mp4"
+    }
+   ]
+  },
+  {
+   "n": 42,
+   "id": "LOWER-THIRD-CORP",
+   "family": "Broadcast & corporate",
+   "one": "The interview name super: accent bar, masked name rise, title slide, drawn rule, one glint, clean masked exit.",
+   "tags": [
+    "corporate",
+    "news",
+    "youtube",
+    "hebrew"
+   ],
+   "fonts": "Hebrew Suez One + Secular One; Latin Manrope 700/500",
+   "palette": [
+    "#cc2419",
+    "#0a0c10",
+    "#ffffff"
+   ],
+   "sample": "Kling · talking head · 10 s",
+   "kling": true,
+   "prompt": "Titles: LOWER-THIRD-CORP - accent-bar lower third, name masked rise, title slide, rule draw, one glint, Suez One + Secular One in Hebrew.",
+   "shoot_it_like_this": "One take, no cuts · chest-up, the person centre or one side; the lower-left/lower-right quarter calm · 18% free bottom",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     6,
+     30
+    ],
+    "aspect": "16:9",
+    "subject": "a person speaking (interview, creator, CEO)",
+    "framing": "chest-up, the person centre or one side; the lower-left/lower-right quarter calm",
+    "negative_space": {
+     "side": "bottom",
+     "min_frac": 0.18
+    },
+    "camera": "locked-off tripod or a very slow push",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "COMPOSITION: the lower quarter of the frame stays calm and uncluttered on the side opposite the speaker's gesturing hand.",
+     "CAMERA: locked-off tripod at eye level. FORBIDDEN: cuts, zooms, shake.",
+     "POSITIVE LOCKS: No text, no logos, no captions, no UI, no graphics, no screens showing text at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0,
+     "min_free_margin": 0.15
+    },
+    "source": "Kling talking-head (10 s, one take)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py LOWER-THIRD-CORP --spec <spec.json> --render",
+   "example": "examples/lower-third-corp",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/lower-third-corp.mp4",
+   "renders": [
+    {
+     "label": "Sample · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_LOWER-THIRD-CORP.mp4"
+    }
+   ]
+  },
+  {
+   "n": 43,
+   "id": "BREAKING-NEWS",
+   "family": "Broadcast & corporate",
+   "one": "Rolling-news package: red slab slam + shine, headline bar that types and flips, strap, LIVE bug with a running clock, ticker.",
+   "tags": [
+    "news",
+    "corporate",
+    "hebrew"
+   ],
+   "fonts": "Hebrew Karantina 700 + Secular One (Oswald numerals); Latin Oswald 700 + Archivo 500",
+   "palette": [
+    "#d6001c",
+    "#ffffff",
+    "#0a1a33"
+   ],
+   "sample": "Kling · city at dusk · 10 s",
+   "kling": true,
+   "prompt": "Titles: BREAKING-NEWS - red slab slam with shine, headline bar word-by-word, flip to the next headline, strap, LIVE bug with clock, ticker.",
+   "shoot_it_like_this": "One take, no cuts · wide; key action in the upper two thirds; the bottom third is road/ground · 30% free bottom",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     6,
+     30
+    ],
+    "aspect": "16:9",
+    "subject": "news b-roll: a street, a scene, an event location",
+    "framing": "wide; key action in the upper two thirds; the bottom third is road/ground",
+    "negative_space": {
+     "side": "bottom",
+     "min_frac": 0.3
+    },
+    "camera": "locked-off or a very slow push from an elevated position",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "COMPOSITION: the lower third of the frame is road or ground without important detail.",
+     "POSITIVE LOCKS: no readable text, no signs with words, no logos, no license plates, no billboards, no UI at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0,
+     "min_free_margin": 0
+    },
+    "source": "Kling city-news (10 s, one take)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py BREAKING-NEWS --spec <spec.json> --render",
+   "example": "examples/breaking-news",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/breaking-news.mp4",
+   "renders": [
+    {
+     "label": "Sample · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_BREAKING-NEWS.mp4"
+    }
+   ]
+  },
+  {
+   "n": 44,
+   "id": "LEADER-CALLOUTS",
+   "family": "Tech & UI",
+   "one": "Premium product callouts: dot + ring pulse on a tracked part, two-segment leader line, spec value counting up.",
+   "tags": [
+    "product",
+    "tech",
+    "luxury"
+   ],
+   "fonts": "Latin Space Grotesk 700/500; Hebrew Secular One",
+   "palette": [
+    "#ffffff",
+    "#7cf0ff",
+    "#0b0d10"
+   ],
+   "sample": "Kling · earbuds on a plinth · 10 s",
+   "kling": true,
+   "prompt": "Titles: LEADER-CALLOUTS - dot + ring on each tracked part, thin two-segment leader lines, spaced caption over a counting spec value, cyan unit.",
+   "shoot_it_like_this": "One take, no cuts · product centred in the middle third, large empty dark space left and right · 30% free both sides",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     8,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "one product on a plain dark set, parts clearly separable",
+    "framing": "product centred in the middle third, large empty dark space left and right",
+    "negative_space": {
+     "side": "both",
+     "min_frac": 0.3
+    },
+    "camera": "slow orbit or turntable with a gentle push-in",
+    "separation": false,
+    "track": [
+     "product parts (2-4)"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "COMPOSITION: the product occupies the centre third; the left and right thirds are empty dark background.",
+     "CAMERA: slow smooth orbit and push-in. FORBIDDEN: cuts, shake, fast moves.",
+     "POSITIVE LOCKS: exactly one product. No text, no logos, no brand marks, no labels, no UI at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.9,
+     "min_free_margin": 0.25
+    },
+    "source": "Kling product-macro (10 s, one take)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py LEADER-CALLOUTS --spec <spec.json> --render",
+   "example": "examples/leader-callouts",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/leader-callouts.mp4",
+   "renders": [
+    {
+     "label": "Sample · English",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_LEADER-CALLOUTS.mp4"
+    }
+   ]
+  },
+  {
+   "n": 45,
+   "id": "DATA-CHARTS",
+   "family": "Tech & UI",
+   "one": "Infographic glass card: gridlines draw, bars grow with counting values, then a line chart draws with an area fill and a value flag.",
+   "tags": [
+    "corporate",
+    "tech",
+    "hebrew"
+   ],
+   "fonts": "Hebrew Secular One; Latin Manrope 700/500",
+   "palette": [
+    "#0a0d12",
+    "#39d98a",
+    "#ffffff"
+   ],
+   "sample": "Kling · office b-roll · 10 s",
+   "kling": true,
+   "prompt": "Titles: DATA-CHARTS - frosted card on the clean side, gridlines draw, bars grow with counters, hand-over to a line chart with area fill and a value flag.",
+   "shoot_it_like_this": "One take, no cuts · people on one side; the other half soft out-of-focus space (window, wall) · 42% free left",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     8,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "business b-roll: people working, meeting, reviewing",
+    "framing": "people on one side; the other half soft out-of-focus space (window, wall)",
+    "negative_space": {
+     "side": "left",
+     "min_frac": 0.42
+    },
+    "camera": "slow smooth dolly or locked-off",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "COMPOSITION: the people stay in the right half; the left half is soft bright out-of-focus space, completely empty.",
+     "POSITIVE LOCKS: no walls with writing, no whiteboards, no signs, no screens facing the camera, no readable text anywhere, no logos, no UI."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0,
+     "min_free_margin": 0.35
+    },
+    "source": "Kling office-b-roll v2 (10 s, one take; v1 rejected for AI lettering on the wall)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py DATA-CHARTS --spec <spec.json> --render",
+   "example": "examples/data-charts",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/data-charts.mp4",
+   "renders": [
+    {
+     "label": "Sample · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_DATA-CHARTS.mp4"
+    }
+   ]
+  },
+  {
+   "n": 46,
+   "id": "KPI-COUNTERS",
+   "family": "Tech & UI",
+   "one": "Results dashboard: frosted tiles cascade, big numbers count up, delta chips pop, sparklines draw with a glowing end dot.",
+   "tags": [
+    "corporate",
+    "tech",
+    "product"
+   ],
+   "fonts": "Latin Space Grotesk 700/500; Hebrew Secular One",
+   "palette": [
+    "#080b10",
+    "#3ddc84",
+    "#7cc8ff"
+   ],
+   "sample": "Kling · office b-roll · 10 s",
+   "kling": true,
+   "prompt": "Titles: KPI-COUNTERS - frosted KPI tiles cascade in, numbers count up with separators, delta chips, sparklines with a glowing end dot.",
+   "shoot_it_like_this": "One take, no cuts · subject on one side, a clean half for a tile column · 35% free left",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     6,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "business or product b-roll",
+    "framing": "subject on one side, a clean half for a tile column",
+    "negative_space": {
+     "side": "left",
+     "min_frac": 0.35
+    },
+    "camera": "slow dolly or locked-off",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "COMPOSITION: the subject stays in the right half; the left half is calm soft background.",
+     "POSITIVE LOCKS: no readable text on screens or walls, no logos, no UI at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0,
+     "min_free_margin": 0.3
+    },
+    "source": "Kling office-b-roll v2 (10 s, one take)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py KPI-COUNTERS --spec <spec.json> --render",
+   "example": "examples/kpi-counters",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/kpi-counters.mp4",
+   "renders": [
+    {
+     "label": "Sample · English",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_KPI-COUNTERS.mp4"
+    }
+   ]
+  },
+  {
+   "n": 47,
+   "id": "APP-UI-POPUPS",
+   "family": "Social & YouTube",
+   "one": "Phone-style UI floating beside the subject: notification banners spring in and stack, a progress-ring card fills, a toast confirms.",
+   "tags": [
+    "tech",
+    "product",
+    "youtube",
+    "hebrew"
+   ],
+   "fonts": "Hebrew Secular One; Latin Manrope 700/500",
+   "palette": [
+    "#f6f7fa",
+    "#35d07f",
+    "#0d1117"
+   ],
+   "sample": "Kling · phone on the sofa · 10 s",
+   "kling": true,
+   "prompt": "Titles: APP-UI-POPUPS - iOS-style notification banners spring in and stack, a progress-ring card fills, a toast confirms; glass, no logos.",
+   "shoot_it_like_this": "One take, no cuts · the person in the left third; the right two thirds soft and empty · 35% free right",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     6,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "a person using a phone (screen never visible)",
+    "framing": "the person in the left third; the right two thirds soft and empty",
+    "negative_space": {
+     "side": "right",
+     "min_frac": 0.35
+    },
+    "camera": "locked-off, shallow depth of field",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "COMPOSITION: she sits in the left third; the right two thirds are soft and empty.",
+     "POSITIVE LOCKS: the phone screen is never visible. No text, no logos, no UI, no captions at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0,
+     "min_free_margin": 0.3
+    },
+    "source": "Kling phone-hands (10 s, one take)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py APP-UI-POPUPS --spec <spec.json> --render",
+   "example": "examples/app-ui-popups",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/app-ui-popups.mp4",
+   "renders": [
+    {
+     "label": "Sample · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_APP-UI-POPUPS.mp4"
+    }
+   ]
+  },
+  {
+   "n": 48,
+   "id": "CHAT-BUBBLES",
+   "family": "Social & YouTube",
+   "one": "Messenger conversation over the shot: typing dots, springy bubbles, timestamps, double ticks turning blue. Outgoing on the left in Hebrew.",
+   "tags": [
+    "youtube",
+    "tech",
+    "hebrew"
+   ],
+   "fonts": "Hebrew Secular One; Latin Manrope 700/500",
+   "palette": [
+    "#d9fdd3",
+    "#ffffff",
+    "#53bdeb"
+   ],
+   "sample": "Kling · phone on the sofa · 10 s",
+   "kling": true,
+   "prompt": "Titles: CHAT-BUBBLES - messenger thread over the shot: typing indicator, bubbles pop from the tail, timestamps, read ticks turn blue.",
+   "shoot_it_like_this": "One take, no cuts · the person in one third; a tall clean area on the other side for the thread · 33% free right",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     6,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "a person texting (screen never visible)",
+    "framing": "the person in one third; a tall clean area on the other side for the thread",
+    "negative_space": {
+     "side": "right",
+     "min_frac": 0.33
+    },
+    "camera": "locked-off",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "COMPOSITION: she sits in the left third; the right third is clean.",
+     "POSITIVE LOCKS: the phone screen is never visible. No text, no logos, no UI at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0,
+     "min_free_margin": 0.3
+    },
+    "source": "Kling phone-hands (10 s, one take)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py CHAT-BUBBLES --spec <spec.json> --render",
+   "example": "examples/chat-bubbles",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/chat-bubbles.mp4",
+   "renders": [
+    {
+     "label": "Sample · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_CHAT-BUBBLES.mp4"
+    }
+   ]
+  },
+  {
+   "n": 49,
+   "id": "SOCIAL-CTA",
+   "family": "Social & YouTube",
+   "one": "Subscribe CTA: channel chip with counting followers, cursor clicks a red pill that flips to Subscribed, bell rings, like counts up.",
+   "tags": [
+    "youtube",
+    "hebrew"
+   ],
+   "fonts": "Hebrew Secular One; Latin Manrope 700/500",
+   "palette": [
+    "#ff0033",
+    "#3a3f47",
+    "#ffffff"
+   ],
+   "sample": "Kling · talking head · 10 s",
+   "kling": true,
+   "prompt": "Titles: SOCIAL-CTA - channel chip with counting followers, cursor clicks SUBSCRIBE, pill flips to SUBSCRIBED, bell rings, like counts up; no platform logos.",
+   "shoot_it_like_this": "One take, no cuts · creator centre-right; the lower-left quarter clean · 25% free left",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     6,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "a creator talking to camera, ideally pointing at the CTA side at the end",
+    "framing": "creator centre-right; the lower-left quarter clean",
+    "negative_space": {
+     "side": "left",
+     "min_frac": 0.25
+    },
+    "camera": "locked-off tripod",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "8.0-10.0s: he smiles, points toward the left side of the frame, and keeps looking at the lens.",
+     "COMPOSITION: he stays in the right half; the left half is soft background.",
+     "POSITIVE LOCKS: No text, no logos, no captions, no UI, no graphics, no screens showing text at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0,
+     "min_free_margin": 0.2
+    },
+    "source": "Kling talking-head (10 s, one take)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py SOCIAL-CTA --spec <spec.json> --render",
+   "example": "examples/social-cta",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/social-cta.mp4",
+   "renders": [
+    {
+     "label": "Sample · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_SOCIAL-CTA.mp4"
+    }
+   ]
+  },
+  {
+   "n": 50,
+   "id": "END-SCREEN",
+   "family": "Social & YouTube",
+   "one": "YouTube-style end card: angled scrim wipe, WATCH NEXT, two video tiles flip up with Ken Burns thumbnails, avatar in a spinning ring.",
+   "tags": [
+    "youtube"
+   ],
+   "fonts": "Latin Manrope 700/500; Hebrew Secular One",
+   "palette": [
+    "#0b0d12",
+    "#ff0033",
+    "#ffffff"
+   ],
+   "sample": "Kling · talking head · 10 s",
+   "kling": true,
+   "prompt": "Titles: END-SCREEN - angled scrim wipe, WATCH NEXT, two thumbnail tiles flip up (Ken Burns, duration badge), avatar in a spinning dashed ring + SUBSCRIBE.",
+   "shoot_it_like_this": "One take, no cuts · creator on one side (centre-right); the other half free for the card · 40% free left",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     6,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "the creator's closing line to camera",
+    "framing": "creator on one side (centre-right); the other half free for the card",
+    "negative_space": {
+     "side": "left",
+     "min_frac": 0.4
+    },
+    "camera": "locked-off",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "COMPOSITION: he stays in the right half of the frame.",
+     "POSITIVE LOCKS: No text, no logos, no captions, no UI, no graphics, no screens showing text at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0,
+     "min_free_margin": 0.3
+    },
+    "source": "Kling talking-head (10 s, one take)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py END-SCREEN --spec <spec.json> --render",
+   "example": "examples/end-screen",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/end-screen.mp4",
+   "renders": [
+    {
+     "label": "Sample · English",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_END-SCREEN.mp4"
+    }
+   ]
+  },
+  {
+   "n": 51,
+   "id": "PODCAST-TAGS",
+   "family": "Broadcast & corporate",
+   "one": "Video-podcast package: tracked speaker tags light up with a live equalizer on whoever talks, episode chip, topic strip, audio waveform.",
+   "tags": [
+    "youtube",
+    "corporate",
+    "hebrew"
+   ],
+   "fonts": "Hebrew Suez One + Secular One (Manrope numerals); Latin Manrope 700/500",
+   "palette": [
+    "#ffb13b",
+    "#0e0c0a",
+    "#ffffff"
+   ],
+   "sample": "Kling · podcast studio · 10 s",
+   "kling": true,
+   "prompt": "Titles: PODCAST-TAGS - tracked speaker tags, active speaker lit with a live equalizer from the real audio, episode chip + REC, topic strip, waveform.",
+   "shoot_it_like_this": "One take, no cuts · wide two-shot, hosts in the left and right thirds, the table edge along the bottom · 15% free bottom",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     8,
+     30
+    ],
+    "aspect": "16:9",
+    "subject": "two hosts talking at microphones, turn-taking",
+    "framing": "wide two-shot, hosts in the left and right thirds, the table edge along the bottom",
+    "negative_space": {
+     "side": "bottom",
+     "min_frac": 0.15
+    },
+    "camera": "locked-off with a very slow push",
+    "separation": false,
+    "track": [
+     "host_left",
+     "host_right"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "0.0-5.0s: the host on the left talks while the other listens; 5.0-10.0s: the host on the right answers.",
+     "COMPOSITION: wide two-shot; the lower third of the frame is the table edge, calm and empty.",
+     "POSITIVE LOCKS: exactly two people. No brand names on the microphones, no screens, no text, no logos, no UI at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.9,
+     "min_free_margin": 0
+    },
+    "source": "Kling podcast (10 s, one take)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py PODCAST-TAGS --spec <spec.json> --render",
+   "example": "examples/podcast-tags",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/podcast-tags.mp4",
+   "renders": [
+    {
+     "label": "Sample · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_PODCAST-TAGS.mp4"
+    }
+   ]
+  },
+  {
+   "n": 52,
+   "id": "CHAPTER-MARKERS",
+   "family": "Editorial & doc",
+   "one": "Documentary chapter card: outline numeral fills, chapter title rises from a mask, a chapter scrub bar fills, then a corner chip.",
+   "tags": [
+    "youtube",
+    "travel",
+    "real estate",
+    "hebrew",
+    "corporate"
+   ],
+   "fonts": "Suez One · Secular One (Latin: DM Serif Display · Manrope)",
+   "palette": [
+    "#ffffff",
+    "#e8c27a",
+    "#0b0f16"
+   ],
+   "sample": "Kling · aerial port · 10 s",
+   "kling": true,
+   "prompt": "Titles: CHAPTER-MARKERS - outline numeral that fills, chapter title rising from a mask, subtitle, a segmented chapter bar, then a corner chapter chip. Suez One + Secular One, gold accent.",
+   "shoot_it_like_this": "One take, no cuts · subject in one half of the frame; the other half open (sea, sky, wall) · 40% free left",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     6,
+     30
+    ],
+    "aspect": "16:9",
+    "subject": "a calm establishing shot of the place the chapter is about",
+    "framing": "subject in one half of the frame; the other half open (sea, sky, wall)",
+    "negative_space": {
+     "side": "left",
+     "min_frac": 0.4
+    },
+    "camera": "slow steady glide, level horizon",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "COMPOSITION: The subject fills the right half; the left half is open water and sky for a chapter card.",
+     "CAMERA: smooth stabilised drone or slider, constant slow speed, level horizon. FORBIDDEN: cuts, fast moves, shake.",
+     "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0,
+     "min_free_margin": 0
+    },
+    "source": "kling_plates/aerial_doc.mp4 (Kling 3.0, 10 s)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py CHAPTER-MARKERS --spec <spec.json> --render",
+   "example": "examples/chapter-markers",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/chapter-markers.mp4",
+   "renders": [
+    {
+     "label": "Sample · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_CHAPTER-MARKERS.mp4"
+    }
+   ]
+  },
+  {
+   "n": 53,
+   "id": "QUOTE-TESTIMONIAL",
+   "family": "Editorial & doc",
+   "one": "Customer quote that builds word by word in sync with the speaker's own voice, key phrase underlined as it is said, name + five stars.",
+   "tags": [
+    "corporate",
+    "product",
+    "youtube",
+    "real estate"
+   ],
+   "fonts": "DM Serif Display · Manrope (Hebrew: Suez One · Secular One)",
+   "palette": [
+    "#1c1712",
+    "#d9892b",
+    "#f4efe6"
+   ],
+   "sample": "Kling · testimonial · 10 s",
+   "kling": true,
+   "prompt": "Titles: QUOTE-TESTIMONIAL - quote mark drops in, quote builds word by word on the speaker's own voice, key phrase underlined as spoken, then name, role and five stars.",
+   "shoot_it_like_this": "One take, no cuts · medium close-up, the speaker on one third, the other half a soft bright wall or window · 35% free left",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     6,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "one person speaking a short testimonial line (native speech on the plate, or a VO)",
+    "framing": "medium close-up, the speaker on one third, the other half a soft bright wall or window",
+    "negative_space": {
+     "side": "left",
+     "min_frac": 0.35
+    },
+    "camera": "locked tripod with an imperceptible push-in",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "COMPOSITION: medium close-up, the speaker on the RIGHT third; the LEFT half is a softly out-of-focus bright wall with empty space.",
+     "CAMERA: locked-off tripod, imperceptibly slow push-in, 85mm. FORBIDDEN: cuts, zooms, shake. Exactly one person.",
+     "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0,
+     "min_free_margin": 0.3
+    },
+    "source": "kling_plates/portrait_testimonial.mp4 (Kling 3.0, 10 s, native speech)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py QUOTE-TESTIMONIAL --spec <spec.json> --render",
+   "example": "examples/quote-testimonial",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/quote-testimonial.mp4",
+   "renders": [
+    {
+     "label": "Sample · English",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_QUOTE-TESTIMONIAL.mp4"
+    }
+   ]
+  },
+  {
+   "n": 54,
+   "id": "DOC-LOCATION-STAMP",
+   "family": "Editorial & doc",
+   "one": "Documentary place/date stamp: letterbox bars, the place types in with a cursor, coordinates scramble and lock, a crosshair locks onto a tracked landmark.",
+   "tags": [
+    "travel",
+    "real estate",
+    "hebrew",
+    "news"
+   ],
+   "fonts": "Secular One · JetBrains Mono (Latin: Manrope · JetBrains Mono)",
+   "palette": [
+    "#ffffff",
+    "#ffcf6e",
+    "#000000"
+   ],
+   "sample": "Kling · aerial port · 10 s",
+   "kling": true,
+   "prompt": "Titles: DOC-LOCATION-STAMP - cinema letterbox, typewriter place name with block cursor, transliteration, GPS coordinates that scramble into place, time/date, crosshair locked on a tracked landmark.",
+   "shoot_it_like_this": "One take, no cuts · landmark in one half; a calm corner for the stamp · 35% free left",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     6,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "an establishing shot of a real place with one clear landmark",
+    "framing": "landmark in one half; a calm corner for the stamp",
+    "negative_space": {
+     "side": "left",
+     "min_frac": 0.35
+    },
+    "camera": "slow steady glide",
+    "separation": false,
+    "track": [
+     "the landmark (tower, bridge, building)"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "COMPOSITION: one clear landmark in the right half; the lower-left corner calm (water, sky or plain ground).",
+     "CAMERA: smooth slow glide, level horizon. FORBIDDEN: cuts, shake, fast moves.",
+     "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.9,
+     "min_free_margin": 0.25
+    },
+    "source": "kling_plates/aerial_doc.mp4 (Kling 3.0, 10 s)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py DOC-LOCATION-STAMP --spec <spec.json> --render",
+   "example": "examples/doc-location-stamp",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/doc-location-stamp.mp4",
+   "renders": [
+    {
+     "label": "Sample · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_DOC-LOCATION-STAMP.mp4"
+    }
+   ]
+  },
+  {
+   "n": 55,
+   "id": "SWISS-GRID",
+   "family": "Editorial & doc",
+   "one": "International Typographic Style: a 12-column grid draws in, heavy grotesk statements snap to it, a Swiss-red square jumps cell to cell.",
+   "tags": [
+    "corporate",
+    "tech",
+    "real estate",
+    "luxury"
+   ],
+   "fonts": "Manrope 700 · Manrope 500 (Hebrew: Secular One)",
+   "palette": [
+    "#111111",
+    "#e3342f",
+    "#f2f2ee"
+   ],
+   "sample": "Kling · white architecture · 10 s",
+   "kling": true,
+   "prompt": "Titles: SWISS-GRID - 12-column grid draws in, black grotesk statements rise from masks and snap to columns, one red square jumping between cells, counter and caption column.",
+   "shoot_it_like_this": "One take, no cuts · large flat light surfaces across the left and centre · 50% free left",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     6,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "clean minimal geometry (white wall, concrete, studio cyclorama)",
+    "framing": "large flat light surfaces across the left and centre",
+    "negative_space": {
+     "side": "left",
+     "min_frac": 0.5
+    },
+    "camera": "slow slider move, perfectly level",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "COMPOSITION: large flat empty white wall areas in the left and centre of the frame, strong horizontal and vertical lines.",
+     "CAMERA: smooth slider move, constant slow speed, perfectly level. FORBIDDEN: cuts, shake, tilts.",
+     "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0,
+     "min_free_margin": 0
+    },
+    "source": "kling_plates/minimal_architecture.mp4 (Kling 3.0, 10 s)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py SWISS-GRID --spec <spec.json> --render",
+   "example": "examples/swiss-grid",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/swiss-grid.mp4",
+   "renders": [
+    {
+     "label": "Sample · English",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_SWISS-GRID.mp4"
+    }
+   ]
+  },
+  {
+   "n": 56,
+   "id": "GRADIENT-GLASS",
+   "family": "Tech & UI",
+   "one": "SaaS launch: a frosted glass card tilts in, gradient headline, glass feature chips float, a cursor glides to the CTA and clicks it.",
+   "tags": [
+    "tech",
+    "product",
+    "corporate"
+   ],
+   "fonts": "Sora 800 · Manrope 500 (Hebrew: Secular One)",
+   "palette": [
+    "#c3a8ff",
+    "#7cc4ff",
+    "#ffa98a"
+   ],
+   "sample": "Kling · abstract glass · 10 s",
+   "kling": true,
+   "prompt": "Titles: GRADIENT-GLASS - frosted glass card with border glint, NEW pill, gradient headline, subhead, CTA button, floating glass chips, cursor that clicks the CTA with a ripple.",
+   "shoot_it_like_this": "One take, no cuts · motion around the edges, the centre calm and darker · no free space needed",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     6,
+     15
+    ],
+    "aspect": "16:9",
+    "subject": "abstract gradient/glass motion background (or a softly blurred office)",
+    "framing": "motion around the edges, the centre calm and darker",
+    "negative_space": {
+     "side": "none",
+     "min_frac": 0
+    },
+    "camera": "very slow push-in",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "COMPOSITION: shapes mostly around the edges, the centre of the frame calmer and darker for a glass card.",
+     "CAMERA: very slow push-in, perfectly smooth. FORBIDDEN: cuts, shake. Abstract only, no people, no objects, no numbers.",
+     "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0,
+     "min_free_margin": 0
+    },
+    "source": "kling_plates/gradient_glass.mp4 (Kling 3.0, 10 s)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py GRADIENT-GLASS --spec <spec.json> --render",
+   "example": "examples/gradient-glass",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/gradient-glass.mp4",
+   "renders": [
+    {
+     "label": "Sample · English",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_GRADIENT-GLASS.mp4"
+    }
+   ]
+  },
+  {
+   "n": 57,
+   "id": "BEFORE-AFTER-SPLIT",
+   "family": "Editorial & doc",
+   "one": "Renovation / upgrade comparison: two takes of the same camera move, a divider with a handle sweeps, swings back, settles, big BEFORE/AFTER chips.",
+   "tags": [
+    "real estate",
+    "product",
+    "hebrew",
+    "youtube"
+   ],
+   "fonts": "Karantina 700 · Secular One (Latin: Oswald · Manrope)",
+   "palette": [
+    "#ffd23f",
+    "#111111",
+    "#ffffff"
+   ],
+   "sample": "Kling · 2 takes, same dolly · 10 s",
+   "kling": true,
+   "prompt": "Titles: BEFORE-AFTER-SPLIT - two takes of one camera move, a white divider with a round handle sweeps and settles, big before/after label chips, a stat bar on the finished result.",
+   "shoot_it_like_this": "One take, no cuts · identical framing in both takes (make both from one start frame + its edit) · no free space needed",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     6,
+     12
+    ],
+    "aspect": "16:9",
+    "subject": "the SAME space or product in two states, shot with an identical camera move",
+    "framing": "identical framing in both takes (make both from one start frame + its edit)",
+    "negative_space": {
+     "side": "none",
+     "min_frac": 0
+    },
+    "camera": "identical slow dolly in both takes",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous take; the attached image is the exact first frame.",
+     "CAMERA: the camera dollies very slowly straight forward at chest height, perfectly smooth and level, constant speed.",
+     "Nothing in the room moves or changes; FORBIDDEN: cuts, pans, tilts, shake, people, new objects.",
+     "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0,
+     "min_free_margin": 0
+    },
+    "source": "kling_plates/ba_before.mp4 + ba_after.mp4 (Kling 3.0 image_to_video from a text_to_image frame + its image_to_image 'before' edit)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py BEFORE-AFTER-SPLIT --spec <spec.json> --render",
+   "example": "examples/before-after-split",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/before-after-split.mp4",
+   "renders": [
+    {
+     "label": "Sample · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_BEFORE-AFTER-SPLIT.mp4"
+    }
+   ]
+  },
+  {
+   "n": 58,
+   "id": "LOGO-SHINE-REVEAL",
+   "family": "Tech & UI",
+   "one": "Premium logo sting: the mark draws on then fills silver, the wordmark opens from a light slit, a specular shine and star glint cross it with the plate's light.",
+   "tags": [
+    "tech",
+    "luxury",
+    "corporate",
+    "product",
+    "hebrew"
+   ],
+   "fonts": "Michroma wordmark · Secular One tagline · JetBrains Mono",
+   "palette": [
+    "#e9edf2",
+    "#6d7582",
+    "#9fd3ff"
+   ],
+   "sample": "Kling · brushed metal · 10 s",
+   "kling": true,
+   "prompt": "Titles: LOGO-SHINE-REVEAL - logomark strokes draw then fill with brushed silver, wordmark opens from a light slit, specular shine + star glint in sync with the plate's light sweep, tagline settles, slow push-in.",
+   "shoot_it_like_this": "One take, no cuts · surface fills the frame; the centre clear and even · no free space needed",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     5,
+     12
+    ],
+    "aspect": "16:9",
+    "subject": "a dark premium surface (brushed metal, stone, fabric) with one moving light",
+    "framing": "surface fills the frame; the centre clear and even",
+    "negative_space": {
+     "side": "none",
+     "min_frac": 0
+    },
+    "camera": "locked, imperceptible push-in",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "SUBJECT: a dark brushed-metal surface; a single soft light sweep glides slowly left to right, then settles into a soft glow.",
+     "CAMERA: locked-off with an imperceptible slow push-in, macro. FORBIDDEN: cuts, shake. Abstract surface only, no objects, no engraving.",
+     "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0,
+     "min_free_margin": 0
+    },
+    "source": "kling_plates/logo_metal.mp4 (Kling 3.0, 10 s)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py LOGO-SHINE-REVEAL --spec <spec.json> --render",
+   "example": "examples/logo-shine-reveal",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/logo-shine-reveal.mp4",
+   "renders": [
+    {
+     "label": "Sample · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_LOGO-SHINE-REVEAL.mp4"
+    }
+   ]
+  },
+  {
+   "n": 59,
+   "id": "LYRIC-KINETIC-3D",
+   "family": "Social & YouTube",
+   "one": "Music-video kinetic lyrics in 3D: words fly in from depth on their sung syllables, key words behind the performer, parallax planes, magenta glow.",
+   "tags": [
+    "music",
+    "youtube",
+    "fashion",
+    "sport"
+   ],
+   "fonts": "Anton · Cormorant Garamond italic (Hebrew: Karantina · Suez One)",
+   "palette": [
+    "#ffffff",
+    "#ff3fb4",
+    "#1a1030"
+   ],
+   "sample": "Kling · singer with native vocal · 10 s",
+   "kling": true,
+   "prompt": "Titles: LYRIC-KINETIC-3D - words fly in from depth on the sung syllables, big condensed key words + small italic connectives, chosen words behind the performer (matte), counter-rotating planes, glow on the hook word.",
+   "shoot_it_like_this": "One take, no cuts · medium shot, performer centred, dark space above and on both sides · 18% free both sides · subject matte",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     6,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "one performer singing (native vocal on the plate or the song as a ref), dark haze stage",
+    "framing": "medium shot, performer centred, dark space above and on both sides",
+    "negative_space": {
+     "side": "both",
+     "min_frac": 0.18
+    },
+    "camera": "very slow orbit",
+    "separation": true,
+    "track": [
+     "performer body",
+     "face"
+    ],
+    "beats": true,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "COMPOSITION: medium shot, the singer centred, large dark negative space with haze on both sides and above him.",
+     "CAMERA: very slow orbit, 50mm, shallow depth of field. FORBIDDEN: cuts, shake. Exactly one person.",
+     "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.95,
+     "min_free_margin": 0.15
+    },
+    "source": "kling_plates/singer.mp4 (Kling 3.0, 10 s, native singing)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py LYRIC-KINETIC-3D --spec <spec.json> --render",
+   "example": "examples/lyric-kinetic-3d",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/lyric-kinetic-3d.mp4",
+   "renders": [
+    {
+     "label": "Sample · English",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_LYRIC-KINETIC-3D.mp4"
+    }
+   ]
+  },
+  {
+   "n": 60,
+   "id": "TIMELINE-HISTORY",
+   "family": "Editorial & doc",
+   "one": "History timeline: a ruled timeline with a travelling playhead, years count up as nodes pop, captions rise, sepia archival grade warms into colour at today.",
+   "tags": [
+    "travel",
+    "real estate",
+    "corporate",
+    "hebrew",
+    "news"
+   ],
+   "fonts": "Suez One · Secular One (Latin: DM Serif Display · Manrope)",
+   "palette": [
+    "#f2c46d",
+    "#ffffff",
+    "#1a140c"
+   ],
+   "sample": "Kling · aerial port · 10 s",
+   "kling": true,
+   "prompt": "Titles: TIMELINE-HISTORY - ruled timeline with minor ticks, travelling playhead, nodes pop and captions rise, big year odometer, sepia archival grade warming into colour at the present.",
+   "shoot_it_like_this": "One take, no cuts · the lower third calm enough for a timeline band; one open side for the big year · 30% free left",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     8,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "a place or product with a history (old city, factory, building)",
+    "framing": "the lower third calm enough for a timeline band; one open side for the big year",
+    "negative_space": {
+     "side": "left",
+     "min_frac": 0.3
+    },
+    "camera": "slow steady glide",
+    "separation": false,
+    "track": [],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "COMPOSITION: the subject in the right half; the lower third calm (water, ground, sky) for a timeline.",
+     "CAMERA: smooth slow glide, level. FORBIDDEN: cuts, shake.",
+     "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0,
+     "min_free_margin": 0.25
+    },
+    "source": "kling_plates/aerial_doc.mp4 (Kling 3.0, 10 s)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py TIMELINE-HISTORY --spec <spec.json> --render",
+   "example": "examples/timeline-history",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/timeline-history.mp4",
+   "renders": [
+    {
+     "label": "Sample · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_TIMELINE-HISTORY.mp4"
+    }
+   ]
+  },
+  {
+   "n": 61,
+   "id": "LISTING-SPECS",
+   "family": "Editorial & doc",
+   "one": "Real-estate listing: status pill + title + address, tracked pins on the house, a glass spec bar with icons and count-ups, the asking price counting up.",
+   "tags": [
+    "real estate",
+    "hebrew",
+    "luxury"
+   ],
+   "fonts": "Suez One · Secular One (Latin: DM Serif Display · Manrope)",
+   "palette": [
+    "#e3b35d",
+    "#ffffff",
+    "#0c0e12"
+   ],
+   "sample": "Kling · villa dolly · 10 s",
+   "kling": true,
+   "prompt": "Titles: LISTING-SPECS - status pill, property title and address, tracked pins with labels on the house, glass spec bar with line icons and count-up numbers, asking price counting up.",
+   "shoot_it_like_this": "One take, no cuts · the house centre-right; sky across the top quarter; calm ground across the bottom quarter · 30% free left",
+   "plate_contract": {
+    "take": "one-take",
+    "max_cuts": 0,
+    "duration_s": [
+     8,
+     20
+    ],
+    "aspect": "16:9",
+    "subject": "a property exterior (or interior) approached slowly",
+    "framing": "the house centre-right; sky across the top quarter; calm ground across the bottom quarter",
+    "negative_space": {
+     "side": "left",
+     "min_frac": 0.3
+    },
+    "camera": "slow gimbal dolly, level",
+    "separation": false,
+    "track": [
+     "the house",
+     "one feature (pool, terrace, view)"
+    ],
+    "beats": false,
+    "text_in_frame": false,
+    "seedance_lines": [
+     "FORMAT: One continuous shot, no cuts.",
+     "COMPOSITION: the house sits centre-right; clear sky across the top quarter and calm ground or water across the bottom quarter.",
+     "CAMERA: smooth gimbal dolly at chest height, constant slow speed, level. FORBIDDEN: cuts, shake, drones, fast moves.",
+     "POSITIVE LOCKS: no text, no logos, no signage, no UI, no captions at any time."
+    ],
+    "gate": {
+     "max_cuts": 0,
+     "min_track_coverage": 0.9,
+     "min_free_margin": 0.25
+    },
+    "source": "kling_plates/property_villa.mp4 (Kling 3.0, 10 s)"
+   },
+   "runner": "run_style",
+   "build": "python scripts/run_style.py LISTING-SPECS --spec <spec.json> --render",
+   "example": "examples/listing-specs",
+   "preview": "https://ai-video-titles-guyaga.netlify.app/previews/listing-specs.mp4",
+   "renders": [
+    {
+     "label": "Sample · Hebrew",
+     "url": "https://ai-video-titles-guyaga.netlify.app/full/N20_LISTING-SPECS.mp4"
+    }
+   ]
+  }
+ ]
+}

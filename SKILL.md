@@ -1,6 +1,6 @@
 ---
 name: ai-video-titles
-description: After-Effects-style titles, HUD and motion graphics ON TOP of AI-generated video (Seedance 2.5 recommended) - stomp/social titles that ride a tracked subject, text behind the subject, Iron-Man-style HUDs, broadcast stat counters, Hebrew kinetic and tape titles, karaoke captions, flash-sale countdown CTAs, and fully bespoke crafted worlds (thermal camera, jeweller's loupe, architect's drawing, magazine spread, kitchen ticket). Frame-by-frame tracking (Gemini + optical flow), beat/voice sync, SFX + music + AI voice, HyperFrames render, Gemini QA. Ships with a visual style catalog of 41 styles (incl. famous AE looks: viral captions, decode, glitch, neon, keynote, split-flap, write-on, broadcast pack, film title cards, particle text, flip montage, text on path), each with an ID, a copy-paste prompt and a plate contract (references/plates.json: how the video must be shot for that style). Post only: a clip goes in; to generate the video too, use ai-ad-studio. Use when the user wants titles, callouts, HUD, lower-thirds, captions, kinetic typography, motion graphics or "AE-style" text over an AI video / Seedance clip, a shoppable or product-callout video, a Hebrew social ad with big titles, or asks which title style to use.
+description: After-Effects-style titles, HUD and motion graphics ON TOP of AI-generated video (Seedance 2.5 recommended) - stomp/social titles that ride a tracked subject, text behind the subject, Iron-Man-style HUDs, broadcast stat counters, Hebrew kinetic and tape titles, karaoke captions, flash-sale countdown CTAs, and fully bespoke crafted worlds (thermal camera, jeweller's loupe, architect's drawing, magazine spread, kitchen ticket). Frame-by-frame tracking (Gemini + optical flow), beat/voice sync, SFX + music + AI voice, HyperFrames render, Gemini QA. Ships with a 61-style catalog as a database (references/catalog.json + scripts/catalog.py + the hosted hub): famous AE looks (viral captions, decode, glitch, neon, keynote, split-flap, write-on, broadcast, film title cards, particle text, flip montage, text on path) and industry staples (lower thirds, breaking news, product callouts, charts, KPI counters, app pop-ups, chat bubbles, subscribe CTA, end screen, podcast tags, chapters, testimonial quotes, doc stamps, Swiss grid, SaaS glass, before/after, logo reveal, lyric video, timeline, listing specs), each with a number, samples, a copy-paste prompt and a plate contract. Starts by asking 'Do you want to see the catalog?'. Post only: a clip goes in; to generate the video too, use ai-ad-studio. Use when the user wants titles, callouts, HUD, lower-thirds, captions, kinetic typography, motion graphics or "AE-style" text over an AI video / Seedance clip, a shoppable or product-callout video, a Hebrew social ad with big titles, or asks which title style to use.
 ---
 
 # AI Video Titles
@@ -10,10 +10,11 @@ Code-driven motion graphics over AI footage. The video is generated **clean**; e
 
 ```
 SKILL=~/.claude/skills/ai-video-titles
-catalog      https://ai-video-titles-guyaga.netlify.app   (hosted: send this link when the user picks a style)
+catalog      https://ai-video-titles-guyaga.netlify.app   (hosted hub: 61 numbered cards, send this link)
+catalog db   $SKILL/references/catalog.json   + scripts/catalog.py  list | show <n|ID> | brief <n|ID> "context" | build
              $SKILL/catalog/index.html        the same page locally (serve it, e.g. npx http-server)
 style specs  $SKILL/references/styles.md      what each style is, fonts, palette, motion, how to build it
-kit          $SKILL/scripts/                  run_style (7 parametrised styles), run_ad (adkit + bespoke specs), vtrack, track,
+kit          $SKILL/scripts/                  run_style (41 parametrised styles), run_ad (adkit + bespoke specs), vtrack, track,
                                               finalize, qa, music, vo_take2, word_times, doctor
 examples     $SKILL/examples/                 one spec per run_style style + 3 adkit/bespoke specs + demo/ (8 s, no keys needed)
 recipes      $SKILL/references/recipes/       the original hand-built compositions (reference source for bespoke work)
@@ -40,24 +41,38 @@ no Seedance spend: `cd $SKILL/examples/demo && python ../../scripts/run_style.py
 - A plate that breaks its style's contract (a cut in a one-take style, no room for the titles, text in frame) is sent
   back for regeneration, not fixed in post.
 
-## STEP 0 - Pick the style with the user (always first)
+## STEP 0 - The catalog conversation (always first)
 
-1. Open or describe the catalog. Ask with **AskUserQuestion**: 2-4 style IDs that fit the subject, the first marked
-   "(Recommended)", each with its one-line description. Users can also paste a catalog prompt line
-   (`Titles: STOMP-ESCORT - ...`). If a clip already exists, only offer styles whose plate contract it can meet.
-   Map subject -> family:
-   - fashion / drops / e-commerce -> STOMP-ESCORT, STOMP-BEHIND, GLASS-CALLOUT, COUNTDOWN-CTA
-   - Hebrew social ad -> KINETIC-HE, TAPE-HE, KINETIC-KARAOKE, FLASH-CARD
-   - sport / measurable action -> SPEED-STAT; epic brand film -> PRESIDENTIAL-SERIF
-   - sci-fi / tech / AI assistant -> HUD-HELMET, SCIFI-TARGETING; automotive -> ROAD-HUD; emergency -> THERMAL-RESCUE
-   - product engineering -> SPEC-SCAN; luxury -> HALLMARK-LUXE; real estate -> ARCH-DRAWING, MAP-FLYOVER
-   - interiors -> MAGAZINE-EDITORIAL; food -> KITCHEN-TICKET; travel / wearables -> LENS-POSTCARD; venues -> CAMPUS-AR
-2. **Decide the piece's own visual language.** The catalog is a starting point, not a house style. The lesson that
-   cost a full rebuild: running eight different ads through one kit made them all look the same. For every piece ask
-   "what does this subject's world print, measure, stamp or display?" (a kitchen prints tickets, a jeweller uses a
-   loupe, an architect draws on vellum) and build that. One accent colour. Few, big, meaningful titles.
-3. Decide **the ending first** (the last title / CTA) and the **device** (the one structural idea). For multi-ad
-   batches write an `EDIT-DOCTRINE.md` with the edit-director skill (example in `references/recipes/`).
+The catalog is a database of 61 styles, each with its number, look, use cases, fonts, sample videos, shooting
+requirements and how to build it: `references/catalog.json` (the same data as the hub). Query it with
+`scripts/catalog.py`; never guess a style from memory.
+
+1. **Offer the catalog.** When the user asks for titles, callouts, a HUD, captions or motion graphics and has not
+   named a style, ask with AskUserQuestion: "Do you want to see the catalog?"
+   - **Yes, show me** (Recommended): send https://ai-video-titles-guyaga.netlify.app and say they can answer with a
+     card number ("#43") or an ID ("BREAKING-NEWS"), or paste the card's "Copy" prompt line.
+   - **Suggest for me**: run `python scripts/catalog.py list --tag <use case>` (or `--q <word>`), pick 2-4 that fit
+     the subject and language, and offer them with one line each and their preview links, the best first,
+     "(Recommended)". If a clip already exists, offer only styles whose shooting requirements it meets (`show` prints them).
+   - **I know what I want**: take the number, ID or prompt line they give.
+2. **Show the choice back.** Run `python scripts/catalog.py show <n|ID>` and confirm the pick in two lines:
+   what it looks like and the sample to watch.
+3. **Write the build brief = style + their context.** Run
+   `python scripts/catalog.py brief <n|ID> "<the user's project context>"`.
+   - The context is everything relevant from the conversation: product or subject, brand name and colours, language
+     (Hebrew → Suez One / Karantina / Secular One only), the real words, names and prices, length and aspect, music or
+     VO, the ending/CTA, and the clip if one exists.
+   - Ask only for what is missing and matters, in one question.
+   - The brief carries the style's look, fonts and palette (brand colours win), its shooting requirements, the example
+     to adapt and the exact build command. Work from it through STEP 1-5.
+4. **No clip yet?** Hand the brief to ai-ad-studio. It reads the style's shooting requirements and generates a plate that fits.
+5. **Make it the project's own.** A catalog style is the starting grammar, not a template to fill. Ask what this
+   subject's world prints, measures, stamps or displays, and let that shape the details. One accent colour, few big
+   meaningful titles, and decide the ending (the last title or CTA) first. The lesson that cost a full rebuild:
+   running eight ads through one look made them all the same.
+6. **A style the user invents** (not in the catalog): build it bespoke. When it ships, add its card to the hub,
+   its entry to styles.md and plates.json, then run `python scripts/catalog.py build` so the database grows with it.
+   Numbers are stable: new styles get the next number.
 
 ## STEP 1 - Check the plate against the style's contract
 
