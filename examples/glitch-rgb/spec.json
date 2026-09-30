@@ -1,0 +1,67 @@
+{
+ "_comment": "GLITCH-RGB, English, Oswald 700 + IBM Plex Mono, on the 10 s NORTHLINE underpass walk (fictional streetwear label). Item words ride the tracked garments; the plate tears on each hit. Beat grid measured on the music with librosa.",
+ "name": "ae-glitch-rgb",
+ "clip": "clips/northline_720p.mp4",
+ "track": "tracks/northline_vtrack.json",
+ "beat": {
+  "bpm": 117.5,
+  "offset": 0.05
+ },
+ "titles": [
+  {
+   "text": "NORTHLINE",
+   "sub": "WINTER DROP 01",
+   "beat": 1,
+   "until": 5,
+   "x": 960,
+   "y": 300,
+   "size": 230
+  },
+  {
+   "text": "PUFFER",
+   "sub": "SIGNAL PUFFER · $340",
+   "beat": 6,
+   "until": 9,
+   "follow": "jacket",
+   "anchor": "r",
+   "dx": 70,
+   "align": "left",
+   "size": 150
+  },
+  {
+   "text": "CARGO",
+   "sub": "GRID CARGO PANT · $180",
+   "beat": 10,
+   "until": 13,
+   "follow": "cargo",
+   "anchor": "l",
+   "dx": -70,
+   "align": "right",
+   "size": 150
+  },
+  {
+   "text": "RUNNER",
+   "sub": "LOW RUNNER · $210",
+   "beat": 14,
+   "until": 16,
+   "follow": "sneakers",
+   "anchor": "r",
+   "dx": 70,
+   "dy": -40,
+   "align": "left",
+   "size": 150
+  },
+  {
+   "text": "NORTHLINE",
+   "sub": "DROP 01 · OUT NOW",
+   "beat": 17,
+   "x": 90,
+   "y": 430,
+   "size": 190,
+   "align": "left"
+  }
+ ],
+ "music": "shared/sfx/E6_sneaker_music.mp3",
+ "music_vol": 0.65,
+ "plate_vol": 0.35
+}

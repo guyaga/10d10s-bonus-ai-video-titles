@@ -1,0 +1,77 @@
+{
+ "_comment": "FILM-TITLE-CARD, English (Jost 500 + Jost 300 for the Anderson card, Oswald 700 for the Saul Bass card), on the 24 s SPARTA battle plate (cuts 2.9 / 8.2 / 11.9 / 15.75 / 19.5 s). Credits are the real making-of credits.",
+ "name": "ae-film-title-card",
+ "clip": "clips/E2_spartan_720p.mp4",
+ "cards": [
+  {
+   "mode": "anderson",
+   "t": 3.3,
+   "until": 7.7,
+   "kicker": "CHAPTER ONE",
+   "title": "The Machine",
+   "sub": "in which a warrior refuses to kneel",
+   "y": 860
+  },
+  {
+   "mode": "bass",
+   "t": 8.35,
+   "until": 11.7,
+   "title": "SPARTA",
+   "sub": "versus the machine",
+   "y": 560,
+   "palette": [
+    "#d7261e",
+    "#111111",
+    "#f3e6cf"
+   ]
+  }
+ ],
+ "credits": {
+  "t": 19.7,
+  "until": 24.0,
+  "x": 560,
+  "size": 42,
+  "scrim": 0.62,
+  "lines": [
+   [
+    "A FILM BY",
+    "GUYAGA"
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "WARRIOR",
+    "SEEDANCE 2.5"
+   ],
+   [
+    "MACHINE",
+    "SEEDANCE 2.5"
+   ],
+   [
+    "TITLES",
+    "AI VIDEO TITLES"
+   ],
+   [
+    "MUSIC",
+    "ELEVENLABS"
+   ],
+   [
+    "TRACKING",
+    "GEMINI + OPTICAL FLOW"
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "SPARTA",
+    "THE AI CLUB"
+   ]
+  ]
+ },
+ "music": "shared/sfx/E2_spartan_music.mp3",
+ "music_vol": 0.6,
+ "plate_vol": 0.45
+}

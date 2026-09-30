@@ -978,5 +978,387 @@
    "min_free_margin": 0.15
   },
   "source": "E9_glasses_720p (18 s)"
+ },
+ "VIRAL-CAPTIONS": {
+  "take": "cuts-ok",
+  "max_cuts": 6,
+  "duration_s": [
+   8,
+   30
+  ],
+  "aspect": "16:9",
+  "subject": "anything carried by a voiceover; the subject sits high enough to leave the lower band free",
+  "framing": "subject in the upper two thirds",
+  "negative_space": {
+   "side": "bottom",
+   "min_frac": 0.25
+  },
+  "camera": "any smooth move; cuts on the voice's phrases",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, or hard cuts only at the listed timecodes.",
+   "COMPOSITION: Keep the bottom quarter of every shot low-detail (floor, table, dark studio): the captions sit there.",
+   "AUDIO: no voices, no music (the voiceover is added in post). No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 6,
+   "min_track_coverage": 0,
+   "min_free_margin": 0.2
+  },
+  "source": "E6_sneaker_720p (15 s) + Hebrew VO word timings"
+ },
+ "DECODE-TYPE": {
+  "take": "cuts-ok",
+  "max_cuts": 4,
+  "duration_s": [
+   6,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "a tech, sci-fi or data subject (a face in a helmet, a screen, a machine); lines decode beside it",
+  "framing": "subject centred or off-centre, calm space on one side for the status lines",
+  "negative_space": {
+   "side": "right",
+   "min_frac": 0.22
+  },
+  "camera": "locked or very slow push",
+  "separation": false,
+  "track": [
+   "face or subject (optional, to pin lines to it)"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts (or cuts only at the listed timecodes).",
+   "CAMERA: Locked-off with a very slow push-in. FORBIDDEN: shake, whip-pans.",
+   "The right quarter of the frame stays dark and calm (background bokeh, helmet interior). No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 4,
+   "min_track_coverage": 0,
+   "min_free_margin": 0.2
+  },
+  "source": "B4_helmet_long_720p (first 12 s)"
+ },
+ "GLITCH-RGB": {
+  "take": "cuts-ok",
+  "max_cuts": 6,
+  "duration_s": [
+   6,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "a bold subject (streetwear, music, tech) with graphic negative space around it",
+  "framing": "subject centred, walking or posing; plain walls or sky either side",
+  "negative_space": {
+   "side": "both",
+   "min_frac": 0.25
+  },
+  "camera": "locked or slow push; hits come from the music",
+  "separation": false,
+  "track": [
+   "items/garments (optional, for pinned words)"
+  ],
+  "beats": true,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot preferred; hard cuts only on the beat if cutting.",
+   "COMPOSITION: The subject stays in the centre third; the left and right thirds are plain (concrete, sky, wall).",
+   "CAMERA: Locked-off or very slow push-in. FORBIDDEN: shake (the glitch adds all the energy). No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 6,
+   "min_track_coverage": 0,
+   "min_free_margin": 0.22
+  },
+  "source": "NORTHLINE plate (10 s underpass walk)"
+ },
+ "NEON-SIGN": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   6,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "a night location with blank walls or surfaces to mount the signs and a wet or glossy floor to reflect them",
+  "framing": "symmetrical corridor or street, subject in the centre third, blank walls left and right",
+  "negative_space": {
+   "side": "both",
+   "min_frac": 0.25
+  },
+  "camera": "locked-off or very slow push",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "LOCATION: night; bare, evenly lit walls on the left and right; a wet floor with soft reflections.",
+   "CAMERA: Locked-off or extremely slow push-in, vanishing point near the centre. FORBIDDEN: cuts, shake.",
+   "POSITIVE LOCKS: no signs, no lettering, no screens on the walls. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0,
+   "min_free_margin": 0.22
+  },
+  "source": "NORTHLINE plate (10 s underpass walk)"
+ },
+ "KEYNOTE-REVEAL": {
+  "take": "cuts-ok",
+  "max_cuts": 6,
+  "duration_s": [
+   8,
+   24
+  ],
+  "aspect": "16:9",
+  "subject": "one idea per shot, each with a calm, low-detail centre where the number lands",
+  "framing": "subject off-centre or small; the centre third calm (sky, windscreen, dark interior)",
+  "negative_space": {
+   "side": "none",
+   "min_frac": 0
+  },
+  "camera": "slow, smooth, steady",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: Timestamped cut-blocks, one stat per shot. HARD CUTS only at the listed timecodes.",
+   "COMPOSITION: Keep the centre of each shot low-detail and not too bright (a big number sits there).",
+   "CAMERA: slow and smooth. FORBIDDEN: shake, whip-pans. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 6,
+   "min_track_coverage": 0,
+   "min_free_margin": 0
+  },
+  "source": "E3_car_720p (18 s, 4 cuts)"
+ },
+ "SPLIT-FLAP": {
+  "take": "cuts-ok",
+  "max_cuts": 4,
+  "duration_s": [
+   8,
+   24
+  ],
+  "aspect": "16:9",
+  "subject": "travel, transport, hospitality or any place with a departure/arrival story",
+  "framing": "subject in the lower two thirds; the top band free for the board",
+  "negative_space": {
+   "side": "top",
+   "min_frac": 0.3
+  },
+  "camera": "gentle walk or glide",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot preferred.",
+   "COMPOSITION: The upper third of the frame is sky, facade or calm background: a departure board sits there.",
+   "CAMERA: stabilised, gentle. FORBIDDEN: shake, whip-pans. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 4,
+   "min_track_coverage": 0,
+   "min_free_margin": 0.25
+  },
+  "source": "E9_glasses_720p (18 s POV)"
+ },
+ "SIGNATURE-WRITE-ON": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   8,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "a subject with clear features to circle and point at (a building's terrace, a product's parts, a room's pieces)",
+  "framing": "features readable and not moving too fast; open sky or wall on one side for the handwriting",
+  "negative_space": {
+   "side": "left",
+   "min_frac": 0.3
+  },
+  "camera": "smooth drone climb, slow glide or locked",
+  "separation": false,
+  "track": [
+   "each annotated feature"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "CAMERA: smooth, constant speed. FORBIDDEN: cuts, shake, spins.",
+   "COMPOSITION: The left third keeps open sky or a plain wall for handwritten notes. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 0.8,
+   "min_free_margin": 0.25
+  },
+  "source": "E8_tower_720p (18 s drone climb)"
+ },
+ "BROADCAST-PACK": {
+  "take": "cut-list",
+  "max_cuts": 4,
+  "duration_s": [
+   10,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "a sports moment in shots: player intro, the action (slow-motion replay), the result",
+  "framing": "player readable in the intro and result shots; top corners and the bottom band free",
+  "negative_space": {
+   "side": "top",
+   "min_frac": 0.15
+  },
+  "camera": "broadcast-style: tracking, slow motion on the replay",
+  "separation": false,
+  "track": [
+   "player"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: Timestamped cut-blocks. HARD CUTS exactly at the listed timecodes and nowhere else.",
+   "COMPOSITION: Keep the top-left corner and the bottom tenth free of key action (score bug and ticker).",
+   "POSITIVE LOCKS: plain kits with no logos, badges, sponsor text or numbers; no scoreboards or screens in frame. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 4,
+   "min_track_coverage": 0.4,
+   "min_free_margin": 0.12
+  },
+  "source": "E1_soccer_720p (15 s, 3 planned cuts)"
+ },
+ "FILM-TITLE-CARD": {
+  "take": "cut-list",
+  "max_cuts": 6,
+  "duration_s": [
+   12,
+   30
+  ],
+  "aspect": "16:9",
+  "subject": "a cinematic story in shots; at least one wide shot with a calm lower third and a final hero shot",
+  "framing": "wide establishing shots with dust, sky or floor space; hero off-centre in the last shot",
+  "negative_space": {
+   "side": "bottom",
+   "min_frac": 0.25
+  },
+  "camera": "cinematic, grounded; no whips",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: Timestamped cut-blocks. HARD CUTS exactly at the listed timecodes and nowhere else.",
+   "COMPOSITION: The wide shots keep the lower third calm (ground, haze); the final shot leaves the left third open for credits.",
+   "CAMERA: cinematic, grounded. FORBIDDEN: whip-pans, shaky cam. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 6,
+   "min_track_coverage": 0,
+   "min_free_margin": 0.2
+  },
+  "source": "E2_spartan_720p (24 s, 5 cuts)"
+ },
+ "PARTICLE-TEXT": {
+  "take": "cuts-ok",
+  "max_cuts": 5,
+  "duration_s": [
+   8,
+   20
+  ],
+  "aspect": "16:9",
+  "subject": "footage with natural particles to borrow (fire and embers, salt or sand, steam or smoke) and a dark area for the words",
+  "framing": "subject low or to one side; dark, low-detail space above it",
+  "negative_space": {
+   "side": "top",
+   "min_frac": 0.3
+  },
+  "camera": "slow push or locked; cuts on the recipe steps",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, or hard cuts only at the listed timecodes.",
+   "COMPOSITION: The upper third of each shot stays dark and uncluttered (the words form there).",
+   "CAMERA: slow. FORBIDDEN: shake, whip-pans. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 5,
+   "min_track_coverage": 0,
+   "min_free_margin": 0.25
+  },
+  "source": "E10_chef_720p (15 s, 4 cuts)"
+ },
+ "FLIP-MONTAGE-LOGO": {
+  "take": "cuts-ok",
+  "max_cuts": 6,
+  "duration_s": [
+   6,
+   30
+  ],
+  "aspect": "16:9",
+  "subject": "any footage with varied moments to flip through; the montage takes the last ~3.5 s",
+  "framing": "variety across the shot (close-ups, wides, details) makes the flip read",
+  "negative_space": {
+   "side": "none",
+   "min_frac": 0
+  },
+  "camera": "any",
+  "separation": false,
+  "track": [],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: Any; plan the last 3-4 seconds as the logo montage (the plate underneath is replaced).",
+   "COMPOSITION: Vary framing across the take (wide, medium, detail) so the flipped pages differ. No text, no logos, no signage, no UI, no graphics at any time."
+  ],
+  "gate": {
+   "max_cuts": 6,
+   "min_track_coverage": 0,
+   "min_free_margin": 0
+  },
+  "source": "NORTHLINE plate (10 s; 18 frames of it flip)"
+ },
+ "TEXT-ON-PATH": {
+  "take": "one-take",
+  "max_cuts": 0,
+  "duration_s": [
+   8,
+   15
+  ],
+  "aspect": "16:9",
+  "subject": "a high aerial with a visible road, river or trail that is tracked point by point",
+  "framing": "the route clearly visible and roughly flat to camera, not hidden behind buildings",
+  "negative_space": {
+   "side": "none",
+   "min_frac": 0
+  },
+  "camera": "smooth drone, constant slow push and slight descent; no rotation",
+  "separation": false,
+  "track": [
+   "route points (planar, track.py)"
+  ],
+  "beats": false,
+  "text_in_frame": false,
+  "seedance_lines": [
+   "FORMAT: One continuous shot, no cuts.",
+   "CAMERA: Smooth stabilized drone, constant slow speed, gentle forward push and slight descent only. FORBIDDEN: whip-pans, rotation, roll, cuts.",
+   "POSITIVE LOCKS: the road/route stays visible for the whole shot. No text, no labels, no map graphics, no UI, no logos at any time."
+  ],
+  "gate": {
+   "max_cuts": 0,
+   "min_track_coverage": 1.0,
+   "min_free_margin": 0
+  },
+  "source": "A1_seedance_720p (10 s aerial)"
  }
 }

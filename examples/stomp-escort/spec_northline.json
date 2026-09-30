@@ -1,0 +1,56 @@
+{
+ "_comment": "STOMP-ESCORT on the 10 s NORTHLINE walk (fictional label): the model starts far away, so the price sticker keeps its own scale floor (sticker_min_scale .62) and stays legible while the word shrinks with her.",
+ "name": "ae-stomp-escort-northline",
+ "clip": "clips/northline_720p.mp4",
+ "track": "tracks/northline_vtrack.json",
+ "follow": "model",
+ "beat": {
+  "bpm": 117.5,
+  "offset": 0.05
+ },
+ "brand": {
+  "name": "NORTHLINE",
+  "tag": "DROP 01",
+  "beat": 1
+ },
+ "items": [
+  {
+   "key": "jacket",
+   "word": "PUFFER",
+   "name": "Signal Puffer",
+   "price": 340,
+   "side": "L",
+   "beat": 3
+  },
+  {
+   "key": "cargo",
+   "word": "CARGO",
+   "name": "Grid Cargo Pant",
+   "price": 180,
+   "side": "R",
+   "beat": 7
+  },
+  {
+   "key": "sneakers",
+   "word": "RUNNER",
+   "name": "Low Runner",
+   "price": 210,
+   "side": "L",
+   "beat": 11
+  }
+ ],
+ "finale": {
+  "title": "THE LOOK",
+  "beat": 15,
+  "label": "three pieces"
+ },
+ "sticker_min_scale": 0.62,
+ "colors": {
+  "paper": "#f6f1e8",
+  "ink": "#16130f",
+  "accent": "#ff5a1f"
+ },
+ "music": "shared/sfx/E6_sneaker_music.mp3",
+ "music_vol": 0.6,
+ "plate_vol": 0.35
+}

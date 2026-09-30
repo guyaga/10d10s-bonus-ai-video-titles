@@ -1,0 +1,62 @@
+{
+ "_comment": "DECODE-TYPE, Hebrew, Secular One, on a 12 s helmet close-up. Status lines pinned beside the tracked face, the headline decodes centre-low.",
+ "name": "ae-decode-type",
+ "clip": "clips/helmet12_720p.mp4",
+ "track": "tracks/helmet12_vtrack.json",
+ "language": "he",
+ "pair": "secular",
+ "seed": 7,
+ "lines": [
+  {
+   "text": "סריקת רשתית",
+   "t": 0.6,
+   "until": 11.6,
+   "follow": "face",
+   "anchor": "r",
+   "dx": 70,
+   "dy": -150,
+   "size": 46,
+   "weight": "body",
+   "panel": true,
+   "align": "left"
+  },
+  {
+   "text": "זיהוי: 98.6% התאמה",
+   "t": 1.8,
+   "until": 11.6,
+   "follow": "face",
+   "anchor": "r",
+   "dx": 70,
+   "dy": -80,
+   "size": 46,
+   "weight": "body",
+   "panel": true,
+   "align": "left"
+  },
+  {
+   "text": "סיווג 4 · מבצע אורה",
+   "t": 3.0,
+   "until": 11.6,
+   "follow": "face",
+   "anchor": "r",
+   "dx": 70,
+   "dy": -10,
+   "size": 46,
+   "weight": "body",
+   "panel": true,
+   "align": "left"
+  },
+  {
+   "text": "גישה מאושרת",
+   "t": 5.2,
+   "until": 11.6,
+   "x": 960,
+   "y": 900,
+   "size": 150,
+   "weight": "display",
+   "dur": 1.6,
+   "align": "center"
+  }
+ ],
+ "plate_vol": 0.8
+}

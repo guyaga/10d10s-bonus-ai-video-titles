@@ -34,8 +34,17 @@ FAM = {
                           + [(f"cormorant-garamond-latin-{w}-italic", w, "italic") for w in (500, 600)],
     "Manrope": [(f"manrope-latin-{w}-normal", w, "normal") for w in (400, 500, 700)],
     "Assistant": [(f"assistant-{sub}-{w}", w, "normal") for w in (300, 400, 600, 700, 800) for sub in ("hebrew", "latin")],
-    "Rubik": [(f"rubik-{sub}-{w}-normal", w, "normal") for w in (700, 800, 900) for sub in ("hebrew", "latin")],
-    "Karantina": [(f"karantina-{sub}-{w}-normal", w, "normal") for w in (400, 700) for sub in ("hebrew", "latin")],
+    "Rubik": [(f"rubik-{sub}-{w}-normal", w, "normal") for w in (300, 400, 500, 700, 800, 900) for sub in ("hebrew", "latin")],
+    "Heebo": [(f"heebo-{sub}-{w}-normal", w, "normal") for w in (200, 300, 400, 500, 600, 700, 800, 900) for sub in ("hebrew", "latin")],
+    "Amatic SC": [(f"amatic-sc-{sub}-{w}-normal", w, "normal") for w in (400, 700) for sub in ("hebrew", "latin")],
+    "Jost": [(f"jost-latin-{w}-normal", w, "normal") for w in (300, 500, 700)],
+    "Caveat": [(f"caveat-latin-{w}-normal", w, "normal") for w in (600, 700)],
+    "Tilt Neon": [("tilt-neon-latin-400-normal", 400, "normal")],
+    "Oswald": [(f"oswald-latin-{w}-normal", w, "normal") for w in (600, 700)],
+    "IBM Plex Mono": [("ibm-plex-mono-latin-500-normal", 500, "normal")],
+    "Karantina": [(f"karantina-{sub}-{w}-normal", w, "normal") for w in (300, 400, 700) for sub in ("hebrew", "latin")],
+    "Suez One": [(f"suez-one-{sub}-400-normal", 400, "normal") for sub in ("hebrew", "latin")],
+    "Secular One": [(f"secular-one-{sub}-400-normal", 400, "normal") for sub in ("hebrew", "latin")],
     "Bodoni Moda": [(f"bodoni-moda-latin-{w}", w, "normal") for w in (400, 500, 600, 700)] + [("bodoni-moda-latin-400-italic", 400, "italic")],
     "Archivo": [(f"archivo-latin-{w}", w, "normal") for w in (400, 500, 600, 700)],
     "JetBrains Mono": [(f"jetbrains-mono-latin-{w}-normal", w, "normal") for w in (500, 700)],
@@ -61,7 +70,7 @@ def font_faces(theme):
     for fam in fams:
         for stem, w, st in FAM[fam]:
             ur = (";unicode-range:U+0590-05FF,U+FB1D-FB4F,U+200C-2010,U+20AA,U+25CC" if "-hebrew-" in stem
-                  else ";unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2190-2199,U+2212,U+2215" if "-latin-" in stem and fam in ("Assistant", "Rubik", "Karantina") else "")
+                  else ";unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2190-2199,U+2212,U+2215" if "-latin-" in stem and any("-hebrew-" in x[0] for x in FAM[fam]) else "")
             css.append(f'@font-face{{font-family:"{fam}";font-weight:{w};font-style:{st};src:url(assets/fonts/{stem}.woff2) format("woff2"){ur}}}')
             files[f"fonts/{stem}.woff2"] = paths.fonts() / f"{stem}.woff2"
     return "".join(css), files

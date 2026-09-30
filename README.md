@@ -3,7 +3,7 @@
 **Style hub (live):** https://ai-video-titles-guyaga.netlify.app
 
 After-Effects-style titles, HUDs and motion graphics on top of AI-generated video (Seedance 2.5 recommended), built as
-code: frame-by-frame tracking, beat and voice sync, HyperFrames render, Gemini QA. 29 styles, each with a live
+code: frame-by-frame tracking, beat and voice sync, HyperFrames render, Gemini QA. 41 styles, each with a live
 preview on the hub, a style ID and a one-line prompt to paste into Claude Code.
 
 ## Install
@@ -48,6 +48,12 @@ python ../../scripts/run_style.py STOMP-ESCORT --spec spec.json --render
 ```
 Then change a name or a price in `spec.json` and render again. That is the whole loop: spec in, video out.
 
+## Hebrew
+
+Hebrew titles use Suez One (premium), Karantina (social stomp) and Secular One (captions, UI), bundled and paired
+(`"pair": "suez" | "karantina" | "secular" | "karantina-suez"`). RTL motion, mirrored wipes and number gluing are
+built in. Details: *Hebrew typography* in SKILL.md.
+
 ## Pick a style
 
 Browse the hub (https://ai-video-titles-guyaga.netlify.app), filter by use case, press **Copy** on a style and paste
@@ -58,7 +64,7 @@ the line into Claude Code. The same page runs locally:
 
 | Route | Styles | Command |
 |---|---|---|
-| `run_style.py` (parametrised JSON spec) | STOMP-ESCORT, COUNTDOWN-CTA, HUD-HELMET, SCIFI-TARGETING, MAP-FLYOVER, CAMPUS-AR, SPEED-STAT | `python scripts/run_style.py HUD-HELMET --spec spec.json [--render]` |
+| `run_style.py` (parametrised JSON spec) | STOMP-ESCORT, COUNTDOWN-CTA, HUD-HELMET, SCIFI-TARGETING, MAP-FLYOVER, CAMPUS-AR, SPEED-STAT, VIRAL-CAPTIONS, DECODE-TYPE, GLITCH-RGB, NEON-SIGN, KEYNOTE-REVEAL, SPLIT-FLAP, SIGNATURE-WRITE-ON, BROADCAST-PACK, FILM-TITLE-CARD, PARTICLE-TEXT, FLIP-MONTAGE-LOGO, TEXT-ON-PATH | `python scripts/run_style.py HUD-HELMET --spec spec.json [--render]` |
 | `run_ad.py` (adkit elements) | STOMP-BEHIND, GLASS-CALLOUT, KINETIC-HE, TAPE-HE, KINETIC-KARAOKE, FLASH-CARD, PRESIDENTIAL-SERIF | `python scripts/run_ad.py AD --spec spec.py [--render]` |
 | bespoke (run_ad + html/css/js hooks) | ROAD-HUD, THERMAL-RESCUE, SPEC-SCAN, HALLMARK-LUXE, ARCH-DRAWING, MAGAZINE-EDITORIAL, KITCHEN-TICKET, LENS-POSTCARD | start from `references/recipes/bespoke/` |
 

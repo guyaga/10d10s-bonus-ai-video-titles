@@ -1,0 +1,65 @@
+{
+ "_comment": "KEYNOTE-REVEAL, Hebrew, Suez One + Secular One, on an 18 s EV film with hard cuts at 5.0 / 8.4 / 12.0 / 14.7 s: one stat per shot. Fictional brand AURA EV.",
+ "name": "ae-keynote-reveal",
+ "clip": "clips/E3_car_720p.mp4",
+ "language": "he",
+ "pair": "suez",
+ "beats": [
+  {
+   "text": "3.2",
+   "count": [
+    0,
+    3.2
+   ],
+   "dec": 1,
+   "unit": "שניות",
+   "label": "מ-0 ל-100 קמ״ש",
+   "t": 0.8,
+   "until": 4.8,
+   "wipe": "up"
+  },
+  {
+   "text": "620",
+   "count": [
+    0,
+    620
+   ],
+   "unit": "ק״מ",
+   "label": "טווח בטעינה אחת",
+   "t": 5.3,
+   "until": 8.2,
+   "wipe": "start"
+  },
+  {
+   "text": "18",
+   "count": [
+    0,
+    18
+   ],
+   "unit": "דקות",
+   "label": "מ-10% ל-80% טעינה",
+   "t": 8.7,
+   "until": 11.8,
+   "wipe": "up"
+  },
+  {
+   "text": "360°",
+   "label": "רואה כל רוכב, בכל לילה",
+   "t": 12.3,
+   "until": 14.5,
+   "wipe": "center",
+   "size": 260
+  },
+  {
+   "text": "AURA",
+   "label": "רואה ראשונה.",
+   "t": 15.0,
+   "wipe": "center",
+   "size": 240,
+   "y": 900
+  }
+ ],
+ "music": "shared/sfx/E3_car_music.mp3",
+ "music_vol": 0.6,
+ "plate_vol": 0.25
+}

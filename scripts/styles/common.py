@@ -81,6 +81,17 @@ def project_dir(spec, style):
 
 
 def tracks(spec, base):
+    """The spec's track file(s). Styles that track nothing may omit "track": a frame clock is derived from the clip."""
+    if not spec.get("track"):
+        import subprocess
+        clip = res(base, spec["clip"])
+        d = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(clip)],
+                                 capture_output=True, text=True).stdout.strip())
+        n = int(round(d * 24))
+        out = paths.root() / "tracks" / f"_{spec.get('name', 'clip')}_clock.json"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps({"fps": 24.0, "frames": n, "canvas": [1920, 1080], "objects": {}}), encoding="utf-8")
+        return out
     t = spec["track"]
     return [res(base, x) for x in t] if isinstance(t, list) else res(base, t)
 
@@ -139,3 +150,69 @@ def envelope(audio, fps=24):
     rms = librosa.feature.rms(y=y, frame_length=hop * 2, hop_length=hop)[0]
     rms = rms / (np.percentile(rms, 98) + 1e-9)
     return [round(float(min(1, v)), 3) for v in rms]
+
+
+# ---- Hebrew typography --------------------------------------------------------------------------------------------
+# Hebrew titles use three Google faces only (Guy's system). Hebrew titles NEVER use Anton / Bodoni / any Latin-only face.
+#   Suez One     serif display: premium, luxury, film, real estate
+#   Karantina    condensed display: social stomp, sport, food, loud drops
+#   Secular One  bold rounded-geometric: captions, HUD labels, tech, clean UI
+# Pairings (display, weight, body/accent, weight):
+HE_PAIRS = {
+    "suez": ("Suez One", 400, "Secular One", 400),          # premium display + clean labels
+    "karantina": ("Karantina", 700, "Secular One", 400),    # punchy social stomp + clean labels
+    "secular": ("Secular One", 400, "Secular One", 400),    # captions, HUD, UI
+    "karantina-suez": ("Karantina", 700, "Suez One", 400),  # condensed display + a Suez One accent word/line
+}
+
+
+def type_pair(spec, latin=("Oswald", 700, "Archivo", 400), default_pair="secular"):
+    """Resolve the spec's typography. Returns dict(css, files, display, dw, body, bw, rtl, lang, dir).
+    spec: "language": "he" | "en";  "pair": one of HE_PAIRS (Hebrew) ;  "fonts": {"display", "dw", "body", "bw"} (override)."""
+    lang = spec.get("language", "en")
+    rtl = lang == "he"
+    if rtl:
+        pair = spec.get("pair", default_pair)
+        if pair not in HE_PAIRS:
+            raise SystemExit(f"unknown Hebrew pair '{pair}'. Use one of: {', '.join(HE_PAIRS)}")
+        d, dw, b, bw = HE_PAIRS[pair]
+    else:
+        d, dw, b, bw = latin
+    f = spec.get("fonts", {})
+    d, dw, b, bw = f.get("display", d), f.get("dw", dw), f.get("body", b), f.get("bw", bw)
+    if rtl:
+        for fam in (d, b):
+            if not any("-hebrew-" in st for st, _, _ in adkit.FAM.get(fam, [])):
+                raise SystemExit(f"'{fam}' has no Hebrew glyphs; Hebrew titles use Suez One, Karantina or Secular One (see HE_PAIRS)")
+    css, files = fonts(d, b)
+    return dict(css=css, files=files, display=d, dw=dw, body=b, bw=bw, rtl=rtl, lang=lang, dir="rtl" if rtl else "ltr")
+
+
+def words(text):
+    """Split a line into display words. A token made only of digits/%/./, is glued to the NEXT word
+    ('6 שעות', '24 מ׳', '100 %') so numbers never stand alone on a caption or a stomp (adkit rule)."""
+    toks = [t for t in str(text).split() if t]
+    out, i = [], 0
+    while i < len(toks):
+        t = toks[i]
+        core = t.strip(".,%₪$€")
+        if core.replace(".", "").replace(",", "").isdigit() and i + 1 < len(toks):
+            j = i + 1
+            while j + 1 < len(toks) and not any(ch.isalpha() for ch in toks[j]):   # "100 % כותנה": glue the symbol too
+                j += 1
+            out.append(" ".join(toks[i:j + 1]))
+            i = j + 1
+        else:
+            out.append(t)
+            i += 1
+    return out
+
+
+# deterministic helpers for canvas / procedural styles: never Math.random, everything a pure function of t + seed
+JS_UTIL = r"""
+const mulberry32 = (a) => () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+const hash1 = (n) => { const x = Math.sin(n * 12.9898 + 78.233) * 43758.5453; return x - Math.floor(x); };
+const clamp01 = (u) => Math.max(0, Math.min(1, u));
+const easeOut3 = (u) => 1 - Math.pow(1 - clamp01(u), 3);
+const easeInOut = (u) => { u = clamp01(u); return u < .5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2; };
+"""

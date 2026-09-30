@@ -1,6 +1,6 @@
 ---
 name: ai-video-titles
-description: After-Effects-style titles, HUD and motion graphics ON TOP of AI-generated video (Seedance 2.5 recommended) - stomp/social titles that ride a tracked subject, text behind the subject, Iron-Man-style HUDs, broadcast stat counters, Hebrew kinetic and tape titles, karaoke captions, flash-sale countdown CTAs, and fully bespoke crafted worlds (thermal camera, jeweller's loupe, architect's drawing, magazine spread, kitchen ticket). Frame-by-frame tracking (Gemini + optical flow), beat/voice sync, SFX + music + AI voice, HyperFrames render, Gemini QA. Ships with a visual style catalog of 29 styles, each with an ID, a copy-paste prompt and a plate contract (references/plates.json: how the video must be shot for that style). Post only: a clip goes in; to generate the video too, use ai-ad-studio. Use when the user wants titles, callouts, HUD, lower-thirds, captions, kinetic typography, motion graphics or "AE-style" text over an AI video / Seedance clip, a shoppable or product-callout video, a Hebrew social ad with big titles, or asks which title style to use.
+description: After-Effects-style titles, HUD and motion graphics ON TOP of AI-generated video (Seedance 2.5 recommended) - stomp/social titles that ride a tracked subject, text behind the subject, Iron-Man-style HUDs, broadcast stat counters, Hebrew kinetic and tape titles, karaoke captions, flash-sale countdown CTAs, and fully bespoke crafted worlds (thermal camera, jeweller's loupe, architect's drawing, magazine spread, kitchen ticket). Frame-by-frame tracking (Gemini + optical flow), beat/voice sync, SFX + music + AI voice, HyperFrames render, Gemini QA. Ships with a visual style catalog of 41 styles (incl. famous AE looks: viral captions, decode, glitch, neon, keynote, split-flap, write-on, broadcast pack, film title cards, particle text, flip montage, text on path), each with an ID, a copy-paste prompt and a plate contract (references/plates.json: how the video must be shot for that style). Post only: a clip goes in; to generate the video too, use ai-ad-studio. Use when the user wants titles, callouts, HUD, lower-thirds, captions, kinetic typography, motion graphics or "AE-style" text over an AI video / Seedance clip, a shoppable or product-callout video, a Hebrew social ad with big titles, or asks which title style to use.
 ---
 
 # AI Video Titles
@@ -94,7 +94,8 @@ Also look at a contact sheet (ffmpeg `fps=2,tile`) and note the timecode of ever
 Three routes, by style (references/styles.md says which one each style uses):
 
 **A. Parametrised styles - `run_style.py`** (STOMP-ESCORT, COUNTDOWN-CTA, HUD-HELMET, SCIFI-TARGETING, MAP-FLYOVER,
-CAMPUS-AR, SPEED-STAT). Copy `examples/<style>/spec.json`, edit texts / items / prices / times / colours, point `clip`
+CAMPUS-AR, SPEED-STAT, and the AE classics: VIRAL-CAPTIONS, DECODE-TYPE, GLITCH-RGB, NEON-SIGN, KEYNOTE-REVEAL,
+SPLIT-FLAP, SIGNATURE-WRITE-ON, BROADCAST-PACK, FILM-TITLE-CARD, PARTICLE-TEXT, FLIP-MONTAGE-LOGO, TEXT-ON-PATH). Copy `examples/<style>/spec.json`, edit texts / items / prices / times / colours, point `clip`
 and `track` at your files, then:
 ```bash
 python $SKILL/scripts/run_style.py STOMP-ESCORT --spec specs/runway.json            # build + hyperframes check
@@ -135,12 +136,34 @@ Tracking in markup: `data-follow="obj" data-anchor="c|t|b|l|r|tl|tr|bl|br" data-
 box anchor every frame; `data-box="obj" data-pad` sizes it to the box. Put `<!--MATTE-->` in raw HUD to split
 behind/front around the matte. Everything must be seek-safe: drive motion from `t`, never from wall-clock time.
 
-**Typography.** Hebrew: Assistant 300-800 for UI and sub-lines, Rubik 900 and Karantina 700 for big social words,
-Frank Ruhl Libre for editorial/luxury, Heebo for calm tech; write gershayim/geresh with the real characters (״ ׳).
+**Typography.** Hebrew: see *Hebrew typography* below (Suez One, Karantina, Secular One); write gershayim/geresh
+with the real characters (״ ׳).
 Latin pairings in the kit (`FAM` in adkit.py): Anton + Bodoni Moda, DM Serif Display + Space Grotesk, Michroma +
 Sora, Barlow Condensed, Cormorant Garamond + Manrope, Fraunces. Fonts ship in `assets/fonts` (override `TITLES_FONTS`).
 **Readability over footage** (thin text over video failed every time): tape strips, a bottom scrim, glass panels
 with a blur, or a hard 1-2 px outline; accent-coloured text only on ink/strip backgrounds (`tacc` auto-contrast).
+
+## Hebrew typography
+
+Hebrew titles use three Google faces, bundled in `assets/fonts` with Hebrew + Latin unicode-ranges:
+
+| Face | Character | Use it for |
+|---|---|---|
+| **Suez One** | serif display, weighty and editorial | premium, luxury, film, real estate |
+| **Karantina** (700) | condensed display, loud | social stomp, sport, food, loud drops |
+| **Secular One** | bold rounded-geometric, very legible | captions, HUD labels, tech, clean UI |
+
+Pairings (`"pair"` in any run_style spec; defined in `scripts/styles/common.py` HE_PAIRS):
+- `suez`: Suez One display + Secular One body/labels (premium)
+- `karantina`: Karantina 700 display + Secular One body/labels (punchy social)
+- `secular`: Secular One alone (captions, UI)
+- `karantina-suez`: Karantina display + a Suez One accent word or line
+
+Rules: Hebrew titles never use Anton, Bodoni or any Latin-only face (`type_pair` refuses them). `dir=rtl`; wipes and
+motion mirror; numbers stay glued to the word they belong to (`words()` in common.py) and digit runs stay one
+left-to-right island. Assistant remains only inside styles shipped before this system: HUD-HELMET, SCIFI-TARGETING,
+MAP-FLYOVER and CAMPUS-AR (Hebrew HUD and label text) and the adkit themes `he_bold` / `he_premium` (KINETIC-HE,
+TAPE-HE, KINETIC-KARAOKE, STOMP-SX), whose shipped renders it matches. New work uses the three faces above.
 
 ## STEP 4 - Sound
 

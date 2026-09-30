@@ -1,0 +1,27 @@
+{
+ "_comment": "VIRAL-CAPTIONS, Hebrew, Secular One (captions). Word timings from scripts/word_times.py for the voiceover. Plate: 15 s sneaker product film.",
+ "name": "ae-viral-captions",
+ "clip": "clips/E6_sneaker_720p.mp4",
+ "words": "tracks/E6_sneaker_he_words.json",
+ "language": "he",
+ "pair": "secular",
+ "keywords": [
+  "אוויר",
+  "שכבות",
+  "פשרות",
+  "קרבון",
+  "אחיזה",
+  "אירו"
+ ],
+ "emoji": {
+  "אוויר.": "🌬️",
+  "קרבון.": "⚡",
+  "אחיזה": "🔥",
+  "אירו.": "👟"
+ },
+ "vo": "shared/sfx/E6_sneaker_he_vo.mp3",
+ "music": "shared/sfx/E6_sneaker_music.mp3",
+ "music_vol": 0.3,
+ "plate_vol": 0.2,
+ "y": 0.86
+}

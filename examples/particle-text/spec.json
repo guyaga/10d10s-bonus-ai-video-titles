@@ -1,0 +1,49 @@
+{
+ "_comment": "PARTICLE-TEXT, English, Jost 700 + Jost 300, on the 15 s EMBER kitchen film (fictional restaurant): embers rise into FIRE FIRST over the flame, salt grains blow in as SEA SALT over the salt shot, steam gathers into EMBER on the hero plate. Cuts at 1.75 / 4.5 / 6.83 / 10.42 s.",
+ "name": "ae-particle-text",
+ "clip": "clips/E10_chef_720p.mp4",
+ "words": [
+  {
+   "text": "FIRE FIRST",
+   "mode": "embers",
+   "t": 0.1,
+   "form": 1.3,
+   "hold_until": 3.4,
+   "out": 1.1,
+   "x": 1180,
+   "y": 250,
+   "size": 170,
+   "density": 4
+  },
+  {
+   "text": "SEA SALT",
+   "sub": "FLEUR DE SEL · BY HAND",
+   "mode": "sand",
+   "t": 6.95,
+   "form": 1.3,
+   "hold_until": 9.7,
+   "out": 0.9,
+   "x": 960,
+   "y": 190,
+   "size": 180,
+   "density": 4,
+   "scrim": 0.6,
+   "subsize": 54
+  },
+  {
+   "text": "EMBER",
+   "sub": "TEL AVIV · SINCE 2019",
+   "mode": "smoke",
+   "t": 10.9,
+   "form": 1.6,
+   "x": 960,
+   "y": 250,
+   "size": 230,
+   "density": 4,
+   "subsize": 60
+  }
+ ],
+ "music": "shared/sfx/E10_chef_music.mp3",
+ "music_vol": 0.6,
+ "plate_vol": 0.3
+}

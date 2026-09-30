@@ -170,6 +170,18 @@ def load_track(track):
     out = None
     for tr in tracks:
         T = json.loads(Path(tr).read_text(encoding="utf-8"))
+        # compositions are 1920x1080: a track made on another canvas (e.g. vtrack --canvas 1280x720) is rescaled
+        if "canvas" not in T:
+            raise SystemExit(f"track {tr} has no \"canvas\" [w, h]; re-run vtrack.py/track.py or add the canvas it was tracked at")
+        cw, ch = T["canvas"]
+        if [cw, ch] != [1920, 1080]:
+            sx, sy = 1920 / cw, 1080 / ch
+            print(f"WARNING: track {Path(tr).name} is on a {cw}x{ch} canvas; rescaling to 1920x1080 (x{sx:.3f}, y{sy:.3f})")
+            if "objects" in T:
+                T["objects"] = {k: [[b[0] * sx, b[1] * sy, b[2] * sx, b[3] * sy] if b else None for b in v] for k, v in T["objects"].items()}
+            if "points" in T:
+                T["points"] = {k: [[p[0] * sx, p[1] * sy] if p else None for p in v] for k, v in T["points"].items()}
+            T["canvas"] = [1920, 1080]
         if "points" in T and "objects" not in T:
             T["objects"] = {k: [[p[0], p[1], p[0], p[1]] if p else None for p in v] for k, v in T.pop("points").items()}
         if out is None:

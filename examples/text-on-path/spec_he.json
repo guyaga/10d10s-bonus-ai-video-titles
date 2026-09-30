@@ -1,0 +1,36 @@
+{
+ "_comment": "TEXT-ON-PATH, Hebrew (Heebo 900): the same route with a Hebrew line; verified to read right-to-left in the correct order.",
+ "name": "ae-text-on-path-he",
+ "clip": "clips/aerial_720p.mp4",
+ "track": "tracks/aerial_points.json",
+ "route": [
+  "r0",
+  "r1",
+  "r2",
+  "r3",
+  "r4",
+  "r5"
+ ],
+ "draw": {
+  "t": 1.2,
+  "dur": 2.2,
+  "width": 8,
+  "color": "#9bd14a",
+  "glow": true
+ },
+ "lines": [
+  {
+   "text": "מנתב״ג לקמפוס · 12.8 ק״מ",
+   "t": 2.0,
+   "until": 9.6,
+   "from": 0.02,
+   "to": 0.35,
+   "size": 44,
+   "dy": -16,
+   "weight": "display"
+  }
+ ],
+ "plate_vol": 0.55,
+ "language": "he",
+ "pair": "heebo"
+}

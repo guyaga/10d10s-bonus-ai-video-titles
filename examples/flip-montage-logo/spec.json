@@ -1,0 +1,20 @@
+{
+ "_comment": "FLIP-MONTAGE-LOGO, English, Oswald 700 + Jost 300, closing the 10 s NORTHLINE walk (fictional label): 18 frames of the plate itself flip past as pages, then the wordmark lands on an orange block.",
+ "name": "ae-flip-montage-logo",
+ "clip": "clips/northline_720p.mp4",
+ "t": 6.4,
+ "dur": 2.2,
+ "frames": 18,
+ "logo": {
+  "text": "NORTHLINE",
+  "sub": "WINTER DROP 01"
+ },
+ "colors": {
+  "brand": "#ff5a1f",
+  "text": "#ffffff",
+  "tint": 0.55
+ },
+ "music": "shared/sfx/E6_sneaker_music.mp3",
+ "music_vol": 0.65,
+ "plate_vol": 0.35
+}

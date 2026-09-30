@@ -191,6 +191,89 @@ PLATES = {
     ["FORMAT: One continuous shot, no cuts.", "CAMERA: natural first-person walk, stabilised, gentle head motion. FORBIDDEN: cuts, shake.",
      "POSITIVE LOCKS: the sign keeps abstract unreadable symbols; no readable text anywhere. " + CLEAN],
     (0, .6, .15), source="E9_glasses_720p (18 s)"),
+ # ---------------------------------------------------------------- AE classics (all built with run_style.py)
+ "VIRAL-CAPTIONS": P("cuts-ok", 6, [8, 30], "anything carried by a voiceover; the subject sits high enough to leave the lower band free",
+    "subject in the upper two thirds", ("bottom", .25), "any smooth move; cuts on the voice's phrases", [],
+    ["FORMAT: One continuous shot, or hard cuts only at the listed timecodes.",
+     "COMPOSITION: Keep the bottom quarter of every shot low-detail (floor, table, dark studio): the captions sit there.",
+     "AUDIO: no voices, no music (the voiceover is added in post). " + CLEAN],
+    (6, 0, .2), source="E6_sneaker_720p (15 s) + Hebrew VO word timings"),
+ "DECODE-TYPE": P("cuts-ok", 4, [6, 20], "a tech, sci-fi or data subject (a face in a helmet, a screen, a machine); lines decode beside it",
+    "subject centred or off-centre, calm space on one side for the status lines", ("right", .22), "locked or very slow push",
+    ["face or subject (optional, to pin lines to it)"],
+    ["FORMAT: One continuous shot, no cuts (or cuts only at the listed timecodes).",
+     "CAMERA: Locked-off with a very slow push-in. FORBIDDEN: shake, whip-pans.",
+     "The right quarter of the frame stays dark and calm (background bokeh, helmet interior). " + CLEAN],
+    (4, 0, .2), source="B4_helmet_long_720p (first 12 s)"),
+ "GLITCH-RGB": P("cuts-ok", 6, [6, 20], "a bold subject (streetwear, music, tech) with graphic negative space around it",
+    "subject centred, walking or posing; plain walls or sky either side", ("both", .25), "locked or slow push; hits come from the music",
+    ["items/garments (optional, for pinned words)"],
+    ["FORMAT: One continuous shot preferred; hard cuts only on the beat if cutting.",
+     "COMPOSITION: The subject stays in the centre third; the left and right thirds are plain (concrete, sky, wall).",
+     "CAMERA: Locked-off or very slow push-in. FORBIDDEN: shake (the glitch adds all the energy). " + CLEAN],
+    (6, 0, .22), beats=True, source="NORTHLINE plate (10 s underpass walk)"),
+ "NEON-SIGN": P("one-take", 0, [6, 20], "a night location with blank walls or surfaces to mount the signs and a wet or glossy floor to reflect them",
+    "symmetrical corridor or street, subject in the centre third, blank walls left and right", ("both", .25), "locked-off or very slow push",
+    [],
+    ["FORMAT: One continuous shot, no cuts.",
+     "LOCATION: night; bare, evenly lit walls on the left and right; a wet floor with soft reflections.",
+     "CAMERA: Locked-off or extremely slow push-in, vanishing point near the centre. FORBIDDEN: cuts, shake.",
+     "POSITIVE LOCKS: no signs, no lettering, no screens on the walls. " + CLEAN],
+    (0, 0, .22), source="NORTHLINE plate (10 s underpass walk)"),
+ "KEYNOTE-REVEAL": P("cuts-ok", 6, [8, 24], "one idea per shot, each with a calm, low-detail centre where the number lands",
+    "subject off-centre or small; the centre third calm (sky, windscreen, dark interior)", ("none", 0), "slow, smooth, steady",
+    [],
+    ["FORMAT: Timestamped cut-blocks, one stat per shot. HARD CUTS only at the listed timecodes.",
+     "COMPOSITION: Keep the centre of each shot low-detail and not too bright (a big number sits there).",
+     "CAMERA: slow and smooth. FORBIDDEN: shake, whip-pans. " + CLEAN],
+    (6, 0, 0), source="E3_car_720p (18 s, 4 cuts)"),
+ "SPLIT-FLAP": P("cuts-ok", 4, [8, 24], "travel, transport, hospitality or any place with a departure/arrival story",
+    "subject in the lower two thirds; the top band free for the board", ("top", .30), "gentle walk or glide",
+    [],
+    ["FORMAT: One continuous shot preferred.",
+     "COMPOSITION: The upper third of the frame is sky, facade or calm background: a departure board sits there.",
+     "CAMERA: stabilised, gentle. FORBIDDEN: shake, whip-pans. " + CLEAN],
+    (4, 0, .25), source="E9_glasses_720p (18 s POV)"),
+ "SIGNATURE-WRITE-ON": P("one-take", 0, [8, 20], "a subject with clear features to circle and point at (a building's terrace, a product's parts, a room's pieces)",
+    "features readable and not moving too fast; open sky or wall on one side for the handwriting", ("left", .30),
+    "smooth drone climb, slow glide or locked", ["each annotated feature"],
+    ["FORMAT: One continuous shot, no cuts.",
+     "CAMERA: smooth, constant speed. FORBIDDEN: cuts, shake, spins.",
+     "COMPOSITION: The left third keeps open sky or a plain wall for handwritten notes. " + CLEAN],
+    (0, .8, .25), source="E8_tower_720p (18 s drone climb)"),
+ "BROADCAST-PACK": P("cut-list", 4, [10, 20], "a sports moment in shots: player intro, the action (slow-motion replay), the result",
+    "player readable in the intro and result shots; top corners and the bottom band free", ("top", .15),
+    "broadcast-style: tracking, slow motion on the replay", ["player"],
+    ["FORMAT: Timestamped cut-blocks. HARD CUTS exactly at the listed timecodes and nowhere else.",
+     "COMPOSITION: Keep the top-left corner and the bottom tenth free of key action (score bug and ticker).",
+     "POSITIVE LOCKS: plain kits with no logos, badges, sponsor text or numbers; no scoreboards or screens in frame. " + CLEAN],
+    (4, .4, .12), separation=False, source="E1_soccer_720p (15 s, 3 planned cuts)"),
+ "FILM-TITLE-CARD": P("cut-list", 6, [12, 30], "a cinematic story in shots; at least one wide shot with a calm lower third and a final hero shot",
+    "wide establishing shots with dust, sky or floor space; hero off-centre in the last shot", ("bottom", .25),
+    "cinematic, grounded; no whips", [],
+    ["FORMAT: Timestamped cut-blocks. HARD CUTS exactly at the listed timecodes and nowhere else.",
+     "COMPOSITION: The wide shots keep the lower third calm (ground, haze); the final shot leaves the left third open for credits.",
+     "CAMERA: cinematic, grounded. FORBIDDEN: whip-pans, shaky cam. " + CLEAN],
+    (6, 0, .2), source="E2_spartan_720p (24 s, 5 cuts)"),
+ "PARTICLE-TEXT": P("cuts-ok", 5, [8, 20], "footage with natural particles to borrow (fire and embers, salt or sand, steam or smoke) and a dark area for the words",
+    "subject low or to one side; dark, low-detail space above it", ("top", .30), "slow push or locked; cuts on the recipe steps",
+    [],
+    ["FORMAT: One continuous shot, or hard cuts only at the listed timecodes.",
+     "COMPOSITION: The upper third of each shot stays dark and uncluttered (the words form there).",
+     "CAMERA: slow. FORBIDDEN: shake, whip-pans. " + CLEAN],
+    (5, 0, .25), source="E10_chef_720p (15 s, 4 cuts)"),
+ "FLIP-MONTAGE-LOGO": P("cuts-ok", 6, [6, 30], "any footage with varied moments to flip through; the montage takes the last ~3.5 s",
+    "variety across the shot (close-ups, wides, details) makes the flip read", ("none", 0), "any", [],
+    ["FORMAT: Any; plan the last 3-4 seconds as the logo montage (the plate underneath is replaced).",
+     "COMPOSITION: Vary framing across the take (wide, medium, detail) so the flipped pages differ. " + CLEAN],
+    (6, 0, 0), source="NORTHLINE plate (10 s; 18 frames of it flip)"),
+ "TEXT-ON-PATH": P("one-take", 0, [8, 15], "a high aerial with a visible road, river or trail that is tracked point by point",
+    "the route clearly visible and roughly flat to camera, not hidden behind buildings", ("none", 0),
+    "smooth drone, constant slow push and slight descent; no rotation", ["route points (planar, track.py)"],
+    ["FORMAT: One continuous shot, no cuts.",
+     "CAMERA: Smooth stabilized drone, constant slow speed, gentle forward push and slight descent only. FORBIDDEN: whip-pans, rotation, roll, cuts.",
+     "POSITIVE LOCKS: the road/route stays visible for the whole shot. No text, no labels, no map graphics, no UI, no logos at any time."],
+    (0, 1.0, 0), source="A1_seedance_720p (10 s aerial)"),
 }
 
 SIDE = {"both": "both sides", "left": "left", "right": "right", "top": "top", "bottom": "bottom"}
@@ -220,3 +303,35 @@ if __name__ == "__main__":
         h = h.replace("const S = [", block + chr(10) + "const S = [", 1)
     hub.write_text(h, encoding="utf-8")
     print("hub 'Shoot it like this' lines ->", hub)
+
+
+def plate_line(v):
+    """The one-line 'Plate:' summary under each style in styles.md."""
+    d = v["duration_s"]
+    take = {"one-take": "one take, no cuts", "cuts-ok": f"cuts OK (max {v['max_cuts']})", "cut-list": f"planned cut list (max {v['max_cuts']})"}[v["take"]]
+    ns = v["negative_space"]
+    space = "no free space needed" if ns["side"] == "none" else f"{round(ns['min_frac'] * 100)}% free {SIDE[ns['side']]}"
+    extra = [x for x, b in (("matte (subject separable)", v["separation"]), ("music beat grid", v["beats"])) if b]
+    tr = ("track: " + ", ".join(v["track"])) if v["track"] else "no tracking"
+    return f"- Plate: {take}, {d[0]}-{d[1]} s · {v['framing']} · {space} · {v['camera']} · {tr}" + (" · " + ", ".join(extra) if extra else "") + "."
+
+
+def write_plate_lines():
+    import re
+    md = Path(__file__).resolve().parent / "styles.md"
+    s = md.read_text(encoding="utf-8")
+    parts = re.split(r"(?m)^(?=### )", s)
+    out = []
+    for p in parts:
+        m = re.match(r"### (\S+)", p)
+        if m and m.group(1) in PLATES:
+            p = re.sub(r"(?m)^- Plate:.*\n", "", p)
+            line = plate_line(PLATES[m.group(1)])
+            p = p.replace("\n- Prompt:", "\n" + line + "\n- Prompt:", 1) if "\n- Prompt:" in p else p.rstrip("\n") + "\n" + line + "\n\n"
+        out.append(p)
+    md.write_text("".join(out), encoding="utf-8")
+    print("styles.md Plate: lines ->", sum(1 for p in out if "- Plate:" in p))
+
+
+if __name__ == "__main__":
+    write_plate_lines()

@@ -1,0 +1,68 @@
+{
+ "_comment": "BROADCAST-PACK, English, Oswald 700 + Archivo 500, on the 15 s football plate (hard cuts 2.54 / 7.75 / 11.125 s). Fictional clubs and league. Stingers wipe into and out of the slow-motion replay; the lower-third rides the tracked player; the bug scores the goal.",
+ "name": "ae-broadcast-pack",
+ "clip": "clips/E1_soccer_720p.mp4",
+ "track": "tracks/E1_vtrack.json",
+ "brand": "SPARTA LEAGUE",
+ "teams": [
+  {
+   "code": "SPA",
+   "color": "#e63b2e",
+   "score": 1
+  },
+  {
+   "code": "NOR",
+   "color": "#1e6cff",
+   "score": 1
+  }
+ ],
+ "clock": {
+  "start": "88:42",
+  "t": 0
+ },
+ "goal": {
+  "team": 0,
+  "t": 11.4,
+  "label": "GOAL"
+ },
+ "lower": [
+  {
+   "follow": "player",
+   "anchor": "b",
+   "dx": 0,
+   "dy": -160,
+   "name": "#9 LIOR AVNI",
+   "role": "STRIKER · 14 GOALS THIS SEASON",
+   "t": 0.5,
+   "until": 2.45
+  },
+  {
+   "follow": "player",
+   "anchor": "b",
+   "dx": 0,
+   "dy": -150,
+   "name": "#9 LIOR AVNI",
+   "role": "88' · WINNER · 2-1",
+   "t": 12.2
+  }
+ ],
+ "replay": [
+  {
+   "t": 2.7,
+   "until": 11.0,
+   "label": "REPLAY · SLOW MOTION"
+  }
+ ],
+ "ticker": {
+  "text": "LIVE · SPARTA 1-1 NORTH  ·  TOP OF THE TABLE ON THE LINE  ·  NEXT: SPARTA vs HARBOR, SAT 21:00  ·  AVNI 14 GOALS THIS SEASON",
+  "t": 0.4,
+  "speed": 170
+ },
+ "wipes": [
+  2.54,
+  11.125
+ ],
+ "music": "shared/sfx/E1_music.mp3",
+ "music_vol": 0.55,
+ "plate_vol": 0.5
+}

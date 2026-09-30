@@ -1,0 +1,90 @@
+{
+ "_comment": "SPLIT-FLAP, Hebrew, Karantina 700 cells + Secular One labels, over an 18 s first-person travel walk. Times stay left-to-right, destinations fill right-to-left; one status re-flips at 9 s.",
+ "name": "ae-split-flap",
+ "clip": "clips/E9_glasses_720p.mp4",
+ "language": "he",
+ "pair": "karantina",
+ "title": "יציאות · DEPARTURES",
+ "board": {
+  "x": 1860,
+  "y": 70,
+  "align": "right",
+  "cell": 44
+ },
+ "columns": [
+  {
+   "w": 5,
+   "dir": "ltr",
+   "label": "שעה"
+  },
+  {
+   "w": 8,
+   "label": "יעד"
+  },
+  {
+   "w": 3,
+   "dir": "ltr",
+   "label": "שער"
+  },
+  {
+   "w": 7,
+   "label": "סטטוס",
+   "color": "#ffd23f"
+  }
+ ],
+ "rows": [
+  {
+   "cols": [
+    "08:40",
+    "רומא",
+    "B4",
+    "עלייה"
+   ],
+   "t": 0.8
+  },
+  {
+   "cols": [
+    "09:15",
+    "פריז",
+    "C2",
+    "בזמן"
+   ],
+   "t": 1.4
+  },
+  {
+   "cols": [
+    "09:50",
+    "אתונה",
+    "A7",
+    "בזמן"
+   ],
+   "t": 2.0
+  },
+  {
+   "cols": [
+    "10:25",
+    "ברצלונה",
+    "D1",
+    "מתעכב"
+   ],
+   "t": 2.6
+  }
+ ],
+ "changes": [
+  {
+   "row": 0,
+   "col": 3,
+   "text": "המריא",
+   "t": 9.0
+  },
+  {
+   "row": 3,
+   "col": 3,
+   "text": "עלייה",
+   "t": 12.5
+  }
+ ],
+ "music": "shared/sfx/E9_glasses_music.mp3",
+ "music_vol": 0.55,
+ "plate_vol": 0.35
+}

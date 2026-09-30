@@ -1,0 +1,63 @@
+{
+ "_comment": "SIGNATURE-WRITE-ON, English (Caveat 700 hand, red marker), on the 18 s SEAVIEW 24 drone climb (fictional development). A note in the open sky arrows to the tracked balconies; at the top, 'the penthouse.' writes on, the tracked terrace gets a hand circle and an arrow.",
+ "name": "ae-signature-write-on",
+ "clip": "clips/E8_tower_720p.mp4",
+ "track": "tracks/E8_tower_vtrack.json",
+ "language": "en",
+ "notes": [
+  {
+   "text": "every home faces the sea",
+   "x": 90,
+   "y": 250,
+   "size": 92,
+   "t": 4.6,
+   "dur": 1.4,
+   "until": 10.5,
+   "underline": true,
+   "arrow": {
+    "to": "balcony",
+    "t": 6.3,
+    "dur": 0.7,
+    "bend": -0.25
+   }
+  },
+  {
+   "text": "the penthouse.",
+   "x": 150,
+   "y": 210,
+   "size": 130,
+   "t": 12.8,
+   "dur": 1.1,
+   "underline": true,
+   "mark": {
+    "obj": "terrace",
+    "shape": "circle",
+    "pad": 26,
+    "t": 13.8,
+    "dur": 0.9
+   },
+   "arrow": {
+    "to": "terrace",
+    "t": 14.6,
+    "dur": 0.6,
+    "bend": 0.3
+   }
+  },
+  {
+   "text": "sunset, included",
+   "x": 110,
+   "y": 900,
+   "size": 78,
+   "t": 15.6,
+   "dur": 1.1
+  }
+ ],
+ "music": "shared/sfx/E8_tower_music.mp3",
+ "music_vol": 0.6,
+ "plate_vol": 0.3,
+ "colors": {
+  "ink": "#14213d",
+  "marker": "#e5251d",
+  "shadow": "rgba(255,248,235,.75)"
+ }
+}

@@ -28,6 +28,10 @@ import shotkit  # noqa: E402
 STYLES = {  # catalog ID -> module in scripts/styles
     "STOMP-ESCORT": "runway", "COUNTDOWN-CTA": "runway", "HUD-HELMET": "helmet", "SCIFI-TARGETING": "targeting",
     "MAP-FLYOVER": "mapflyover", "CAMPUS-AR": "campus", "SPEED-STAT": "speedstat",
+    # AE classics
+    "VIRAL-CAPTIONS": "viral", "DECODE-TYPE": "decode", "GLITCH-RGB": "glitch", "NEON-SIGN": "neon",
+    "KEYNOTE-REVEAL": "keynote", "SPLIT-FLAP": "splitflap", "SIGNATURE-WRITE-ON": "writeon", "BROADCAST-PACK": "broadcast",
+    "FILM-TITLE-CARD": "filmcard", "PARTICLE-TEXT": "particles", "FLIP-MONTAGE-LOGO": "flipmontage", "TEXT-ON-PATH": "textpath",
 }
 ADKIT = ["STOMP-BEHIND", "GLASS-CALLOUT", "KINETIC-HE", "TAPE-HE", "KINETIC-KARAOKE", "FLASH-CARD", "PRESIDENTIAL-SERIF"]
 

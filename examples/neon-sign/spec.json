@@ -1,0 +1,68 @@
+{
+ "_comment": "NEON-SIGN, Hebrew, Karantina 700 tubes + a Suez One accent line, mounted on the concrete walls of the 10 s NORTHLINE underpass (fictional label), reflected in the wet floor.",
+ "name": "ae-neon-sign",
+ "clip": "clips/northline_720p.mp4",
+ "language": "he",
+ "pair": "karantina-suez",
+ "signs": [
+  {
+   "lines": [
+    {
+     "text": "חורף ברחוב",
+     "tube": "outline",
+     "weight": "display",
+     "size": 140,
+     "color": "#ff3da8"
+    },
+    {
+     "text": "NORTHLINE · דרופ 01",
+     "tube": "solid",
+     "weight": "body",
+     "size": 58,
+     "color": "#3de0ff"
+    }
+   ],
+   "x": 150,
+   "y": 640,
+   "align": "left",
+   "wall": "left",
+   "angle": 55,
+   "t": 0.8,
+   "floor": 790,
+   "reflect": 0.8
+  },
+  {
+   "lines": [
+    {
+     "text": "מעיל פאפר",
+     "tube": "outline",
+     "weight": "display",
+     "size": 120,
+     "color": "#ff8a1a"
+    },
+    {
+     "text": "340$ · מהדורה מוגבלת",
+     "tube": "solid",
+     "weight": "body",
+     "size": 52,
+     "color": "#ffe36b"
+    }
+   ],
+   "x": 1770,
+   "y": 650,
+   "align": "right",
+   "wall": "right",
+   "angle": 55,
+   "t": 4.6,
+   "floor": 800,
+   "reflect": 0.8
+  }
+ ],
+ "music": "shared/sfx/E6_sneaker_music.mp3",
+ "music_vol": 0.55,
+ "plate_vol": 0.45,
+ "vanishing": [
+  960,
+  470
+ ]
+}

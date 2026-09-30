@@ -10,6 +10,7 @@ Spec keys (JSON). Required: clip, track, items (escort) and/or countdown.
   brand         {"name": "ATELIER VEYRA", "tag": "AW26", "beat": 1}          optional
   look          {"text": "LOOK 07", "beat": 4, "until": 9}                    optional label over the subject's head
   items         [{"key", "word", "name", "price", "image", "side": "L|R", "beat"}]   image optional
+  sticker_min_scale  floor for the price sticker's scale while the subject is small/far (default .62; the word may go to .42)
   big_word      {"text": "AW26", "beat": 24, "until": 29}                   behind the subject when "matte" is set
   finale        {"title": "THE LOOK", "beat": 24, "label": "five pieces"}   optional end card
   countdown     {"beat": 29, "seconds": 15, "discount": 0.2, "pill": "FLASH SALE", "label": "the complete look",
@@ -71,7 +72,7 @@ def build(spec, base, style="STOMP-ESCORT"):
   text-shadow:7px 7px 0 var(--ink);-webkit-text-stroke:3px var(--ink);white-space:nowrap}}
 .idx{{display:inline-block;width:max-content;background:var(--hot);color:var(--ink);font-weight:700;font-size:22px;letter-spacing:.14em;padding:6px 12px;margin-bottom:10px;border:3px solid var(--ink)}}
 .stk{{display:flex;align-items:center;gap:16px;margin-top:30px;padding:12px 18px 12px 12px;background:var(--paper);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);width:max-content}}
-.esc.L .stk{{transform:rotate(-4deg)}}.esc.R .stk{{transform:rotate(3deg)}}
+.esc.L .stk{{transform:rotate(-4deg);transform-origin:100% 0}}.esc.R .stk{{transform:rotate(3deg);transform-origin:0 0}}
 .stk img{{width:112px;height:112px;object-fit:contain;background:#ede6da;border:2px solid var(--ink);display:block}}
 .stk .nm{{display:block;font-family:"{SF}",serif;font-style:italic;font-size:32px;color:var(--ink);white-space:nowrap}}
 .stk .pr{{display:inline-block;margin-top:8px;background:var(--hot);color:var(--ink);font-weight:700;font-size:34px;padding:4px 14px;border:3px solid var(--ink)}}
@@ -150,7 +151,7 @@ def build(spec, base, style="STOMP-ESCORT"):
 
     ITEMS = [[i["key"], i["side"], i["beat"]] for i in items]
     j = [STOMP_JS, f"const B = (i) => +({off} + {60 / bpm} * i).toFixed(3);",
-         f"const ITEMS = {js(ITEMS)}; const FOLLOW = {js(follow)}; const END = B({end_beat});"]
+         f"const ITEMS = {js(ITEMS)}; const FOLLOW = {js(follow)}; const END = B({end_beat}); const STK_MIN = {spec.get('sticker_min_scale', .62)};"]
     j.append(r"""
 window.onPlace = (t) => {
   const m = boxAt(FOLLOW, t); if (!m) return;
@@ -159,6 +160,9 @@ window.onPlace = (t) => {
     const el = document.getElementById("e-" + key), sc = el.firstElementChild;
     el.style.left = (side === "L" ? m[0] - 30 : m[2] + 30) + "px"; el.style.top = (m[1] + h * .18) + "px";
     sc.style.transform = side === "L" ? `translateX(-100%) scale(${s})` : `scale(${s})`;
+    // the price sticker must stay legible while the subject is far away: its own floor (STK_MIN) on top of the word's scale
+    const stk = el.getElementsByClassName("stk")[0];
+    if (stk) stk.style.scale = String(Math.max(STK_MIN, s) / s);
   }
   const lk = document.getElementById("lk"); if (lk) lk.firstElementChild.style.fontSize = (44 * Math.max(.6, s)) + "px";
   if (window.onCD) window.onCD(t);
