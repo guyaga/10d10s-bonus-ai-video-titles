@@ -262,7 +262,11 @@ def cmd_make(a):
     if need:
         objs = out / "objects.json"
         if not objs.exists():
-            objs.write_text(json.dumps(objects_template(sid, need), ensure_ascii=False, indent=1), encoding="utf-8")
+            tpl = objects_template(sid, need)
+            if a.context and "TODO" in tpl.get("context", ""):
+                # the user's project context is the best shot description we have: use it so --track can run
+                tpl["context"] = a.context
+            objs.write_text(json.dumps(tpl, ensure_ascii=False, indent=1), encoding="utf-8")
         track = out / "tracks" / "track.json"
         spec["track"] = "tracks/track.json"
         has_todo = "TODO" in objs.read_text(encoding="utf-8")
